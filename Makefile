@@ -16,7 +16,7 @@ $(BUILDDIR)/%.pdf: %.tex
 
 
 $(TITLE): $(TITLE).tex $(BUILDDIR)
-	cp $(TITLE).tex $(BUILDDIR)/.
+	cp *.tex $(BUILDDIR)/.
 	cp $(TITLE).bib $(BUILDDIR)/.
 	cp _static/*.jpg $(BUILDDIR)/.
 	cp _static/*.bst $(BUILDDIR)/.

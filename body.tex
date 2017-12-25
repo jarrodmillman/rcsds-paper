@@ -1,0 +1,221 @@
+\maketitle
+
+% Curriculum, Instruction, and Pedagogy manuscripts have a 5,000 word limit (~10pages)
+\wordcount
+
+\begin{abstract} % 350 words limit
+We describe our experience teaching a project-based introduction to
+reproducible and collaborative neuroimaging data analysis.
+
+\tiny
+ \keyFont{ \section{Keywords:} Neuroimaging, fMRI, Statistics, Reproducible Research, Python, Data Science}
+ %All article types: you may provide up to 8 keywords; at least 5 are mandatory.
+\end{abstract}
+
+\section{Introduction}
+
+traditional approach vs. our approach to teaching fMRI analysis ...
+
+bottom up (low-level) vs. top down (high-level)
+
+reproducible research \citep{millman2014developing}
+
+Python for neuroimaging analysis \citep{millman2007analysis}
+
+Scientific Python \citep{millman2011python}
+
+interdisciplinary
+
+would it work?
+
+\section{Methods}
+
+During the fall semester of 2015, we co-taught an upper-level undergraduate
+(Stat 159) and first-semester graduate (Stat 259) course in the statistics
+department at UC Berkeley.\footnote{\url{http://www.jarrodmillman.com/stat159-fall2015/}}
+
+Course purpose
+
+\begin{quote}
+A project-based introduction to statistical data analysis. Through case
+studies, computer laboratories, and a term project, students learn
+practical techniques and tools for producing statistically sound and
+appropriate, reproducible, and verifiable computational answers to
+scientific questions. Course emphasizes version control, testing,
+process automation, code review, and collaborative programming.
+Software tools include Bash, Git, Python, and \LaTeX.
+
+\hfill\textit{Reproducible and Collaborative Statistical Data Science (Stat 159/259)}
+\end{quote}
+
+our background ... preliminary attempts
+
+student audience
+
+\textbf {Prerequisites:} Statistics 133, Statistics 134, and Statistics 135
+(or equivalent). Graduate standing is required to register for Statistics 259.
+
+\textbf {Credit Hours:} 4
+
+
+\subsection{Core topics}
+
+Our objective for the course was for students to
+(1) be proficient at the Unix commandline;
+(2) be expert at version control with Git;
+(3) be able to write documents in Markdown or \LaTeX (including using pandoc);
+(4) be familiar with scientific computing in Python;
+(5) understand the computational and statistical issues involved with reproducibility; and
+(6) be familiar with computational issues in modern statistical data
+analysis through hands-on analysis of functional MRI data.
+
+\subsubsection{Scientific computing with Python}
+
+Using the bash shell;
+Introduction to Git;
+Introduction to Python
+
+\subsubsection{Statistical analysis of fMRI data}
+
+\subsubsection{Readings}
+
+Annotated reading list?
+
+\begin{itemize}
+\item \textbf{Reading 1}: \href{https://osf.io/zqbu2}{L Preeyanon, AB Pyrkosz, and CT Brown.
+             ``Reproducible bioinformatics research for biologists.''
+Implementing Reproducible Research (2014)}
+\item \textbf{Reading 2}: \href{http://arxiv.org/pdf/0906.3662v1}{MA Lindquist. ``The statistical analysis of fMRI data.''}
+              %Statistical Science 23.4 (2008)
+(2008)
+\item \textbf{Reading 3}: \href{http://www.computer.org/cms/Computer.org/ComputingNow/issues/2015/04/T-mcs2011020013.pdf}{F P\'{e}rez, BE Granger, and JD Hunter.
+              ``Python: an ecosystem for scientific computing.''}
+              %Computing in Science \& Engineering 13.2 (2011)
+(2011)
+\item \textbf{Reading 4}: \href{http://statweb.stanford.edu/~wavelab/Wavelab_850/wavelab.pdf}{JB Buckheit and DL Donoho.
+``Wavelab and reproducible research.'' (1995)}
+\item \textbf{Reading 5}: \href{http://www.jarrodmillman.com/publications/millman2014developing.pdf}{KJ Millman and F P\'{e}rez.
+              ``Developing open source scientific practice.''}
+              %Implementing Reproducible Research (2014)
+(2014)
+\item \textbf{Reading 6}: \href{http://matthew.dynevor.org/_downloads/does_glm_love.pdf}{JB Poline and M Brett. ``The general linear model and fMRI: does love last forever?'' (2012)}
+\item \textbf{Reading 7}: \href{http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124}{JPA Ioannidis. ``Why Most Published Research Findings Are False'' (2005)}
+\end{itemize}
+
+\subsubsection{Homeworks and Quizzes}
+
+\subsection{Project}
+
+The majority of the class focuses on a final group project
+
+\begin{quote}
+\textbf {\large \\Learning objectives:} Investigate a published fMRI study;
+collaborate on a software project; work with complex and large datasets; convolution
+(hemodynamic modeling, smoothing); interpolation (slice time correction, image
+resampling); optimization (registration, advanced statistics); basic linear
+algebra (statistics).
+\end{quote}
+
+\begin{quote}
+\textbf {\large \\ Project overview:}
+The semester project involves ``investigating'' a published result using the
+analysis of functional Magnetic Resonance Imaging (MRI).\footnote{Exactly what
+each team means by ``investigate'' will need to be defined by each team.  For
+example, for one team this might mean a very careful reanalysis of the data
+using the original methods as closely as possible.  However, this shouldn't
+mean merely running existing scripts used in the original analysis; rather, the
+team would need to reimplement the analysis scripts.  Another team might decide
+to conduct a different analysis than used in the original study.  For instance,
+the published work might use a parametric approach and the team project might
+attempt to use a nonparametric technique such as permutation testing.  A third
+team might focus on a careful validation of the modeling assumptions made by
+the original analysis.}    Functional MRI (fMRI) allows scientists to localize
+which parts of the brain are associated with specific cognitive tasks. There is
+no expectation that you will have a background in neuroscience. You will learn
+everything you need to know about the method in the course. The intention of
+focusing on fMRI data is merely to provide a concrete problem domain that
+exemplifies the types of programming and statistical challenges present in many
+modern statistical applications.  Additionally, the weekly labs will prepare
+you---through a series of guided exercises---with the basic skills and
+background you need for the group project.
+
+While you will learn the basic methods and tools during lecture and lab, you
+will be expected to do additional research and reading in the course of working
+on the group project.  For instance, you may need to use a specialized analysis
+method or a Python package not covered in the lectures or labs.
+
+As part of your final project grade, you will be required to work on your
+project using GitHub's pull request and code review mechanism.  During lecture,
+I will cover the exact workflow you will be expected to follow.  Please note
+that as this course is explicitly about reproducibility and collaboration your
+project grade will not be entirely based on your final report, but will also
+reflect how well your group work is reproducible and how effectively you
+collaborated using the techniques taught in the course (e.g., pull requests,
+code review, testing, etc.)
+\end{quote}
+
+\begin{quote}
+\begin{flushleft}
+Form teams \dotfill Week 5 (Sept. 22)\\
+Project proposal \dotfill Week 6 (Oct. 1)\\
+Progress presentation \dotfill Week 12 (Nov. 12)\\
+Draft report \dotfill Week 12 (Nov. 12)\\
+Project presentation \dotfill Week 15 (Dec. 1 \& 3)\\
+Final report \dotfill Week 17 (Dec. 14)\\
+\end{flushleft}
+\end{quote}
+
+\section{Results}
+
+\subsection{Course Projects}
+
+
+
+\citep{tom2007neural}
+
+\section{Discussion}
+
+How would this work for Psychology students?
+
+How would this work in a quarter system?
+
+\section{Conclusion}
+
+lessons learned ...
+
+
+\section*{Conflict of Interest Statement}
+%All financial, commercial or other relationships that might be perceived by the academic community as representing a potential conflict of interest must be disclosed. If no such relationship exists, authors will be asked to confirm the following statement: 
+
+The authors declare that the research was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest.
+
+\section*{Author Contributions}
+
+KJM was the lead instructor and was responsible for the syllabus and project timeline;
+KJM and MB were responsible for lectures and created homework assignements;
+KJM and RB were responsible for labs, readings, quizzes, and grading;
+all authors held weekly office hours to assist students with their projects.
+KJM and MB wrote the first draft of the manuscript;
+all authors wrote sections of the manuscript, contributed to manuscript revision, 
+as well as read and approved the submitted version.
+
+\section*{Funding}
+
+... GSI funding from stat department?
+... BIDS funding for writing?
+... anything else?
+
+\section*{Acknowledgments}
+We would like to thank the following people
+... Russ Poldrack and OpenfMRI.org
+... Alexander Huth guest lecture
+... Stefan, Fernando, Paul, Mark (any one from Practical Neuroimaging?)
+... anyone else? 
+
+\bibliographystyle{frontiersinSCNS_ENG_HUMS} % for Science, Engineering and Humanities and Social Sciences articles, for Humanities and Social Sciences articles please include page numbers in the in-text citations
+%\bibliographystyle{frontiersinHLTH&FPHY} % for Health, Physics and Mathematics articles
+\bibliography{teaching}
+
+%%% Make sure to upload the bib file along with the tex file and PDF
+%%% Please see the test.bib file for some examples of references
+
