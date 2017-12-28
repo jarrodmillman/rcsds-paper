@@ -19,6 +19,9 @@
 \usepackage{url,hyperref,lineno,microtype,subcaption}
 \usepackage[onehalfspacing]{setspace}
 
+\usepackage[T1]{fontenc}
+\usepackage{pifont,array}
+
 \linenumbers
 
 
@@ -187,4 +190,16 @@ $^{4}$Neurology and Neurosurgery, McGill University, Montreal, Quebec, Canada}
 %%%% Frontiers will add the figures at the end of the provisional pdf automatically
 %%%% The use of LaTeX coding to draw Diagrams/Figures/Structures should be avoided. They should be external callouts including graphics.
 %
+
+\begin{table}
+\begin{center}
+\begin{tiny}
+\input{rubric}
+\caption{Project grading rubric.
+To receive an ``A'' on this assignment required roughly seven check marks and two check pluses.}
+\label{rubric}
+\end{tiny}
+\end{center}
+\end{table}
+
 \end{document}
