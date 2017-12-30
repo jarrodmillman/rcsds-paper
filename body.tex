@@ -23,25 +23,125 @@ computer, often remotely; collating and manipulating data; writing and sharing
 scripts in computing languages such as Matlab or the Unix shell-scripting
 languages.  Analyses can and do become messy and complicated, leading to
 confusion and error.  Most labs expect students to learn how to do this on the
-job, and few labs use current computing tools and process to control this
-complexity, and reduce this error.  As a corollary, it is usually
-difficult for a researcher to share their analysis with another
-researcher, even in their own lab, and it is hard for the PI to check the
-analysis for errors or invalid assumptions.
+job, and few labs use current computing tools and process to control 
+complexity and error.  As a corollary, it is usually difficult for a
+researcher to share their analysis with another researcher, even in their own
+lab, and it is hard for the PI to check the analysis for errors or invalid
+assumptions.
 
 The final problem is that we have made it hard for imagers to collaborate with
 other technical fields such as engineering and statistics.  Imaging software
 packages are highly specific to brain imaging, and present an interface to
 common statistical procedures that our students do not recognize.  Many
-students have little background in standard engineering tools such as
-convolution, the Fourier transform or numerical optimization.  In our
+students do not have much background in standard engineering tools such as
+convolution, the Fourier transform or numerical optimization.  In traditional
 teaching, we usually gloss over the details of these fields, which saves us
 time, but leaves the students without the understanding or vocabulary to
 explain their analysis problem to other scientists in a way that makes it easy
-for them to engage.  The result of our teaching may be that imaging research
-is more likely to live in a neuroscience ghetto that is effectively walled off
-from insight by and collaboration with other scientists.
+for them to engage.  The result may be that imaging research is more likely to
+live in a neuroscience ghetto that is effectively walled off from
+collaboration and insight by other scientists.
 
+After years of trying to patch up the problems caused by our own teaching, we
+came to the conclusion that the traditional approach is based on a fundamental
+error of emphasis.
+
+Functional imaging analysis is difficult to teach.  Explaining the origin and
+contrast of functional MRI involves a significant amount of physics, signal
+processing and physiology.  Analysis methods cover many numerical and
+mathematical fields, including signal and image processing, linear algebra,
+statistics and machine learning.  Practical analysis involves manipulating
+large amounts of data, with many steps, each of which are prone to error.  To
+answer new questions, the researcher will usually need to write new code.  The
+analysis needs to be transparent and repeatable in order to be useful to
+collaborators and reviewers.
+
+Teaching all these topics in depth would take much longer than most students
+or institutions have time for.  We need to choose what we will teach, and what
+we will leave for the students to learn later, in other courses, or as part of
+their practical research experience.  We have to decide what is fundamental,
+and what is peripheral.
+
+The traditional approach takes the top level to be fundamental.  It aims to
+give the big picture, leaving the students to fill in the details. The
+assumption is that the student will either know or pick up some of the
+mathematical and computational foundations later, with the big picture as a
+framework to guide them in choosing what to learn.
+
+Our experience is that this assumption is quite incorrect.  It is rare for
+students to go on to learn these foundations, and common for researchers to
+continue to work with a limited and superficial understanding.  We believe
+this has severe consequences for the quality of their work; because we did not
+teach them these foundations, they come to believe that they do not need to
+know them.  The foundations appear to them to be the preserve of clever
+mathematical and computing types; they have no hope of understanding them in
+any depth.  They come to treat the analysis as something special and magic,
+where the rules are determined by practice, because they cannot hope to reason
+about them.
+
+Here we propose an alternative to the traditional approach.  Instead of
+concentrating on the big picture, we emphasize the foundations on which the
+analysis is built, and their implementation in practice, with code and
+computing.  We were inspired by the famous epithet of Richard Feynman, found
+written on his blackboard after his death: ``What I cannot create, I do not
+understand'' \citep{feynman-blackboard}.  We aim to give the students a
+sufficient grasp of how the methods work, that they could implement their own
+crude versions of the major algorithms.  In teaching them to work with code,
+we also teach them standard programming techniques for reducing complexity and
+controlling error.  We encourage them to own their own learning, and explore
+their data, by devoting a large proportion of the course and course marks to
+an open-ended group project that must be public and completely replicable,
+down to the figures used in the final report.
+
+We will concentrate on two examples to illustrate the contrast between the
+traditional approach and our own.
+
+\subsection{The General Linear Model}
+
+We have been thinking about how to teach the General Linear Model (GLM) for
+many years \citep{spm-statistics-orig,introducing-the-glm,poline2012general}.
+The GLM is a matrix formulation of multiple regression that can implement
+familiar analysis methods such as Analysis of Variance and Covariance (ANOVA,
+ANCOVA).  Many students have not taken linear algebra, or if they have, do not
+remember it very well.  The traditional teaching approach is to show how the
+GLM relates to simple and multiple regression over a few slides in an
+hour-long talk, and then move on to more advanced topics such as temporal
+filtering or random effects.  Although the students may have the impression
+that they have understood, we have found that most of them are unable to
+answer simple questions about the GLM formulation after such a talk, and that
+they rarely go on to improve their understanding in their later education.
+
+Our current teaching works through the GLM very slowly. We found that we
+needed to do this for the students to see that the GLM is just another way of
+expressing statistical methods that they already know, such as regression,
+t-tests and ANOVA.  We start with simple regression, showing how the
+regression can be expressed as the addition of vectors and vector / scalar
+multiplication.  This leads to the matrix formulation of simple regression,
+and thence to multiple regression.  We introduce dummy indicator variables to
+express group membership and show how these relate to group means.  We do all
+this using simple Python code to show them how the mathematics works in
+practice, and give them sample code that they can edit and run for themselves.
+
+In contrast, we rely on the students to work through more advanced concepts
+such as temporal filtering and random effects.
+
+\subsection{Version Control}
+
+Version control is a fundamental tool used by programmers to organize work,
+store the history of changes to code and data, centralize bug fixes, and
+prevent a proliferation of near-identical script versions that make it
+difficult to know which code has been applied in a particular analysis. The
+current standard software for version control, {\tt Git}, is not easy to learn
+without guidance and study.  We know of no traditional course that teaches
+version control.  Because version control takes time and discipline to learn,
+it is rare for imaging researchers to use it.  We teach version control
+explicitly in our course, and require that the students use version control
+for their final projects, to track the code changes and to record the
+individual contributions of each student.  We believe this gives the student a
+sound foundation for their future work, to reduce error and make it easier to
+understand and reproduce.
+
+\subsection{Jarrod's notes - are these covered?}
 
 traditional approach vs. our approach to teaching fMRI analysis ...
 
