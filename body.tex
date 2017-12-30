@@ -84,14 +84,16 @@ concentrating on the big picture, we emphasize the foundations on which the
 analysis is built, and their implementation in practice, with code and
 computing.  We were inspired by the famous epithet of Richard Feynman, found
 written on his blackboard after his death: ``What I cannot create, I do not
-understand'' \citep{feynman-blackboard}.  We aim to give the students a
-sufficient grasp of how the methods work, that they could implement their own
-crude versions of the major algorithms.  In teaching them to work with code,
-we also teach them standard programming techniques for reducing complexity and
-controlling error.  We encourage them to own their own learning, and explore
-their data, by devoting a large proportion of the course and course marks to
-an open-ended group project that must be public and completely replicable,
-down to the figures used in the final report.
+understand''
+\footnote{\url{http://archives.caltech.edu/pictures/1.10-29.jpg}}
+We aim to give the students a sufficient grasp of how the methods work, that
+they could implement their own crude versions of the major algorithms.  In
+teaching them to work with code, we also teach them standard programming
+techniques for reducing complexity and controlling error.  We encourage them
+to own their own learning, and explore their data, by devoting a large
+proportion of the course and course marks to an open-ended group project that
+must be public and completely replicable, down to the figures used in the
+final report.
 
 We will concentrate on two examples to illustrate the contrast between the
 traditional approach and our own.
@@ -99,7 +101,10 @@ traditional approach and our own.
 \subsection{The General Linear Model}
 
 We have been thinking about how to teach the General Linear Model (GLM) for
-many years \citep{spm-statistics-orig,introducing-the-glm,poline2012general}.
+many years
+\footnote{\url{http://imaging.mrc-cbu.cam.ac.uk/imaging/PrinciplesStatistics}}
+\footnote{\url{http://matthew-brett.github.io/teaching/glm_intro.html}}
+\citep{poline2012general}.
 The GLM is a matrix formulation of multiple regression that can implement
 familiar analysis methods such as Analysis of Variance and Covariance (ANOVA,
 ANCOVA).  Many students have not taken linear algebra, or if they have, do not
@@ -125,21 +130,29 @@ practice, and give them sample code that they can edit and run for themselves.
 In contrast, we rely on the students to work through more advanced concepts
 such as temporal filtering and random effects.
 
-\subsection{Version Control}
+\subsection{Programming}
 
-Version control is a fundamental tool used by programmers to organize work,
-store the history of changes to code and data, centralize bug fixes, and
-prevent a proliferation of near-identical script versions that make it
-difficult to know which code has been applied in a particular analysis. The
-current standard software for version control, {\tt Git}, is not easy to learn
-without guidance and study.  We know of no traditional course that teaches
-version control.  Because version control takes time and discipline to learn,
-it is rare for imaging researchers to use it.  We teach version control
-explicitly in our course, and require that the students use version control
-for their final projects, to track the code changes and to record the
-individual contributions of each student.  We believe this gives the student a
-sound foundation for their future work, to reduce error and make it easier to
-understand and reproduce.
+Traditional courses do not use code for teaching; the hope is that the student
+will pick up the code that they need while they are working, or by taking an
+unrelated general course on programming.  Many lab heads without programming
+expertise argue that teaching students to use code is not necessary, because
+scientists do not need to be programmers.  Unfortunately, imaging researchers
+do need to use, write and share code.  If we do not teach them to do this
+correctly, our experience suggests that scientists tend to write sloppy and
+poorly-structured code, with many errors.  Because they have no training in
+correct practice, they do not learn, and the quality of their code does not
+improve with experience.  In practice, imaging researchers {\em are}
+programmers, but if we do not train them, they will be incompetent
+programmers, and they will likely continue to be incompetent programmers for
+the rest of their careers.
+
+For this reason, we introduced standard correct coding practice from the
+beginning of our course, including testing, code review, measuring test
+coverage, version control, and continuous automated testing with different
+software versions. All final project work used public online repositories for
+version control, code review, automated code coverage and testing.  The
+projects gave the students an experience of best practice in collaborative
+work with code and data that they could apply to their future work.
 
 \subsection{Jarrod's notes - are these covered?}
 
