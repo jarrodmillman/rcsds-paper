@@ -18,9 +18,12 @@
 %\setcitestyle{square} % for Physics and Applied Mathematics and Statistics articles
 \usepackage{url,hyperref,lineno,microtype,subcaption}
 \usepackage[onehalfspacing]{setspace}
+\usepackage{dirtree}
 
 \usepackage[T1]{fontenc}
 \usepackage{pifont,array}
+
+\usepackage[multiple]{footmisc}
 
 % Added by MB
 % https://tex.stackexchange.com/questions/10102/multiple-references-to-the-same-footnote-with-hyperref-support-is-there-a-bett/10116#10116
@@ -57,6 +60,14 @@ $^{4}$Neurology and Neurosurgery, McGill University, Montreal, Quebec, Canada}
 \immediate\write18{echo " out of 5000" | (echo -n "Word count: " && texcount -total -brief -sum body.tex | xargs echo -n && cat) > wordcount.tex}
 \newcommand\wordcount{\verbatiminput{wordcount.tex}}
 
+\newcommand{\blockpar}[1]{\vspace*{3mm} \noindent \textbf{#1}}
+
+% Commands for annotating the docs with fixme notes.
+\usepackage{amssymb}
+
+\newcommand{\fixme}[1] { \textcolor{red} {
+{\fbox{ {\bf Fix:} \ensuremath{\blacktriangleright }} {\bf #1}
+\fbox{\ensuremath{\blacktriangleleft} } } } }
 
 \begin{document}
 \onecolumn
@@ -81,7 +92,7 @@ We describe our experience teaching a project-based introduction to
 reproducible and collaborative neuroimaging data analysis.
 
 \tiny
- \keyFont{ \section{Keywords:} Neuroimaging, fMRI, Statistics, Reproducible Research, Python, Data Science}
+ \keyFont{ \section{Keywords:} neuroimaging, fMRI, computational reproducibility, scientific computing, statistics, education, python language, data science}
  %All article types: you may provide up to 8 keywords; at least 5 are mandatory.
 \end{abstract}
 
@@ -96,12 +107,14 @@ reproducible and collaborative neuroimaging data analysis.
 ... anything else?
 
 \section*{Acknowledgments}
-We would like to thank the following people
-... the students
-... Russ Poldrack and OpenfMRI.org
-... Alexander Huth guest lecture
-... Stefan, Fernando, Paul, Mark (any one from Practical Neuroimaging?)
-... anyone else?
+We would like to thank the students who took our class for their enthusiasm, hard work,
+and thoughtful feedback.
+Russ Poldrack and OpenfMRI.org ...
+Alexander Huth gave a overview of neuroimaging analysis in a guest lecture.
+St{\'e}fan van der Walt, Fernando P{\'e}rez, and Paul Ivanov have through long
+collaboration and numerous discussions helped clarify and refine our approach
+to teaching.
+Mark D'Esposito ....
 
 \bibliographystyle{frontiersinSCNS_ENG_HUMS} % for Science, Engineering and Humanities and Social Sciences articles, for Humanities and Social Sciences articles please include page numbers in the in-text citations
 %\bibliographystyle{frontiersinHLTH&FPHY} % for Health, Physics and Mathematics articles
@@ -111,6 +124,40 @@ We would like to thank the following people
 %%% Please see the test.bib file for some examples of references
 
 \newpage
+\begin{figure}[h!]
+\dirtree{%
+.1 /.
+.2 code.
+.3 Makefile.
+.2 data.
+.3 \_\_init\_\_.py.
+.3 data.py.
+.3 hashes.json.
+.3 test\_data.py.
+.2 report.
+.3 Makefile.
+.3 report.bib.
+.3 report.tex.
+.2 proposal.
+.3 Makefile.
+.3 proposal.bib.
+.3 proposal.tex.
+.2 slides.
+.3 Makefile.
+.3 final.md.
+.3 progress.md.
+.2 .coveragerc.
+.2 .gitignore.
+.2 .travis.yml.
+.2 LICENSE.
+.2 Makefile.
+.2 README.md.
+.2 requirements.txt.
+}
+\caption{...}\label{fig:repo}
+\end{figure}
+
+\newpage
 \begin{table}
 \centering 
 \vspace{2cm}
@@ -118,8 +165,9 @@ We would like to thank the following people
 \input{rubric}
 \caption{Project grading rubric.
 To receive an ``A'' on this assignment required roughly seven check marks and two check pluses.}
-\label{rubric}
+\label{tab:rubric}
 \end{tiny}
 \end{table}
+
 
 \end{document}
