@@ -1,9 +1,11 @@
 \section{Introduction}
 
-%traditional approach vs. our approach to teaching neuroimaging analysis;
-%bottom up (low-level) vs. top down (high-level);
-%project-based;
-%interdisciplinary
+\fixme{
+traditional approach vs. our approach to teaching neuroimaging analysis;
+bottom up (low-level) vs. top down (high-level);
+project-based;
+interdisciplinary
+}
 
 We begin by explaining the background and rationale (\S~\ref{background}) of our approach to the course.
 In material and methods (\S~\ref{methods}), we describe the course format, student audience,
@@ -138,14 +140,13 @@ such as temporal filtering and random effects.
 
 \subsection{Project-based}
 
-\begin{quote}\emph{
+\fixme{
 Computational reproducibility \citep{buckheit1995wavelab} and collaboration are
 too abstract in the absence of a significant concrete project.  If you have a
 tiny dataset and a small handful of tiny functions, you can just throw them all
 in a directory and post them online.  Problems compound as data grows, analysis
 complexity increases, and lines of code multiply.
-}\end{quote}
-
+}
 
 \subsection{Programming}
 
@@ -215,66 +216,46 @@ Our objective for the course was for students to
 (f) be familiar with computational issues in modern statistical data
 analysis through hands-on analysis of neuroimaging data.
 
-
-\blockpar{Neuroimaging data analysis.}
 In Section~\ref{project} we discuss the course project and
 in Section~\ref{analysis} we outline how we taught the
 students about neuroimaging data analysis.
 First we describe the software stack and the class structure.
 
 \blockpar{The software stack.}
-Python for neuroimaging analysis \citep{millman2007analysis} and
-software development best practices \citep{millman2014developing}.
+Rather than teaching which buttons to push in specific neuroimaging analysis
+packages, we taught them how to analyze neuroimaging data using general
+software tools.
+The scientific Python software stack \citep{millman2011python, perez2011python}
+is increasingly popular for scientific computing and data science
+including for neuroimaging analysis \citep{millman2007analysis}.
+
+... software development best practices \citep{millman2014developing}.
 
 \begin{itemize}
 \item \textbf{The Unix environment.}
-Introduction to the command line interface, the filesystem hierarchy, and
+shell, command line interface, filesystem hierarchy, and
 working with text files
 \citep{preeyanon2014reproducible}.\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/bash.html}}
 
 \item \textbf{Version control with Git.}
-Introduce version control with
 Git\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/git-intro.html}}
-focusing on conceptual model and basic objects.
 
 \item \textbf{Process automation with Make.}
 
-\item \textbf{Text processing with \LaTeX and pandoc.}
+\item \textbf{Document generation with \LaTeX and pandoc.}
 
 \item \textbf{Scientific computing with Python.}
-Introduction to the scientific Python software stack
-\citep{millman2011python, perez2011python};
 Introduction to Python;\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/python.html}}
 Basic NumPy, SciPy, and matplotlib;\footnote{\url{http://www.scipy-lectures.org/}}
 
-\item \textbf{Continuous integration with GitHub, Travis CI, and Coveralls.io.}
+\item \textbf{Functions and unit tests.}
+
+\item \textbf{Continuous integration with GitHub.}
 
 \end{itemize}
 
-\begin{quote}\emph{
-As if the teams were working in a scientific research group or in industry, they were
-given a set of tools (a ``software stack'') and practices, which they were required to
-master and use. As if you were working in a scientific research group or in
-industry, you will be pointed to resources to help you learn the tools, and it
-is your responsibility to ensure that you have mastered them, which will
-require a substantial amount of time outside class. And, as if you were working
-in a scientific research group or in industry, you will be required to
-collaborate and to take responsibility for your role in the collaboration.
-}
-
-\emph{
-But the point is not merely to master the tools or to learn to collaborate
-effectively.  Rather, the point is to do sound computational science, and to do
-it in a way that others can verify the data and statistical techniques behind
-your analysis, can verify that your code does what it's supposed to do, can run
-the code using the data and parameters you used, can verify that they get the
-same results you do, and can build on what you have done to advance science
-even further.
-}\end{quote}
 
 \blockpar{Lectures, labs, homeworks, readings, and quizzes.}
-
-\begin{quote}\emph{
 The weekly lectures and labs prepared students---through a
 series of guided exercises---with the basic skills and
 background needed for the group project.
@@ -283,18 +264,28 @@ students were expected to do additional research and reading in the course
 of working on the group project.
 For instance, they may have needed to use a specialized analysis
 method or a Python package not covered in the lectures or labs.
-}\end{quote}
 
-\begin{quote}\emph{
-learn what we need to know, when we need to know it; just-in-time learning 
-}\end{quote}
+...learn what we need to know, when we need to know it; just-in-time learning 
 
-homeworks
+...homeworks
 
-readings, and quizzes
-
+...readings, and quizzes
+%Readings will be assigned weekly and will mostly consist of articles and tutorials.
+%Quizzes will be held during class or lab.
 
 \subsection{Course project}\label{project}
+
+The course focused on a semester-long group project, which counted for
+55\% of the class grade.
+\begin{quote}
+\begin{flushleft}
+Form teams \dotfill Week 5\\
+Project proposal \dotfill Week 6\\
+Progress presentation \& draft report \dotfill Week 12\\
+Project presentation \dotfill Week 15\\
+Final report \dotfill Week 17\\
+\end{flushleft}
+\end{quote}
 
 Our semester project involved investigating a published result using the
 analysis of neuroimaging data.\footnote{There was no requirement
@@ -306,39 +297,46 @@ Groups of three to five students formed teams.
 Each team chose a published neuroimaging study to investigate and
 decided what they meant by \emph{investigate} in consultation with us.
 
-\begin{quote}\emph{
+Investigating a published neuroimaging study involved
 (55\% of grade)
-Students gain experience acquiring, cleaning, and curating data; formulating
-scientific questions statistically; developing appropriate statistical methods
-to analyze the data to answer the scientific questions; implementing those
-methods in robust, testable, reusable, extensible software; applying the
-methods; visualizing the results; interpreting the results; and communicating
-the results to others. The students learn to do this in a way that is
+acquiring, cleaning, and curating data;
+formulating scientific questions statistically;
+developing appropriate statistical methods
+to analyze the data to answer the scientific questions;
+implementing those methods in robust, testable, reusable, extensible software;
+applying the methods;
+visualizing the results;
+interpreting the results;
+and communicating the results to others.
+The students learn to do this in a way that is
 computationally reproducible.
-}\end{quote}
 
-\begin{quote}
-\begin{flushleft}
-Form teams \dotfill Week 5\\
-Project proposal \dotfill Week 6\\
-Progress presentation \& draft report \dotfill Week 12\\
-Project presentation \dotfill Week 15\\
-Final report \dotfill Week 17\\
-\end{flushleft}
-\end{quote}
 
 \blockpar{Repository.}
 All project artifacts were stored in a repository.
 See Figure~\ref{fig:repo} for a skeleton project repository listing.
 
 \begin{quote}\emph{
-The most important piece of documentation in your entire project is the README.
-It is your responsibility to tell new users EXACTLY how to install, configure,
-and run all aspects of your project. How you have the individual tasks broken
-down is up to you, but you must very clearly state how to operate the
-components of your project and in what order to do so. For example, one section
-of your README (preferably the first section) might give us an enumerated list
-of task to carry out, like:
+required to work on your project using GitHub's pull request and code review mechanism;
+during lecture, covered the workflow you will be expected to follow;
+project grade based on (a) your final report, (b) how well your group work is
+reproducible, and (c) how effectively you collaborated using the techniques
+taught in the course (e.g., pull requests, code review, testing, etc.)
+}\end{quote}
+
+
+If you have questions about your projects, there should be a pull request
+or issue with code and text and \texttt{@mention} one or more of the us.
+
+
+\blockpar{\texttt{README} and \texttt{Makefile}.}
+\begin{quote}\emph{
+The \texttt{README} should explain how to install, configure,
+and run all aspects of your project.
+It should clearly state how to operate the
+components of your project and in what order to do so.
+One section of each project's \texttt{README} (preferably the first section)
+might provide an enumerated list of task to carry out, like:
 }\end{quote}
 
 \begin{verbatim}
@@ -350,29 +348,12 @@ of task to carry out, like:
 \end{verbatim}
 
 \begin{quote}\emph{
-Again, how you structure things is up to you, but it is very important that you
-notify us of this structure. If the instructions aren't clear and we just have
-to "figure it out", you're relying on us going through the same progression as
-you by chance: this is a bad bet. 
-}
-
-\emph{
-The README should also contain other pertinent information: for example, if
-your "make data" step is going to download 5 Gb of data, it is very prudent to
+The \texttt{README} should also contain other pertinent information: for example, if
+the \texttt{make data} step is going to download 5 Gb of data,
 warn users of this so they make sure they have enough disk space and are on a
 stable internet connection before trying to do so.
-}
-
-\emph{
-As part of your final project grade, you will be required to work on your
-project using GitHub's pull request and code review mechanism.  During lecture,
-I will cover the exact workflow you will be expected to follow.  Please note
-that as this course is explicitly about reproducibility and collaboration your
-project grade will not be entirely based on your final report, but will also
-reflect how well your group work is reproducible and how effectively you
-collaborated using the techniques taught in the course (e.g., pull requests,
-code review, testing, etc.)
 }\end{quote}
+
 
  
 
@@ -381,6 +362,9 @@ code review, testing, etc.)
 OpenfMRI\footnote{\url{https://www.openfmri.org/}}---resource for publicly-available fMRI datasets
 \citep{poldrack2013toward,poldrack2015openfmri}.
 \end{quote}
+
+should be able to get all the relevant files for your study by typing \texttt{make data} and
+can verify the content of the downloaded files using \texttt{make validate}.
 
 \blockpar{Proposal.}
 
@@ -400,20 +384,11 @@ validating the data describe the assumptions used in the analysis and indicate
 how you might check them.
 }\end{quote}
 
-\begin{quote}\emph{
-%we should use actual examples here or remove it
-For example, for one team this might mean a very careful reanalysis of the data
-using the original methods as closely as possible.  However, this shouldn't
-mean merely running existing scripts used in the original analysis; rather, the
-team would need to reimplement the analysis scripts.  Another team might decide
-to conduct a different analysis than used in the original study.  For instance,
-the published work might use a parametric approach and the team project might
-attempt to use a nonparametric technique such as permutation testing.  A third
-team might focus on a careful validation of the modeling assumptions made by
-the original analysis.
-}\end{quote}
-
 \blockpar{Code.}
+Pull requests, code review, continuous integration, coverage reporting
+
+Most of your code should be written as a collection of functions with tests,
+then use scripts calling these functions to perform your analysis
 
 \blockpar{Slides.}
 
@@ -422,15 +397,13 @@ the original analysis.
 
 \subsection{Neuroimaging data analysis}\label{analysis}
 
-\begin{quote}\emph{
-Our aim is for students to
+When teaching neuroimaging data analysis, our aim was for students to
 (a) understand the basic concepts in neuroimaging,
 and how they relate to the wider world of statistics, engineering, computer science;
 (b) be comfortable working with neuroimaging data and code,
 so they can write their own basic algorithms, and understand other people's code;
 (c) work with code and data in a way that will save them time, help them collaborate,
 and continue learning.%this isn't quite parallel
-}\end{quote}
 
 
 convolution (hemodynamic modeling, smoothing);
