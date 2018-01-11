@@ -124,12 +124,26 @@ encouragement as we experimented with new ways of teaching.
 %%% Make sure to upload the bib file along with the tex file and PDF
 %%% Please see the test.bib file for some examples of references
 
+
 \newpage
 \begin{figure}[h!]
+\centering
+\begin{minipage}[b]{0.4\textwidth}
+\dirtree{%
+.1 /.
+.2 proposal.
+.3 Makefile.
+.3 proposal.bib.
+.3 proposal.tex.
+.2 LICENSE.
+.2 README.md.
+}
+\caption{Initial repository structure.}\label{fig:repo}
+\end{minipage}
+\begin{minipage}[b]{0.4\textwidth}
 \dirtree{%
 .1 /.
 .2 code.
-.3 Makefile.
 .2 data.
 .3 \_\_init\_\_.py.
 .3 data.py.
@@ -155,7 +169,8 @@ encouragement as we experimented with new ways of teaching.
 .2 README.md.
 .2 requirements.txt.
 }
-\caption{...}\label{fig:repo}
+\caption{Final project skelton.}\label{fig:repo1}
+\end{minipage}
 \end{figure}
 
 \newpage
