@@ -4,7 +4,8 @@
 traditional approach vs. our approach to teaching neuroimaging analysis;
 bottom up (low-level) vs. top down (high-level);
 project-based;
-interdisciplinary
+interdisciplinary;
+computational reproducibility \citep{buckheit1995wavelab} 
 }
 
 We begin by explaining the background and rationale (\S~\ref{background}) of our approach to the course.
@@ -101,7 +102,7 @@ proportion of the course and course marks to an open-ended group project that
 must be public and completely replicable, down to the figures used in the
 final report.
 
-We will concentrate on three examples to illustrate the contrast between the
+We will concentrate on two examples to illustrate the contrast between the
 traditional approach and our own.
 
 \subsection{The General Linear Model}
@@ -141,16 +142,6 @@ they can edit and run for themselves.\cref{glm_intro}
 
 In contrast, we rely on the students to work through more advanced concepts
 such as temporal filtering and random effects.
-
-\subsection{Project-based}
-
-\fixme{
-Computational reproducibility \citep{buckheit1995wavelab} and collaboration are
-too abstract in the absence of a significant concrete project.  If you have a
-tiny dataset and a small handful of tiny functions, you can just throw them all
-in a directory and post them online.  Problems compound as data grows, analysis
-complexity increases, and lines of code multiply.
-}
 
 \subsection{Programming}
 
@@ -218,46 +209,11 @@ Our objective for the course was for students to
 (f) be familiar with computational issues in modern statistical data
 analysis through hands-on analysis of neuroimaging data.
 
-In Section~\ref{project} we discuss the course project and
-in Section~\ref{analysis} we outline how we taught the
-students about neuroimaging data analysis.
-First we describe the software stack and the class structure.
+Below we focus on the course project (\S~\ref{project}) and
+how we taught neuroimaging data analysis (\S~\ref{analysis}).
+First, we briefly describe the class structure and software stack.
 
-\blockpar{The software stack.}
-Rather than teaching which buttons to push in specific neuroimaging analysis
-packages, we taught them how to analyze neuroimaging data using general
-software tools.
-The scientific Python software stack \citep{millman2011python, perez2011python}
-is increasingly popular for scientific computing and data science
-including for neuroimaging analysis \citep{millman2007analysis}.
-
-... software development best practices \citep{millman2014developing}.
-
-\begin{itemize}
-\item \textbf{The Unix environment.}
-shell, command line interface, filesystem hierarchy, and
-working with text files
-\citep{preeyanon2014reproducible}.\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/bash.html}}
-
-\item \textbf{Version control with Git.}
-Git\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/git-intro.html}}
-
-\item \textbf{Process automation with Make.}
-
-\item \textbf{Document generation with \LaTeX and pandoc.}
-
-\item \textbf{Scientific computing with Python.}
-Introduction to Python;\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/python.html}}
-Basic NumPy, SciPy, and matplotlib;\footnote{\url{http://www.scipy-lectures.org/}}
-
-\item \textbf{Functions and unit tests.}
-
-\item \textbf{Continuous integration with GitHub.}
-
-\end{itemize}
-
-
-\blockpar{Lectures, labs, homeworks, readings, and quizzes.}
+\blockpar{Lectures, labs, notes, homeworks, readings, and quizzes.}
 The weekly lectures and labs prepared students---through a
 series of guided exercises---with the basic skills and
 background needed for the group project.
@@ -265,42 +221,113 @@ While we demonstrated basic methods and tools during lecture and lab,
 students were expected to do additional research and reading in the course
 of working on the group project.
 For instance, they may have needed to use a specialized analysis
-method or a Python package not covered in the lectures or labs.
+method or a software package not covered in the lectures or labs.
 
 ...learn what we need to know, when we need to know it; just-in-time learning 
 
 ...homeworks
 
-...readings, and quizzes
+...readings
 %Readings will be assigned weekly and will mostly consist of articles and tutorials.
+
+...quizzes
 %Quizzes will be held during class or lab.
+
+\blockpar{The software stack.}
+Rather than teaching a specific neuroimaging analysis packages' user interface,
+we taught students the scientific Python software stack
+\citep{millman2011python, perez2011python} and software development best
+software development practices for computational reproducibility \citep{millman2014developing}.
+Python is increasingly popular for scientific computing and data science
+including for neuroimaging analysis \citep{millman2007analysis}.
+
+
+\begin{itemize}
+\item \textbf{The Unix environment.}
+The Unix environment is the computational equivalent of the scientists'
+workbench \citep{preeyanon2014reproducible}.
+However, many students have limited exposure working with
+command line interfaces and text files.
+% and the Bash shell, in particular, are 
+%Many of the tools and practices
+%shell, command line interface, filesystem hierarchy, and
+
+\item \textbf{Version control with Git.}
+Git has become the dominant version control system for open source scientific
+Python community.
+
+\item \textbf{Process automation with Make.}
+Make is the workhorse of process (or execution) automation of the Unix environment.
+
+\item \textbf{Scientific computing with Python.}
+Python is a general purpose programming language,
+popular for teaching and prevalent in industry.
+The scientific stack is a collection of add-on packages created by scientists.
+For instance, NumPy, SciPy, and matplotlib are the core packages.
+
+\item \textbf{Functions and unit tests.}
+
+
+\item \textbf{Continuous integration with GitHub.}
+
+\item \textbf{Document generation with \LaTeX and pandoc.}
+Most students are intimately familiar with word processors, but have little experience
+working with text files and editors.
+
+\end{itemize}
+
+We gave one or two lectures on Unix, Git, Python, Testing, and NumPy.
+Weekly labs focused on this software stack.
+Students were referred to our course notes on
+Bash,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/bash.html}}
+Git,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/git-intro.html}}
+Make,
+Python,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/python.html}}
+scientific Python packages,\footnote{\url{http://www.scipy-lectures.org/}}
+and \LaTeX.
+Course work made use of the toolstack.
+All course work was versioned controlled with Git
+and submitted via GitHub.
+Finally, the course project extensively exercised this software stack
+and practices.
 
 \subsection{Course project}\label{project}
 
-The course focused on a semester-long group project, which counted for
-55\% of the class grade.
-\begin{quote}
-\begin{flushleft}
-Form teams \dotfill Week 5\\
-Project proposal \dotfill Week 6\\
-Progress presentation \& draft report \dotfill Week 12\\
-Project presentation \dotfill Week 15\\
-Final report \dotfill Week 17\\
-\end{flushleft}
-\end{quote}
+The course focused on a semester-long group project.
+Students worked in teams on their projects for three months.
+%Students formed teams at the start of week 5 and final reports were submitted
+%at the end of week 17.
+The reason the project lasted for so long and was such a large portion of the grade (55\%)
+is that we believe computational reproducibility and collaboration
+are too abstract in the absence of a significant concrete project.
+If a project lasts just a few weeks, it is easy to remember all the steps
+without carefully tracking them.
+If you have a tiny dataset and a small handful of tiny functions, you can just
+throw them all in a directory and post them online.
+Problems compound as data grows and analysis complexity increases as lines of
+code multiply.
 
-Our semester project involved investigating a published result using the
-analysis of neuroimaging data.\footnote{There was no requirement
-for students to have a background in neuroscience.  The intention of focusing
-on neuroimaging data was  merely to provide a concrete problem domain that
-exemplifies the types of programming and statistical challenges present in many
-modern statistical applications.}
-Groups of three to five students formed teams.
-Each team chose a published neuroimaging study to investigate and
-decided what they meant by \emph{investigate} in consultation with us.
+%\begin{quote}
+%\begin{flushleft}
+%Form teams \dotfill Week 5\\
+%Project proposal \dotfill Week 6\\
+%Progress presentation \& draft report \dotfill Week 12\\
+%Project presentation \dotfill Week 15\\
+%Final report \dotfill Week 17\\
+%\end{flushleft}
+%\end{quote}
 
-Investigating a published neuroimaging study involved
-(55\% of grade)
+Early in the semester (week~5) groups of three to five students formed teams
+and immediately (week~6) submitted proposals to investigate
+a published result using the analysis of neuroimaging data.\footnote{There
+was no requirement for students to have a background in neuroscience.
+The intention of focusing on neuroimaging data was to provide a concrete problem
+domain that exemplifies the types of programming and statistical challenges
+present in many modern statistical applications.}
+%Groups of three to five students formed teams.
+%Each team chose a published neuroimaging study to investigate and
+%decided what they meant by \emph{investigate} in consultation with us.
+Each team's investigation involved
 acquiring, cleaning, and curating data;
 formulating scientific questions statistically;
 developing appropriate statistical methods
@@ -310,8 +337,8 @@ applying the methods;
 visualizing the results;
 interpreting the results;
 and communicating the results to others.
-The students learn to do this in a way that is
-computationally reproducible.
+Every aspect of the project work was done in a computationally reproducible
+and collaborative way.
 
 
 \blockpar{Repository.}
@@ -326,21 +353,38 @@ reproducible, and (c) how effectively you collaborated using the techniques
 taught in the course (e.g., pull requests, code review, testing, etc.)
 }\end{quote}
 
+%https://github.com/berkeley-stat159/project-template
 
 If you have questions about your projects, there should be a pull request
 or issue with code and text and \texttt{@mention} one or more of the us.
 
+\blockpar{Proposal.}
+The project proposal was the first item each team added to their project repository.
+...state advantage of having proposal directly attached to record of the
+project work
+...explain how it worked, timeline, and feedback
 
-\blockpar{\texttt{README} and \texttt{Makefile}.}
 \begin{quote}\emph{
-The \texttt{README} should explain how to install, configure,
-and run all aspects of your project.
-It should clearly state how to operate the
-components of your project and in what order to do so.
-One section of each project's \texttt{README} (preferably the first section)
-might provide an enumerated list of task to carry out, like:
+Identify a published fMRI paper and the accompanying data.
+Explain the basic idea of the paper in a paragraph.
+Perform basic sanity check on the data
+(e.g., check that you can downloaded and read the files,
+confirm that you have the correct number of subjects).
+Briefly explain what approach you intend to take for exploring
+the data and paper.  If you intend to ``reproduce'' some aspect of the paper,
+explain in exactly what sense you mean to do this.  If you are thinking about
+validating the data describe the assumptions used in the analysis and indicate
+how you might check them.
 }\end{quote}
 
+\blockpar{\texttt{README} and \texttt{Makefile}.}
+Each project was required to put a \texttt{README} file at the top-level
+of their repository to explain how to install, configure,
+and run all aspects of their project.
+Each \texttt{README} clearly stated  how to operate the
+components of the project and in what order to do so.
+In particular, they were required to include a section with
+an enumerated list of task to carry out, like:
 \begin{verbatim}
     make data - downloads the data 
     make validate - ensure the data is not corrupted
@@ -349,53 +393,55 @@ might provide an enumerated list of task to carry out, like:
     make report - build final report
 \end{verbatim}
 
-\begin{quote}\emph{
-The \texttt{README} should also contain other pertinent information: for example, if
-the \texttt{make data} step is going to download 5 Gb of data,
+The \texttt{README} also contained other pertinent information:
+for example, if the \texttt{make data} step downloads 5 Gb of data, it should
 warn users of this so they make sure they have enough disk space and are on a
 stable internet connection before trying to do so.
-}\end{quote}
-
-
  
-
 \blockpar{Data.}
-\begin{quote}
-OpenfMRI\footnote{\url{https://www.openfmri.org/}}---resource for publicly-available fMRI datasets
+All projects used data from OpenfMRI.\footnote{\url{https://www.openfmri.org/}}
+OpenfMRI is a publicly-available depository of MRI and EEG datasets
 \citep{poldrack2013toward,poldrack2015openfmri}.
-\end{quote}
 
-should be able to get all the relevant files for your study by typing \texttt{make data} and
-can verify the content of the downloaded files using \texttt{make validate}.
-
-\blockpar{Proposal.}
-
-\begin{quote}\emph{
-Identify a published fMRI paper and the accompanying data.
-You should explain the basic idea of the paper in a paragraph.
-You should also perform basic sanity check on the data
-(e.g., can you downloaded, can you load the files, confirm that you have the
-correct number of subjects).
-}\end{quote}
-
-\begin{quote}\emph{
-Briefly explain what approach you intend to take for exploring
-the data and paper.  If you intend to ``reproduce'' some aspect of the paper,
-explain in exactly what sense you mean to do this.  If you are thinking about
-validating the data describe the assumptions used in the analysis and indicate
-how you might check them.
-}\end{quote}
+Rather than having students commit raw data to their project repository, we had
+them commit code to download and validate all raw data used in their project.
+For example, their project \texttt{README} might tell us that \texttt{make data}
+downloads all the relevant files for their study and \texttt{make validate}
+verifies the content of the downloaded files.
 
 \blockpar{Code.}
+Most code was written as a collection of functions with tests with short
+scripts that called these functions to perform the project data analysis.
+
+All code submissions were added to the project via GitHub pull requests (PRs).
+While we allowed students to decide when to merge PRs, we recommended that
+all PRs should have at least three participants, coverage shouldn’t decrease,
+and tests should pass before being merged.
+
 Pull requests, code review, continuous integration, coverage reporting
 
-Most of your code should be written as a collection of functions with tests,
-then use scripts calling these functions to perform your analysis
-
 \blockpar{Slides.}
+Slides were written in Markdown.
+These plain text files were committed to the project repository.
+For example, if \texttt{progress.md} is the source file for a progress presentation,
+then the \texttt{Makefile} might have the following recipe for building a nicely
+formatted PDF file \texttt{progress.pdf}:
+\begin{verbatim}
+progress.pdf: progress.md
+        pandoc -t beamer -s progress.md -o progress.pdf
+\end{verbatim}
+
+In addition to using beamer,
+Pandoc\footnote{\url{http://pandoc.org/MANUAL.html\#producing-slide-shows-with-pandoc}}
+can also output using other formats like reveal.js or slidy.
 
 \blockpar{Report.}
-
+We committed the following three files to each project repository:
+\begin{itemize}
+\item \texttt{paper/report.tex}
+\item \texttt{paper/report.bib}
+\item \texttt{Makefile}
+\end{itemize}
 
 \subsection{Neuroimaging data analysis}\label{analysis}
 
@@ -422,7 +468,7 @@ the following topics:
     convolution;
 \item Spatial smoothing with Gaussian kernel;
 \item Simple regression, vector formulation, matrix formulation; least-squares
-    cost-functiion; solving with the pseudoinverse; extension to multiple
+    cost-function; solving with the pseudoinverse; extension to multiple
         regression; dummy variables and matrix formulation of analysis of
         variance.
 \item High-resolution sampling of regressors.
