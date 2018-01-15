@@ -228,10 +228,30 @@ method or a software package not covered in the lectures or labs.
 ...homeworks
 
 ...readings
-%Readings will be assigned weekly and will mostly consist of articles and tutorials.
 
-...quizzes
-%Quizzes will be held during class or lab.
+Over the course of the semester, seven readings were assigned on a roughly
+bi-weekly basis.
+The readings consisted of articles that emphasized the core concepts
+of the class, either with respect to scientific computing, or neuroimaging.
+For the ``assignment'' portion of the reading, students were asked to compose
+a two-paragraph write-up that both summarized the main points of the article,
+and commented on it from their personal perspective.
+
+...quizzes and labs
+
+In principle, the labs and quizzes were designed to emphasize hands-on 
+experience with the computing tools and best-practices associated with
+reproducible and collaborative computing (e.g. version control, \LaTeX, etc.).
+The quizzes were held at the beginning of lab sessions, and heavily emphasized
+the computing aspects of the course material as opposed to the stastical and
+neuroimaging components covered in the lectures.
+Quizzes were multiple choice and assigned and submitted via Github.
+The remainder of the lab was devoted to providing hands-on experience via
+collaborative work on breakout exercises.
+These breakout exercises were formulated as small ``projects'' that were to be
+attacked by groups of students with 3 to 4 students per team.
+Prior to the breakout session, a small review of material relevant for the 
+exercises was presented, often in the form of an interactive Jupyter notebook.
 
 \blockpar{The software stack.}
 Rather than teaching a specific neuroimaging analysis packages' user interface,
@@ -478,13 +498,73 @@ the following topics:
 
 \section{Results}\label{results}
 
-12 teams of 3 to 5 students
+There were a total of eleven different research teams composed of three
+to five students, each responsible for completing a final project of their
+own design using datasets available through the openfMRI organization.
+The scope of the projects were defined iteratively: each team submitted a 
+proposal at the midpoint of the semester, with the instructors providing
+prompt feedback to help clarify the motivation and goals of each project.
+This feedback process continued throughout the semester, with students 
+submitting drafts according to various milestones defined within the project
+timeline.
+Feedback was not only provided to the students from the instructors: the
+project evaluations included peer-review, where each research team was
+responsible for cloning another team's project, running the tests and analyses,
+and evaluating the resulting technical document.
+The peer-review process proved particularly valuable, as the students 
+benefitted greatly from the exposure to the coding techniques and 
+organizational principles of their peers.
 
-Grading included checking that we could reproduce everyone's work, reviewing pull
-requests and code contributions, checking that all code included
-(passing) tests, reviewing code to see if it was well written, and
-reading the final reports among other things. 
+The evaluation of the final projects was based on criteria that emphasized the
+underyling principles of reproducibility, collaboration, and technical
+quality.
 See Table~\ref{tab:rubric} for the final project grading rubric.
+From the perspective of reproducibility, projects were evaluated on whether the
+presented results could be generated from their repositories according to the
+documentation they provided.
+The code tests were also evaluated with respect to code coverage
+and thoroughness.
+The collaborative aspects of the project were evaluated using the information
+from projecty history provided by the version control, including
+individual contributions and reviewing pull requests.
+Finally, the technical quality of the project was evaluated both in terms of
+the clarity of the final report and with respect to how well the proposed
+goals of the study were met by the final results of the analysis.
+
+There was a large disparity in the backgrounds of the students that constituted 
+each research team, and this was reflected by a range of scopes for the
+final projects.
+The primary focus of the majority of projects was reproducing results
+of published research from the openfMRI datasets using the neuroimaging 
+analysis methods introduced in the course.
+For example, several teams chose to focus on the open dataset provided by a
+study entitled \textit{The neural basis of loss aversion in decision-making
+under risk}\cite{tom2007neutral}.
+The research teams implemented analyses based on the GLM as well extending
+the analysis to include other regression techniques, comparing their results
+to those of the published study.
+Projects of this nature accounted for about 8 of the 11 research teams, and
+on the whole were largely successful in demonstrating a practical understanding
+of the relevant statistical techniques.
+However, several teams expressed interest in using the open data sets to 
+perform analyses beyond replicating the published results.
+The investigation of modern machine learning techniques was of particular 
+interest to several groups that included students with a stronger computer
+science background.
+These projects utilized supervised learning techniques in an attempt to 
+develop predictive models based on input fMRI images.
+The ability of students to apply these concepts (which were largely external
+to the course) within the given reproducible and collaborative 
+framework was impressive and, according to feedback from the students, quite
+motivating and rewarding for them as well.
+In all cases, the quality of the organization and emphasis on reproducibility
+of the final projects was quite satisfactory, especially given the fact that
+most of the students had no practical experience with the tools (python, git,
+etc.) prior to this course.
+Most teams demonstrated an understanding of the neuroimaging methods introduced
+in the course by implementing analyses to replicate published results; and 
+several went beyond this to expand their investigations to novel applications
+of the open data.
 
 %\url{https://raw.githubusercontent.com/jarrodmillman/rcsds/master/notes/rubric.rst}
 %\url{http://www.jarrodmillman.com/rcsds/notes/rubric.pdf}
@@ -501,6 +581,26 @@ How would this work for Psychology students?  Psych 214 follow-up
 How would this work in a quarter system?
 
 lessons learned ...
+
+Based on student feedback about the lab portion of the course, the breakout
+exercises were extremely valuable to the students whereas the quizzes seemed
+to be of less value.
+Several students indicated that they had spent an inordinate amount of time in
+preparation for the quizzes, in some cases as the expense of hands-on
+experience with the computing tools.
+This is counter to the goals of the quizzes and laboratory section in general,
+and should be reviewed for future iterations of the course.
+Given the positive feedback about the breakout exercises, one potential 
+approach would be to replace the quizzes entirely by including a quantitative
+evaluation component to the breakout exercises.
+Additional effort would have to be devoted to designing the exercises so that
+they could be objectively evaluated, with special emphasis on ensuring that
+each student can be individually evaluated based on their understanding of the
+concepts that the exercise is designed to highlight.
+The ultimate goal would be to design a mechanism to ensure that the students
+are gaining practical experience with the computing tools they will need for 
+the final projects, while maintaining the appropriate perspective such that
+students are not spending time on low-level tasks like memorizing syntax.
 
 
 \section*{Conflict of Interest Statement}
