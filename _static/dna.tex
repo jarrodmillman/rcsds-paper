@@ -1,0 +1,40 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{dna} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ATGATTTTTCCATCTTTAAGTGCGATACTGTTTTGT}\PY{l+s+s1}{\PYZsq{}}
+\PY{n}{dna\PYZus{}bases} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{G}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{T}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+\PY{n}{rna\PYZus{}bases} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{G}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{U}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+\PY{n}{basecomplement} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{T}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{G}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{T}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{G}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}
+
+
+\PY{k}{def} \PY{n+nf}{is\PYZus{}dna}\PY{p}{(}\PY{n}{dna}\PY{p}{)}\PY{p}{:}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{    Checks whether a string is a DNA string.}
+
+\PY{l+s+sd}{    Parameters}
+\PY{l+s+sd}{    \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{l+s+sd}{    dna : string}
+\PY{l+s+sd}{        A string (i.e., you can assume you get a string)}
+
+\PY{l+s+sd}{    Returns}
+\PY{l+s+sd}{    \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{l+s+sd}{    out : bool}
+\PY{l+s+sd}{        Returns True, if dna is a valid DNA string (i.e,}
+\PY{l+s+sd}{        a string composed of the letters \PYZsq{}A\PYZsq{}, \PYZsq{}C\PYZsq{}, \PYZsq{}G\PYZsq{}, or}
+\PY{l+s+sd}{        \PYZsq{}T\PYZsq{} (and False otherwise).}
+
+\PY{l+s+sd}{    Hint}
+\PY{l+s+sd}{    \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{l+s+sd}{    Use the builtin set function and set methods.}
+
+\PY{l+s+sd}{    Examples}
+\PY{l+s+sd}{    \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{l+s+sd}{    \PYZgt{}\PYZgt{}\PYZgt{} is\PYZus{}dna(\PYZsq{}ATGATT\PYZsq{})}
+\PY{l+s+sd}{    True}
+\PY{l+s+sd}{    \PYZgt{}\PYZgt{}\PYZgt{} is\PYZus{}dna(\PYZsq{}ATGATU\PYZsq{})}
+\PY{l+s+sd}{    False}
+\PY{l+s+sd}{    \PYZgt{}\PYZgt{}\PYZgt{} is\PYZus{}dna(\PYZsq{}atgatt\PYZsq{})}
+\PY{l+s+sd}{    False}
+\PY{l+s+sd}{    \PYZgt{}\PYZgt{}\PYZgt{} is\PYZus{}dna(\PYZsq{}My grandMa\PYZsq{})}
+\PY{l+s+sd}{    False}
+\PY{l+s+sd}{    \PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{k}{return} \PY{n+nb+bp}{NotImplemented}
+\end{Verbatim}

@@ -25,6 +25,15 @@
 
 \usepackage[multiple]{footmisc}
 
+\usepackage[nofiglist,notablist]{endfloat}
+\makeatletter
+\setlength{\@fptop}{0pt plus 1fil}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+
+\input{pygmentize.tex}
+
+
 % Added by MB
 % https://tex.stackexchange.com/questions/10102/multiple-references-to-the-same-footnote-with-hyperref-support-is-there-a-bett/10116#10116
 \usepackage{cleveref}
@@ -57,7 +66,7 @@ $^{4}$Neurology and Neurosurgery, McGill University, Montreal, Quebec, Canada}
 
 % Count of words
 \usepackage{moreverb} % for verbatim ouput
-\immediate\write18{echo " out of 5000" | (echo -n "Word count: " && texcount -total -brief -sum body.tex | xargs echo -n && cat) > wordcount.tex}
+\immediate\write18{echo " out of 5000" | (echo -n "Word count: " && texcount -total -brief -sum body.tex discussion.tex | xargs echo -n && cat) > wordcount.tex}
 \newcommand\wordcount{\verbatiminput{wordcount.tex}}
 
 \newcommand{\blockpar}[1]{\vspace*{3mm} \noindent \textbf{#1}}
@@ -125,66 +134,6 @@ encouragement as we experimented with new ways of teaching.
 %%% Please see the test.bib file for some examples of references
 
 
-\newpage
-\begin{figure}[h!]
-\centering
-\begin{minipage}[b]{0.4\textwidth}
-\dirtree{%
-.1 /.
-.2 proposal.
-.3 Makefile.
-.3 proposal.bib.
-.3 proposal.tex.
-.2 LICENSE.
-.2 README.md.
-}
-\subcaption{Initial repository template.}\label{fig:init-repo}
-\end{minipage}
-\begin{minipage}[b]{0.4\textwidth}
-\dirtree{%
-.1 /.
-.2 proposal.
-.3 Makefile.
-.3 proposal.bib.
-.3 proposal.tex.
-.2 code.
-.2 data.
-.3 \_\_init\_\_.py.
-.3 data.py.
-.3 hashes.json.
-.3 test\_data.py.
-.2 report.
-.3 Makefile.
-.3 report.bib.
-.3 report.tex.
-.2 slides.
-.3 Makefile.
-.3 final.md.
-.3 progress.md.
-.2 .coveragerc.
-.2 .travis.yml.
-.2 requirements.txt.
-.2 LICENSE.
-.2 Makefile.
-.2 README.md.
-}
-\subcaption{Final project template.}\label{fig:final-repo}
-\end{minipage}
-
-\caption{General caption ...} \label{fig:repo}
-\end{figure}
-
-\newpage
-\begin{table}
-\centering 
-\vspace{2cm}
-\begin{tiny}
-\input{rubric}
-\caption{Project grading rubric.
-An ``A'' was roughly two or more check pluses and no check minuses.}
-\label{tab:rubric}
-\end{tiny}
-\end{table}
 
 
 \end{document}

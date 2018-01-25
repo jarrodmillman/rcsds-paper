@@ -1,12 +1,37 @@
 \section{Introduction}
 
-\fixme{
-traditional approach vs. our approach to teaching neuroimaging analysis;
-bottom up (low-level) vs. top down (high-level);
-project-based;
-interdisciplinary;
-computational reproducibility \citep{buckheit1995wavelab} 
-}
+Computational reproducibility \citep{buckheit1995wavelab} ;
+general crisis in modern scientific research ;
+large data / complex analysis / diverse technical skills needed .
+Neuroimaging is experiencing these problems as well ;
+examples ...
+better practices and training needed...
+
+collaboration, multidisciplinary ;
+data and analysis sharing ;
+large multisite data collection ;
+increasing number of extra data sources (e.g., genomic) ;
+
+With these concerns in mind, we took a
+practical rather than academic approach to teaching reproducible
+and collaborative statistical analysis of neuroimaging data;
+trained to use a set of tools and practices through substantial engagement
+with scientific project ;
+we focus on a course we taught to master students and undergraduates through
+a course in the statistics department... ;
+while the course in general could have focused on any scientific problem domain,
+given our expertise we chose to focus on neuroimaging ;
+taught it much like we teach beginning neuroscientists.
+
+There was no requirement for students to have a background in neuroscience.
+The intention of focusing on neuroimaging data was to provide a concrete problem
+domain that exemplifies the types of programming and statistical challenges
+present in many modern statistical applications.
+Conversely, neuroimaging students taking a course like this also
+gain familiarity with the types of programming and statistical challenges
+present in many modern statistical applications.
+This means they can more easily incorporate new applications
+in their work.
 
 We begin by explaining the background and rationale (\S~\ref{background}) of our approach to the course.
 In material and methods (\S~\ref{methods}), we describe the course format, student audience,
@@ -223,9 +248,87 @@ of working on the group project.
 For instance, they may have needed to use a specialized analysis
 method or a software package not covered in the lectures or labs.
 
-...learn what we need to know, when we need to know it; just-in-time learning 
+core software stack brief lectures beginning of course ;
+supplemented with labs and homeworks ;
+an occasional portion of class to address a new core topic ;
+most of the lectures were devoted to analzing neuroimaging data..
 
-...homeworks
+%learn what we need to know, when we need to know it; just-in-time learning 
+
+%homeworks
+
+During the first part of the semester, we assigned two homeworks.
+Students had two weeks to work on each homework.
+GitHub, doctest/unit tests, functions, basic Python and scientific Python...
+
+\begin{figure}
+\centering
+\input{dna.tex}
+\caption{Above we list the first few lines of \texttt{dna.py}.
+The assignment was to edit this file by implementing the functions.
+Including \texttt{is\_dna}, there were 9 functions
+to implement in \texttt{dna.py}.
+The first homework consisted of this Python file as well as two others.
+It also included a \texttt{README} file, which included instructions
+such as:}\label{fig:dna}
+\begin{quotation}
+The functions you are to implement are already defined in the \texttt{dna.py} and
+\texttt{cipher.py} files respectively. The string that immediately follows the function
+definition is called the \emph{docstring}. (The function definition is the line
+starting with \texttt{def}). In this case, you are to use the description given in the
+docstring as a guide for how to implement the function. At the end of each
+docstring, there is an \texttt{Examples} section that contains lines that start with
+\verb|>>>|. These are called \emph{doctests} as they are \emph{tests} for the code that are
+contained in the docstring. If you run the doctests on the assignment before
+doing any work, you'll notice that all of the tests fail. That's because none
+of the functions have been implemented yet! Once you have implemented a
+function, you can run the doctests again to make sure that function passes all
+of its doctests.
+\end{quotation}
+\end{figure}
+
+The first homework focused on basic Python and consisted of three parts.
+The first two parts,  \texttt{dna.py}and \texttt{cipher.py}
+are intended to get you used to reading and writing Python code.
+Your task for \texttt{dna.py} is to implement a series of functions in Python.
+Similarly, in \texttt{cipher.py} the task is to implement methods of a Cipher class.
+%The functions and methods you are to implement are already defined in the \texttt{dna.py} and
+%\texttt{cipher.py} files respectively.
+The functions and methods are documented, but not implemented.
+We also provided simple unit tests, which they could use to partially test their work.
+See the code listing in Figure~\ref{fig:dna} for an example.
+The third part, involved students analyzing the State of the Union
+speeches from 1790 to 2015.
+To do this you will need to prepare the speeches in
+a form that is suitable for statistical analysis. 
+%https://github.com/berkeley-stat159/assignments-fall2015/blob/master/hw1/sou/sou.md
+
+The second homework focused on data analysis and consisted of two parts. 
+%https://github.com/berkeley-stat159/assignments-fall2015/blob/master/hw2/num.py
+For the first part, students implemented some of the functionality of NumPy's arrays.
+To do this, you will be representing a multidimensional array as a (linear) 1-D list
+of numbers.  You will store the multidimensional layout of the data array in a
+shape tuple.  There are two standard ways to fill-in the multidimensional
+structure specified by shape from the linear order of the list of
+numbers---row-major and column-major order.
+
+Gives a new shape to an array without changing its data;
+Return the position in the linear order specified by the given index in
+the multidimensional array;
+Return the value of the array at the given index.
+
+Reduction operations
+Sum of array elements over a given axis.
+Compute the arithmetic mean along the specified axis.
+
+% https://github.com/berkeley-stat159/assignments-fall2015/blob/master/hw2/diagnostics/diagnostics.md 
+In this assignment we will try to detect outlier 3D volumes in a 4D FMRI image.
+The purpose of this part of the homework is for you to practice:
+(a) implementing functions on image arrays;
+(b) exploring FMRI data for outliers; and
+(c) running least-squares fits on different models.
+Along the way, we hope you will pick up some more advanced skills for making
+and saving plots with matplotlib.
 
 Over the course of the semester, seven readings were assigned on a roughly
 bi-weekly basis.
@@ -336,11 +439,7 @@ code multiply.
 
 Early in the semester (week~5) groups of three to five students formed teams
 and immediately (week~6) submitted proposals to investigate
-a published result using the analysis of neuroimaging data.\footnote{There
-was no requirement for students to have a background in neuroscience.
-The intention of focusing on neuroimaging data was to provide a concrete problem
-domain that exemplifies the types of programming and statistical challenges
-present in many modern statistical applications.}
+a published result using the analysis of neuroimaging data.
 %Groups of three to five students formed teams.
 %Each team chose a published neuroimaging study to investigate and
 %decided what they meant by \emph{investigate} in consultation with us.
@@ -357,6 +456,12 @@ and communicating the results to others.
 Every aspect of the project work was done in a computationally reproducible
 and collaborative way.
 
+\begin{figure}
+\centering
+\input{tree.tex}
+\caption{General caption ...}
+\label{fig:repo}
+\end{figure}
 
 \blockpar{Repository.}
 All project artifacts were stored in a repository.
@@ -499,7 +604,7 @@ There were a total of eleven different research teams composed of three
 to five students, each responsible for completing a final project of their
 own design using datasets available through the openfMRI organization.
 The scope of the projects were defined iteratively: each team submitted a 
-proposal at the midpoint of the semester, with the instructors providing
+proposal a third of the way through the semester, with the instructors providing
 prompt feedback to help clarify the motivation and goals of each project.
 This feedback process continued throughout the semester, with students 
 submitting drafts according to various milestones defined within the project
@@ -511,6 +616,16 @@ and evaluating the resulting technical document.
 The peer-review process proved particularly valuable, as the students 
 benefited greatly from the exposure to the coding techniques and 
 organizational principles of their peers.
+
+\begin{table}
+\centering
+\begin{tiny}
+\input{rubric}
+\caption{Project grading rubric.
+An ``A'' was roughly two or more check pluses and no check minuses.}
+\label{tab:rubric}
+\end{tiny}
+\end{table}
 
 The evaluation of the final projects was based on criteria that emphasized the
 underlying principles of reproducibility, collaboration, and technical
@@ -566,10 +681,6 @@ of the open data.
 %\url{https://raw.githubusercontent.com/jarrodmillman/rcsds/master/notes/rubric.rst}
 %\url{http://www.jarrodmillman.com/rcsds/notes/rubric.pdf}
 
-discuss general quality
-
-discuss a couple of example projects
-\citep{tom2007neural}
 
 \input{discussion}
 
