@@ -248,10 +248,22 @@ of working on the group project.
 For instance, they may have needed to use a specialized analysis
 method or a software package not covered in the lectures or labs.
 
-core software stack brief lectures beginning of course ;
-supplemented with labs and homeworks ;
-an occasional portion of class to address a new core topic ;
-most of the lectures were devoted to analzing neuroimaging data..
+For the first three lectures, we briefly introduced students to the Unix
+environment and started teaching them Git, a popular version control system.
+The fourth lecture was a high-level introduction to neuroimaging and
+functional magnetic resonance imaging (or fMRI), in particular.
+Then we quickly introduced students to scientific computing with Python.
+By the the ninth lecture, we started focusing on analyzing fMRI data
+with Python.
+The data analysis lectures continued to develop the students skills with
+Unix and scientific Python software stack through practical problems,
+which arose as we showed them how to analyze fMRI data.
+
+%During the first 
+%core software stack brief lectures beginning of course ;
+%supplemented with labs and homeworks ;
+%an occasional portion of class to address a new core topic ;
+%most of the lectures were devoted to analzing neuroimaging data..
 
 %learn what we need to know, when we need to know it; just-in-time learning 
 
@@ -259,7 +271,22 @@ most of the lectures were devoted to analzing neuroimaging data..
 
 During the first part of the semester, we assigned two homeworks.
 Students had two weeks to work on each homework.
-GitHub, doctest/unit tests, functions, basic Python and scientific Python...
+Homeworks were assigned and submitted using private GitHub repositories.
+Typically, assignments were given as a collection of unimplemented
+functions.
+These functions were documented according to the NumPy documentation
+standard\footnote{\url{https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt}}
+and including unit tests.
+Students implemented the functions according to the documentation
+and ran the unit tests to check that their code at least
+returned the correct results for the provided tests.
+Assignments were grade using unit tests, which were not provided to
+the students before they submitted their work.
+The homework reinforced the material we taught during the
+beginning of the course and mainly focused on scientific programming
+in Python.
+
+%GitHub, doctest/unit tests, functions, basic Python and scientific Python...
 
 \begin{figure}
 \centering
@@ -288,47 +315,42 @@ of its doctests.
 \end{figure}
 
 The first homework focused on basic Python and consisted of three parts.
-The first two parts,  \texttt{dna.py}and \texttt{cipher.py}
-are intended to get you used to reading and writing Python code.
-Your task for \texttt{dna.py} is to implement a series of functions in Python.
-Similarly, in \texttt{cipher.py} the task is to implement methods of a Cipher class.
+The first two parts, \texttt{dna.py} and \texttt{cipher.py}
+were intended to get students used to reading and writing Python code.
+For \texttt{dna.py} students had to implement a series of functions and for
+\texttt{cipher.py} they implemented a class.
 %The functions and methods you are to implement are already defined in the \texttt{dna.py} and
 %\texttt{cipher.py} files respectively.
-The functions and methods are documented, but not implemented.
-We also provided simple unit tests, which they could use to partially test their work.
+%The functions and methods were documented, but not implemented.
+%We also provided simple unit tests, which they could use to partially test their work.
 See the code listing in Figure~\ref{fig:dna} for an example.
-The third part, involved students analyzing the State of the Union
+For the third part, students analyzed the State of the Union
 speeches from 1790 to 2015.
-To do this you will need to prepare the speeches in
-a form that is suitable for statistical analysis. 
+This involved reading text files, data cleaning and preprocessing, as well
+as implementing functions to represent a term document matrix as a list of
+lists.
+%To do this you will need to prepare the speeches in
+%a form that is suitable for statistical analysis. 
 %https://github.com/berkeley-stat159/assignments-fall2015/blob/master/hw1/sou/sou.md
 
 The second homework focused on data analysis and consisted of two parts. 
 %https://github.com/berkeley-stat159/assignments-fall2015/blob/master/hw2/num.py
 For the first part, students implemented some of the functionality of NumPy's arrays.
-To do this, you will be representing a multidimensional array as a (linear) 1-D list
-of numbers.  You will store the multidimensional layout of the data array in a
-shape tuple.  There are two standard ways to fill-in the multidimensional
-structure specified by shape from the linear order of the list of
-numbers---row-major and column-major order.
-
-Gives a new shape to an array without changing its data;
-Return the position in the linear order specified by the given index in
-the multidimensional array;
-Return the value of the array at the given index.
-
-Reduction operations
-Sum of array elements over a given axis.
-Compute the arithmetic mean along the specified axis.
-
+Their implementations represented multidimensional arrays using a (linear) 1-D list
+of numbers and a shape tuple.
+We also required that their implementations handle arrays using either
+row-major and column-major ordering.
+While we did not ask them to implement all of NumPy's functionality,
+we asked them to implement several functions including basic operations
+such as indexing and reshaping as well as more complicated
+reduction operations such as summing array elements over a given axis. 
 % https://github.com/berkeley-stat159/assignments-fall2015/blob/master/hw2/diagnostics/diagnostics.md 
-In this assignment we will try to detect outlier 3D volumes in a 4D FMRI image.
-The purpose of this part of the homework is for you to practice:
-(a) implementing functions on image arrays;
-(b) exploring FMRI data for outliers; and
-(c) running least-squares fits on different models.
-Along the way, we hope you will pick up some more advanced skills for making
-and saving plots with matplotlib.
+The second part focused on detecting outlier 3D volumes in a 4D fMRI image.
+This included
+(a) implementing functions on image arrays using NumPy,
+(b) exploring fMRI data for outliers,
+(c) running least-squares fits on different models, and
+(d) making and saving plots with matplotlib.
 
 Over the course of the semester, seven readings were assigned on a roughly
 bi-weekly basis.
@@ -537,7 +559,7 @@ scripts that called these functions to perform the project data analysis.
 
 All code submissions were added to the project via GitHub pull requests (PRs).
 While we allowed students to decide when to merge PRs, we recommended that
-all PRs should have at least three participants, coverage shouldn’t decrease,
+all PRs should have at least three participants, coverage should not decrease,
 and tests should pass before being merged.
 
 Pull requests, code review, continuous integration, coverage reporting
