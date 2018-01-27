@@ -227,7 +227,7 @@ project-based course that introduces students to reproducible and collaborative
 statistical research, applied to a real scientific question.
 Our objective for the course was for students to
 (a) be proficient at the Unix commandline,
-(b) be expert at version control with Git,
+(b) be fluent in using version control with Git,
 (c) be able to write documents in Markdown and \LaTeX,
 (d) be familiar with scientific computing in Python,
 (e) understand the computational and statistical issues involved with reproducibility, and
@@ -236,7 +236,8 @@ analysis through hands-on analysis of neuroimaging data.
 
 Below we focus on the course project (\S~\ref{project}) and
 how we taught neuroimaging data analysis (\S~\ref{analysis}).
-First, we briefly describe the class structure and software stack.
+First, we briefly describe the class structure.  Next we describe the tools
+and process we taught the students to use.
 
 \blockpar{Lectures, labs, notes, homeworks, readings, and quizzes.}
 The weekly lectures and labs prepared students---through a
@@ -374,30 +375,101 @@ attacked by groups of students with 3 to 4 students per team.
 Prior to the breakout session, a small review of material relevant for the 
 exercises was presented, often in the form of an interactive Jupyter notebook.
 
-\blockpar{The software stack.}
-Rather than teaching a specific neuroimaging analysis packages' user interface,
-we taught students the scientific Python software stack
-\citep{millman2011python, perez2011python} and software development best
-software development practices for computational reproducibility \citep{millman2014developing}.
-Python is increasingly popular for scientific computing and data science
-including for neuroimaging analysis \citep{millman2007analysis}.
+\blockpar{Tools and process}
 
+Our approach was to teach the students efficient reproducible practice with
+the standard tools that experts use for this purpose.  Our motivating
+assumptions were twofold.  First, our own experience has taught us that the
+power of these tools only becomes clear when you use them to do substantial
+work in collaboration with your peers.  Second, we have found that teaching
+``easy'' tools that need less initial learning has the paradoxical effect of
+making it harder for learners to move on to the more powerful and efficient
+tools that experts prefer.
+
+We applied this approach in our choice of general computing tools and
+neuroimaging analysis software.   For example, rather than teaching the user
+interface of a specific neuroimaging analysis package, we taught scientific
+coding with Python and its associated scientific libraries, and then showed
+the students how to perform standard statistical procedures on imaging data,
+using these tools.
+
+% we taught students the scientific Python software stack
+% \citep{millman2011python, perez2011python} and software development best
+% software development practices for computational reproducibility \citep{millman2014developing}.
+% Python is increasingly popular for scientific computing and data science
+% including for neuroimaging analysis \citep{millman2007analysis}.
 
 \begin{itemize}
-\item \textbf{The Unix environment.}
+\item \textbf{The Unix command line.}
 The Unix environment is the computational equivalent of the scientists'
-workbench \citep{preeyanon2014reproducible}.
-However, many students have limited exposure working with
-command line interfaces and text files.
-% and the Bash shell, in particular, are 
-%Many of the tools and practices
-%shell, command line interface, filesystem hierarchy, and
+workbench \citep{preeyanon2014reproducible}.  The Unix command line, and the
+Bash shell in particular, provides mature, well-documented tools for building
+and executing sequences of commands that are readable, repeatable, and can be
+stored in text files as scripts for later execution.  Quoting
+\cite(wilson2014best) -- the Bash shell makes it easier to ``make the computer
+repeat tasks'' and ``save recent commands in a file for re-use``.
+
+The GUI interface of operating systems such as Windows and macOS can obscure
+the tree structure of the filesystem, and this in turn makes it harder for
+students to think about the organization of their data in hierarchy of
+directories and files.  Linux and macOS are native Unix platforms and provide
+Unix / Bash command line tools from a standard install.  Windows 10 provides
+the Unix / Bash tools as an optional install.
+
+Most students have little or no experience of using a command line interface
+or scripting commands with text files, or of thinking of files in terms of the
+underlying file system.
 
 \item \textbf{Version control with Git.}
-Git has become the dominant version control system for open source scientific
-Python community.
+Version control is a fundamental tool for organizing and storing code and
+other products of data analysis.  Distributed version control allows many
+people to work in parallel on the same set of files.  The tools associated
+with distributed version control make it much easier for collaborators to
+review each other's work and suggest changes.
 
-\item \textbf{Pull requests and code review/collaboration.}
+Git is a distributed version control system that has become the standard in
+open source scientific computing. It is widely used in industry.  There are
+automated installers for all major operating systems.  Web platforms such as
+Github (\url{https://github.com}), Bitbucket (\url{https://bitbucket.org}) and
+Gitlab (\url{https://about.gitlab.com}) provide web interfaces to version
+control to simplify procedures such as code review, automated testing and
+issue tracking (see below).
+
+Git can be difficult to teach if the student does not understand why they need
+it.  Git relies on an underlying model of great elegance and power, and it
+exposes this model in standard use. Fluency in the use of Git relies on some
+understanding of the underlying model.  Teaching this model is not
+particularly difficult, but does require patience in absorbing some basic
+ideas in computing, such as directed graphs and hashes as signatures for
+files.  The command line is the most efficient user interface.
+
+We emphasized the use of Git from the command line as a daily tool for the
+students' work.  Students recorded and submitted their homework with Git.
+They used Git for all their project work.
+
+\item \textbf{Pull requests and peer review.}
+Regular peer review is one of the most important ways of continuing to learn
+to be an effective author of correct code and data analysis.  Git and its
+various web platforms provide a powerful tool for peer review.  We introduced
+the students to these tools in class, and required them to use these tools for
+all work on their project.  In particular, the students the Github platform to
+submit their work for review, using the Github ``Pull request'' mechanism.
+The students commit their work on their own computers, using Git, and then use
+Git to ``push'' their work up to the Github hosting platform.  They use the
+Github platform to submit this work as a ``Pull request'' for others in their
+group to review and comment.  When they have have responded to all the
+comments, for example, with changes to their code or text, the group can
+``merge'' the changes from the Pull Request, via the Github web GUI, or from
+the Git command line.
+
+Github, like other Git hosting platforms, provides an interface for creating
+``Issues''.  These can be reports of errors in the code or analysis that need
+to be tracked, larger scale suggestions for changes, or items in a To Do list.
+Students also used the Github Issues interface to record project discussions and actions taken by the group members.
+
+We told the students that we would use the Pull Request and Issue discussions
+as evidence for their contributions to the project, and as data for their
+final grades.
 
 \item \textbf{Process automation with Make.}
 Make is the workhorse of process (or execution) automation of the Unix environment.
@@ -430,7 +502,7 @@ scientific Python packages,\footnote{\url{http://www.scipy-lectures.org/}}
 and \LaTeX.\footnote{\url{https://www.youtube.com/watch?v=8khoelwmMwo}}
 %\footnote{\url{http://github.com/berkeley-scf/tutorial-latex-intro}}
 Course work made use of the toolstack.
-All course work was versioned controlled with Git
+All course work was version controlled with Git
 and submitted via GitHub.
 Finally, the course project extensively exercised this software stack
 and practices.
