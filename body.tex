@@ -130,7 +130,7 @@ final report.
 We will concentrate on two examples to illustrate the contrast between the
 traditional approach and our own.
 
-\subsection{The General Linear Model}
+\subsection{General Linear Model}
 
 The General Linear Model (GLM) is a widely-used term in neuroimaging, to refer
 to the generalization of multiple regression to analysis of variance (ANOVA)
@@ -239,7 +239,8 @@ how we taught neuroimaging data analysis (\S~\ref{analysis}).
 First, we briefly describe the class structure.  Next we describe the tools
 and process we taught the students to use.
 
-\blockpar{Lectures, labs, notes, homeworks, readings, and quizzes.}
+\subsubsection{Lectures, labs, notes, homeworks, readings, and quizzes}
+
 The weekly lectures and labs prepared students---through a
 series of guided exercises---with the basic skills and
 background needed for the group project.
@@ -375,23 +376,24 @@ attacked by groups of students with 3 to 4 students per team.
 Prior to the breakout session, a small review of material relevant for the 
 exercises was presented, often in the form of an interactive Jupyter notebook.
 
-\blockpar{Tools and process}
+\subsubsection{Tools and process}
 
-Our approach was to teach the students efficient reproducible practice with
-the standard tools that experts use for this purpose.  Our motivating
-assumptions were twofold.  First, our own experience has taught us that the
-power of these tools only becomes clear when you use them to do substantial
-work in collaboration with your peers.  Second, we have found that teaching
-``easy'' tools that need less initial learning has the paradoxical effect of
-making it harder for learners to move on to the more powerful and efficient
-tools that experts prefer.
+Our approach was to teach the students efficient reproducible practice with the
+standard tools that experts use for this purpose \citep{millman2014developing}.
+Our motivating assumptions were twofold.  First, our own experience has taught
+us that the power of these tools only becomes clear when you use them to do
+substantial work in collaboration with your peers.  Second, we have found that
+teaching ``easy'' tools that need less initial learning has the paradoxical
+effect of making it harder for learners to move on to the more powerful and
+efficient tools that experts prefer.
 
 We applied this approach in our choice of general computing tools and
 neuroimaging analysis software.   For example, rather than teaching the user
 interface of a specific neuroimaging analysis package, we taught scientific
-coding with Python and its associated scientific libraries, and then showed
-the students how to perform standard statistical procedures on imaging data,
-using these tools.
+coding with Python and its associated scientific libraries
+\citep{millman2011python, perez2011python}, and then showed the students how to
+perform standard statistical procedures on imaging data, using these tools
+\citep{millman2007analysis}.
 
 % we taught students the scientific Python software stack
 % \citep{millman2011python, perez2011python} and software development best
@@ -399,15 +401,31 @@ using these tools.
 % Python is increasingly popular for scientific computing and data science
 % including for neuroimaging analysis \citep{millman2007analysis}.
 
-\begin{itemize}
-\item \textbf{The Unix command line.}
+We gave one or two lectures on Unix, Git, Python, Testing, and NumPy.
+Weekly labs focused on this software stack.
+Students were referred to our course notes on
+Bash,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/bash.html}}
+Git,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/git-intro.html}}
+Make,\footnote{\url{https://www.youtube.com/watch?v=-Cp3jBBHQBE}}
+%\footnote{\url{https://github.com/berkeley-scf/tutorial-make-workflows}}
+Python,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/python.html}}
+scientific Python packages,\footnote{\url{http://www.scipy-lectures.org/}}
+and \LaTeX.\footnote{\url{https://www.youtube.com/watch?v=8khoelwmMwo}}
+%\footnote{\url{http://github.com/berkeley-scf/tutorial-latex-intro}}
+Course work made use of the toolstack.
+All course work was version controlled with Git
+and submitted via GitHub.
+Finally, the course project extensively exercised the following tools
+and practices.
+
+\blockpar{The Unix command line.}
 The Unix environment is the computational equivalent of the scientists'
 workbench \citep{preeyanon2014reproducible}.  The Unix command line, and the
 Bash shell in particular, provides mature, well-documented tools for building
 and executing sequences of commands that are readable, repeatable, and can be
 stored in text files as scripts for later execution.  Quoting
-\cite(wilson2014best) -- the Bash shell makes it easier to ``make the computer
-repeat tasks'' and ``save recent commands in a file for re-use``.
+\cite{wilson2014best}---the Bash shell makes it easier to ``make the computer
+repeat tasks'' and ``save recent commands in a file for re-use.''
 
 The GUI interface of operating systems such as Windows and macOS can obscure
 the tree structure of the filesystem, and this in turn makes it harder for
@@ -420,7 +438,20 @@ Most students have little or no experience of using a command line interface
 or scripting commands with text files, or of thinking of files in terms of the
 underlying file system.
 
-\item \textbf{Version control with Git.}
+\blockpar{Text editing.}
+%http://www.jarrodmillman.com/rcsds/append/software.html
+"You will need an editor for text to edit code and other things.
+Your text editor will be your constant companion and you should chose
+carefully.
+Your teachers use the vim text editor; this is very powerful but has a steep
+learning curve. The editors we recommend below are easier to use without
+practice, but less powerful.
+
+We suggest Notepad++.
+We suggest TextWrangler."
+
+
+\blockpar{Version control with Git.}
 Version control is a fundamental tool for organizing and storing code and
 other products of data analysis.  Distributed version control allows many
 people to work in parallel on the same set of files.  The tools associated
@@ -447,7 +478,7 @@ We emphasized the use of Git from the command line as a daily tool for the
 students' work.  Students recorded and submitted their homework with Git.
 They used Git for all their project work.
 
-\item \textbf{Pull requests and peer review.}
+\blockpar{Pull requests and peer review.}
 Regular peer review is one of the most important ways of continuing to learn
 to be an effective author of correct code and data analysis.  Git and its
 various web platforms provide a powerful tool for peer review.  We introduced
@@ -471,41 +502,23 @@ We told the students that we would use the Pull Request and Issue discussions
 as evidence for their contributions to the project, and as data for their
 final grades.
 
-\item \textbf{Process automation with Make.}
+\blockpar{Process automation with Make.}
 Make is the workhorse of process (or execution) automation of the Unix environment.
 
-\item \textbf{Scientific computing with Python.}
+\blockpar{Scientific computing with Python.}
 Python is a general purpose programming language,
 popular for teaching and prevalent in industry.
 The scientific stack is a collection of add-on packages created by scientists.
 For instance, NumPy, SciPy, and matplotlib are the core packages.
 
-\item \textbf{Functions and unit tests.}
+\blockpar{Functions and unit tests.}
 
-\item  \textbf{Continuous integration with GitHub.}
+\blockpar{Continuous integration with GitHub.}
 
-\item \textbf{Document generation with \LaTeX and pandoc.}
+\blockpar{Document generation with \LaTeX and pandoc.}
 Most students are intimately familiar with word processors, but have little experience
 working with text files and editors.
 
-\end{itemize}
-
-We gave one or two lectures on Unix, Git, Python, Testing, and NumPy.
-Weekly labs focused on this software stack.
-Students were referred to our course notes on
-Bash,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/bash.html}}
-Git,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/git-intro.html}}
-Make,\footnote{\url{https://www.youtube.com/watch?v=-Cp3jBBHQBE}}
-%\footnote{\url{https://github.com/berkeley-scf/tutorial-make-workflows}}
-Python,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/python.html}}
-scientific Python packages,\footnote{\url{http://www.scipy-lectures.org/}}
-and \LaTeX.\footnote{\url{https://www.youtube.com/watch?v=8khoelwmMwo}}
-%\footnote{\url{http://github.com/berkeley-scf/tutorial-latex-intro}}
-Course work made use of the toolstack.
-All course work was version controlled with Git
-and submitted via GitHub.
-Finally, the course project extensively exercised this software stack
-and practices.
 
 \subsection{Course project}\label{project}
 
