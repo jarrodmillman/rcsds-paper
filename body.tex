@@ -1,53 +1,78 @@
 \section{Introduction}
 
-Computational reproducibility \citep{buckheit1995wavelab} ;
-general crisis in modern scientific research ;
-large data / complex analysis / diverse technical skills needed .
-Neuroimaging is experiencing these problems as well ;
-examples ...
-better practices and training needed...
-
-collaboration, multidisciplinary ;
-data and analysis sharing ;
-large multisite data collection ;
-increasing number of extra data sources (e.g., genomic) ;
-
-With these concerns in mind, we took a
-practical rather than academic approach to teaching reproducible
-and collaborative statistical analysis of neuroimaging data;
-trained to use a set of tools and practices through substantial engagement
-with scientific project ;
-we focus on a course we taught to master students and undergraduates through
-a course in the statistics department... ;
-while the course in general could have focused on any scientific problem domain,
-given our expertise we chose to focus on neuroimaging ;
-taught it much like we teach beginning neuroscientists.
-
-There was no requirement for students to have a background in neuroscience.
-The intention of focusing on neuroimaging data was to provide a concrete problem
-domain that exemplifies the types of programming and statistical challenges
+Since the seminal paper of \citet{buckheit1995wavelab}, the issue of
+reproducibility in computational work has become recognized as a
+central challenge of modern statistical data analysis.
+Data sets have dramatically increased in size and
+analysis pipelines have grown in complexity
+in tandem with increases in computational power.
+Neuroimaging exhibits the types of programming and statistical challenges
 present in many modern statistical applications.
-Conversely, neuroimaging students taking a course like this also
-gain familiarity with the types of programming and statistical challenges
-present in many modern statistical applications.
-This means they can more easily incorporate new applications
-in their work.
+%general crisis in modern scientific research ;
+%large data / complex analysis / diverse technical skills needed .
+%Neuroimaging is experiencing these problems as well ;
+%examples ...
+%better practices and training needed...
+We have witnessed the problems with computational reproducibility in
+neuroimaging first-hand.
+In addition to large data and complex analysis,
+neuroimaging research is inherently collaborative and
+multidisciplinary.
+%collaboration, multidisciplinary ;
+%data and analysis sharing ;
+%large multisite data collection ;
+%increasing number of extra data sources (e.g., genomic) ;
 
-\jb{
-\emph{The reproducibility crisis in science (and especially life sciences): a strong rationale for changing how teaching is done.}
-% * JB: Rationale 1:  Reproducibility in life/science and neuroimaging 
-Since the seminal papers of J. Ioannidis \citep{ioannidis_why_2005}, the issue of reproducibility or replicability in life science has been debated in the literature and attracted the attention of the research community, the funders and the journals editors (see for instance amongst many \citep{collins_nih_2014, allison_reproducibility, horton_offline:_2016}, and in brain imaging \citep{boekel_purely_2013}). Since researchers seem to produce a large number of irreproducible results, it is important to consider the causes of this irreproducibility and what can be done to curb the issue. One direct answer is to work to provide the future researchers with the tools and good practices that foster scientific reproducibility \citep{janz_bringing_2015}. We describe here an attempt in this direction . 
-}
-% * JB: Rationale 2:  Difficulty in collaborating on research projects
-\jb{
-}
+In this article, we describe a statistics course we taught to master and
+undergraduate students at UC Berkeley.
+With the above concerns in mind, we took a practical rather than academic
+approach to teaching reproducible and collaborative statistical analysis of
+neuroimaging data.
+Students trained to use a set of tools and processes through an open-ended,
+semester-long neuroimaging data analysis project.
+While students taking statistics courses and those taking psychology or
+neuroscience courses typically have different backgrounds, we found (see
+\S~\ref{discussion}) that there was little difference between the two in their
+abilities to master the technical material necessary for computational
+reproducibility.
+As a result, we taught the course much like we would teach it if it was
+offered through a psychology or neuroscience department.
 
-We begin by explaining the background and rationale (\S~\ref{background}) of our approach to the course.
+
+\fixme{Showing rather than motivating as a theme for the approach in the
+course (pitch in and do rather than explain first).
+Until they see it, they won't know they need it.
+Our course is a proof of concept for our approach ...}
+
+%collaboration is not only a matter of learning tools
+%it also requires training not just neuroimagers, but
+%also statisticians and computer scientists.
+%we hope to see more courses like this one taught to
+%statiticians, computer scientists, applied mathematicians,
+%and physicists as well as psychologists and neuroscientists.
+
+%in the statistics department... ;
+%while the course in general could have focused on any scientific problem domain,
+%given our expertise we chose to focus on neuroimaging ;
+%taught it much like we teach beginning neuroscientists.
+
+%There was no requirement for students to have a background in neuroscience.
+%The intention of focusing on neuroimaging data was to provide a concrete problem
+%domain that exemplifies the types of programming and statistical challenges
+%present in many modern statistical applications.
+%Conversely, neuroimaging students taking a course like this also
+%gain familiarity with the types of programming and statistical challenges
+%present in many modern statistical applications.
+%This means they can more easily incorporate new applications
+%in their work.
+
+We begin by explaining the background and rationale (\S~\ref{background}) of
+our approach to teaching students how to analyze neuroimaging data.
 In material and methods (\S~\ref{methods}), we describe the course format, student audience,
 and curriculum.
 Student projects are presented in results (\S~\ref{results}).
 Finally, we discuss (\S~\ref{discussion}) adapting the course to
-different student audiences.
+different student audiences, ...
 
 \section{Background and Rationale}\label{background}
 
@@ -235,7 +260,7 @@ Software tools include Bash, Git, Python, and \LaTeX.
 project-based course that introduces students to reproducible and collaborative
 statistical research, applied to a real scientific question.
 Our objective for the course was for students to
-(a) be proficient at the Unix commandline,
+(a) be proficient at the Unix command line,
 (b) be fluent in using version control with Git,
 (c) be able to write documents in Markdown and \LaTeX,
 (d) be familiar with scientific computing in Python,
@@ -246,7 +271,8 @@ analysis through hands-on analysis of neuroimaging data.
 Below we focus on the course project (\S~\ref{project}) and
 how we taught neuroimaging data analysis (\S~\ref{analysis}).
 First, we describe the tools and process we taught the students to use.
-We conclude this section by briefly describing the class structure.
+We conclude this section by briefly describing the course
+lectures, labs, notes, homeworks, readings, and quizzes.
 
 \subsubsection{Tools and process}
 
@@ -273,7 +299,7 @@ perform standard statistical procedures on imaging data, using these tools
 % Python is increasingly popular for scientific computing and data science
 % including for neuroimaging analysis \citep{millman2007analysis}.
 
-\blockpar{The Unix command line.}
+\blockpar{Unix, text files, and the command line.}
 The Unix environment is the computational equivalent of the scientists'
 workbench \citep{preeyanon2014reproducible}.  The Unix command line, and the
 Bash shell in particular, provides mature, well-documented tools for building
@@ -289,65 +315,26 @@ directories and files.  Linux and macOS are native Unix platforms and provide
 Unix / Bash command line tools from a standard install.  Windows 10 provides
 the Unix / Bash tools as an optional install.
 
-%Most students have little or no experience of using a command line interface
-%or scripting commands with text files, or of thinking of files in terms of the
-%underlying file system.
-
-\blockpar{Text editing.}
-%http://www.jarrodmillman.com/rcsds/append/software.html
-"You will need an editor for text to edit code and other things.
-Your text editor will be your constant companion and you should chose
-carefully.
-Your teachers use the vim text editor; this is very powerful but has a steep
-learning curve. The editors we recommend below are easier to use without
-practice, but less powerful.
-
-We suggest Notepad++.
-We suggest TextWrangler."
-
-
 \blockpar{Version control with Git.}
 Version control is a fundamental tool for organizing and storing code and
-other products of data analysis.  Distributed version control allows many
-people to work in parallel on the same set of files.  The tools associated
-with distributed version control make it much easier for collaborators to
-review each other's work and suggest changes.
+other products of data analysis.
+Distributed version control allows many people to work in parallel on the
+same set of files.
+The tools associated with distributed version control make it much easier
+for collaborators to review each other's work and suggest changes.
 
 Git is a distributed version control system that has become the standard in
-open source scientific computing. It is widely used in industry.  There are
-automated installers for all major operating systems.  Web platforms such as
-Github (\url{https://github.com}), Bitbucket (\url{https://bitbucket.org}) and
-Gitlab (\url{https://about.gitlab.com}) provide web interfaces to version
-control to simplify procedures such as code review, automated testing and
-issue tracking (see below).
-
-%Git can be difficult to teach if the student does not understand why they need
-%it.  Git relies on an underlying model of great elegance and power, and it
-%exposes this model in standard use. Fluency in the use of Git relies on some
-%understanding of the underlying model.  Teaching this model is not
-%particularly difficult, but does require patience in absorbing some basic
-%ideas in computing, such as directed graphs and hashes as signatures for
-%files.  The command line is the most efficient user interface.
-
-%We emphasized the use of Git from the command line as a daily tool for the
-%students' work.  Students recorded and submitted their homework with Git.
-%They used Git for all their project work.
+open source scientific computing.
+It is widely used in industry.
+There are automated installers for all major operating systems.
+Web platforms such as GitHub, Bitbucket, and GitLab provide web interfaces
+to version control to simplify procedures such as code review, automated
+testing and issue tracking (see below).
 
 \blockpar{Pull requests and peer review.}
 Regular peer review is one of the most important ways of continuing to learn
 to be an effective author of correct code and data analysis.  Git and its
 various web platforms provide a powerful tool for peer review.
-%We introduced
-%the students to these tools in class, and required them to use these tools for
-%all work on their project.  In particular, the students the Github platform to
-%submit their work for review, using the Github ``Pull request'' mechanism.
-%The students commit their work on their own computers, using Git, and then use
-%Git to ``push'' their work up to the Github hosting platform.  They use the
-%Github platform to submit this work as a ``Pull request'' for others in their
-%group to review and comment.  When they have have responded to all the
-%comments, for example, with changes to their code or text, the group can
-%``merge'' the changes from the Pull Request, via the Github web GUI, or from
-%the Git command line.
 
 Github, like other Git hosting platforms, provides an interface for creating
 ``Issues''.  These can be reports of errors in the code or analysis that need
@@ -359,19 +346,6 @@ to be tracked, larger scale suggestions for changes, or items in a To Do list.
 %as evidence for their contributions to the project, and as data for their
 %final grades.
 
-\blockpar{Process automation with Make.}
-Theoretically, one could write a single program for each data analysis.
-%download data, validate it, perform EDA, run the analysis, and generate
-%the report.
-In practice, scientists rarely operate in this manner.
-It is more common to write several smaller scripts or programs
-and then run them by hand at the commandline.
-This enables ...
-However, this is error prone and it can be easy to forget the specific
-invocations made when running scripts by hand.
-
-Make is the classic tool for process (or execution) automation of the Unix
-environment.
 
 \blockpar{Scientific computing with Python.}
 Python is a general purpose programming language,
@@ -380,42 +354,73 @@ The scientific stack is a collection of add-on packages created by scientists.
 For instance, NumPy, SciPy, and matplotlib are the core packages.
 
 \blockpar{Functions and unit tests.}
-stream of consciousness scripts writing...
-reuse in this mode looks much like
-the children's game telephone where each child whispers what they
-think was whispered to them to the next child.
-Scripts passed from researcher to researcher with each one making some
-changes.
+Functions are reusable blocks of code used to perform a specific task.
+They usually manipulate some input argument(s) and return some output
+result(s).
+There are several advantages to organizing your code into functions rather
+than simply writing stream of consciousness scripts.
+First, functions allow you to ``hide'' the details of a discrete bit of
+code from view.
+This can be used to make the steps of your analysis easier to see.
+Second, it encourages you to think of your program as a collection of sub-steps.
+Third, it allows you to reuse code instead of rewriting or copying and editing
+it.
+Fourth, it enables you to keep your variable namespace clean.
+Finally, it also allows you to test small parts of your program in isolation
+from the rest.
 
-importance of unit testing.... catching cascading errors ...
+That last advantage is particularly useful.
+When you learned basic algebra, you were probably told to check your answer by
+plugging your result back into the equation.
+This is an easy test to make sure you performed the correct calculations. 
+When implementing functions, you should do the same.
+
+unit tests, doctests
+
 
 \blockpar{Continuous integration.}
+Several services to build and test software projects on GitHub 
 building on the unit tests ...
 coverage reports...
 
-\blockpar{Document preparation systems and markup languages.}
-Document generation with \LaTeX and pandoc.
-theme of text based continued...
+\blockpar{Document processing and markup languages.}
+Separating the content from the format of a document is useful.
+A markup language allows for generation of content in plain text, while also
+maintaining a set of special syntax to annotate the content with structural
+information.
+In this way, the plain-text or ``source'' files are human-readable and easy to
+version control.
+To produce the final document, the source files must undergo a build or render
+step where the markup syntax (and any associated style files) are passed to a
+tool that knows how to interpret and render the content.
+
+\fixme{Document generation with \LaTeX and pandoc.}
+
+\blockpar{Reproducible workflows with Make.}
+The venerable Make system was originally written to automate the process
+of compiling and linking programs.
+However, when working in the Unix command line environment, you are constantly
+generating files by performing a sequence of commands perhaps depending on
+other files.
+%While exploring running these commands by hand is common.
+Makefiles are machine-readable text files enabling reproducible workflows.
+A basic \texttt{Makefile} consists of ``rules'' of the following form:
+\begin{verbatim}
+            target: sourcefile(s)
+                command(s)
+\end{verbatim}
+
+%Theoretically, one could write a single program for each data analysis.
+%download data, validate it, perform EDA, run the analysis, and generate
+%the report.
+%In practice, scientists rarely operate in this manner.
+%It is more common to write several smaller scripts or programs
+%and then run them by hand at the commandline.
+%This enables ...
+%However, this is error prone and it can be easy to forget the specific
+%invocations made when running scripts by hand.
 
 \subsubsection{Lectures, labs, notes, homeworks, readings, and quizzes}
-
-%We gave one or two lectures on Unix, Git, Python, Testing, and NumPy.
-%Weekly labs focused on this software stack.
-%Students were referred to our course notes on
-%Bash,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/bash.html}}
-%Git,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/git-intro.html}}
-%Make,\footnote{\url{https://www.youtube.com/watch?v=-Cp3jBBHQBE}}
-%%\footnote{\url{https://github.com/berkeley-scf/tutorial-make-workflows}}
-%Python,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/python.html}}
-%scientific Python packages,\footnote{\url{http://www.scipy-lectures.org/}}
-%%and \LaTeX.\footnote{\url{https://www.youtube.com/watch?v=8khoelwmMwo}}
-%%\footnote{\url{http://github.com/berkeley-scf/tutorial-latex-intro}}
-%Course work made use of the toolstack.
-%All course work was version controlled with Git
-%and submitted via GitHub.
-%Finally, the course project extensively exercised the following tools
-%and practices.
-
 
 The weekly lectures and labs prepared students---through a
 series of guided exercises---with the basic skills and
@@ -425,6 +430,23 @@ students were expected to do additional research and reading in the course
 of working on the group project.
 For instance, they may have needed to use a specialized analysis
 method or a software package not covered in the lectures or labs.
+
+\fixme{We gave one or two lectures on Unix, Git, Python, Testing, and NumPy.
+Weekly labs focused on this software stack.
+Students were referred to our course notes on
+Bash,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/bash.html}}
+Git,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/git-intro.html}}
+Make,\footnote{\url{https://www.youtube.com/watch?v=-Cp3jBBHQBE}}
+%\footnote{\url{https://github.com/berkeley-scf/tutorial-make-workflows}}
+Python,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/python.html}}
+scientific Python packages,\footnote{\url{http://www.scipy-lectures.org/}}
+%and \LaTeX.\footnote{\url{https://www.youtube.com/watch?v=8khoelwmMwo}}
+%\footnote{\url{http://github.com/berkeley-scf/tutorial-latex-intro}}
+Course work made use of the toolstack.
+All course work was version controlled with Git
+and submitted via GitHub.
+Finally, the course project extensively exercised the following tools
+and practices.}
 
 For the first three lectures, we briefly introduced students to the Unix
 environment and started teaching them Git, a popular version control system.
@@ -554,7 +576,7 @@ exercises was presented, often in the form of an interactive Jupyter notebook.
 
 \subsection{Course project}\label{project}
 
-The course focused on a semester-long group project.
+The course centered around a semester-long group project.
 Students worked in teams on their projects for three months.
 %Students formed teams at the start of week 5 and final reports were submitted
 %at the end of week 17.
@@ -581,6 +603,10 @@ code multiply.
 Early in the semester (week~5) groups of three to five students formed teams
 and immediately (week~6) submitted proposals to investigate
 a published result using the analysis of neuroimaging data.
+All teams chose a paper and accompanying dataset from
+OpenfMRI,\footnote{\url{https://www.openfmri.org/}} a publicly-available
+depository of MRI and EEG datasets
+\citep{poldrack2013toward,poldrack2015openfmri}.
 %Groups of three to five students formed teams.
 %Each team chose a published neuroimaging study to investigate and
 %decided what they meant by \emph{investigate} in consultation with us.
@@ -627,54 +653,26 @@ or issue with code and text and \texttt{@mention} one or more of us,
 if they had any questions about their projects.
 
 \blockpar{Proposal.}
-The project proposal was the first item each team added to their project repository.
-...state advantage of having proposal directly attached to record of the
-project work
-...explain how it worked, timeline, and feedback
+Once we created repositories for each team, they had a week to propose what
+they would do for their projects.
+The project proposals involved
+(a) identifying a published fMRI paper and the accompanying data,
+(b) explaining the basic idea of the paper in a paragraph,
+(c) confirming that they could download the data and that what they
+downloaded passed basic sanity checks (e.g., correct number of subjects), and
+(d) explaining what approach they intended to take for exploring
+the data and paper.
 
-\begin{quote}\emph{
-Identify a published fMRI paper and the accompanying data.
-Explain the basic idea of the paper in a paragraph.
-Perform basic sanity check on the data
-(e.g., check that you can downloaded and read the files,
-confirm that you have the correct number of subjects).
-Briefly explain what approach you intend to take for exploring
-the data and paper.  If you intend to ``reproduce'' some aspect of the paper,
-explain in exactly what sense you mean to do this.  If you are thinking about
-validating the data describe the assumptions used in the analysis and indicate
-how you might check them.
-}\end{quote}
-
-\blockpar{\texttt{README} and \texttt{Makefile}.}
-Each project was required to put a \texttt{README} file at the top-level
-of their repository to explain how to install, configure,
-and run all aspects of their project.
-Each \texttt{README} clearly stated  how to operate the
-components of the project and in what order to do so.
-In particular, they were required to include a section with
-an enumerated list of task to carry out, like:
-\begin{verbatim}
-    make data - downloads the data 
-    make validate - ensure the data is not corrupted
-    make eda - generate figures from exploratory analysis
-    make analysis - generate figures and results
-    make report - build final report
-\end{verbatim}
-
-The \texttt{README} also contained other pertinent information:
-for example, if the \texttt{make data} step downloads 5 Gb of data, it should
-warn users of this so they make sure they have enough disk space and are on a
-stable internet connection before trying to do so.
+We read and discussed their project proposals and then meet with each
+team to help them refine their initial ideas.
+Most teams proposals were initially too ambitious, so our feedback
+was mostly around helping the students come up with more manageable
+goals.
  
 \blockpar{Data.}
-All projects used data from OpenfMRI.\footnote{\url{https://www.openfmri.org/}}
-OpenfMRI is a publicly-available depository of MRI and EEG datasets
-\citep{poldrack2013toward,poldrack2015openfmri}.
-
-% JB: add advocacy bit on open versioned and citable data
-
 Rather than having students commit raw data to their project repository, we had
 them commit code to download and validate all raw data used in their project.
+Write scripts ...
 For example, their project \texttt{README} might tell us that \texttt{make data}
 downloads all the relevant files for their study and \texttt{make validate}
 verifies the content of the downloaded files.
@@ -712,6 +710,28 @@ We committed the following three files to each project repository:
 \item \texttt{paper/report.bib}
 \item \texttt{Makefile}
 \end{itemize}
+
+
+\blockpar{\texttt{README}.}
+Each project was required to put a \texttt{README} file at the top-level
+of their repository to explain how to install, configure,
+and run all aspects of their project.
+Each \texttt{README} clearly stated  how to operate the
+components of the project and in what order to do so.
+In particular, they were required to include a section with
+an enumerated list of task to carry out, like:
+\begin{verbatim}
+    make data - downloads the data 
+    make validate - ensure the data is not corrupted
+    make eda - generate figures from exploratory analysis
+    make analysis - generate figures and results
+    make report - build final report
+\end{verbatim}
+
+The \texttt{README} also contained other pertinent information:
+for example, if the \texttt{make data} step downloads 5 Gb of data, it should
+warn users of this so they make sure they have enough disk space and are on a
+stable internet connection before trying to do so.
 
 \subsection{Neuroimaging data analysis}\label{analysis}
 
@@ -831,12 +851,268 @@ of the open data.
 %\url{https://raw.githubusercontent.com/jarrodmillman/rcsds/master/notes/rubric.rst}
 %\url{http://www.jarrodmillman.com/rcsds/notes/rubric.pdf}
 
+\section{Discussion}\label{discussion}
 
-\input{discussion}
+\subsection{The balance between hands on and theoretical components}
+
+This course was specifically designed to be as ``practical'' and ``hands on''
+as possible.
+However, reproducible computational science is not void of theoretical aspects,
+and is not limited to a particular set of tools.
+It is likely that some conceptual work may still need to be done to extract the
+principles of reproducible computational practices and teach the concepts and
+the models to be adopted.
+This is already the attempt of this course for instance with Git, insisting on
+the underlying principles model and rationales (i.e., ``how does it work and
+why does it work this way?'') of Git rather than merely trying to teach a list
+of commands associated with specific tasks. 
+Currently, reproducible computational science may still more be seen a set of
+tools and good practices than a formal conceptual model, but this may evolve in
+the future.
+We recommend that the more fundamental concepts were extracted and highlighted
+in the teaching materials as far as possible.
+
+\subsection{Prerequisites: could this work for Psychology students?}
+
+As this specific course was taught to students in statistics, one can wonder
+how generalizable to other population it can be.
+For instance, how would this work for Psychology students?
+Some of the authors followed up with a course on ``practical neuroimaging''
+(Psych 214) and experienced how the project based course could be delivered to
+students in psychology involved in brain imaging project.
+While the number of students was limited, the feedback indicated that the
+students considered that they learned important and a significant amount of
+material.
+
+On the role of "theory" - our students had statistics probability and
+statistical computing as requirements.
+Nevertheless, this did not seem to help in the basic exposition.  i
+The general pace of presenting regression etc seemed comparable across the
+courses we have taught to neuroscientists.
+"Same kind of shambles".
+
+\subsection{Is the material too hard?}
+
+Most students have little or no experience of using a command line interface
+or scripting commands with text files, or of thinking of files in terms of the
+underlying file system.
+
+Text editors
+
+%%http://www.jarrodmillman.com/rcsds/append/software.html
+%"You will need an editor for text to edit code and other things.
+%Your text editor will be your constant companion and you should chose
+%carefully.
+%Your teachers use the vim text editor; this is very powerful but has a steep
+%learning curve. The editors we recommend below are easier to use without
+%practice, but less powerful.
+%
+%We suggest Notepad++.
+%We suggest TextWrangler."
+
+
+%We introduced
+%the students to these tools in class, and required them to use these tools for
+%all work on their project.  In particular, the students the Github platform to
+%submit their work for review, using the Github ``Pull request'' mechanism.
+%The students commit their work on their own computers, using Git, and then use
+%Git to ``push'' their work up to the Github hosting platform.  They use the
+%Github platform to submit this work as a ``Pull request'' for others in their
+%group to review and comment.  When they have have responded to all the
+%comments, for example, with changes to their code or text, the group can
+%``merge'' the changes from the Pull Request, via the Github web GUI, or from
+%the Git command line.
+
+
+Git can be difficult to teach if the student does not understand why they need
+it.
+Git relies on an underlying model of great elegance and power, and it
+exposes this model in standard use.
+Fluency in the use of Git relies on some understanding of the underlying model.
+Teaching this model is not particularly difficult, but does require patience in
+absorbing some basic ideas in computing, such as directed graphs and hashes as
+signatures for files.
+The command line is the most efficient user interface.
+
+We emphasized the use of Git from the command line as a daily tool for the
+students' work.
+Students recorded and submitted their homework with Git.
+They used Git for all their project work.
+
+
+\subsection{Other format or length for this course?}
+
+* How would this course work as a two weeks ``software carpentry'' workshop?
+See the Neurohack (2) weeks in Seattle?
+
+* How would this work in a quarter system?
+
+* Could this be done in a MOOC?
+
+Bootcamp as introduction and supplement to a course like ours.
+
+Get agreement across neuroimaging labs on working with these methods, use
+course as central training across labs.
+
+Maybe make projects longer, lasting past the end of the course, to be reviewed
+by the PIs.
+
+MOOC as material to allow labs without teaching resources to run the course,
+where the local teachers do the exercises and project mentorship and grading
+(flipped course).
+
+\subsection{Reproducibility versus replication}
+
+%\jb{ \emph{The reproducibility crisis in science (and especially life
+%sciences): a strong rationale for changing how teaching is done.}
+%% * JB: Rationale 1:  Reproducibility in life/science and neuroimaging
+\jb{Since the seminal papers of J. Ioannidis \citep{ioannidis_why_2005}, the
+issue of reproducibility or replicability in life science has been debated in
+the literature and attracted the attention of the research community, the
+funders and the journals editors (see for instance amongst many
+\citep{collins_nih_2014, allison_reproducibility, horton_offline:_2016}, and in
+brain imaging \citep{boekel_purely_2013}).
+Since researchers seem to produce a large number of irreproducible results, it
+is important to consider the causes of this irreproducibility and what can be
+done to curb the issue.
+One direct answer is to work to provide the future researchers with the tools
+and good practices that foster scientific reproducibility
+\citep{janz_bringing_2015}.}
+
+\subsection{Student evaluation}
+
+Student evaluation is not only necessary for the validation of the course by
+the university administration, but, in our mind, should be designed primarily
+to provide feedback to students as the course progresses.
+In our case, we based our evaluation on quizzes, projects, and participation.
+We review briefly their characteristics.
+
+\begin{itemize}
+% here is the grading breakdown
+%Reading 10%
+%Quiz 15%
+%Homework    20%
+%Project 55%
+% everything but project was graded individually
+
+\item Quizzes have several advantages: they can be corrected automatically, are
+quick to perform.
+\fixme{They can be challenging to construct in some situations, and are not always
+best fitted for evaluating the most important pedagogical components.
+In our case, we emphasized the collaborative and reproducibility aspects and
+quizzes can not evaluate the overall success in making a reproducible project.}
+
+\item % KJM - this should be homework (not exercises)
+Exercises typically would be designed to assess competency on one (or
+possibly several) key concepts. % they were designed to help the students master the material
+They usually not only great for the evaluation but participate to the students'
+learning, as it has been often noted that ``active learning, or learning
+through doing'' is more effective than passive learning.
+% they were hard to design, but they were easy to mark as we used
+% scripts to grade them.
+Exercises may be hard to design and answers may be difficult to mark but they
+are a great learning tool.
+
+\item Projects have their own challenges.
+Given the size and complexity of the final projects, grading was extremely time
+consumming.
+Just running the analysis scripts took several hours for each project.
+We also offered to proofread each team's report before it was due and
+we provided feedback to students to help ensure we could run their
+code before the due date.
+
+Checking projects rather than standard grading.
+
+Lots of pre-submission help and review, including small group presentations to
+mentors.
+
+Projects as examples of how we would want our own students to work with us.
+
+An alternative project idea is to get students to bring projects they have
+already planned from labs committed to learning the methods.
+
+Importance of consultation during project design and analysis - realistic for
+real work with mentors.
+
+% KJM - We didn't give students individual grades for the project, so I am not
+% sure we should address this point here.
+%First, evaluation is individual, and while Git should permit to assess each
+%individual contribution, evaluation of each student contribution to the project
+%remains a fairly difficult task.
+
+% KJM-I didn't have a separate participation part of the grade, so I am not
+% sure we should address this point here. 
+%\item Participation and laboratory sessions.
+%While assessing students participation and reactivity in laboratory sessions is
+%important and is often a good indicator of how well the material is mastered,
+%these evaluations are subjective and may disadvantage shy students who may
+%master very well the material and be great contributors to a project.
+
+\end{itemize}
+
+\subsection{Other lessons learned from students' feedback}
+
+Seventeen out of forty undergraduates and six out of ten graduate students
+completed anonymous course evaluations.
+Over 70\% of the undergraduates and all the graduate students, claimed to work
+10 or more hours a week on average.
+We generally had scores similar to the department averages.
+However, undergraduates scores were slightly lower than department averages,
+while graduate students gave slightly higher than average scores.
+We suspect this may be due to the difficulty of class.
+For example, one undergraduate stated:
+\begin{quotation}
+``[W]hile . . . I was a big fan of having a large group
+project spanning over multiple weeks, it might be overestimating the maturity
+and experience of an undergraduate class to effectively manage their time and
+stay organized for that long.''
+\end{quotation}
+and another stated the course was ``better designed for graduate students'' and
+that it was ``a good preparation for students who plan to go to graduate
+school.''
+%\begin{quotation}
+%``The class is better designed for graduate students, and also a good
+%preparation for students who plan to go to graduate school.''
+%\end{quotation}
+
+Based on student feedback about the lab portion of the course, the breakout
+exercises were extremely valuable to the students whereas the quizzes seemed
+to be of less value.
+Several students indicated that they had spent an inordinate amount of time in
+preparation for the quizzes, in some cases as the expense of hands-on
+experience with the computing tools.
+This is counter to the goals of the quizzes and laboratory section in general,
+and should be reviewed for future iterations of the course.
+Given the positive feedback about the breakout exercises, one potential
+approach would be to replace the quizzes entirely by including a quantitative
+evaluation component to the breakout exercises.
+Additional effort would have to be devoted to designing the exercises so that
+they could be objectively evaluated, with special emphasis on ensuring that
+each student can be individually evaluated based on their understanding of the
+concepts that the exercise is designed to highlight.
+The ultimate goal would be to design a mechanism to ensure that the students
+are gaining practical experience with the computing tools they will need for
+the final projects, while maintaining the appropriate perspective such that
+students are not spending time on low-level tasks like memorizing syntax.
+
+We conclude with one of the undergraduate student's responses to the question
+\emph{``What advice would you give to another student who is considering taking this course?''}:
+\begin{quotation}
+``[U]nlike most group projects (which last for maybe a few weeks tops or
+could conceivably be pulled off by one very dedicated person), this one will
+dominate the entire semester. . . . Try to stay organized for the project and
+create lots of little goals and checkpoints. You should always be working on
+something for the project, whether that's coding, reviewing, writing, etc. Ask
+lots of questions and ask them early!''
+\end{quotation}
+
+
 
 \section*{Conflict of Interest Statement}
 
-The authors declare that the research was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest.
+The authors declare that the research was conducted in the absence of any
+commercial or financial relationships that could be construed as a potential
+conflict of interest.
 
 \section*{Author Contributions}
 

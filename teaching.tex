@@ -66,7 +66,7 @@ $^{4}$Neurology and Neurosurgery, McGill University, Montreal, Quebec, Canada}
 
 % Count of words
 \usepackage{moreverb} % for verbatim ouput
-\immediate\write18{echo " out of 5000" | (echo -n "Word count: " && texcount -total -brief -sum body.tex discussion.tex | xargs echo -n && cat) > wordcount.tex}
+\immediate\write18{echo " out of 5000" | (echo -n "Word count: " && texcount -total -brief -sum body.tex | xargs echo -n && cat) > wordcount.tex}
 \newcommand\wordcount{\verbatiminput{wordcount.tex}}
 
 \newcommand{\blockpar}[1]{\vspace*{3mm} \noindent \textbf{#1}}
@@ -74,10 +74,11 @@ $^{4}$Neurology and Neurosurgery, McGill University, Montreal, Quebec, Canada}
 % Commands for annotating the docs with fixme notes.
 \usepackage{amssymb}
 
-\newcommand{\fixme}[1] { \textcolor{red} {
-{\fbox{ {\bf Fix:} \ensuremath{\blacktriangleright }} {\bf #1}
-\fbox{\ensuremath{\blacktriangleleft} } } } }
+%\newcommand{\fixme}[1] { \textcolor{red} {
+%{\fbox{ {\bf Fix:} \ensuremath{\blacktriangleright }} {\bf #1}
+%\fbox{\ensuremath{\blacktriangleleft} } } } }
 
+\newcommand{\fixme}[1]{\textcolor{red}{{#1}}} %added 
 \newcommand{\jb}[1]{\textcolor{blue}{{#1}}} %added 
 
 
@@ -114,8 +115,8 @@ reproducible and collaborative neuroimaging data analysis.
 
 \section*{Funding}
 
-... BIDS funding for writing
-... anything else?
+KJM was supported while writing this article by the Berkeley Institute for Data
+Science, funded by the Moore--Sloan Data Science Environment Program.
 
 \section*{Acknowledgments}
 We would like to thank the students who took our class for their enthusiasm,
