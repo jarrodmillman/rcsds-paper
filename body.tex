@@ -122,11 +122,12 @@ came to the conclusion that the traditional approach is based on a fundamental
 error of emphasis.
 
 Functional imaging analysis touches on many theoretical and practical fields,
-including signal and image processing, linear algebra, statistics, computing,
-coding and data management.  Teaching all these topics in depth would take
-longer than most students or institutions have time for.  We need to choose
-what we will teach, and what we will leave for the students to pick up later.
-We have to decide what is fundamental, and what is peripheral.
+including anatomy, physiology, signal and image processing, linear algebra,
+statistics, computing, coding and data management.  Teaching all these topics
+in depth would take longer than most students or institutions have time for.
+We need to choose what we will teach, and what we will leave for the students
+to pick up later. We have to decide what is fundamental, and what is
+peripheral.
 
 The traditional approach takes the top level to be fundamental.  It aims to
 give the big picture, leaving the students to fill in the details. The
@@ -136,14 +137,14 @@ framework to guide them in choosing what to learn.
 
 Our experience is that this assumption is quite incorrect.  It is rare for
 students to go on to learn these foundations, and common for researchers to
-continue to work with a limited and superficial understanding.  We believe
-this has severe consequences for the quality of their work; because we did not
-teach them these foundations, they come to believe that they do not need to
-know them.  The foundations appear to them to be the preserve of clever
+continue to work with a limited and superficial understanding.  This has a
+major negative impact on the quality of their work; because we did not teach
+them these foundations, they come to believe that they do not need to know
+them.  The foundations appear to them to be the preserve of clever
 mathematical and computing types; they have no hope of understanding them in
-any depth.  They come to treat the analysis as something special and magic,
-where the rules are determined by practice, because they cannot hope to reason
-about them.
+any depth.  They treat the analysis as something special and magic, where the
+rules are determined by practice, because they cannot hope to reason about
+them.
 
 Here we propose an alternative to the traditional approach.  Instead of
 concentrating on the big picture, we emphasize the foundations on which the
@@ -151,13 +152,14 @@ analysis is built, and their implementation in practice, with code and
 computing.  We were inspired by the famous epithet of Richard Feynman, found
 written on his blackboard after his death: ``What I cannot create, I do not
 understand.''\footnote{\url{http://archives.caltech.edu/pictures/1.10-29.jpg}}
-We aim to give the students a sufficient grasp of how the methods work, that
+We aim to give the students enough understanding of how the methods work, that
 they could implement their own crude versions of the major algorithms.  In
 teaching them to work with code, we also teach them standard programming
-techniques for reducing complexity and controlling error.  We encourage them
-to own their own learning, and explore their data, by devoting a large
-proportion of the course and course marks to an open-ended group project that
-must be public and completely replicable, down to the figures used in the
+techniques for reducing complexity and controlling error, so they can think
+clearly while they are working.  We encourage them to own their own learning,
+and explore their data, by devoting a large proportion of the course and
+course marks to an open-ended group project that must be public and completely
+replicable, down to the figures used in the
 final report.
 
 We will concentrate on two examples to illustrate the contrast between the
@@ -177,14 +179,14 @@ years
 
 Functional imaging packages present the linear model as a matrix formulation
 of multiple regression.  Many students have not taken linear algebra, or if
-they have, do not remember it very well.  The traditional teaching approach is
-to show how the matrix formulation relates to simple and multiple regression
-over a few slides in an hour-long talk, and then move on to more advanced
-topics such as temporal filtering or random effects.  Although the students
-may have the impression that they have understood, we have found that most of
-them are unable to answer simple questions about the matrix formulation after
-such a talk, and that they rarely go on to improve their understanding in
-their later education.
+they have, do not remember it well.  The traditional teaching approach is to
+show how the matrix formulation relates to simple and multiple regression over
+a few slides in an hour-long talk, and then move on to more advanced topics
+such as temporal filtering or random effects.  Although the students may have
+the impression that they have understood, we have found that most of them are
+unable to answer simple questions about the matrix formulation after such a
+talk, and that they rarely go on to improve their understanding in their later
+education.
 
 Our current teaching works through the linear model very slowly. We found that
 we needed to do this for the students to see that the matrix formulation of
@@ -213,16 +215,17 @@ our experience suggests that scientists tend to be inefficient programmers;
 they take a long time to write code; their code is sloppy and
 poorly-structured with many errors.  They improve very slowly with experience.
 In practice, imaging researchers {\em are} programmers; but if we do not train
-them to learn, they will be incompetent programmers, and they will likely
-continue to be incompetent programmers for the rest of their careers.
+them to learn, they will be incompetent programmers, and the most likely
+outcome is they will continue to be incompetent programmers for the rest of
+their careers.
 
-For this reason, we introduced standard best coding practice from the
-beginning of our course, including testing, code review, measuring test
-coverage, version control, and continuous automated testing with different
-software versions. All final project work used public online repositories for
-version control, code review, automated code coverage and testing.  The
-projects gave the students an experience of best practice in collaboration
-with code and data that they could apply to their future work.
+For this reason, we introduced standard coding process from the beginning of
+our course, including testing, code review, measuring test coverage, version
+control, and continuous automated testing with different software versions.
+All final project work used public online repositories for version control,
+code review, automated code coverage and testing.  The projects gave the
+students an experience of efficient practice in collaboration with code and
+data that they could apply to their future work.
 
 \section{Material and Methods}\label{methods}
 
@@ -275,14 +278,15 @@ lectures, labs, notes, homeworks, readings, and quizzes.
 
 \subsubsection{Tools and process}
 
-Our approach was to teach the students efficient reproducible practice with the
-standard tools that experts use for this purpose \citep{millman2014developing}.
-Our motivating assumptions were twofold.  First, our own experience has taught
-us that the power of these tools only becomes clear when you use them to do
-substantial work in collaboration with your peers.  Second, we have found that
-teaching ``easy'' tools that need less initial learning has the paradoxical
-effect of making it harder for learners to move on to the more powerful and
-efficient tools that experts prefer.
+Our approach was to teach the students efficient reproducible practice with
+the standard tools that experts use for this purpose
+\citep{millman2014developing}. Our motivating assumptions were twofold.
+First, our own experience has taught us that the power of these tools only
+becomes clear when you use them to do substantial work in collaboration with
+your peers.  Second, we have found that teaching ``easy'' tools that need less
+initial learning has the paradoxical effect of making it harder for learners
+to move on to the more powerful and efficient tools that they will need for
+their daily work.
 
 We applied this approach in our choice of general computing tools and
 neuroimaging analysis software.   For example, rather than teaching the user
@@ -308,11 +312,14 @@ stored in text files as scripts for later execution.  Quoting
 repeat tasks'' and ``save recent commands in a file for re-use.''
 
 The GUI interface of operating systems such as Windows and macOS can obscure
-the tree structure of the filesystem, and this in turn makes it harder for
-to think about the organization of data in hierarchy of
-directories and files.  Linux and macOS are native Unix platforms and provide
-Unix / Bash command line tools from a standard install.  Windows 10 provides
-the Unix / Bash tools as an optional install.
+the tree structure of the filesystem, and this in turn makes it harder for GUI
+users to think about the organization of data in hierarchy of directories and
+files.  The command line tools make the file system heirarchy explicit, and
+therefore, make it easier to reason about data organization.
+
+Linux and macOS are native Unix platforms and provide Unix / Bash command line
+tools from a standard install.  Windows 10 provides the Unix / Bash tools as
+an optional operating system install.
 
 \blockpar{Version control with Git.}
 Version control is a fundamental tool for organizing and storing code and
@@ -322,9 +329,8 @@ same set of files.
 The tools associated with distributed version control make it much easier
 for collaborators to review each other's work and suggest changes.
 
-Git is a distributed version control system that has become the standard in
-open source scientific computing.
-It is widely used in industry.
+Git is the distributed version control system that has become the standard in
+open source scientific computing. It is widely used in industry.
 There are automated installers for all major operating systems.
 Web platforms such as GitHub, Bitbucket, and GitLab provide web interfaces
 to version control to simplify procedures such as code review, automated
