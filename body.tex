@@ -1,12 +1,50 @@
 \section{Introduction}
 
-Since the seminal paper of \citet{buckheit1995wavelab}, the issue of
-reproducibility in computational work has become recognized as a
-central challenge of modern data analysis.
-Data sets have dramatically increased in size and
-analysis pipelines have grown in complexity.
-Neuroimaging exhibits the types of computational and statistical challenges
-present in many modern statistical applications.
+We define an analysis as computationally reproducible when someone other than
+the original author of an analysis can take the author's data, code and
+instructions, and reproduce their analysis.
+
+Very few neuroimaging analyses are reproducible, even between researchers in a
+single lab.  The process of analysis is typically ad-hoc and informal; a
+analysis is often the fruit of a considerable amount of trial and error, based
+in part on scripts and data structures that the author inherited from past and
+current members of the lab.   We are describing typical analysis *process* in
+order to argue that this *process* is a) confusing, leading to unclear
+hypotheses and conclusions, b) error prone, leading to incorrect conclusions
+and greater confusion and c) an impossible foundation on which to build
+reproducible analyses.
+
+The trifecta of confusion, error and lack of reproducibility are ubiquitous
+problems of computation that programmers have been fighting since "programmer"
+became a job description. There are widely accepted tools and processes to
+control this trifecta. These tools include the Unix command line; version
+control; high-level readable programming languages; code review; breaking code
+into manageable functions and objects; writing tests for all code  and
+continuous automatic test execution.
+
+Most researchers accept that learning these techniques is desirable, but
+object that a neuroimager has a limited amount of time they can spend in
+class.  This time should be spent learning an overview of neuroimaging
+analysis, rather than tools and process for efficient development.
+
+In the course we describe here, we tested our suspicion that we could
+effectively teach *both* the tools for efficient and reproducible work *and*
+the principles of neuroimaging, by putting a substantial collaborative project
+at the heart of the course, and putting the tools into immediate practice.
+
+At intake, our students that had little or no prior exposure to neuroimaging,
+or to the computational tools and process we listed above.  We set them the
+open-ended task of designing and executing a project which was either a
+replication or an extension of a published neuroimaging analysis, built from
+code they had written themselves.  We required the analysis to be entirely
+replicable; the graders had to be able to run a simple set of commands to
+fetch the data, run the analysis, and generate the final report, including the
+figures.  As we will report in the results, our students were remarkably
+successful in achieving this goal.  We will argue that this approach to
+training in neuroimaging is likely to be far more fruitful than troditional
+imaging courses in preparing our students to do efficient, valid and
+reproducible work.
+
 %general crisis in modern scientific research ;
 %large data / complex analysis / diverse technical skills needed .
 %Neuroimaging is experiencing these problems as well ;
