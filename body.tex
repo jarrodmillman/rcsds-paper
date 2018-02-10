@@ -273,8 +273,12 @@ Statistical Data Science},\footnote{\url{http://www.jarrodmillman.com/stat159-fa
 a new project-based course offered through the Department of Statistics at UC Berkeley.
 The course was open to upper-level undergraduates (as STAT 159) as well as
 first-year graduate students (as STAT 259).
-Students were required to have a basic undergraduate level familiarity with
-probability, statistics, and statistical computing in R.
+
+The course entry requirements were Berkeley courses Stat 133 (Concepts in
+Computing with Data), Stat 134 (Concepts of Probability), and Stat 135
+(Concepts of Statistics).  Together these courses provide basic
+undergraduate-level familiarity with probability, statistics, and statistical
+computing in R.
 Many students were from statistics and/or computer science; however, we also
 had students from many disciplines including cognitive science, psychology, and
 architecture.
@@ -934,22 +938,176 @@ same tools that experts use for sound and reproducible research.
 
 \subsection{Did we really teach neuroimaging analysis?}
 
+By design, our course covered tools and process as well as neuroimaging.  We
+used neuroimaging as the example scientific application of these tools.  Can
+we claim to have taught a substantial amount of neuroimaging in this class?
 
+Class content specific to neuroimaging was a guest lecture in class 4 (of 25),
+and teaching on the general linear model and principal component analysis from
+classes 9 through 15.  We only attempted to cover the standard statistical
+techniques needed for a basic analysis of a single run of FMRI data.  This is
+a much narrower range than a standard neuroimaging course.  However, we argue
+that we covered these topics in much greater depth that is typical for a
+neuroimaging course, and that this formed the foundation for final projects
+that were substantial and well-grounded.
+
+As we argued in the introduction, typical imaging courses do not attempt to
+teach the fundamental ideas of linear models, but assume this understanding
+and move onto imaging specifics.  This assumption is almost entirely false for
+neuroscience and psychology students, and mostly false for our own
+students, most of whom already had some training from an undergraduate
+statistics major. As a result of this incorrect assumption, it is rare for
+students of neuroimaging to understand the statistics they are using.  We
+taught both the linear model and principal components analysis from the first
+principles of vector algebra, using the tools they had just learned to build a
+simple analysis from basic components.  As a result, when the students got to
+their projects, they had the tools they needed to build their own analysis
+code for the neuroimaging data, both demonstrating and advancing their own
+understanding.
+
+We also note the difficulty of the task that we gave the students, and the
+extent of their success.  We made clear that their project was an open-ended
+exploration of an FMRI dataset and paper.  Very few students had any
+experience or knowledge of FMRI before the course. The only guidance we gave
+was that they should prefer well-curated datasets from the OpenFMRI
+depository.  In order to design and implement their project, they had to read
+and understand at least one published FMRI paper, with little assistance from
+their instructors.  We gave no example projects for them to review, or
+templates for them to follow.  As we have already described in the results,
+the submitted projects were all substantial efforts to reproduce and / or
+extend the published results, and all included analysis code that they had
+written themselves.
+
+We did not teach the full range of neuroimaging analysis.  For example, we did
+not cover pre-processing of the data, random effects analysis, or inference
+with multiple comparisons.   Our claim is that what we did teach was a sound
+and sufficient foundation from which they could build code to implement their
+own analyses.  We argue that this is a level of competence that few
+neuroimagers achieve even after considerable practical experience.
 
 \subsection{Did we teach the right tools?}
 
+We do not believe that the individual tools we chose were controversial. We
+consciously taught the tools that we use ourselves, and that we would teach to
+students working with us.
+
+We could have used R instead of Python, but Python is a better language for
+teaching, and is better developed for neuroimaging and machine learning.
+
+A more interesting question is whether we went too far in forcing the students
+to use expert tools.  For example, we required them to write their their
+report in \LaTeX, and their presentation slides and analysis description in
+plain text with Markdown markup.  We asked them to do all project interaction
+using Github tools such as the issue tracker and pull requests.
+
+We set and marked code exercises with git version control and text code files,
+rather than interactive alternatives, such as Jupyter Notebooks.
+
+Of course some students complained that they would rather use Facebook chat
+for pasting code fragments and Powerpoint for their presentation slides.
+Should we have allowed them to do this?  We believe not.  Our own experience
+of using the tools we taught is that their true power only becomes apparent
+when you learn to use them for all the tasks of analysis, including generating
+reports and presentations.  Mixing ``easy'' but heavy tools like Powerpoint
+and Facebook with ``simple'' and light tools like text editors and Markdown
+causes us to lose concentration as we switch modes from heavy to light and
+back again. It is easy to be distracted by the difficulty of getting used to
+the light tools, and therefore fail to notice the clarity of thought and
+transparency of process that they quickly bring.  Successfully switching from
+heavy to light is a process that requires patience and support; it is best
+done in the context of a class where there are examples of use from coursework
+and support from experienced instructors.
+
 \subsection{What background do students need?}
+
+The requirements for our course were previous classes giving some familiarity
+with probability, statistics, and the use of the R programming language.
+
+From our experience of teaching the course, we would be happy to relax the
+requirement for probability.  We did not refer to the ideas of
+probability in any depth during the course.  Authors JBP and MB have taught
+similar material to neuroscience and psychology students who lack training in
+probability; the pace of teaching and level of understanding were similar
+across the statistics students in this course and the other students we have
+taught.
+
+Psychology and neuroscience students do have some statistical training.  We
+believe this background is necessary for us to be able to as start quickly as
+we did in the analysis of linear regression.
+
+We would also keep the requirement for some programming experience.  Our
+course went fairly quickly through basic programming ideas such as for loops,
+conditionals, and functions.  We could not have done this for students without
+any experience of programming.  In our psychology / neuroscience courses that
+used similar material, we required some experience of programming in a
+language such as Python, R or Matlab.
 
 \subsection{Where would such a course fit in a curriculum?}
 
+Our course would not fully qualify a student for independent research in
+neuroimaging.  As we discuss above, we did not cover important aspects of
+imaging, including spatial and temporal pre-processing of data, random effects
+or control of false positives in the presence of multiple comparisons.  For a
+full training in imaging, the student would need more training.  Where should
+the elements of our course sit in relation to a larger program for training
+imagers and other computational scientists?
+
+We think of this course as a foundation.  Students graduating from this course
+will be more effective in learning and analysis.  The tools that they have
+learned allow the instructor to build analyses from simple blocks, to
+show them how algorithms work, and make them simple to extend.  We therefore
+suggest that something like this course should be a first course in a
+sequence, where the following courses would continue to use these tools for
+exposition and for project work.
+
+A full course on brain imaging might start with an introduction to Python and
+data analysis.  Something like this course would follow, introducing tools for
+efficient work with data and with Python code.  There should be follow-up
+courses using the same tools for more advanced topics such as
+machine-learning, spatial pre-processing, and analysis of other modalities.
+We suggest that each of these courses should have group project work as a
+large component, in which the student can continue to practice techniques for
+efficient reproducible analysis and collaboration.
+
 \subsection{What factors would influence the success of such a course?}
 
-\subsection{Caveats}
+We should note that there were factors in the relative success of this
+course that may not apply in other institutions.
 
-\subsection{Future development}
+Berkeley has as a strong tradition in statistical computing and
+reproducibility.  Leo Brieman was a professor in the Berkeley statistics
+department, and an early advocate of what we would now call data science.  He
+put a heavy emphasis on computational teaching to statisticians.  Sandrine
+Dudoit is a professor in the statistics and biostatistics departments, and a
+founding core development of the Bioconductor project devoted to reproducible
+genomics research in R.  Many of the imaging labs in Berkeley take this issue
+seriously and transmit this to their students.  If that were not the case,
+then it would be correspondingly more difficult to persuade the students of
+the importance of working in a reproducible way, especially given the relative
+comfort and convenience of less disciplined working process.
 
+Students of statistics and other disciplines at Berkeley are well aware of the
+importance of Python in scientific computing, and in industry.  Tech firms
+recruit aggressively on campus, and Python is a valuable skill in industry.
+The introduction to programming course by the computer science department uses
+Python, as does the cross discipline course in Fundamentals of Data Science.
+The new Berkeley Institute of Data Science has a strong emphasis towards
+Python for scientific computing.
 
+In the same way, a booming tech sector nearby made it easy to persuade
+students they would need to learn tools like Git and Github, as these are
+widely used in the tech industry.  For example, public activity on Github is
+one factor companies use to identify candidates for well-paid positions as
+software engineers.
 
+We required students to use \LaTeX to write their final reports.  This was an
+easy sell to statistics students, as \LaTeX is widely used in statistics.
+Students outside mathematical fields might be less agreeable; if we were
+teaching psychology and neuroscience students, we would probably prefer
+another plain text markup language, such as Markdown, run through Pandoc
+software to write publication quality output.
+
+\section{Conclusion}\label{conclusion}
 
 We conclude with one of the undergraduate student's responses to the question
 \emph{``What advice would you give to another student who is considering taking this course?''}:
