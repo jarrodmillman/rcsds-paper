@@ -46,64 +46,6 @@ training in neuroimaging is likely to be far more fruitful than traditional
 imaging courses in preparing our students to do efficient, valid, and
 reproducible work.
 
-%%general crisis in modern scientific research ;
-%%large data / complex analysis / diverse technical skills needed .
-%%Neuroimaging is experiencing these problems as well ;
-%%examples ...
-%%better practices and training needed...
-%We have witnessed the problems with computational reproducibility in
-%neuroimaging first-hand.
-%In addition to large data and complex analysis,
-%neuroimaging research is inherently collaborative and
-%multidisciplinary.
-%%collaboration, multidisciplinary ;
-%%data and analysis sharing ;
-%%large multisite data collection ;
-%%increasing number of extra data sources (e.g., genomic) ;
-%
-%In this article, we describe a statistics course we taught to master and
-%undergraduate students at UC Berkeley.
-%With the above concerns in mind, we took a practical rather than academic
-%approach to teaching reproducible and collaborative statistical analysis of
-%neuroimaging data.
-%Students trained to use a set of tools and processes through an open-ended,
-%semester-long neuroimaging data analysis project.
-%While students taking statistics courses and those taking psychology or
-%neuroscience courses typically have different backgrounds, we found (see
-%\S~\ref{discussion}) that there was little difference between the two in their
-%abilities to master the technical material necessary for computational
-%reproducibility.
-%As a result, we taught the course much like we would teach it if it was
-%offered through a psychology or neuroscience department.
-%
-%
-%\fixme{Showing rather than motivating as a theme for the approach in the
-%course (pitch in and do rather than explain first).
-%Until they see it, they won't know they need it.
-%Our course is a proof of concept for our approach ...}
-%
-%%collaboration is not only a matter of learning tools
-%%it also requires training not just neuroimagers, but
-%%also statisticians and computer scientists.
-%%we hope to see more courses like this one taught to
-%%statiticians, computer scientists, applied mathematicians,
-%%and physicists as well as psychologists and neuroscientists.
-%
-%%in the statistics department... ;
-%%while the course in general could have focused on any scientific problem domain,
-%%given our expertise we chose to focus on neuroimaging ;
-%%taught it much like we teach beginning neuroscientists.
-%
-%%There was no requirement for students to have a background in neuroscience.
-%%The intention of focusing on neuroimaging data was to provide a concrete problem
-%%domain that exemplifies the types of programming and statistical challenges
-%%present in many modern statistical applications.
-%%Conversely, neuroimaging students taking a course like this also
-%%gain familiarity with the types of programming and statistical challenges
-%%present in many modern statistical applications.
-%%This means they can more easily incorporate new applications
-%%in their work.
-%
 %We begin by explaining the background and rationale (\S~\ref{background}) of
 %our approach to teaching students how to analyze neuroimaging data.
 %In material and methods (\S~\ref{methods}), we describe the course format, student audience,
@@ -174,7 +116,7 @@ assumption is that the student will either know or pick up some of the
 mathematical and practical foundations later, with the big picture as a
 framework to guide them in choosing what to learn.
 
-Our experience is that this assumption is quite incorrect.  It is rare for
+Our experience is that this assumption is incorrect.  It is rare for
 students to go on to learn these foundations, and common for researchers to
 continue to work with a limited and superficial understanding.  This has a
 major negative impact on the quality of their work; because we did not teach
@@ -197,8 +139,8 @@ teaching them to work with code, we also teach them standard programming
 techniques for reducing complexity and controlling error, so they can think
 clearly while they are working.  We encourage them to own their own learning,
 and explore their data, by devoting a large proportion of the course and
-course grade to an open-ended group project that must be public and completely
-replicable, down to the figures used in the
+course grade to an open-ended group project that must be public and computationally
+reproducible, down to the figures used in the
 final report.
 
 We use two examples to illustrate the contrast between the
@@ -339,12 +281,6 @@ coding with Python and its associated scientific libraries
 perform standard statistical procedures on imaging data, using these tools
 \citep{millman2007analysis}.
 
-% we taught students the scientific Python software stack
-% \citep{millman2011python, perez2011python} and software development best
-% software development practices for computational reproducibility \citep{millman2014developing}.
-% Python is increasingly popular for scientific computing and data science
-% including for neuroimaging analysis \citep{millman2007analysis}.
-
 \blockpar{Unix, text files, and the command line.}
 The Unix environment is the computational equivalent of the scientists'
 workbench \citep{preeyanon2014reproducible}.  The Unix command line, and the
@@ -400,10 +336,10 @@ Python is a general purpose programming language,
 popular for teaching and prevalent in industry.
 It is used widely in science, with particular strength in data science,
 astronomy and genetics.
-Its strength in science rests on a stack of popular scientific libraries, including
-as NumPy (computing with arrays); Scipy (scientific algorithms
-including optimization and image processing); Matplotlib (2D plotting);
-Scikit-Learn (machine learning) and Pandas (data science).
+Its strength in science rests on a stack of popular scientific libraries including
+as NumPy (computing with arrays), SciPy (scientific algorithms
+including optimization and image processing), Matplotlib (2D plotting),
+Scikit-Learn (machine learning), and Pandas (data science).
 
 \blockpar{Functions and unit tests.}
 Functions are reusable blocks of code used to perform a specific task.
@@ -456,16 +392,6 @@ A basic \texttt{Makefile} consists of ``rules'' of the following form:
                 command(s)
 \end{verbatim}
 
-%Theoretically, one could write a single program for each data analysis.
-%download data, validate it, perform EDA, run the analysis, and generate
-%the report.
-%In practice, scientists rarely operate in this manner.
-%It is more common to write several smaller scripts or programs
-%and then run them by hand at the commandline.
-%This enables ...
-%However, this is error prone and it can be easy to forget the specific
-%invocations made when running scripts by hand.
-
 \subsubsection{Lectures, labs, notes, homeworks, readings, and quizzes}
 
 The weekly lectures and labs prepared students---through a
@@ -497,23 +423,13 @@ and practices.}
 For the first three lectures, we briefly introduced students to the Unix
 environment and started teaching them Git, a popular version control system.
 The fourth lecture was a high-level introduction to neuroimaging and
-functional magnetic resonance imaging (or fMRI), in particular.
+functional magnetic resonance imaging (or FMRI), in particular.
 Then we quickly introduced students to scientific computing with Python.
-By the the ninth lecture, we started focusing on analyzing fMRI data
+By the the ninth lecture, we started focusing on analyzing FMRI data
 with Python.
 The data analysis lectures continued to develop the students skills with
 Unix and scientific Python software stack through practical problems,
-which arose as we showed them how to analyze fMRI data.
-
-%During the first 
-%core software stack brief lectures beginning of course ;
-%supplemented with labs and homeworks ;
-%an occasional portion of class to address a new core topic ;
-%most of the lectures were devoted to analzing neuroimaging data..
-
-%learn what we need to know, when we need to know it; just-in-time learning 
-
-%homeworks
+which arose as we showed them how to analyze FMRI data.
 
 During the first part of the semester, we assigned two homeworks.
 Students had two weeks to work on each homework.
@@ -565,8 +481,6 @@ The first two parts, \texttt{dna.py} and \texttt{cipher.py}
 were intended to get students used to reading and writing Python code.
 For \texttt{dna.py} students had to implement a series of functions and for
 \texttt{cipher.py} they implemented a class.
-%The functions and methods you are to implement are already defined in the \texttt{dna.py} and
-%\texttt{cipher.py} files respectively.
 %The functions and methods were documented, but not implemented.
 %We also provided simple unit tests, which they could use to partially test their work.
 See the code listing in Figure~\ref{fig:dna} for an example.
@@ -591,10 +505,10 @@ we asked them to implement several functions including basic operations
 such as indexing and reshaping as well as more complicated
 reduction operations such as summing array elements over a given axis. 
 % https://github.com/berkeley-stat159/assignments-fall2015/blob/master/hw2/diagnostics/diagnostics.md 
-The second part focused on detecting outlier 3D volumes in a 4D fMRI image.
+The second part focused on detecting outlier 3D volumes in a 4D FMRI image.
 This included
 (a) implementing functions on image arrays using NumPy,
-(b) exploring fMRI data for outliers,
+(b) exploring FMRI data for outliers,
 (c) running least-squares fits on different models, and
 (d) making and saving plots with matplotlib.
 
@@ -650,10 +564,9 @@ Early in the semester (week~5) groups of three to five students formed teams
 and immediately (week~6) submitted proposals to investigate
 a published result using the analysis of neuroimaging data.
 All teams chose a paper and accompanying dataset from
-OpenfMRI,\footnote{\url{https://www.openfmri.org/}} a publicly-available
+OpenFMRI,\footnote{\url{https://www.openfmri.org/}} a publicly-available
 depository of MRI and EEG datasets
 \citep{poldrack2013toward,poldrack2015openfmri}.
-%Groups of three to five students formed teams.
 %Each team chose a published neuroimaging study to investigate and
 %decided what they meant by \emph{investigate} in consultation with us.
 Each team's investigation involved
@@ -702,7 +615,7 @@ if they had any questions about their projects.
 Once we created repositories for each team, they had a week to propose what
 they would do for their projects.
 The project proposals involved
-(a) identifying a published fMRI paper and the accompanying data,
+(a) identifying a published FMRI paper and the accompanying data,
 (b) explaining the basic idea of the paper in a paragraph,
 (c) confirming that they could download the data and that what they
 downloaded passed basic sanity checks (e.g., correct number of subjects), and
@@ -787,7 +700,7 @@ and how they relate to the wider world of statistics, engineering, computer scie
 (b) be comfortable working with neuroimaging data and code, so they can write
 their own basic algorithms, and understand other people's code;
 (c) work with code and data in a way that will save them time, help them collaborate,
-and continue learning.%this isn't quite parallel
+and prepare them to continue learning.
 
 For this course we concentrated on the statistical analysis of functional MRI
 data.  We scheduled the teaching to give the students a sound background in
@@ -821,12 +734,12 @@ the following topics:
 
 There were a total of eleven different research teams composed of three
 to five students, each responsible for completing a final project of their
-own design using datasets available through the openfMRI organization.
+own design using datasets available through the OpenFMRI organization.
 The scope of the projects were defined iteratively: each team submitted a 
 proposal a third of the way through the semester, with the instructors providing
 prompt feedback to help clarify the motivation and goals of each project.
 This feedback process continued throughout the semester, with students 
-submitting drafts according to various milestones defined within the project
+submitting drafts according to milestones defined within the project
 timeline.
 Feedback was not only provided to the students from the instructors: the
 project evaluations included peer-review, where each research team was
@@ -836,7 +749,7 @@ The peer-review process proved particularly valuable, as the students
 benefited greatly from the exposure to the coding techniques and 
 organizational principles of their peers.
 
-... an advantage of having all students working on their own work
+% an advantage of having all students working on their own work
 
 \begin{table}
 \centering
@@ -868,7 +781,7 @@ There was a large disparity in the backgrounds of the students that constituted
 each research team, and this was reflected by a range of scopes for the
 final projects.
 The primary focus of the majority of projects was reproducing results
-of published research from the openfMRI datasets using the neuroimaging 
+of published research from the OpenFMRI datasets using the neuroimaging 
 analysis methods introduced in the course.
 For example, several teams chose to focus on the open dataset provided by a
 study entitled \textit{The neural basis of loss aversion in decision-making
@@ -885,7 +798,7 @@ The investigation of modern machine learning techniques was of particular
 interest to several groups that included students with a stronger computer
 science background.
 These projects utilized supervised learning techniques in an attempt to 
-develop predictive models based on input fMRI images.
+develop predictive models based on input FMRI images.
 The ability of students to apply these concepts (which were largely external
 to the course) within the given reproducible and collaborative 
 framework was impressive and, according to feedback from the students, quite
@@ -899,12 +812,7 @@ in the course by implementing analyses to replicate published results; and
 several went beyond this to expand their investigations to novel applications
 of the open data.
 
-%\url{https://raw.githubusercontent.com/jarrodmillman/rcsds/master/notes/rubric.rst}
-%\url{http://www.jarrodmillman.com/rcsds/notes/rubric.pdf}
-
 \section{Discussion}\label{discussion}
-
-\subsection{Two roads to reproducible}
 
 Most neuroimaging researchers agree that computational reproducibility is
 desirable, but rare.  How should we adapt our teaching to make reproducibility
@@ -919,8 +827,10 @@ We believe this approach is doomed to failure, because the students are
 building on an insecure foundation.  Once you have learned to work in an
 informal and undisciplined way, it is difficult to switch to a process that
 initially demands much more effort and thought.  Rigor and clarity are hard to
-retrofit. To invert a common saying: "A week in the lab saves an hour in the
-library".
+retrofit.
+%To invert a common saying: "A week in the lab saves an hour in the library".
+To quote the American chemist Frank Westheimer:
+``A couple of months in the laboratory can frequently save a couple of hours in the library.''
 
 For these reasons, our course took the opposite to the common approach. We
 started with the tools and process for working with numerical data, and for
@@ -1036,7 +946,7 @@ believe this background is necessary for us to be able to as start quickly as
 we did in the analysis of linear regression.
 
 We would also keep the requirement for some programming experience.  Our
-course went fairly quickly through basic programming ideas such as for loops,
+course went quickly through basic programming ideas such as for loops,
 conditionals, and functions.  We could not have done this for students without
 any experience of programming.  In our psychology / neuroscience courses that
 used similar material, we required some experience of programming in a
@@ -1077,15 +987,15 @@ We should note that there were factors in the relative success of this
 course that may not apply in other institutions.
 
 Berkeley has as a strong tradition in statistical computing and
-reproducibility.  Leo Brieman was a professor in the Berkeley statistics
+reproducibility.  Leo Breiman was a professor in the Berkeley statistics
 department, and an early advocate of what we would now call data science.  He
 put a heavy emphasis on computational teaching to statisticians.  Sandrine
 Dudoit is a professor in the statistics and biostatistics departments, and a
 founding core development of the Bioconductor project devoted to reproducible
 genomics research in R.  The then head of the statistics department, Philip
 Stark, is one of many Berkeley authors (including KJM) to contribute to the
-recent book ``The Practice of Reproducible Research``
-\citep{kitzes2018practice}. Outside statistics, several of the imaging labs in
+recent book ``The Practice of Reproducible Research''
+\citep{kitzes2017practice}. Outside statistics, several of the imaging labs in
 Berkeley take this issue seriously and transmit this to their students.  If
 there had not been such local interest in the problem of reproducibility, it
 would have been more difficult to persuade the students of the importance of
