@@ -12,7 +12,7 @@ the lab.
 This \emph{process} is
 (a) confusing, leading to unclear hypotheses and conclusions,
 (b) error prone, leading to incorrect conclusions and greater confusion,
-and (c) an impossible foundation on which to build reproducible analyses.
+and (c) an impractical foundation on which to build reproducible analyses.
 
 The trifecta of confusion, error, and lack of reproducibility are ubiquitous
 problems of computation that programmers have been fighting since before ``programmer''
@@ -900,247 +900,56 @@ of the open data.
 
 \section{Discussion}\label{discussion}
 
-\subsection{The balance between hands on and theoretical components}
+\subsection{Two roads to reproducible}
 
-This course was specifically designed to be as ``practical'' and ``hands on''
-as possible.
-However, reproducible computational science is not void of theoretical aspects,
-and is not limited to a particular set of tools.
-It is likely that some conceptual work may still need to be done to extract the
-principles of reproducible computational practices and teach the concepts and
-the models to be adopted.
-This is already the attempt of this course for instance with Git, insisting on
-the underlying principles model and rationales (i.e., ``how does it work and
-why does it work this way?'') of Git rather than merely trying to teach a list
-of commands associated with specific tasks. 
-Currently, reproducible computational science may still more be seen a set of
-tools and good practices than a formal conceptual model, but this may evolve in
-the future.
-We recommend that the more fundamental concepts were extracted and highlighted
-in the teaching materials as far as possible.
+Most neuroimaging researchers agree that computational reproducibility is
+desirable, but rare.  How should we adapt our teaching to make reproducibility
+more common?
 
-\subsection{Prerequisites: could this work for psychology students?}
+We believe the most common answer to this question, is that we should train
+neuroimaging and other computational researchers as we do now, but add short
+courses or bootcamps that teach a subset of the tools we taught here.  That
+is, reproducibility is an addition on top of current training.
 
-As this specific course was taught to students in statistics, one can wonder
-how generalizable to other population it can be.
-For instance, how would this work for psychology students?
-Some of the authors followed up with a course on ``practical neuroimaging''
-(PSYCH 214) and experienced how the project based course could be delivered to
-students in psychology involved in brain imaging project.
-While the number of students was limited, the feedback indicated that the
-students considered that they learned important and a significant amount of
-material.
+We believe this approach is doomed to failure, because the students are
+building on an insecure foundation.  Once you have learned to work in an
+informal and undisciplined way, it is difficult to switch to a process that
+initially demands much more effort and thought.  Rigor and clarity are hard to
+retrofit. To invert a common saying: "A week in the lab saves an hour in the
+library".
 
-On the role of ``theory''---our students had statistics probability and
-statistical computing as requirements.
-Nevertheless, this did not seem to help in the basic exposition. 
-The general pace of presenting regression etc seemed comparable across the
-courses we have taught to neuroscientists.
-"Same kind of shambles".
+For these reasons, our course took the opposite to the common approach. We
+started with the tools and process for working with numerical data, and for
+building their own analyses. We used this framework as a foundation on which
+to build their understanding of the underlying ideas.  As we taught these
+tools, we integrated them into their exercises, and made it clear how they
+related to their work on the project.
 
-\subsection{Is the material too hard?}
+Our claim is that this made our teaching and our students much more efficient.
+The secure foundation made it easier for them to work with us and with each
+other. As they started their project work, early in the course, they could
+already see the value of these tools for clarity and collaboration. Our
+students graduated from the course with significant experience of using the
+same tools that experts use for sound and reproducible research.
 
-Most students have little or no experience of using a command line interface
-or scripting commands with text files, or of thinking of files in terms of the
-underlying file system.
-
-Text editors
-
-%%http://www.jarrodmillman.com/rcsds/append/software.html
-%"You will need an editor for text to edit code and other things.
-%Your text editor will be your constant companion and you should chose
-%carefully.
-%Your teachers use the vim text editor; this is very powerful but has a steep
-%learning curve. The editors we recommend below are easier to use without
-%practice, but less powerful.
-%
-%We suggest Notepad++.
-%We suggest TextWrangler."
+\subsection{Did we really teach neuroimaging analysis?}
 
 
-%We introduced
-%the students to these tools in class, and required them to use these tools for
-%all work on their project.  In particular, the students the Github platform to
-%submit their work for review, using the Github ``Pull request'' mechanism.
-%The students commit their work on their own computers, using Git, and then use
-%Git to ``push'' their work up to the Github hosting platform.  They use the
-%Github platform to submit this work as a ``Pull request'' for others in their
-%group to review and comment.  When they have have responded to all the
-%comments, for example, with changes to their code or text, the group can
-%``merge'' the changes from the Pull Request, via the Github web GUI, or from
-%the Git command line.
+
+\subsection{Did we teach the right tools?}
+
+\subsection{What background do students need?}
+
+\subsection{Where would such a course fit in a curriculum?}
+
+\subsection{What factors would influence the success of such a course?}
+
+\subsection{Caveats}
+
+\subsection{Future development}
 
 
-Git can be difficult to teach if the student does not understand why they need
-it.
-Git relies on an underlying model of great elegance and power, and it
-exposes this model in standard use.
-Fluency in the use of Git relies on some understanding of the underlying model.
-Teaching this model is not particularly difficult, but does require patience in
-absorbing some basic ideas in computing, such as directed graphs and hashes as
-signatures for files.
-The command line is the most efficient user interface.
 
-We emphasized the use of Git from the command line as a daily tool for the
-students' work.
-Students recorded and submitted their homework with Git.
-They used Git for all their project work.
-
-
-\subsection{Other format or length for this course?}
-
-* How would this course work as a two weeks ``software carpentry'' workshop?
-See the Neurohack (2) weeks in Seattle?
-
-* How would this work in a quarter system?
-
-* Could this be done in a MOOC?
-
-Bootcamp as introduction and supplement to a course like ours.
-
-Get agreement across neuroimaging labs on working with these methods, use
-course as central training across labs.
-
-Maybe make projects longer, lasting past the end of the course, to be reviewed
-by the PIs.
-
-MOOC as material to allow labs without teaching resources to run the course,
-where the local teachers do the exercises and project mentorship and grading
-(flipped course).
-
-\subsection{Reproducibility versus replication}
-
-%\jb{ \emph{The reproducibility crisis in science (and especially life
-%sciences): a strong rationale for changing how teaching is done.}
-%% * JB: Rationale 1:  Reproducibility in life/science and neuroimaging
-\jb{Since the seminal papers of J. Ioannidis \citep{ioannidis_why_2005}, the
-issue of reproducibility or replicability in life science has been debated in
-the literature and attracted the attention of the research community, the
-funders and the journals editors (see for instance amongst many
-\citep{collins_nih_2014, allison_reproducibility, horton_offline:_2016}, and in
-brain imaging \citep{boekel_purely_2013}).
-Since researchers seem to produce a large number of irreproducible results, it
-is important to consider the causes of this irreproducibility and what can be
-done to curb the issue.
-One direct answer is to work to provide the future researchers with the tools
-and good practices that foster scientific reproducibility
-\citep{janz_bringing_2015}.}
-
-\subsection{Student evaluation}
-
-Student evaluation is not only necessary for the validation of the course by
-the university administration, but, in our mind, should be designed primarily
-to provide feedback to students as the course progresses.
-In our case, we based our evaluation on quizzes, projects, and participation.
-We review briefly their characteristics.
-
-\begin{itemize}
-% here is the grading breakdown
-%Reading 10%
-%Quiz 15%
-%Homework    20%
-%Project 55%
-% everything but project was graded individually
-
-\item Quizzes have several advantages: they can be corrected automatically, are
-quick to perform.
-\fixme{They can be challenging to construct in some situations, and are not always
-best fitted for evaluating the most important pedagogical components.
-In our case, we emphasized the collaborative and reproducibility aspects and
-quizzes can not evaluate the overall success in making a reproducible project.}
-
-\item % KJM - this should be homework (not exercises)
-Exercises typically would be designed to assess competency on one (or
-possibly several) key concepts. % they were designed to help the students master the material
-They usually not only great for the evaluation but participate to the students'
-learning, as it has been often noted that ``active learning, or learning
-through doing'' is more effective than passive learning.
-% they were hard to design, but they were easy to mark as we used
-% scripts to grade them.
-Exercises may be hard to design and answers may be difficult to mark but they
-are a great learning tool.
-
-\item Projects have their own challenges.
-Given the size and complexity of the final projects, grading was extremely time
-consuming.
-Just running the analysis scripts took several hours for each project.
-We also offered to proofread each team's report before it was due and
-we provided feedback to students to help ensure we could run their
-code before the due date.
-
-Checking projects rather than standard grading.
-
-Lots of pre-submission help and review, including small group presentations to
-mentors.
-
-Projects as examples of how we would want our own students to work with us.
-
-An alternative project idea is to get students to bring projects they have
-already planned from labs committed to learning the methods.
-
-Importance of consultation during project design and analysis - realistic for
-real work with mentors.
-
-% KJM - We didn't give students individual grades for the project, so I am not
-% sure we should address this point here.
-%First, evaluation is individual, and while Git should permit to assess each
-%individual contribution, evaluation of each student contribution to the project
-%remains a fairly difficult task.
-
-% KJM-I didn't have a separate participation part of the grade, so I am not
-% sure we should address this point here. 
-%\item Participation and laboratory sessions.
-%While assessing students participation and reactivity in laboratory sessions is
-%important and is often a good indicator of how well the material is mastered,
-%these evaluations are subjective and may disadvantage shy students who may
-%master very well the material and be great contributors to a project.
-
-\end{itemize}
-
-\subsection{Other lessons learned from students' feedback}
-
-Seventeen out of forty undergraduates and six out of ten graduate students
-completed anonymous course evaluations.
-Over 70\% of the undergraduates and all the graduate students, claimed to work
-10 or more hours a week on average.
-We generally had scores similar to the department averages.
-However, undergraduates scores were slightly lower than department averages,
-while graduate students gave slightly higher than average scores.
-We suspect this may be due to the difficulty of class.
-For example, one undergraduate stated:
-\begin{quotation}
-``[W]hile . . . I was a big fan of having a large group
-project spanning over multiple weeks, it might be overestimating the maturity
-and experience of an undergraduate class to effectively manage their time and
-stay organized for that long.''
-\end{quotation}
-and another stated the course was ``better designed for graduate students'' and
-that it was ``a good preparation for students who plan to go to graduate
-school.''
-%\begin{quotation}
-%``The class is better designed for graduate students, and also a good
-%preparation for students who plan to go to graduate school.''
-%\end{quotation}
-
-Based on student feedback about the lab portion of the course, the breakout
-exercises were extremely valuable to the students whereas the quizzes seemed
-to be of less value.
-Several students indicated that they had spent an inordinate amount of time in
-preparation for the quizzes, in some cases as the expense of hands-on
-experience with the computing tools.
-This is counter to the goals of the quizzes and laboratory section in general,
-and should be reviewed for future iterations of the course.
-Given the positive feedback about the breakout exercises, one potential
-approach would be to replace the quizzes entirely by including a quantitative
-evaluation component to the breakout exercises.
-Additional effort would have to be devoted to designing the exercises so that
-they could be objectively evaluated, with special emphasis on ensuring that
-each student can be individually evaluated based on their understanding of the
-concepts that the exercise is designed to highlight.
-The ultimate goal would be to design a mechanism to ensure that the students
-are gaining practical experience with the computing tools they will need for
-the final projects, while maintaining the appropriate perspective such that
-students are not spending time on low-level tasks like memorizing syntax.
 
 We conclude with one of the undergraduate student's responses to the question
 \emph{``What advice would you give to another student who is considering taking this course?''}:
