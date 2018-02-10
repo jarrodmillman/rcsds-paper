@@ -970,13 +970,13 @@ extent of their success.  We made clear that their project was an open-ended
 exploration of an FMRI dataset and paper.  Very few students had any
 experience or knowledge of FMRI before the course. The only guidance we gave
 was that they should prefer well-curated datasets from the OpenFMRI
-depository.  In order to design and implement their project, they had to read
-and understand at least one published FMRI paper, with little assistance from
-their instructors.  We gave no example projects for them to review, or
-templates for them to follow.  As we have already described in the results,
-the submitted projects were all substantial efforts to reproduce and / or
-extend the published results, and all included analysis code that they had
-written themselves.
+depository.  In order to design and implement their project, they had to
+understand at least one published FMRI paper in some depth, with little
+assistance from their instructors.  We gave no example projects for them to
+review, or templates for them to follow.  As we have already described in the
+results, the submitted projects were all substantial efforts to reproduce and
+/ or extend the published results, and all included analysis code that they
+had written themselves.
 
 We did not teach the full range of neuroimaging analysis.  For example, we did
 not cover pre-processing of the data, random effects analysis, or inference
@@ -992,7 +992,7 @@ consciously taught the tools that we use ourselves, and that we would teach to
 students working with us.
 
 We could have used R instead of Python, but Python is a better language for
-teaching, and is better developed for neuroimaging and machine learning.
+teaching, and has seen more development for neuroimaging and machine learning.
 
 A more interesting question is whether we went too far in forcing the students
 to use expert tools.  For example, we required them to write their their
@@ -1040,7 +1040,9 @@ course went fairly quickly through basic programming ideas such as for loops,
 conditionals, and functions.  We could not have done this for students without
 any experience of programming.  In our psychology / neuroscience courses that
 used similar material, we required some experience of programming in a
-language such as Python, R or Matlab.
+language such as Python, R or Matlab.  It is possible that a brief
+introduction would be enough to fulfill this requirement, such as a bootcamp
+or multi-day intensive course.
 
 \subsection{Where would such a course fit in a curriculum?}
 
@@ -1061,13 +1063,13 @@ sequence, where the following courses would continue to use these tools for
 exposition and for project work.
 
 A full course on brain imaging might start with an introduction to Python and
-data analysis.  Something like this course would follow, introducing tools for
-efficient work with data and with Python code.  There should be follow-up
-courses using the same tools for more advanced topics such as
-machine-learning, spatial pre-processing, and analysis of other modalities.
-We suggest that each of these courses should have group project work as a
-large component, in which the student can continue to practice techniques for
-efficient reproducible analysis and collaboration.
+data analysis, possibly as a week-long bootcamp at the start of the semester.
+Something like this course would follow.  There should be follow-up courses
+using the same tools for more advanced topics such as machine-learning,
+spatial pre-processing, and analysis of other modalities. We suggest that each
+of these courses should have group project work as a large component, in which
+the student can continue to practice techniques for efficient reproducible
+analysis and collaboration.
 
 \subsection{What factors would influence the success of such a course?}
 
@@ -1080,11 +1082,17 @@ department, and an early advocate of what we would now call data science.  He
 put a heavy emphasis on computational teaching to statisticians.  Sandrine
 Dudoit is a professor in the statistics and biostatistics departments, and a
 founding core development of the Bioconductor project devoted to reproducible
-genomics research in R.  Many of the imaging labs in Berkeley take this issue
-seriously and transmit this to their students.  If that were not the case,
-then it would be correspondingly more difficult to persuade the students of
-the importance of working in a reproducible way, especially given the relative
-comfort and convenience of less disciplined working process.
+genomics research in R.  The then head of the statistics department, Philip
+Stark, is one of many Berkeley authors (including KJM) to contribute to the
+recent book ``The Practice of Reproducible Research``
+\citep{kitzes2018practice}. Outside statistics, several of the imaging labs in
+Berkeley take this issue seriously and transmit this to their students.  If
+there had not been such local interest in the problem of reproducibility, it
+would have been more difficult to persuade the students of the importance of
+working in a reproducible way, especially given the convenience of less
+disciplined working process.
+
+% KJM, FP writings, courses?
 
 Students of statistics and other disciplines at Berkeley are well aware of the
 importance of Python in scientific computing, and in industry.  Tech firms
@@ -1119,8 +1127,6 @@ create lots of little goals and checkpoints. You should always be working on
 something for the project, whether that's coding, reviewing, writing, etc. Ask
 lots of questions and ask them early!''
 \end{quotation}
-
-
 
 \section*{Conflict of Interest Statement}
 
