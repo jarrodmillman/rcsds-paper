@@ -529,58 +529,14 @@ depository of MRI and EEG datasets
 \citep{poldrack2013toward,poldrack2015openfmri}.
 %Each team chose a published neuroimaging study to investigate and
 %decided what they meant by \emph{investigate} in consultation with us.
-Each team's investigation involved
-acquiring, cleaning, and curating data;
-formulating scientific questions statistically;
-developing appropriate statistical methods
-to analyze the data to answer the scientific questions;
-implementing those methods in robust, testable, reusable, extensible software;
-applying the methods;
-visualizing the results;
-interpreting the results;
-and communicating the results to others.
-Every aspect of the project work was done in a computationally reproducible
-and collaborative way.
 
-\begin{figure}
-\centering
-\input{tree.tex}
-\caption{General caption ...}
-\label{fig:repo}
-\end{figure}
 
-\blockpar{Repository.}
-Once teams were formed, we created a publicly visible project repository for
-each team with a \LaTeX template for their project proposals.
-See Figure~\ref{fig:repo} for a skeleton project repository listing.
-
-All project artifacts were stored in this repository.
-We required students to use GitHub's pull request and review mechanism
-for any work contributed to the project and asked them to try to have
-three team members comment on each pull request.
-During the first few lectures, we covered this workflow in depth
-and made clear that the project grade would be based on
-(a) the final report,
-(b) the analysis code,
-(c) whether we could run their analysis code to reproduce all
-their results and figures, and
-(d) how effectively the team collaborated using the techniques
-taught in the course (e.g., pull requests, code review, testing).
-%https://github.com/berkeley-stat159/project-template
-Moreover, students were instructed to create a pull request
-or issue with code and text and \texttt{@mention} one or more of us,
-if they had any questions about their projects.
-
-%Students also used the Github Issues interface to record project discussions
-%and actions taken by the group members.
-
-%We told the students that we would use the Pull Request and Issue discussions
-%as evidence for their contributions to the project, and as data for their
-%final grades.
-
-\blockpar{Proposal.}
-Once we created repositories for each team, they had a week to propose what
-they would do for their projects.
+To ensure every aspect of the project work was done in a computationally
+reproducible and collaborative way, we immediately created a publicly visible
+project repository for each team.
+They then had a week to propose what they would do for their projects.
+We required them to use a \LaTeX template for their project proposals
+and to add the source file(s) to their project repository (see Figure~\ref{fig:repo}).
 The project proposals involved
 (a) identifying a published FMRI paper and the accompanying data,
 (b) explaining the basic idea of the paper in a paragraph,
@@ -589,56 +545,62 @@ downloaded passed basic sanity checks (e.g., correct number of subjects), and
 (d) explaining what approach they intended to take for exploring
 the data and paper.
 
+\begin{figure}
+\centering
+\input{tree.tex}
+\caption{General caption ...}
+\label{fig:repo}
+\end{figure}
+
 We read and discussed their project proposals and then meet with each
 team to help them refine their initial ideas.
 Most teams proposals were initially too ambitious, so our feedback
 was mostly around helping the students come up with more manageable
 goals.
- 
-\blockpar{Data.}
-Rather than having students commit raw data to their project repository, we had
-them commit code to download and validate all raw data used in their project.
-Write scripts ...
-For example, their project \texttt{README} might tell us that \texttt{make data}
-downloads all the relevant files for their study and \texttt{make validate}
-verifies the content of the downloaded files.
+\fixme{just the beginning of a collaborative process...}
 
-\blockpar{Code.}
-Most code was written as a collection of functions with tests with short
-scripts that called these functions to perform the project data analysis.
-
-All code submissions were added to the project via GitHub pull requests (PRs).
+We required students to use GitHub's pull requests (PRs) and review mechanism
+for any work contributed to the project.
 While we allowed students to decide when to merge PRs, we recommended that
 all PRs should have at least three participants, coverage should not decrease,
 and tests should pass before being merged.
+We covered this workflow in depth during lectures and in lab,
+and made clear that the project grade would be based on
+(a) the final report,
+(b) the analysis code,
+(c) whether we could run their analysis code to reproduce all
+their results and figures, and
+(d) how effectively the team collaborated using the techniques
+taught in the course (e.g., pull requests, code review, testing).
+%https://github.com/berkeley-stat159/project-template
 
-Pull requests, code review, continuous integration, coverage reporting
+Students also used the Github Issues interface to record project discussions
+and actions taken by the group members.
+Moreover, students were instructed to create a pull request
+or issue with code and text and \texttt{@mention} one or more of us,
+if they had any questions about their projects.
+We told the students that we would use the Pull Request and Issue discussions
+as evidence for their contributions to the project, and as data for their
+final grades.
 
-\blockpar{Slides.}
-Slides were written in Markdown.
+Rather than having students commit raw data to their project repository, we had
+them commit code to download and validate (using stored file checksums)
+all raw data used in their project.
+
+Most code was written as a collection of functions with tests with short
+scripts that called these functions to perform the project data analysis.
+\fixme{code review, continuous integration, coverage reporting}
+
+\fixme{Slides were written in Markdown.
 These plain text files were committed to the project repository.
-For example, if \texttt{progress.md} is the source file for a progress presentation,
-then the \texttt{Makefile} might have the following recipe for building a nicely
-formatted PDF file \texttt{progress.pdf}:
-\begin{verbatim}
-progress.pdf: progress.md
-        pandoc -t beamer -s progress.md -o progress.pdf
-\end{verbatim}
-
-In addition to using beamer,
+They used 
 Pandoc\footnote{\url{http://pandoc.org/MANUAL.html\#producing-slide-shows-with-pandoc}}
-can also output using other formats like reveal.js or slidy.
+to generate PDFs using beamer.
+Report was written in \LaTeX.
+They had to commit the final PDF of their reports as well as
+provide instructions for generating the PDF from the source
+\LaTeX files.}
 
-\blockpar{Report.}
-We committed the following three files to each project repository:
-\begin{itemize}
-\item \texttt{paper/report.tex}
-\item \texttt{paper/report.bib}
-\item \texttt{Makefile}
-\end{itemize}
-
-
-\blockpar{\texttt{README}.}
 Each project was required to put a \texttt{README} file at the top-level
 of their repository to explain how to install, configure,
 and run all aspects of their project.
@@ -658,6 +620,15 @@ The \texttt{README} also contained other pertinent information:
 for example, if the \texttt{make data} step downloads 5 Gb of data, it should
 warn users of this so they make sure they have enough disk space and are on a
 stable internet connection before trying to do so.
+
+\fixme{To ensure that all the projects would work.
+We offered to proofread everyone's reports and
+test that we could reproduce their reports.
+As always, we used the GitHub system to record all feedback.
+We also required that each group prepare a slide presentation
+discussing where things were and there plan for finalizing
+their project two weeks before they were due.
+Finally, we had each team reproduce another team's project.}
 
 \subsection{Neuroimaging data analysis}\label{analysis}
 
