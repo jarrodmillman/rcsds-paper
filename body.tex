@@ -415,16 +415,16 @@ which arose as we showed them how to analyze FMRI data.
 During the first part of the semester, we assigned two homeworks.
 Students had two weeks to work on each homework.
 Homeworks were assigned and submitted using private GitHub repositories.
-Typically, assignments were given as a collection of functions without full
-implementations.
-These functions were documented according to the NumPy documentation
+Typically, assignments were given as a collection of function templates with
+missing implementations.
+The functions were documented according to the NumPy documentation
 standard\footnote{\url{https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt}}
-and including unit tests.
+and included unit tests.
 See the code listing in Figure~\ref{fig:dna} for an example from the first homework.
 Students implemented the functions according to the documentation
 and ran the unit tests to check that their code at least
 returned the correct results for the provided tests.
-Assignments were grade using unit tests, which were not provided to
+Assignments were graded using unit tests, which were not provided to
 the students before they submitted their work.
 The homework reinforced the material we taught during the
 beginning of the course and mainly focused on scientific programming
@@ -506,8 +506,7 @@ without carefully recording and explaining them.
 If you have a toy dataset and a small handful of tiny functions, you can just
 throw them all in a directory and post them online.  As the datasets get
 larger and the analysis more complex, it becomes progressively harder to keep
-track of the analysis; this is the typical situation in the analysis of real
-data.
+track of the analysis; this situation is typical of the analysis of real data.
 
 %\begin{quote}
 %\begin{flushleft}
@@ -550,15 +549,15 @@ depository of MRI and EEG datasets
 
 We read and discussed their project proposals and then meet with each
 team to help them refine their initial ideas.
-Most teams proposals were initially too ambitious, so our feedback
+Most teams' proposals were initially too ambitious, so our feedback
 was mostly around helping the students come up with more manageable
 goals.
 \fixme{just the beginning of a collaborative process...
 This continued throughout the semester and was quite involved.
 Mirrors how we work with collaborators.}
 
-We required students to use GitHub's pull request (PR) and review mechanism
-for all project work.
+We required students to use GitHub's pull request (PR) mechanism to review all
+project work.
 While we allowed students to decide when to merge PRs, we recommended that
 all PRs should have at least three participants, test coverage should not decrease,
 and tests should pass before being merged.
@@ -575,8 +574,8 @@ taught in the course (e.g., pull requests, code review, testing).
 Students also used the GitHub Issues interface to record project discussions
 and actions taken by the group members.
 Moreover, students were instructed to create a PR
-or issue with code and text and use the Github interface to alert one or more
-of us, if they had any questions about their projects.
+or issue with code and text and use the Github interface to ask one or more
+of us to respond, if they had any questions about their projects.
 Periodically, we would review their work and open issues.
 We told the students that we would use the PR and Issue discussions
 as evidence for their contributions to the project, and as data for their
@@ -650,12 +649,12 @@ scheduled the teaching to give the students a sound background in standard
 neuroimaging statistical analysis with a linear model (GLM).
 
 All the following teaching used simple Python code to show them how the
-mathematics works in practice, and give them sample code that they edit and
-run for themselves -- see below for some examples.  We specifically avoided
-using off-the-shelf imaging analysis software packages, and encouraged the
-students to build their own analyses given the building blocks we had given
-them.  We interleaved teaching with short group exercises where students took
-the code from class and extended it to solve a new problem.
+mathematics works in practice, and to give them sample code that they could
+edit and run for themselves -- see below for some examples.  We specifically
+avoided using off-the-shelf imaging analysis software packages, and encouraged
+the students to build their own analyses given the building blocks we had
+given them.  We interleaved teaching with short group exercises where students
+took the code from class and extended it to solve a new problem.
 
 We covered the following topics:
 
@@ -679,15 +678,14 @@ We covered the following topics:
         box-car, with all rest periods having identical low activity, and all
         activity periods having identical high activity.  The FMRI acquisition
         measures something like blood flow, rather than neuronal activity, but
-        blood flow changes sluggishly in response to changes in neuronal
-        activity.  We introduced the linear-time-invariant assumption in
-        predicting the hemodynamic activity from the hypothesized neuronal
-        activity, and then the hemodynamic response function as the invariant
-        response.  Finally we demonstrated the mechanism of convolution as a
-        numerical method to express the effect of the hemodynamic response
-        function acting in a linear-time-invariant way, and the caveats to
-        these assumptions.  We now had hemodynamic regressors to fit to our
-        voxel time-course data.
+        blood flow changes slowly in response to changes in neuronal activity.
+        We introduced the linear-time-invariant assumption in predicting the
+        hemodynamic activity from the hypothesized neuronal activity, and then
+        the hemodynamic response function as the invariant response.  Finally
+        we demonstrated the mechanism of convolution as a numerical method to
+        express the effect of the hemodynamic response function acting in a
+        linear-time-invariant way, and the caveats to these assumptions.  We
+        now had hemodynamic regressors to fit to our voxel time-course data.
 \item
     Correlation as a simple test of linear association between the hemodynamic
         regressor and voxel signal.  Calculating correlation with a single
@@ -954,7 +952,7 @@ work.
 % Anecdote: students (5+) coming up on campus to remark how much they liked the
 % tools and process. they say the are using them for new work.
 
-\subsection{Do students need training in programming?}
+\subsection{Do students to be trained in programming?}
 
 One common justification for not training students in good coding practice, is
 the assertion that scientists do not need to be programmers.  Scientists do
