@@ -6,9 +6,9 @@ reproducible} when someone other than the original author of an analysis can
 produce on their own computer the reported results using the author's data,
 code, and instructions.}
 even between researchers in a single lab.
-The process of analysis is typically ad-hoc and informal; an analysis is often
-the fruit of a considerable amount of trial and error, based in part on scripts
-and data structures that the author inherited from past and current members of
+The process of analysis is typically ad-hoc and informal; the final analysis
+is often the fruit of a considerable amount of trial and error, based in part
+on scripts and data structures that the author inherited from other members of
 the lab.
 This \emph{process} is
 (a) confusing, leading to unclear hypotheses and conclusions,
@@ -25,13 +25,14 @@ continuous automatic test execution.
 
 Most researchers accept that learning these techniques is desirable, but
 object that a neuroimager has a limited amount of time they can spend in
-class.  This time should be spent learning an overview of neuroimaging
-analysis, rather than tools and process for efficient development.
+class.  They may argue that this time should be spent learning an overview of
+neuroimaging analysis, rather than tools and process for efficient
+development.
 
-In the course we describe here, we tested our suspicion that we could
+In the course we describe here, we tested our hypothesis that we could
 effectively teach \emph{both} the tools for efficient and reproducible work \emph{and}
-the principles of neuroimaging, by putting a substantial collaborative project
-at the heart of the course, and putting the tools into immediate practice.
+the principles of neuroimaging, by building the course around a substantial
+collaborative project, and putting the tools into immediate practice.
 
 At intake, our students had little or no prior exposure to neuroimaging,
 or to the computational tools and process we listed above.  We set them the
@@ -165,10 +166,9 @@ Computing with Data), STAT 134 (Concepts of Probability), and STAT 135
 (Concepts of Statistics).  Together these courses provide basic
 undergraduate-level familiarity with probability, statistics, and statistical
 computing in R.
-Many students were from statistics and/or computer science; however, we also
-had students from many disciplines including cognitive science, psychology, and
-architecture.
-During the 15-week long semester, students were provided three hours of class
+Many students were from statistics and/or computer science; other majors
+included cognitive science, psychology, and architecture.
+During the 15-week long semester, we gave three hours of class
 per week in two 90-minute sessions, plus two hours of labwork.
 Students were expected to work at least eight hours per week outside class.
 Project reports were due two weeks after the last class.
@@ -231,8 +231,8 @@ repeat tasks'' and ``save recent commands in a file for re-use.''
 The GUI interface of operating systems such as Windows and macOS can obscure
 the tree structure of the filesystem, and this in turn makes it harder for GUI
 users to think about the organization of data in hierarchy of directories and
-files.  The command line tools make the file system hierarchy explicit, and
-therefore, make it easier to reason about data organization.
+files.  The command line tools make the file system hierarchy explicit, and so
+make it easier to reason about data organization.
 
 Linux and macOS are native Unix platforms and provide Unix / Bash command line
 tools from a standard install.  Windows 10 provides the Unix / Bash tools as
@@ -243,8 +243,8 @@ Version control is a fundamental tool for organizing and storing code and
 other products of data analysis.
 Distributed version control allows many people to work in parallel on the
 same set of files.
-The tools associated with distributed version control make it much easier
-for collaborators to review each other's work and suggest changes.
+The tools associated with distributed version control make it easier for
+collaborators to review each other's work and suggest changes.
 
 Git is the distributed version control system that has become the standard in
 open source scientific computing. It is widely used in industry.
@@ -258,10 +258,13 @@ Python is a general purpose programming language,
 popular for teaching and prevalent in industry.
 It is used widely in science, with particular strength in data science,
 astronomy and genetics.
-Its strength in science rests on a stack of popular scientific libraries including
-as NumPy (computing with arrays), SciPy (scientific algorithms
+Its strength in science rests on a stack of popular scientific libraries
+including as NumPy (computing with arrays), SciPy (scientific algorithms
 including optimization and image processing), Matplotlib (2D plotting),
-Scikit-Learn (machine learning), and Pandas (data science).
+Scikit-Learn (machine learning), and Pandas (data science).  The Nibabel
+library \footnote{\url{http://nipy.org/nibabel}\label{nibabel}} loads file in
+standard brain image formats into memory as arrays for manipulations and
+display by the other packages.
 
 \blockpar{Pull requests and peer review.}
 Regular peer review is one of the most important ways of continuing to learn
@@ -272,6 +275,13 @@ GitHub, like other Git hosting platforms, provides an interface for creating
 ``Issues''.  These can be reports of errors in the code or analysis that need
 to be tracked, larger scale suggestions for changes, or items in a To Do list.
 
+``Pull requests'' are a Git interface feature pioneered by Github, that
+presents proposed changes to the shared repository in a convenient web
+interface. This allows collaborators to comment on the changes, ask questions,
+and suggest improvements.  The discussion on this interface forms a record of
+the decisions that the team makes, and a justification for each accepted set
+of changes.
+
 \blockpar{Functions and unit tests.}
 Functions are reusable blocks of code used to perform a specific task.
 They usually manipulate some input argument(s) and return some output
@@ -280,7 +290,7 @@ There are several advantages to organizing your code into functions rather
 than simply writing stream of consciousness scripts.
 First, functions allow you to ``hide'' the details of a discrete bit of
 code from view.
-This can be used to make the steps of your analysis easier to see.
+This can make it easier to see the high-level structure of your analysis.
 Second, it encourages you to think of your program as a collection of sub-steps.
 Third, it allows you to reuse code instead of rewriting or copying and editing
 it.
@@ -288,8 +298,17 @@ Fourth, it enables you to keep your variable namespace clean.
 Finally, it also allows you to test small parts of your program in isolation
 from the rest.
 
-unit tests, doctests
+Testing is an essential discipline to give some assurance that the code
+continues to work as expected, to demonstrate that this is the case to other
+users of the code, and to document how the code is expected to work.
+Inexperienced coders typically greatly underestimate how often they make
+errors; expecting, finding and fixing errors is an essential part of being
+able to learn from continued practice.  We taught students to test their code
+thoroughly.  There are tools that can measure how much of the code has been
+covered by the tests -- this is ``test coverage''. We expected students to
+keep test coverage high, typically above 80\%.
 
+% unit tests doctests
 
 \blockpar{Continuous integration.}
 Several services to build and test software projects on GitHub 
@@ -297,7 +316,8 @@ building on the unit tests ...
 coverage reports...
 
 \blockpar{Document processing and markup languages.}
-Separating the content from the format of a document is useful.
+Separating the content from the format of a document is important for reducing
+visual clutter as you write and edit documents.
 A markup language allows for generation of content in plain text, while also
 maintaining a set of special syntax to annotate the content with structural
 information.
@@ -316,11 +336,29 @@ However, when working in the Unix command line environment, you are constantly
 generating files by performing a sequence of commands perhaps depending on
 other files.
 %While exploring running these commands by hand is common.
-Makefiles are machine-readable text files enabling reproducible workflows.
-A basic \texttt{Makefile} consists of ``rules'' of the following form:
+Makefiles are machine-readable text files that associate labels for tasks with
+the recipe for that task.
+
+For example a Makefile could define a label \textt{get_data}, thus:
+
 \begin{verbatim}
-            target: sourcefile(s)
-                command(s)
+            get_data
+                # Fetch the data archive from Amazon Web Services
+                wget -N http://openfmri.s3.amazonaws.com/tarballs/ds005_raw.tgz
+                # Unpack the data into the current directory
+                tar zxvf ds005_raw.tgz
+\end{verbatim}
+
+Like functions in code, using these labels can make it easier to see the
+structure of a set of tasks.  For example, the whole analysis might be
+expressed as a series of labels supplied to Make:
+
+\begin{verbatim}
+    make get_data
+    make validate_data
+    make analysis
+    make figures
+    make report
 \end{verbatim}
 
 \subsubsection{Lectures, labs, notes, homeworks, readings, and quizzes}
@@ -328,13 +366,17 @@ A basic \texttt{Makefile} consists of ``rules'' of the following form:
 The weekly lectures and labs prepared students---through a
 series of examples and guided exercises---with the basic skills and
 background needed for the group project.
-While we demonstrated basic methods and tools during lecture and lab,
-students were expected to do additional research and reading in the course
-of working on the group project.
-For example, we only gave one or two lectures on Unix, Git, Python, Testing, and NumPy.
-However, weekly labs focused on the software stack.
-Course work made heavy use of the toolstack.
-All course work was version controlled with Git and submitted via GitHub. 
+We demonstrated basic methods and tools during lecture and lab,
+and expected students to do additional research and reading as they worked on
+the group project.
+For example, we only gave one or two lectures on each of Unix, Git, Python,
+Testing, and NumPy.
+Each weekly lab would focus on the software stack from previous lectures;
+after the Git lecture, we began to use Git and Github to fetch and submit all
+exercises;
+after we taught on testing, we continually reinforced testing in the labs.
+Course work outside labs also made heavy use of the toolstack, including each
+new tool as it was introduced in lectures.
 
 % first lecture topic
 For the first three lectures, we briefly introduced students to the Unix
@@ -362,8 +404,8 @@ which arose as we showed them how to analyze FMRI data.
 During the first part of the semester, we assigned two homeworks.
 Students had two weeks to work on each homework.
 Homeworks were assigned and submitted using private GitHub repositories.
-Typically, assignments were given as a collection of unimplemented
-functions.
+Typically, assignments were given as a collection of functions without full
+implementations.
 These functions were documented according to the NumPy documentation
 standard\footnote{\url{https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt}}
 and including unit tests.
@@ -413,16 +455,16 @@ For the ``assignment'' portion of the reading, students were asked to compose
 a two-paragraph write-up that both summarized the main points of the article,
 and commented on it from their personal perspective.
 
-The labs and quizzes emphasized hands-on 
-experience with the computing tools and best-practices associated with
-reproducible and collaborative computing (e.g., version control, \LaTeX, etc.).
-Multiple choice quizzes were held at the beginning of lab sessions, and heavily
+The labs and quizzes emphasized hands-on experience with the computing tools
+and process associated with reproducible and collaborative computing (e.g.,
+version control, \LaTeX, etc.).
+Multiple choice quizzes were held at the beginning of lab sessions, and
 emphasized the computing aspects of the course material as
 opposed to the statistical and neuroimaging components covered in the lectures.
 The remainder of the lab was devoted to providing hands-on experience via
 collaborative work on breakout exercises.
-These breakout exercises were formulated as small ``projects'' that were to be
-attacked by groups of students with 3 to 4 students per team.
+These breakout exercises were formulated as small ``projects'' to be worked on
+in groups of 3 to 4 students.
 Prior to the breakout session, a small review of material relevant for the 
 exercises was presented, often in the form of an interactive Jupyter notebook.
 
@@ -440,19 +482,21 @@ We used their summaries to inform a subsequent discussion about code review.
 
 \subsection{Course project}\label{project}
 
-The course centered around a semester-long group project.
+The course centered around a semester-long group project accounting for 55\%
+of the overall course grade.
 Students worked in teams on their projects for three months.
 %Students formed teams at the start of week 5 and final reports were submitted
 %at the end of week 17.
-The reason the project lasted for so long and was such a large portion of the grade (55\%)
-is that we believe computational reproducibility and collaboration
-are too abstract in the absence of a significant concrete project.
+We centered the course on the group project because we believe computational
+reproducibility and collaboration are too abstract in the absence of a
+significant concrete project.
 If a project lasts just a few weeks, it is easy to remember all the steps
-without carefully tracking them.
-If you have a tiny dataset and a small handful of tiny functions, you can just
-throw them all in a directory and post them online.
-Problems compound as data grows and analysis complexity increases as lines of
-code multiply.
+without carefully recording and explaining them.
+If you have a toy dataset and a small handful of tiny functions, you can just
+throw them all in a directory and post them online.  As the datasets get
+larger and the analysis more complex, it becomes progressively harder to keep
+track of the analysis; this is the typical situation in the analysis of real
+data.
 
 %\begin{quote}
 %\begin{flushleft}
@@ -505,7 +549,7 @@ Mirrors how we work with collaborators.}
 We required students to use GitHub's pull request (PR) and review mechanism
 for all project work.
 While we allowed students to decide when to merge PRs, we recommended that
-all PRs should have at least three participants, coverage should not decrease,
+all PRs should have at least three participants, test coverage should not decrease,
 and tests should pass before being merged.
 We covered this workflow in depth during lectures and in lab,
 and made clear that the project grade would be based on
@@ -520,8 +564,8 @@ taught in the course (e.g., pull requests, code review, testing).
 Students also used the GitHub Issues interface to record project discussions
 and actions taken by the group members.
 Moreover, students were instructed to create a PR
-or issue with code and text and \texttt{@mention} one or more of us,
-if they had any questions about their projects.
+or issue with code and text and use the Github interface to alert one or more
+of us, if they had any questions about their projects.
 Periodically, we would review their work and open issues.
 We told the students that we would use the PR and Issue discussions
 as evidence for their contributions to the project, and as data for their
@@ -539,7 +583,7 @@ scripts that called these functions to perform the project data analysis.
 These plain text files were committed to the project repository.
 They used 
 Pandoc\footnote{\url{http://pandoc.org/MANUAL.html\#producing-slide-shows-with-pandoc}}
-to generate PDFs using beamer.
+to generate PDFs that could be used as presentation slides.
 Report was written in \LaTeX.
 They had to commit the final PDF of their reports as well as
 provide instructions for generating the PDF from the source
@@ -553,7 +597,7 @@ when determining whether we could reproduce their work.
 Each \texttt{README} clearly stated  how to operate the
 components of the project and in what order to do so.
 In particular, they were required to include a section with
-an enumerated list of task to carry out, like:
+an enumerated list of task to carry out, such as:
 \begin{verbatim}
     make data - downloads the data 
     make validate - ensure the data is not corrupted
@@ -576,6 +620,8 @@ discussing where things were and there plan for finalizing
 their project two weeks before they were due.
 Finally, we had each team reproduce another team's project.}
 
+\fixme{More details about 'each team reproduce' ... ?}
+
 \subsection{Neuroimaging data analysis}\label{analysis}
 
 When teaching neuroimaging data analysis, our aim was for students to
@@ -583,8 +629,8 @@ When teaching neuroimaging data analysis, our aim was for students to
 and how they relate to the wider world of statistics, engineering, and computer science;
 (b) be comfortable working with neuroimaging data and code, so they can write
 their own basic algorithms, and understand other people's code;
-(c) work with code and data in a way that will save them time, help them collaborate,
-and prepare them to continue learning.
+(c) continue to use the computational techniques we had taught them to improve
+efficiency and help their understanding.
 
 For this course we concentrated on the statistical analysis of FMRI data.  We
 scheduled the teaching to give the students a sound background in standard
@@ -607,9 +653,8 @@ We covered the following topics:
 \item
     The standard neuroimaging NIfTI image format as a simple image container,
         with metadata (such as shape) and image pixel / voxel data stored as
-        numbers.  Using the Nibabel Python package
-        \footnote{\url{http://nipy.org/nibabel}} to load NIfTI data as
-        three-dimensional arrays.
+        a sequence of numbers.  We used the Nibabel Python package
+        \cref{nibabel} to load NIfTI data as three-dimensional arrays.
 \item
     Four dimensional (4D) images as sequential time-series of 3D image
         volumes.  Slicing arrays to get individual volumes from the 4D
@@ -674,8 +719,11 @@ We covered the following topics:
 See \cref{glm_intro} for an example lesson showing our use of Python code to
 illustrate the mathematical and statistical ideas.
 
-% An example lesson illustrating the approach
 % An exercise as illustration.
+
+%%% Jarrod - can you use your LaTeX foo to put the top of
+%%% assignments-2015/diagnostics/diagnostics.md here as a figure?
+
 % Kind-of flipped.
 % Centered on the project.
 
@@ -692,10 +740,14 @@ prompt feedback to help clarify the motivation and goals of each project.
 This feedback process continued throughout the semester, with students 
 submitting drafts according to milestones defined within the project
 timeline.
+
 Feedback was not only provided to the students from the instructors: the
 project evaluations included peer-review, where each research team was
 responsible for cloning another team's project, running the tests and analyses,
 and evaluating the resulting technical document.
+
+\fixme{Shouldn't these two paras above be in the material and methods?}
+
 The peer-review process proved particularly valuable, as the students 
 benefited greatly from the exposure to the coding techniques and 
 organizational principles of their peers.
@@ -722,7 +774,7 @@ documentation they provided.
 The code tests were also evaluated with respect to code coverage
 and thoroughness.
 The collaborative aspects of the project were evaluated using the information
-from the project history provided by the version control, including
+from the project history provided by version control, including
 individual contributions and reviewing pull requests.
 Finally, the technical quality of the project was evaluated both in terms of
 the clarity of the final report and with respect to how well the proposed
@@ -736,7 +788,7 @@ of published research from the OpenFMRI datasets using the neuroimaging
 analysis methods introduced in the course.
 For example, several teams chose to focus on the open dataset provided by a
 study entitled \textit{The neural basis of loss aversion in decision-making
-under risk}\cite{tom2007neutral}.
+under risk}\cite{tom2007neural}.
 The research teams implemented analyses based on the linear model (GLM) as
 well as extending the analysis to include other regression techniques, comparing
 their results to those of the published study.
@@ -762,6 +814,9 @@ Most teams demonstrated a solid understanding of the neuroimaging methods introd
 in the course by implementing analyses to replicate published results; and 
 several went beyond this to expand their investigations to novel applications
 of the open data.
+
+\fixme{I feel the need for a bit more detail about what they implemented in
+their own code?  Did they mostly use custom code for the GLM?  For PCA?}
 
 \section{Discussion}\label{discussion}
 
@@ -867,20 +922,21 @@ using GitHub tools such as the issue tracker and pull requests.
 We set and marked code exercises with Git version control and text files,
 rather than interactive alternatives, such as Jupyter Notebooks.
 
-Of course some students complained that they would rather use Facebook chat
-for pasting code fragments and Powerpoint for their presentation slides.
+Of course some students complained that they would rather use Facebook for
+code discussions and Powerpoint for their presentation slides.
 Should we have allowed them to do this?  We believe not.  Our own experience
 of using the tools we taught is that their true power only becomes apparent
 when you learn to use them for all the tasks of analysis, including generating
 reports and presentations.  Mixing ``easy'' but heavy tools like Powerpoint
 and Facebook with ``simple'' and light tools like text editors and Markdown
 causes us to lose concentration as we switch modes from heavy to light and
-back again. It is easy to be distracted by the difficulty of getting used to
-the light tools, and therefore fail to notice the clarity of thought and
+back again. It is easy to be put off by the difficulty of getting used to the
+light tools, and therefore fail to notice the clarity of thought and
 transparency of process that they quickly bring.  Successfully switching from
 heavy to light is a process that requires patience and support; it is best
 done in the context of a class where there are examples of use from coursework
-and support from experienced instructors.
+and support from experienced instructors who use these tools in their daily
+work.
 
 % Anecdote: students (5+) coming up on campus to remark how much they liked the
 % tools and process. they say the are using them for new work.
@@ -936,13 +992,13 @@ We think of this course as a foundation.  Students graduating from this course
 will be more effective in learning and analysis.  The tools that they have
 learned allow the instructor to build analyses from simple blocks, to
 show them how algorithms work, and make them simple to extend.  We therefore
-suggest that something like this course should be a first course in a
-sequence, where the following courses would continue to use these tools for
-exposition and for project work.
+suggest that course like ours should be first in a sequence, where the
+following courses would continue to use these tools for exposition and for
+project work.
 
 A full course on brain imaging might start with an introduction to Python and
 data analysis, possibly as a week-long bootcamp at the start of the semester.
-Something like this course would follow.  There should be follow-up courses
+Something like our course would follow.  There should be follow-up courses
 using the same tools for more advanced topics such as machine-learning,
 spatial pre-processing, and analysis of other modalities. We suggest that each
 of these courses should have group project work as a large component, in which
