@@ -333,7 +333,7 @@ A markup language allows for generation of content in plain text, while also
 maintaining a set of special syntax to annotate the content with structural
 information.
 In this way, the plain-text or ``source'' files are human-readable and easy to
-version control.
+use with version control.
 To produce the final document, the source files must undergo a build or render
 step where the markup syntax (and any associated style files) are passed to a
 tool that knows how to interpret and render the content.
@@ -350,10 +350,11 @@ other files.
 Makefiles are machine-readable text files that associate labels for tasks with
 the recipe for that task.
 
-For example a Makefile could define a label \texttt{get\_data}, thus:
+For example a Makefile could define a label \texttt{get\_data} with its
+associated recipe, like this:
 
 \begin{verbatim}
-    get_data
+    get_data:
         # Fetch the data archive from Amazon Web Services
         wget -N http://openfmri.s3.amazonaws.com/tarballs/ds005_raw.tgz
         # Unpack the data into the current directory
@@ -390,11 +391,11 @@ Course work outside labs also made heavy use of the toolstack, including each
 new tool as it was introduced in lectures.
 
 % first lecture topic
-For the first three lectures, we briefly introduced students to the Unix
-environment and started teaching them Git, a popular version control system.
+For the first three lectures, we introduced students to the Unix environment
+and started teaching them version control using Git.
 The fourth lecture was a high-level introduction to neuroimaging and
 functional magnetic resonance imaging (or FMRI).
-Then we quickly introduced students to scientific computing with Python.
+We then introduced students to scientific computing with Python.
 Students were referred to our course notes on
 Bash,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/bash.html}}
 Git,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/git-intro.html}}
@@ -406,8 +407,7 @@ and \LaTeX.\footnote{\url{https://www.youtube.com/watch?v=8khoelwmMwo}}
 %\footnote{\url{http://github.com/berkeley-scf/tutorial-latex-intro}}
 
 % second lecture topic
-By the the ninth lecture, we started focusing on analyzing FMRI data
-with Python.
+By the ninth lecture, we started focusing on analyzing FMRI data with Python.
 The data analysis lectures continued to develop the students skills with
 Unix and scientific Python software stack through practical problems,
 which arose as we showed them how to analyze FMRI data.
