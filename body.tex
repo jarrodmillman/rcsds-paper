@@ -323,9 +323,8 @@ are large free services such as Travis CI
 like Github. We set up each project with a configuration file for Travis CI
 such that all their tests would be run and reported on remote servers, each
 time they changed their code on the Github hosting site.  We added automated
-code coverage testing, so they would get an automated measure of the lines of
-code covered by tests. This also ran and reported whenever they changed the
-code.
+code coverage testing; each change to the code on Github resulted in a measure
+of the proportion of all code lines covered by tests.
 
 \blockpar{Document processing and markup languages.}
 Separating the content from the format of a document is important for reducing
@@ -354,11 +353,11 @@ the recipe for that task.
 For example a Makefile could define a label \texttt{get\_data}, thus:
 
 \begin{verbatim}
-            get_data
-                # Fetch the data archive from Amazon Web Services
-                wget -N http://openfmri.s3.amazonaws.com/tarballs/ds005_raw.tgz
-                # Unpack the data into the current directory
-                tar zxvf ds005_raw.tgz
+    get_data
+        # Fetch the data archive from Amazon Web Services
+        wget -N http://openfmri.s3.amazonaws.com/tarballs/ds005_raw.tgz
+        # Unpack the data into the current directory
+        tar zxvf ds005_raw.tgz
 \end{verbatim}
 
 Like functions in code, using these labels can make it easier to see the
