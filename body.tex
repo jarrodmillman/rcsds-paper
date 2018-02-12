@@ -10,7 +10,7 @@ The process of analysis is typically ad-hoc and informal; the final analysis
 is often the fruit of a considerable amount of trial and error, based in part
 on scripts and data structures that the author inherited from other members of
 the lab.
-This \emph{process} is
+This process is
 (a) confusing, leading to unclear hypotheses and conclusions,
 (b) error prone, leading to incorrect conclusions and greater confusion,
 and (c) an impractical foundation on which to build reproducible analyses.
@@ -100,18 +100,17 @@ The assumption is that the student will either know or pick up some of the
 mathematical and practical foundations later, with the big picture as a
 framework to guide them in choosing what to learn.
 
-Our experience is that this assumption is incorrect.  It is rare for students
-to go on to learn these foundations. They continue as they were when they
-leave the course, as inefficient practitioners, and unable to reason about
-their analysis.
+In fact we find that it is rare for students to go on to learn these
+foundations. They usually continue as they were when they leave the course, as
+inefficient practitioners, and unable to reason about their analysis.
 
 We have particular experience of this in our teaching of the General Linear
 Model (GLM)
 \citep{poline2012general}.\footnote{\url{http://imaging.mrc-cbu.cam.ac.uk/imaging/PrinciplesStatistics}}\footnote{\url{http://matthew-brett.github.io/teaching/glm_intro.html}\label{glm_intro}}.
-The GLM is a widely-used term in neuroimaging, to refer
-to the generalization of multiple regression to analysis of variance (ANOVA)
-and other standard group comparisons.  Statisticians generally prefer the term
-``linear regression model'' or, simply, ``linear model.''
+The GLM is a widely-used term in neuroimaging, to refer to the generalization
+of multiple regression to analysis of variance (ANOVA) and other standard
+group comparisons.  Statisticians generally prefer the term ``linear
+regression model'' or, simply, ``linear model.''
 
 Functional imaging packages present the linear model as a matrix formulation
 of multiple regression.  Many students have not taken linear algebra, or if
@@ -126,7 +125,7 @@ their understanding in their later education.
 % we also believe that it is relatively easy to pick up the big picture once
 % you have the foundation
 
-In contrast to the traditional approach, we put our own emphasis on:
+In contrast to the traditional approach, we emphasize:
 
 \begin{itemize}
 
@@ -175,7 +174,7 @@ Project reports were due two weeks after the last class.
 
 \subsection{Course overview}
 
-The Berkeley course catalog had the following description of our course:
+Here is the Berkeley course catalog entry for our course:
 
 \begin{quote}
 A project-based introduction to statistical data analysis. Through case
@@ -187,17 +186,18 @@ process automation, code review, and collaborative programming.
 Software tools include Bash, Git, Python, and \LaTeX.
 \end{quote}
 
-Our objective for the course was for students to
-(a) be proficient at the Unix command line,
-(b) be fluent in using version control with Git,
-(c) be able to write documents in Markdown and \LaTeX,
-(d) be familiar with scientific computing in Python,
-(e) understand the computational and statistical issues involved with reproducibility, and
-(f) be familiar with computational issues in modern statistical data
+Our objective for the course was for students to be
+(a) proficient at the Unix command line,
+(b) fluent in using version control with Git,
+(c) able to write documents in Markdown and \LaTeX,
+(d) familiar with scientific computing in Python,
+(e) able to understand the computational and statistical issues involved with
+reproducibility, and
+(f) familiar with computational issues in modern statistical data
 analysis through hands-on analysis of neuroimaging data.
 
 In particular, we wanted to show our students how to apply these methods to
-investigating a real scientific question, that they had chosen themselves.
+investigate a real scientific question, that they had chosen themselves.
 
 \subsubsection{Tools and process}
 
@@ -255,32 +255,31 @@ testing and issue tracking (see below).
 
 \blockpar{Scientific computing with Python.}
 Python is a general purpose programming language,
-popular for teaching and prevalent in industry.
-It is used widely in science, with particular strength in data science,
-astronomy and genetics.
-Its strength in science rests on a stack of popular scientific libraries
-including as NumPy (computing with arrays), SciPy (scientific algorithms
-including optimization and image processing), Matplotlib (2D plotting),
-Scikit-Learn (machine learning), and Pandas (data science).  The Nibabel
-library \footnote{\url{http://nipy.org/nibabel}\label{nibabel}} loads file in
-standard brain image formats into memory as arrays for manipulations and
-display by the other packages.
+popular for teaching and prevalent in industry and academia.
+In science, it has particular strength in
+astronomy and genetics, and data science.
+Its impact in scientific computing rests on a stack of popular scientific
+libraries including NumPy (computing with arrays), SciPy (scientific
+algorithms including optimization and image processing), Matplotlib (2D
+plotting), Scikit-Learn (machine learning), and Pandas (data science).  The
+Nibabel library \footnote{\url{http://nipy.org/nibabel}\label{nibabel}} loads
+file in standard brain image formats into memory as arrays for manipulations
+and display by the other packages.
 
 \blockpar{Pull requests and peer review.}
 Regular peer review is one of the most important ways of continuing to learn
 to be an effective author of correct code and data analysis.  Git and its
 various web platforms provide a powerful tool for peer review.
 
-GitHub, like other Git hosting platforms, provides an interface for creating
-``Issues''.  These can be reports of errors in the code or analysis that need
-to be tracked, larger scale suggestions for changes, or items in a To Do list.
-
 ``Pull requests'' are a Git interface feature pioneered by Github, that
 presents proposed changes to the shared repository in a convenient web
 interface. This allows collaborators to comment on the changes, ask questions,
 and suggest improvements.  The discussion on this interface forms a record of
-the decisions that the team makes, and a justification for each accepted set
-of changes.
+decisions, and a justification for each accepted set of changes.
+
+GitHub, like other Git hosting platforms, provides an interface for creating
+``Issues''.  These can be reports of errors in the code or analysis that need
+to be tracked, larger scale suggestions for changes, or items in a To Do list.
 
 \blockpar{Functions and unit tests.}
 Functions are reusable blocks of code used to perform a specific task.
@@ -290,7 +289,7 @@ There are several advantages to organizing your code into functions rather
 than simply writing stream of consciousness scripts.
 First, functions allow you to ``hide'' the details of a discrete bit of
 code from view.
-This can make it easier to see the high-level structure of your analysis.
+This can make it easier to see the higher-level structure of your analysis.
 Second, it encourages you to think of your program as a collection of sub-steps.
 Third, it allows you to reuse code instead of rewriting or copying and editing
 it.
@@ -298,22 +297,35 @@ Fourth, it enables you to keep your variable namespace clean.
 Finally, it also allows you to test small parts of your program in isolation
 from the rest.
 
-Testing is an essential discipline to give some assurance that the code
-continues to work as expected, to demonstrate that this is the case to other
-users of the code, and to document how the code is expected to work.
+Testing is an essential discipline to give some assurance to the authors and
+other users that the code
+continues to work as expected. The tests should also document how the code is
+expected to be used.
 Inexperienced coders typically greatly underestimate how often they make
 errors; expecting, finding and fixing errors is an essential part of being
 able to learn from continued practice.  We taught students to test their code
-thoroughly.  There are tools that can measure how much of the code has been
-covered by the tests -- this is ``test coverage''. We expected students to
-keep test coverage high, typically above 80\%.
+thoroughly.  There are tools that can measure how what proportion of the lines
+of code have covered by the tests -- this is ``test coverage''. We expected
+students to keep test coverage high, typically above 80\%.
 
 % unit tests doctests
 
 \blockpar{Continuous integration.}
-Several services to build and test software projects on GitHub 
-building on the unit tests ...
-coverage reports...
+
+Tests are not useful if they are not run, or if the authors do not see the
+results.  Modern code quality control includes ``continuous integration
+testing'', a practice that guarantees that the tests are run frequently and
+automatically, and the results are reported back to the coding team.
+
+Fortunately, this practice has become so ubiquitous in open-source, that there
+are large free services such as Travis CI
+\footnote{\url{https://travis-ci.org}} that integrate with code hosting sites
+like Github. We set up each project with a configuration file for Travis CI
+such that all their tests would be run and reported on remote servers, each
+time they changed their code on the Github hosting site.  We added automated
+code coverage testing, so they would get an automated measure of the lines of
+code covered by tests. This also ran and reported whenever they changed the
+code.
 
 \blockpar{Document processing and markup languages.}
 Separating the content from the format of a document is important for reducing
@@ -578,11 +590,13 @@ all raw data used in their project.
 Most code was written as a collection of functions with tests with short
 scripts that called these functions to perform the project data analysis.
 \fixme{code review, continuous integration, coverage reporting}
+\fixme{What was the test coverage of the individual projects?}
 
 \fixme{Slides were written in Markdown.
 These plain text files were committed to the project repository.
-They used 
+They used
 Pandoc\footnote{\url{http://pandoc.org/MANUAL.html\#producing-slide-shows-with-pandoc}}
+-- a command line document processor --
 to generate PDFs that could be used as presentation slides.
 Report was written in \LaTeX.
 They had to commit the final PDF of their reports as well as
@@ -1046,8 +1060,9 @@ We required students to use \LaTeX to write their final reports.  This was an
 easy sell to statistics students, as \LaTeX is widely used in statistics.
 Students outside mathematical fields might be less agreeable; if we were
 teaching psychology and neuroscience students, we might choose
-another plain text markup language, such as Markdown, run through Pandoc
-software to write publication quality output.
+another plain text markup language, such as Markdown, with the text files run
+through the Pandoc \footnote{\url{http://pandoc.org}} document processor to
+write publication quality output.
 
 \section{Conclusion}\label{conclusion}
 
