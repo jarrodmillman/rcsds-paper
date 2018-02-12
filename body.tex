@@ -106,7 +106,7 @@ inefficient practitioners, and unable to reason about their analysis.
 
 We have particular experience of this in our teaching of the General Linear
 Model (GLM)
-\citep{poline2012general}.\footnote{\url{http://imaging.mrc-cbu.cam.ac.uk/imaging/PrinciplesStatistics}}\footnote{\url{http://matthew-brett.github.io/teaching/glm_intro.html}\label{glm_intro}}.
+\citep{poline2012general}.\footnote{\url{http://imaging.mrc-cbu.cam.ac.uk/imaging/PrinciplesStatistics}}\footnote{\url{http://matthew-brett.github.io/teaching/glm_intro.html}\label{glm_intro}}
 The GLM is a widely-used term in neuroimaging, to refer to the generalization
 of multiple regression to analysis of variance (ANOVA) and other standard
 group comparisons.  Statisticians generally prefer the term ``linear
@@ -271,14 +271,14 @@ Regular peer review is one of the most important ways of continuing to learn
 to be an effective author of correct code and data analysis.  Git and its
 various web platforms provide a powerful tool for peer review.
 
-``Pull requests'' are a Git interface feature pioneered by Github, that
+``Pull requests'' are a Git interface feature pioneered by GitHub, that
 presents proposed changes to the shared repository in a convenient web
 interface. This allows collaborators to comment on the changes, ask questions,
 and suggest improvements.  The discussion on this interface forms a record of
 decisions, and a justification for each accepted set of changes.
 
 GitHub, like other Git hosting platforms, provides an interface for creating
-``Issues''.  These can be reports of errors in the code or analysis that need
+``Issues.''  These can be reports of errors in the code or analysis that need
 to be tracked, larger scale suggestions for changes, or items in a To Do list.
 
 \blockpar{Functions and unit tests.}
@@ -305,25 +305,23 @@ Inexperienced coders typically greatly underestimate how often they make
 errors; expecting, finding and fixing errors is an essential part of being
 able to learn from continued practice.  We taught students to test their code
 thoroughly.  There are tools that can measure how what proportion of the lines
-of code have covered by the tests -- this is ``test coverage''. We expected
-students to keep test coverage high, typically above 80\%.
+of code have covered by the tests---this is ``test coverage.''
 
 % unit tests doctests
 
 \blockpar{Continuous integration.}
-
 Tests are not useful if they are not run, or if the authors do not see the
 results.  Modern code quality control includes ``continuous integration
-testing'', a practice that guarantees that the tests are run frequently and
+testing,'' a practice that guarantees that the tests are run frequently and
 automatically, and the results are reported back to the coding team.
 
 Fortunately, this practice has become so ubiquitous in open-source, that there
 are large free services such as Travis CI
 \footnote{\url{https://travis-ci.org}} that integrate with code hosting sites
-like Github. We set up each project with a configuration file for Travis CI
+like GitHub. We set up each project with a configuration file for Travis CI
 such that all their tests would be run and reported on remote servers, each
-time they changed their code on the Github hosting site.  We added automated
-code coverage testing; each change to the code on Github resulted in a measure
+time they changed their code on the GitHub hosting site.  We added automated
+code coverage testing; each change to the code on GitHub resulted in a measure
 of the proportion of all code lines covered by tests.
 
 \blockpar{Document processing and markup languages.}
@@ -384,7 +382,7 @@ the group project.
 For example, we only gave one or two lectures on each of Unix, Git, Python,
 Testing, and NumPy.
 Each weekly lab would focus on the software stack from previous lectures;
-after the Git lecture, we began to use Git and Github to fetch and submit all
+after the Git lecture, we began to use Git and GitHub to fetch and submit all
 exercises;
 after we taught on testing, we continually reinforced testing in the labs.
 Course work outside labs also made heavy use of the toolstack, including each
@@ -574,7 +572,7 @@ taught in the course (e.g., pull requests, code review, testing).
 Students also used the GitHub Issues interface to record project discussions
 and actions taken by the group members.
 Moreover, students were instructed to create a PR
-or issue with code and text and use the Github interface to ask one or more
+or issue with code and text and use the GitHub interface to ask one or more
 of us to respond, if they had any questions about their projects.
 Periodically, we would review their work and open issues.
 We told the students that we would use the PR and Issue discussions
@@ -589,17 +587,17 @@ Most code was written as a collection of functions with tests with short
 scripts that called these functions to perform the project data analysis.
 \fixme{code review, continuous integration, coverage reporting}
 \fixme{What was the test coverage of the individual projects?}
+We expected students to keep test coverage high, typically above 90\%.
 
-\fixme{Slides were written in Markdown.
+Slides were written in Markdown.
 These plain text files were committed to the project repository.
-They used
-Pandoc\footnote{\url{http://pandoc.org/MANUAL.html\#producing-slide-shows-with-pandoc}}
--- a command line document processor --
-to generate PDFs that could be used as presentation slides.
-Report was written in \LaTeX.
+They used Pandoc---a command line document processor---to generate
+PDFs that could be used as presentation
+slides.\footnote{\url{http://pandoc.org/MANUAL.html\#producing-slide-shows-with-pandoc}}
+Reports were written in \LaTeX.
 They had to commit the final PDF of their reports as well as
 provide instructions for generating the PDF from the source
-\LaTeX files.}
+\LaTeX files.
 
 Each project was required to put a \texttt{README} file at the top-level
 of their repository to explain how to install, configure,
@@ -712,11 +710,11 @@ We covered the following topics:
         this regressor (using linear interpolation) at the scan onset times.
 \item
     Parametric modulation of event regressors.  Some of the OpenFMRI datasets
-        that the students had chosen used regresssors to model parametric
+        that the students had chosen used regressors to model parametric
         module of events.  There is one regressor to model the hemodynamic
         effect of a particular event type on average, and another to capture
         the variation of the hemodynamic event activity as a linear function
-        of some charactistic of that event, such as duration or intensity.
+        of some characteristic of that event, such as duration or intensity.
 \item
     Spatial smoothing with a Gaussian kernel; smoothing as a form of
     convolution.
@@ -799,7 +797,7 @@ of published research from the OpenFMRI datasets using the neuroimaging
 analysis methods introduced in the course.
 For example, several teams chose to focus on the open dataset provided by a
 study entitled \textit{The neural basis of loss aversion in decision-making
-under risk}\cite{tom2007neural}.
+under risk} \citep{tom2007neural}.
 The research teams implemented analyses based on the linear model (GLM) as
 well as extending the analysis to include other regression techniques, comparing
 their results to those of the published study.
@@ -952,7 +950,7 @@ work.
 % Anecdote: students (5+) coming up on campus to remark how much they liked the
 % tools and process. they say the are using them for new work.
 
-\subsection{Do students to be trained in programming?}
+\subsection{Do students need to be trained in programming?}
 
 One common justification for not training students in good coding practice, is
 the assertion that scientists do not need to be programmers.  Scientists do
