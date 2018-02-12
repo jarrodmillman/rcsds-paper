@@ -66,146 +66,91 @@ software packages.
 We also have a great deal of experience of giving practical support for
 imaging analysis to graduate students and post docs.
 
-Our experience has gradually brought us to realize that we have three major
-problems in the form of traditional teaching.
+Our experience has gradually brought us to realize that this form of teaching
+does a poor job of preparing our students for a productive career in imaging
+research, in two fundamental ways:
 
-The first is that our students often leave their education with a superficial
-understanding of imaging methods.  They are familiar with the steps, and the
-terms, but when we ask them to reason about their analysis, they struggle.
+\begin{itemize}
 
-The second problem is that the idealized picture in the lectures bears a
-slight resemblance to their everyday work, which involves: using a Unix
-computer, often remotely; collating and manipulating data; writing and sharing
-scripts in computing languages such as Matlab or the Unix shell-scripting
-languages.  Analyses can and do become messy and complicated, leading to
-confusion and error.  Most labs expect students to learn how to do this on the
-job, and few labs use current computing tools and practices to control 
-complexity and error.  As a corollary, it is usually difficult for a
-researcher to share their analysis with another researcher, even in their own
-lab, and it is hard for the principal investigator (PI) to check the analysis
-for errors or invalid assumptions.
+\item
+    Computation with large complex datasets is difficult and distracting;
+        without training in standard practice to reduce this distraction, we
+        condemn our students to a life-time of inefficient work, and slow
+        learning.
 
-The final problem is that we have made it hard for imagers to collaborate with
-other technical fields such as engineering and statistics.  Imaging software
-packages are highly specific to brain imaging, and present an interface to
-common statistical procedures that our students do not recognize.  Many
-students do not have much background in standard engineering tools such as
-convolution, the Fourier transform, or numerical optimization.  In traditional
-teaching, we usually gloss over the details of these fields, which saves us
-time, but leaves the students without the understanding or vocabulary to
-explain their analysis problem to other scientists in a way that makes it easy
-for them to engage.  The result may be that imaging research is more likely to
-live in a neuroscience ghetto that is effectively walled off from
-collaboration and insight by other scientists.
+\item
+    Standard teaching assumes either that the students already understand
+        linear algebra, or that they do not need to understand it.  In our
+        experience, both of these assumptions are mostly false, with the
+        result that the students do not have the foundation on which they can
+        build further understanding.
 
-After years of trying to patch up the problems caused by our own teaching, we
-came to the conclusion that the traditional approach is based on a fundamental
-error of emphasis.
+\end{itemize}
 
-Functional imaging analysis touches on many theoretical and practical fields,
-including anatomy, physiology, signal and image processing, linear algebra,
-statistics, computing, coding, and data management.  Teaching all these topics
-in depth would take longer than most students or institutions have time for.
-We need to choose what we will teach, and what we will leave for the students
-to pick up later. We have to decide what is fundamental, and what is
-peripheral.
+As a corollary of these two problems, imaging researchers usually do not have
+the vocabulary, understanding or shared tools that make it possible to
+collaborate fluently with researchers from other fields, such as statistics or
+engineering.
 
-The traditional approach takes the top level to be fundamental.  It aims to
-give the big picture, leaving the students to fill in the details. The
-assumption is that the student will either know or pick up some of the
+We believe these two problems stem from a fundamental error of emphasis.
+The traditional approach to teaching takes the top level to be fundamental.
+It aims to give the big picture, leaving the students to fill in the details.
+The assumption is that the student will either know or pick up some of the
 mathematical and practical foundations later, with the big picture as a
 framework to guide them in choosing what to learn.
 
-Our experience is that this assumption is incorrect.  It is rare for
-students to go on to learn these foundations, and common for researchers to
-continue to work with a limited and superficial understanding.  This has a
-major negative impact on the quality of their work; because we did not teach
-them these foundations, they come to believe that they do not need to know
-them.  The foundations appear to them to be the preserve of clever
-mathematical and computing types; they have no hope of understanding them in
-any depth.  They treat the analysis as something special and magic, where the
-rules are determined by received wisdom, because they cannot hope to reason
-about them.
+Our experience is that this assumption is incorrect.  It is rare for students
+to go on to learn these foundations. They continue as they were when they
+leave the course, as inefficient practitioners, and unable to reason about
+their analysis.
 
-% we also believe that it is relatively easy to pick up the big picture once
-% you have the foundation
-We take an alternative approach.  Instead of
-concentrating on the big picture, we emphasize the foundations on which the
-analysis is built, and their implementation in practice, with code and
-computing.  We were inspired by the famous epithet of Richard Feynman, found
-written on his blackboard after his death: ``What I cannot create, I do not
-understand.''\footnote{\url{http://archives.caltech.edu/pictures/1.10-29.jpg}}
-We give the students enough understanding of how the methods work, that
-they could implement their own crude versions of the major algorithms.  In
-teaching them to work with code, we also teach them standard programming
-techniques for reducing complexity and controlling error, so they can think
-clearly while they are working.  We encourage them to own their own learning,
-and explore their data, by devoting a large proportion of the course and
-course grade to a computationally reproducible group project.
-
-We use two examples to illustrate the contrast between the
-traditional approach and our own.
-
-\subsection{Programming}
-
-Traditional courses do not teach skills for programming; the hope is that the
-student will pick up the code that they need while they are working, or by
-taking an unrelated general course on programming.  Many lab heads without
-programming expertise argue that teaching students to use code is not
-necessary, because scientists do not need to be programmers.  Unfortunately,
-imaging researchers do need to use, write, and share code.  Without training,
-our experience suggests that scientists tend to be inefficient programmers;
-they take a long time to write code; their code is sloppy and
-poorly-structured with many errors.  They improve very slowly with experience.
-In practice, imaging researchers {\em are} programmers; but if we do not train
-them to learn, they will be incompetent programmers, and the most likely
-outcome is they will continue to be incompetent programmers for the rest of
-their careers.
-
-For this reason, we introduced standard coding process from the beginning of
-our course, including testing, code review, measuring test coverage, version
-control, and continuous automated testing with different software versions.
-All project work used public online repositories for version control,
-code review, and automated code coverage and testing.  The projects gave the
-students an experience of efficient practice in collaboration with code and
-data that they could apply to their future work.
-
-\subsection{General Linear Model}
-
-The General Linear Model (GLM) is a widely-used term in neuroimaging, to refer
+We have particular experience of this in our teaching of the General Linear
+Model (GLM)
+\citep{poline2012general}.\footnote{\url{http://imaging.mrc-cbu.cam.ac.uk/imaging/PrinciplesStatistics}}\footnote{\url{http://matthew-brett.github.io/teaching/glm_intro.html}\label{glm_intro}}.
+The GLM is a widely-used term in neuroimaging, to refer
 to the generalization of multiple regression to analysis of variance (ANOVA)
 and other standard group comparisons.  Statisticians generally prefer the term
 ``linear regression model'' or, simply, ``linear model.''
-
-We have been thinking about how to teach the (general) linear model for many
-years
-\citep{poline2012general}.\footnote{\url{http://imaging.mrc-cbu.cam.ac.uk/imaging/PrinciplesStatistics}}\footnote{\url{http://matthew-brett.github.io/teaching/glm_intro.html}\label{glm_intro}}
 
 Functional imaging packages present the linear model as a matrix formulation
 of multiple regression.  Many students have not taken linear algebra, or if
 they have, do not remember it well.  The traditional teaching approach is to
 show how the matrix formulation relates to simple and multiple regression over
-a few slides in an hour-long talk, and then move on to more advanced topics
-such as temporal filtering or random effects.  Although the students may have
-the impression that they have understood, we have found that most of them are
-unable to answer simple questions about the matrix formulation after such a
-talk, and that they rarely go on to improve their understanding in their later
-education.
+a few slides in an hour-long talk, and then move on to more advanced topics.
+Although the students may have the impression that they have understood, we
+have found that most of them are unable to answer simple questions about the
+matrix formulation after such a talk, and that they rarely go on to improve
+their understanding in their later education.
 
-Our current teaching works through the linear model very slowly. We found that
-we needed to do this for the students to see that the matrix formulation of
-the linear model is just another way of expressing statistical methods that
-they already know, such as regression, $t$-tests, and ANOVA.  We start with
-simple regression, showing how the regression can be expressed as the addition
-of vectors and vector / scalar multiplication.  This leads to the matrix
-formulation of simple regression, and thence to multiple regression.  We
-introduce dummy indicator variables to express group membership and show how
-these relate to group means.  We do all this using simple Python code to show
-them how the mathematics works in practice, and give them sample code that
-they edit and run for themselves.\cref{glm_intro}
+% we also believe that it is relatively easy to pick up the big picture once
+% you have the foundation
 
-In contrast, we rely on the students to work through more advanced concepts
-such as temporal filtering and random effects.
+In contrast to the traditional approach, we put our own emphasis on:
+
+\begin{itemize}
+
+\item
+    Efficient computational practice, to decrease confusion, reduce error, and
+        increase collaboration.
+
+\item
+    Teaching on the fundamental mathematical and statistical ideas of the
+        analysis, such as the GLM, using computational tools to build,
+        illustrate and explain.
+
+\end{itemize}
+
+In the course we describe here, we devoted our teaching and assessment time to
+building these foundations, on which the students could build their later
+analysis and understanding.
+
+We were inspired by the famous epithet of Richard Feynman, found written on
+his blackboard after his death: ``What I cannot create, I do not
+understand.''\footnote{\url{http://archives.caltech.edu/pictures/1.10-29.jpg}}
+We first taught the students to build code efficiently, and then we taught
+them how the methods worked, by building them from code.  Our aim was that our
+students should be able to implement their own simple versions of the major
+algorithms they were using.
 
 \section{Material and Methods}\label{methods}
 
@@ -230,6 +175,8 @@ Project reports were due two weeks after the last class.
 
 \subsection{Course overview}
 
+The Berkeley course catalog had the following description of our course:
+
 \begin{quote}
 A project-based introduction to statistical data analysis. Through case
 studies, computer laboratories, and a term project, students learn
@@ -238,13 +185,8 @@ appropriate, reproducible, and verifiable computational answers to
 scientific questions. Course emphasizes version control, testing,
 process automation, code review, and collaborative programming.
 Software tools include Bash, Git, Python, and \LaTeX.
-
-\hfill\emph{---from the course catalog description}
 \end{quote}
 
-\emph{Reproducible and Collaborative Statistical Data Science} is a
-project-based course that introduces students to reproducible and collaborative
-statistical research, applied to a real scientific question.
 Our objective for the course was for students to
 (a) be proficient at the Unix command line,
 (b) be fluent in using version control with Git,
@@ -253,6 +195,9 @@ Our objective for the course was for students to
 (e) understand the computational and statistical issues involved with reproducibility, and
 (f) be familiar with computational issues in modern statistical data
 analysis through hands-on analysis of neuroimaging data.
+
+In particular, we wanted to show our students how to apply these methods to
+investigating a real scientific question, that they had chosen themselves.
 
 \subsubsection{Tools and process}
 
@@ -641,26 +586,93 @@ their own basic algorithms, and understand other people's code;
 (c) work with code and data in a way that will save them time, help them collaborate,
 and prepare them to continue learning.
 
-For this course we concentrated on the statistical analysis of FMRI
-data.  We scheduled the teaching to give the students a sound background in
-standard neuroimaging statistical analysis with a linear model.  We covered
-the following topics:
+For this course we concentrated on the statistical analysis of FMRI data.  We
+scheduled the teaching to give the students a sound background in standard
+neuroimaging statistical analysis with a linear model (GLM).
+
+All the following teaching used simple Python code to show them how the
+mathematics works in practice, and give them sample code that they edit and
+run for themselves -- see below for some examples.  We specifically avoided
+using off-the-shelf imaging analysis software packages, and encouraged the
+students to build their own analyses given the building blocks we had given
+them.  We interleaved teaching with short group exercises where students took
+the code from class and extended it to solve a new problem.
+
+We covered the following topics:
 
 \begin{itemize}
 
-\item The NIfTI image format as a simple image container.
-\item Four dimensional (4D) images; extracting voxel time-courses from 4D
-    images.
-\item The neuronal time-course model.
-\item The hemodynamic time-course model, the hemodynamic response function and
-    convolution;
-\item Spatial smoothing with Gaussian kernel;
-\item Simple regression, vector formulation, matrix formulation; least-squares
-    cost-function; solving with the pseudoinverse; extension to multiple
-        regression; dummy variables and matrix formulation of analysis of
-        variance.
-\item High-resolution sampling of regressors.
-\item Parametric modulation of regressors.
+\item
+    The idea of images as visual displays of values in arrays.
+\item
+    The standard neuroimaging NIfTI image format as a simple image container,
+        with metadata (such as shape) and image pixel / voxel data stored as
+        numbers.  Using the Nibabel Python package
+        \footnote{\url{http://nipy.org/nibabel}} to load NIfTI data as
+        three-dimensional arrays.
+\item
+    Four dimensional (4D) images as sequential time-series of 3D image
+        volumes.  Slicing arrays to get individual volumes from the 4D
+        time-series.  Extracting single-voxel time-courses from 4D images.
+\item
+    Building regressors for the statistical model.  We introduced the idea of
+        the neuronal time-course model as the hypothesized change in neuronal
+        activity caused by the task.  For a block design, this model becomes a
+        box-car, with all rest periods having identical low activity, and all
+        activity periods having identical high activity.  The FMRI acquisition
+        measures something like blood flow, rather than neuronal activity, but
+        blood flow changes sluggishly in response to changes in neuronal
+        activity.  We introduced the linear-time-invariant assumption in
+        predicting the hemodynamic activity from the hypothesized neuronal
+        activity, and then the hemodynamic response function as the invariant
+        response.  Finally we demonstrated the mechanism of convolution as a
+        numerical method to express the effect of the hemodynamic response
+        function acting in a linear-time-invariant way, and the caveats to
+        these assumptions.  We now had hemodynamic regressors to fit to our
+        voxel time-course data.
+\item
+    Correlation as a simple test of linear association between the hemodynamic
+        regressor and voxel signal.  Calculating correlation with a single
+        regressor for every brain voxel and the idea of a statistical
+        parametric map.
+\item
+    The GLM as a matrix formulation of multiple regression.  We started with
+        simple (single-regressor) regression as another measure of linear
+        association.  We expressed simple regression as a linear model and
+        showed how the model can be expressed as the addition of vectors and
+        vector / scalar multiplication.  This leads to the matrix formulation
+        of simple regression, and thence to multiple regression.  We introduce
+        dummy indicator variables to express group membership and show how
+        these relate to group means.  We showed with code how this mathematics
+        can express statistical methods that they already know, such as
+        regression, $t$-tests, and ANOVA.
+\item
+    High-resolution sampling of regressors.  The simple cases that we had
+        covered above assumed events or blocks that started at the same time
+        as the scanner started collecting a new brain volume.  This is not the
+        case in general.  To deal with events that do not start at volume
+        onsets, we need to generate a hemodynamic time-course at higher
+        time resolution than the spacing of the scan onsets, and then sample
+        this regressor (using linear interpolation) at the scan onset times.
+\item
+    Parametric modulation of event regressors.  Some of the OpenFMRI datasets
+        that the students had chosen used regresssors to model parametric
+        module of events.  There is one regressor to model the hemodynamic
+        effect of a particular event type on average, and another to capture
+        the variation of the hemodynamic event activity as a linear function
+        of some charactistic of that event, such as duration or intensity.
+\item
+    Spatial smoothing with a Gaussian kernel; smoothing as a form of
+    convolution.
+
+\item
+    The idea of voxel and millimeter coordinates in brain images, and the
+    image affine as a mapping between them.  The students needed this in order
+    to relate the coordinates reported in their papers to voxels in their own
+    analyses.
+
+See \cref{glm_intro} for an example lesson showing our use of Python code to
+illustrate the mathematical and statistical ideas.
 
 % An example lesson illustrating the approach
 % An exercise as illustration.
@@ -725,9 +737,9 @@ analysis methods introduced in the course.
 For example, several teams chose to focus on the open dataset provided by a
 study entitled \textit{The neural basis of loss aversion in decision-making
 under risk}\cite{tom2007neutral}.
-The research teams implemented analyses based on the GLM as well extending
-the analysis to include other regression techniques, comparing their results
-to those of the published study.
+The research teams implemented analyses based on the linear model (GLM) as
+well as extending the analysis to include other regression techniques, comparing
+their results to those of the published study.
 Projects of this nature accounted for about 8 of the 11 research teams, and
 on the whole were largely successful in demonstrating a practical understanding
 of the relevant statistical techniques.
@@ -768,9 +780,9 @@ building on an insecure foundation.  Once you have learned to work in an
 informal and undisciplined way, it is difficult to switch to a process that
 initially demands much more effort and thought.  Rigor and clarity are hard to
 retrofit.
-%To invert a common saying: "A week in the lab saves an hour in the library".
 To quote the American chemist Frank Westheimer:
-``A couple of months in the laboratory can frequently save a couple of hours in the library.''
+``A couple of months in the laboratory can frequently save a couple of hours
+in the library.''
 
 For these reasons, our course took the opposite to the common approach. We
 started with the tools and process for working with numerical data, and for
@@ -872,6 +884,17 @@ and support from experienced instructors.
 
 % Anecdote: students (5+) coming up on campus to remark how much they liked the
 % tools and process. they say the are using them for new work.
+
+\subsection{Do students need training in programming?}
+
+One common justification for not training students in good coding practice, is
+the assertion that scientists do not need to be programmers.  Scientists do
+have to use, read and write code, so a more realistic version of this
+statement would be that scientists do not need to be good programmers.
+Unfortunately bad programmers are extremely inefficient and prone to error;
+they are less likely to detect errors, and improve slowly over time, if at
+all.  We should invest our work in education to help the student work
+efficiently and continue learning over the whole of their career.
 
 \subsection{What background do students need?}
 
