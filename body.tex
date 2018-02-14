@@ -491,7 +491,7 @@ We used their summaries to inform a subsequent discussion about code review.
 
 \subsection{Course project}\label{project}
 
-The course centered around a semester-long group project accounting for 55\%
+The course centered around a semester-long group project, which accounted for 55\%
 of the overall course grade.
 Students worked in teams on their projects for three months.
 %Students formed teams at the start of week 5 and final reports were submitted
@@ -520,10 +520,17 @@ Early in the semester (week~5) groups of three to five students formed teams.
 To ensure every aspect of the project work was done in a computationally
 reproducible and collaborative way, we immediately created a publicly visible
 project repository for each team.
-They then had a week to propose what they would do for their projects.
-We required them to use a \LaTeX template for their project proposals
-and to add the source file(s) to their project repository (see Figure~\ref{fig:repo}).
-The project proposals involved
+The scope of the projects were defined iteratively: each team submitted a
+proposal (week~6) a third of the way through the semester, with the instructors
+providing prompt feedback to help clarify the motivation and goals of each
+project.
+
+%They then had a week to propose what they would do for their projects.
+
+For their project proposals, we required each team to use a \LaTeX template,
+which we provided, and to add the source file(s) to their project repository
+(see Figure~\ref{fig:repo}).
+Each proposal involved
 (a) identifying a published FMRI paper and the accompanying data,
 (b) explaining the basic idea of the paper in a paragraph,
 (c) confirming that they could download the data and that what they
@@ -545,37 +552,37 @@ depository of MRI and EEG datasets
 \label{fig:repo}
 \end{figure}
 
-We read and discussed their project proposals and then meet with each
-team to help them refine their initial ideas.
-Most teams' proposals were initially too ambitious, so our feedback
-was mostly around helping the students come up with more manageable
-goals.
-\fixme{just the beginning of a collaborative process...
-This continued throughout the semester and was quite involved.
-Mirrors how we work with collaborators.}
-
-The scope of the projects were defined iteratively: each team submitted a 
-proposal a third of the way through the semester, with the instructors providing
-prompt feedback to help clarify the motivation and goals of each project.
-This feedback process continued throughout the semester, with students 
-submitting drafts according to milestones defined within the project
+We immediately read and discussed their project proposals and then meet
+(week~7) with each team to help them refine their initial ideas.
+This feedback process continued throughout the semester, with students
+regularly submitting drafts according to milestones defined within the project
 timeline.
+As much as possible, we attempted to mirror in the class room setting
+the way we work with collaborators in the lab.
+
+%Most teams' proposals were initially too ambitious, so our feedback
+%was mostly around helping the students come up with more manageable
+%goals.
+%\fixme{just the beginning of a collaborative process...
+%This continued throughout the semester and was quite involved.
+%Mirrors how we work with collaborators.}
 
 Feedback was not only provided to the students from the instructors: the
 project evaluations included peer-review, where each research team was
 responsible for cloning another team's project, running the tests and analyses,
 and evaluating the resulting technical document.
-
 The peer-review process proved particularly valuable, as the students 
 benefited greatly from the exposure to the coding techniques and 
 organizational principles of their peers.
 % an advantage of having all students working on their own work
 
-We required students to use GitHub's pull request (PR) mechanism to review all
-project work.
-While we allowed students to decide when to merge PRs, we recommended that
-all PRs should have at least three participants, test coverage should not decrease,
-and tests should pass before being merged.
+Students used GitHub's pull request (PR) mechanism to review all project work.
+We configured their repositories to use Travis CI for continuous integration
+and Coveralls.io for test coverage reporting.
+While each team decided when to merge PRs, we recommended that all PRs should
+have at least three participants, test coverage should not decrease, and tests
+should pass before being merged.
+We expected students to keep test coverage high, typically above 90\%.
 We covered this workflow in depth during lectures and in lab,
 and made clear that the project grade would be based on
 (a) the final report,
@@ -583,7 +590,7 @@ and made clear that the project grade would be based on
 (c) whether we could run their analysis code to reproduce all
 their results and figures, and
 (d) how effectively the team collaborated using the techniques
-taught in the course (e.g., pull requests, code review, testing).
+taught in the course (e.g., PRs, code review, testing).
 %https://github.com/berkeley-stat159/project-template
 
 Students also used the GitHub Issues interface to record project discussions
@@ -596,15 +603,20 @@ We told the students that we would use the PR and Issue discussions
 as evidence for their contributions to the project, and as data for their
 final grades.
 
-Rather than having students commit raw data to their project repository, we had
-them commit code to download and validate (using stored file checksums)
-all raw data used in their project.
-
 Most code was written as a collection of functions with tests with short
 scripts that called these functions to perform the project data analysis.
-\fixme{code review, continuous integration, coverage reporting}
-\fixme{What was the test coverage of the individual projects?}
-We expected students to keep test coverage high, typically above 90\%.
+Rather than having students commit raw data to their project repository, we had
+them commit code to download and validate (using stored file checksums)
+all raw data used in their project (week~8).
+
+exploratory data analysis (week~9).
+
+Progress presentation \& draft report (week~12)
+
+Project presentation (week~15)
+
+Final report (week~17)
+
 
 Slides were written in Markdown.
 These plain text files were committed to the project repository.
