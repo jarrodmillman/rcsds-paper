@@ -603,39 +603,39 @@ We told the students that we would use the PR and Issue discussions
 as evidence for their contributions to the project, and as data for their
 final grades.
 
-Most code was written as a collection of functions with tests with short
+Code was written as a collection of functions with tests with short
 scripts that called these functions to perform the project data analysis.
 Rather than having students commit raw data to their project repository, we had
 them commit code to download and validate (using stored file checksums)
 all raw data used in their project (week~8).
-
-exploratory data analysis (week~9).
-
-Progress presentation \& draft report (week~12)
-
-Project presentation (week~15)
-
-Final report (week~17)
+Since was the first code they added to their repositories, we gave them example
+code to download a file and check it against a stored hash of the file
+content.
+Once they had added code to handle downloading and validating the data,
+we had them commit code for their exploratory data analysis (week~9).
 
 
+Progress presentation \& draft report (week~12) ...
 Slides were written in Markdown.
 These plain text files were committed to the project repository.
 They used Pandoc---a command line document processor---to generate
 PDFs that could be used as presentation
 slides.\footnote{\url{http://pandoc.org/MANUAL.html\#producing-slide-shows-with-pandoc}}
 Reports were written in \LaTeX.
+Project presentation (week~15) ....
+Final report (week~17) ...
 They had to commit the final PDF of their reports as well as
 provide instructions for generating the PDF from the source
 \LaTeX files.
 
-Each project was required to put a \texttt{README} file at the top-level
-of their repository to explain how to install, configure,
+We told the students that to reproduce their work, we would blindly
+follow the instructions in the \texttt{README} file at the top-level
+of their repository.
+The \texttt{README} file had to explain how to install, configure,
 and run all aspects of their project.
-We told the students that we would only look at this \texttt{README}
-when determining whether we could reproduce their work.
-Each \texttt{README} clearly stated  how to operate the
+Each \texttt{README} had to clearly state how to operate the
 components of the project and in what order to do so.
-In particular, they were required to include a section with
+In particular, students were required to include a section with
 an enumerated list of task to carry out, such as:
 \begin{verbatim}
     make data - downloads the data 
@@ -645,10 +645,10 @@ an enumerated list of task to carry out, such as:
     make report - build final report
 \end{verbatim}
 
-The \texttt{README} also contained other pertinent information:
-for example, if the \texttt{make data} step downloads 5 Gb of data, it should
-warn users of this so they make sure they have enough disk space and are on a
-stable internet connection before trying to do so.
+The \texttt{README} also had to contain any other pertinent information: for
+example, if the recipe for \texttt{data} target downloaded 5~GB of data, it had
+to warn of this so we would make sure to have enough disk space and that we were
+on a stable internet connection before trying to do so.
 
 \fixme{To ensure that all the projects would work.
 We offered to proofread everyone's reports and
@@ -1016,7 +1016,7 @@ project work.
 A full course on brain imaging might start with an introduction to Python and
 data analysis, possibly as a week-long bootcamp at the start of the semester.
 Something like our course would follow.  There should be follow-up courses
-using the same tools for more advanced topics such as machine-learning,
+using the same tools for more advanced topics such as machine learning,
 spatial pre-processing, and analysis of other modalities. We suggest that each
 of these courses should have group project work as a large component, in which
 the student can continue to practice techniques for efficient reproducible
@@ -1041,7 +1041,7 @@ Berkeley take this issue seriously and transmit this to their students.  If
 there had not been such local interest in the problem of reproducibility,
 students may have been less convinced of the importance of
 working in a reproducible way, especially given the short-term convenience
-of less disciplined working process.
+of a less disciplined working process.
 
 % KJM, FP writings, courses?
 
