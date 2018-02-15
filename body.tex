@@ -756,11 +756,21 @@ We covered the following topics:
 
 See \cref{glm_intro} for an example lesson showing our use of Python code to
 illustrate the mathematical and statistical ideas.
-
 % An exercise as illustration.
+\fixme{See Figure~\ref{fig:diagnosis_script}...}
 
-%%% Jarrod - can you use your LaTeX foo to put the top of
-%%% assignments-2015/diagnostics/diagnostics.md here as a figure?
+\begin{figure}
+\centering
+\input{diagnosis_script.tex}
+\caption{Above we list the first few lines of \texttt{diagnosis\_script.py}.
+This file was part of the second homework, which focused on detecting outlier
+3D volumes in a 4D FMRI image.
+This included
+(a) implementing functions on image arrays using NumPy,
+(b) exploring FMRI data for outliers,
+(c) running least-squares fits on different models, and
+(d) making and saving plots with matplotlib.}\label{fig:diagnosis_script}
+\end{figure}
 
 % Kind-of flipped.
 % Centered on the project.
