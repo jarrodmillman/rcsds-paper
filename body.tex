@@ -302,7 +302,6 @@ The tests should also document how the code is expected to be used.
 Inexperienced coders typically greatly underestimate how often they make
 errors; expecting, finding and fixing errors is an essential part of being
 able to learn from continued practice.
-We taught students to test their code thoroughly.
 There are tools that can measure how what proportion of the lines
 of code have covered by the tests---this is \emph{test coverage}.
 
@@ -313,18 +312,19 @@ Tests are not useful if they are not run, or if the authors do not see the
 results.  Modern code quality control includes \emph{continuous integration
 testing}, a practice that guarantees that the tests are run frequently and
 automatically, and the results are reported back to the coding team.
-
 Fortunately, this practice has become so ubiquitous in open-source, that there
 are large free services such as Travis CI that integrate with code hosting sites
-like GitHub. We set up each project with a configuration file for Travis CI
-such that all their tests would be run and reported on remote servers, each
-time they changed their code on the GitHub hosting site.  We added automated
-code coverage testing; each change to the code on GitHub resulted in a measure
-of the proportion of all code lines covered by tests.
+like GitHub.
 
 \blockpar{Markup languages.}
-Separating the content from the format of a document is important for reducing
-visual clutter as you write and edit documents.
+% "Separating the content from the format of a document is important for reducing
+% visual clutter as you write and edit documents."
+%
+% I think they add visual clutter, but make it easier to reason about and work
+% with the file.  For instance, you can version control using the same tools
+% that you use for writing code.  You can also easily change format options.
+% Some of this is already said below.
+% We should rewrite the above sentence or just remove it.
 A markup language allows for generation of content in plain text, while also
 maintaining a set of special syntax to annotate the content with structural
 information.
@@ -364,12 +364,15 @@ markdown file (\texttt{progress.md}).\footnote{\url{http://pandoc.org/MANUAL.htm
 If you edit \texttt{progress.md}, you can regenerate \texttt{progress.pdf}
 from the command line using \texttt{make progress.pdf}.
 
-Unlike the above example, Makefile rules often involve several commands.
+%Unlike the above example,
+Makefile rules often involve several commands.
 The target of a rule is often a filename (e.g., \texttt{progress.pdf}), but can
-also be an arbitrary name for some commands that you may want to envoke.
+also be an arbitrary name for some commands that you may want to invoke.
 The dependencies of a rule can be filenames (e.g., \texttt{progress.pdf}), but
 may also be other rules in the Makefile.
-\fixme{This ability to chain ... complex ... reproducible workflows.}
+This ability to chain together complex sequences of commands necessary for
+generating multiple target files depending on other files is essential to
+enabling reproducible workflows.
 
 \subsubsection{Lectures, labs, notes, homeworks, readings, and quizzes}
 
@@ -410,9 +413,10 @@ The data analysis lectures continued to develop the students skills with
 Unix and scientific Python software stack through practical problems,
 which arose as we showed them how to analyze FMRI data.
 
-We assigned two homeworks during the first half of the semester.
+We assigned two homeworks.
 Students had two weeks to work on each homework.
-Homeworks were assigned and submitted using private GitHub repositories.
+Homeworks were assigned and submitted using private GitHub repositories  during
+the first half of the semester.
 Typically, assignments were given as a collection of function templates with
 missing implementations.
 The functions were documented according to the NumPy documentation
@@ -577,12 +581,26 @@ organizational principles of their peers.
 % an advantage of having all students working on their own work
 
 Students used GitHub's pull request mechanism to review all project work.
-We configured their repositories to use Travis CI for continuous integration
-and Coveralls.io for test coverage reporting.
+Code was written as a collection of functions (with tests) with short
+scripts that called these functions to perform the project data analysis.
+We taught students to test their code thoroughly.
+We set up each project with a configuration file for Travis CI
+such that all their tests would be run and reported on remote servers, each
+time they changed their code on the GitHub hosting site.
+We added automated code coverage testing; each change to the code on GitHub
+resulted in a measure of the proportion of all code lines covered by tests.
+We expected students to keep test coverage high, typically above 90\%.
 While each team decided when to merge pull requests, we recommended that
 all pull requests should have at least three participants, test coverage
 should not decrease, and tests should pass before being merged.
-We expected students to keep test coverage high, typically above 90\%.
+
+Students also used the GitHub Issues interface to record project discussions
+and actions taken by the group members.
+Moreover, students were instructed to create a pull request
+or issue with code and text and use the GitHub interface to ask one or more
+of us to respond, if they had any questions about their projects.
+Periodically, we would review their work and open issues.
+
 We covered this workflow in depth during lectures and in lab,
 and made clear that the project grade would be based on
 (a) the final report,
@@ -591,20 +609,10 @@ and made clear that the project grade would be based on
 their results and figures, and
 (d) how effectively the team collaborated using the techniques
 taught in the course (e.g., pull requests, code review, testing).
-%https://github.com/berkeley-stat159/project-template
+And we told the students that we would use the pull request and issue
+discussions as evidence for their contributions to the project, and as data for
+their final grades.
 
-Students also used the GitHub Issues interface to record project discussions
-and actions taken by the group members.
-Moreover, students were instructed to create a pull request
-or issue with code and text and use the GitHub interface to ask one or more
-of us to respond, if they had any questions about their projects.
-Periodically, we would review their work and open issues.
-We told the students that we would use the pull request and issue discussions
-as evidence for their contributions to the project, and as data for their
-final grades.
-
-Code was written as a collection of functions with tests with short
-scripts that called these functions to perform the project data analysis.
 Rather than having students commit raw data to their project repository, we had
 them commit code to download and validate (using stored file checksums)
 all raw data used in their project (week~8).
@@ -1013,7 +1021,7 @@ course went quickly through basic programming ideas such as for loops,
 conditionals, and functions.  We could not have done this for students without
 any experience of programming.  In our psychology / neuroscience courses that
 used similar material, we required some experience of programming in a
-language such as Python, R or Matlab.  It is possible that a brief
+language such as Python, R, or Matlab.  It is possible that a brief
 introduction would be enough to fulfill this requirement, such as a bootcamp
 or multi-day intensive course.
 
