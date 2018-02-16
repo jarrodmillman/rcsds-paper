@@ -23,7 +23,7 @@ control, high-level readable programming languages, code review, breaking code
 into manageable functions and objects, writing tests for all code,  and
 continuous automatic test execution.
 
-Most researchers accept that learning these techniques is desirable, but
+Many researchers accept that learning these techniques is desirable, but
 object that a neuroimager has a limited amount of time they can spend in
 class.  They may argue that this time should be spent learning an overview of
 neuroimaging analysis, rather than tools and process for efficient
@@ -109,8 +109,8 @@ Model (GLM)
 \citep{poline2012general}.\footnote{\url{http://imaging.mrc-cbu.cam.ac.uk/imaging/PrinciplesStatistics}}\footnote{\url{http://matthew-brett.github.io/teaching/glm_intro.html}\label{glm_intro}}
 The GLM is a widely-used term in neuroimaging, to refer to the generalization
 of multiple regression to analysis of variance (ANOVA) and other standard
-group comparisons.  Statisticians generally prefer the term ``linear
-regression model'' or, simply, ``linear model.''
+group comparisons.  Statisticians generally prefer the term \emph{linear
+regression model} or, simply, \emph{linear model}.
 
 Functional imaging packages present the linear model as a matrix formulation
 of multiple regression.  Many students have not taken linear algebra, or if
@@ -136,7 +136,7 @@ In contrast to the traditional approach, we emphasize:
 \item
     Teaching on the fundamental mathematical and statistical ideas of the
         analysis, such as the GLM, using computational tools to build,
-        illustrate and explain.
+        illustrate, and explain.
 
 \end{itemize}
 
@@ -167,10 +167,10 @@ undergraduate-level familiarity with probability, statistics, and statistical
 computing in R.
 Many students were from statistics and/or computer science; other majors
 included cognitive science, psychology, and architecture.
-During the 15-week long semester, we gave three hours of class
-per week in two 90-minute sessions, plus two hours of labwork.
+During the 15-week long semester, we had three hours of class time
+per week in two 90-minute sessions, plus two hours of lab time.
 Students were expected to work at least eight hours per week outside class.
-Project reports were due two weeks after the last class.
+Project reports were due (week~17) two weeks after the last class.
 
 \subsection{Course overview}
 
@@ -219,12 +219,12 @@ coding with Python and its associated scientific libraries
 perform standard statistical procedures on imaging data, using these tools
 \citep{millman2007analysis}.
 
-\blockpar{Unix command line.}
+\blockpar{Command line.}
 The Unix environment is the computational equivalent of the scientists'
 workbench \citep{preeyanon2014reproducible}.  The Unix command line, and the
 Bash shell in particular, provides mature, well-documented tools for building
 and executing sequences of commands that are readable, repeatable, and can be
-stored in text files as scripts for later execution.  Quoting
+stored in text files as scripts for later inspection and execution.  Quoting
 \cite{wilson2014best}---the Bash shell makes it easier to ``make the computer
 repeat tasks'' and ``save recent commands in a file for re-use.''
 
@@ -238,7 +238,7 @@ Linux and macOS are native Unix platforms and provide Unix / Bash command line
 tools from a standard install.  Windows 10 provides the Unix / Bash tools as
 an optional operating system install.
 
-\blockpar{Version control with Git.}
+\blockpar{Version control.}
 Version control is a fundamental tool for organizing and storing code and
 other products of data analysis.
 Distributed version control allows many people to work in parallel on the
@@ -253,35 +253,35 @@ Web platforms such as GitHub, Bitbucket, and GitLab provide web interfaces
 to version control to simplify procedures such as code review, automated
 testing and issue tracking (see below).
 
-\blockpar{Scientific computing with Python.}
+\blockpar{Scientific Python.}
 Python is a general purpose programming language,
 popular for teaching and prevalent in industry and academia.
 In science, it has particular strength in
-astronomy and genetics, and data science.
+astronomy, computational biology, and data science.
 Its impact in scientific computing rests on a stack of popular scientific
 libraries including NumPy (computing with arrays), SciPy (scientific
 algorithms including optimization and image processing), Matplotlib (2D
 plotting), Scikit-Learn (machine learning), and Pandas (data science).  The
-Nibabel library \footnote{\url{http://nipy.org/nibabel}\label{nibabel}} loads
+Nibabel library\footnote{\url{http://nipy.org/nibabel}\label{nibabel}} loads
 file in standard brain image formats into memory as arrays for manipulations
 and display by the other packages.
 
-\blockpar{Pull requests and peer review.}
+\blockpar{Peer review.}
 Regular peer review is one of the most important ways of continuing to learn
 to be an effective author of correct code and data analysis.  Git and its
 various web platforms provide a powerful tool for peer review.
 
-``Pull requests'' are a Git interface feature pioneered by GitHub, that
+\emph{Pull requests} are a Git interface feature pioneered by GitHub, which
 presents proposed changes to the shared repository in a convenient web
 interface. This allows collaborators to comment on the changes, ask questions,
 and suggest improvements.  The discussion on this interface forms a record of
 decisions, and a justification for each accepted set of changes.
 
 GitHub, like other Git hosting platforms, provides an interface for creating
-``Issues.''  These can be reports of errors in the code or analysis that need
-to be tracked, larger scale suggestions for changes, or items in a To Do list.
+\emph{issues}.  These can be reports of errors in the code or analysis that need
+to be tracked, larger scale suggestions for changes, or items in a to-do list.
 
-\blockpar{Functions and unit tests.}
+\blockpar{Functions.}
 Functions are reusable blocks of code used to perform a specific task.
 They usually manipulate some input argument(s) and return some output
 result(s).
@@ -291,40 +291,38 @@ First, functions allow you to ``hide'' the details of a discrete bit of
 code from view.
 This can make it easier to see the higher-level structure of your analysis.
 Second, it encourages you to think of your program as a collection of sub-steps.
-Third, it allows you to reuse code instead of rewriting or copying and editing
-it.
+Third, it allows you to reuse code instead of rewriting or copying and editing it.
 Fourth, it enables you to keep your variable namespace clean.
 Finally, it also allows you to test small parts of your program in isolation
 from the rest.
 
 Testing is an essential discipline to give some assurance to the authors and
-other users that the code
-continues to work as expected. The tests should also document how the code is
-expected to be used.
+other users that the code continues to work as expected.
+The tests should also document how the code is expected to be used.
 Inexperienced coders typically greatly underestimate how often they make
 errors; expecting, finding and fixing errors is an essential part of being
-able to learn from continued practice.  We taught students to test their code
-thoroughly.  There are tools that can measure how what proportion of the lines
-of code have covered by the tests---this is ``test coverage.''
+able to learn from continued practice.
+We taught students to test their code thoroughly.
+There are tools that can measure how what proportion of the lines
+of code have covered by the tests---this is \emph{test coverage}.
 
 % unit tests doctests
 
 \blockpar{Continuous integration.}
 Tests are not useful if they are not run, or if the authors do not see the
-results.  Modern code quality control includes ``continuous integration
-testing,'' a practice that guarantees that the tests are run frequently and
+results.  Modern code quality control includes \emph{continuous integration
+testing}, a practice that guarantees that the tests are run frequently and
 automatically, and the results are reported back to the coding team.
 
 Fortunately, this practice has become so ubiquitous in open-source, that there
-are large free services such as Travis CI
-\footnote{\url{https://travis-ci.org}} that integrate with code hosting sites
+are large free services such as Travis CI that integrate with code hosting sites
 like GitHub. We set up each project with a configuration file for Travis CI
 such that all their tests would be run and reported on remote servers, each
 time they changed their code on the GitHub hosting site.  We added automated
 code coverage testing; each change to the code on GitHub resulted in a measure
 of the proportion of all code lines covered by tests.
 
-\blockpar{Document processing and markup languages.}
+\blockpar{Markup languages.}
 Separating the content from the format of a document is important for reducing
 visual clutter as you write and edit documents.
 A markup language allows for generation of content in plain text, while also
@@ -336,40 +334,42 @@ To produce the final document, the source files must undergo a build or render
 step where the markup syntax (and any associated style files) are passed to a
 tool that knows how to interpret and render the content.
 
-\fixme{Document generation with \LaTeX and pandoc.}
+\LaTeX and Markdown represent two extremes of Markup languages, each
+with their own usefulness.
+\LaTeX is notation heavy, but powerful.
+In contrast, Markdown is notation light, but limited.
 
-\blockpar{Reproducible workflows with Make.}
+Pandoc is a command line document processor that can convert between multiple
+markup formats as well as produce final documents for many of them.
+
+\blockpar{Reproducible workflows.}
+When working with the Unix command line, you frequently generate files
+by performing a sequence of commands.
 The venerable Make system was originally written to automate the process
-of compiling and linking programs.
-However, when working in the Unix command line environment, you are constantly
-generating files by performing a sequence of commands perhaps depending on
-other files.
-%While exploring running these commands by hand is common.
-Makefiles are machine-readable text files that associate labels for tasks with
-the recipe for that task.
+of compiling and linking programs, but is now widely used to
+automate all types of command line workflows.
 
-For example a Makefile could define a label \texttt{get\_data} with its
-associated recipe, like this:
-
+Makefiles are machine-readable text files consisting of rules
+specifying the sequence of commands necessary for generating
+certain files and for tracking dependencies between files.
+For example, a Makefile might contain a rule like this:
 \begin{verbatim}
-    get_data:
-        # Fetch the data archive from Amazon Web Services
-        wget -N http://openfmri.s3.amazonaws.com/tarballs/ds005_raw.tgz
-        # Unpack the data into the current directory
-        tar zxvf ds005_raw.tgz
+    progress.pdf: progress.md
+            pandoc -t beamer -s progress.md -o progress.pdf
 \end{verbatim}
+%The \emph{target} of this rule is the file \texttt{progress.pdf},
+%which \emph{depends} on the file \texttt{progress.md}.
+The rule says how to run \texttt{pandoc} to generate the PDF slides (\texttt{progress.pdf}) from the
+markdown file (\texttt{progress.md}).\footnote{\url{http://pandoc.org/MANUAL.html\#producing-slide-shows-with-pandoc}}
+If you edit \texttt{progress.md}, you can regenerate \texttt{progress.pdf}
+from the command line using \texttt{make progress.pdf}.
 
-Like functions in code, using these labels can make it easier to see the
-structure of a set of tasks.  For example, the whole analysis might be
-expressed as a series of labels supplied to Make:
-
-\begin{verbatim}
-    make get_data
-    make validate_data
-    make analysis
-    make figures
-    make report
-\end{verbatim}
+Unlike the above example, Makefile rules often involve several commands.
+The target of a rule is often a filename (e.g., \texttt{progress.pdf}), but can
+also be an arbitrary name for some commands that you may want to envoke.
+The dependencies of a rule can be filenames (e.g., \texttt{progress.pdf}), but
+may also be other rules in the Makefile.
+\fixme{This ability to chain ... complex ... reproducible workflows.}
 
 \subsubsection{Lectures, labs, notes, homeworks, readings, and quizzes}
 
@@ -410,7 +410,7 @@ The data analysis lectures continued to develop the students skills with
 Unix and scientific Python software stack through practical problems,
 which arose as we showed them how to analyze FMRI data.
 
-During the first part of the semester, we assigned two homeworks.
+We assigned two homeworks during the first half of the semester.
 Students had two weeks to work on each homework.
 Homeworks were assigned and submitted using private GitHub repositories.
 Typically, assignments were given as a collection of function templates with
@@ -460,9 +460,9 @@ Over the course of the semester, seven readings were assigned on a roughly
 bi-weekly basis.
 The readings consisted of articles that emphasized the core concepts
 of the class, either with respect to scientific computing, or neuroimaging.
-For the ``assignment'' portion of the reading, students were asked to compose
-a two-paragraph write-up that both summarized the main points of the article,
-and commented on it from their personal perspective.
+Students were required to compose a two-paragraph write-up that both summarized
+the main points of the article, and commented on it from their personal
+perspective.
 
 The labs and quizzes emphasized hands-on experience with the computing tools
 and process associated with reproducible and collaborative computing (e.g.,
@@ -576,12 +576,12 @@ benefited greatly from the exposure to the coding techniques and
 organizational principles of their peers.
 % an advantage of having all students working on their own work
 
-Students used GitHub's pull request (PR) mechanism to review all project work.
+Students used GitHub's pull request mechanism to review all project work.
 We configured their repositories to use Travis CI for continuous integration
 and Coveralls.io for test coverage reporting.
-While each team decided when to merge PRs, we recommended that all PRs should
-have at least three participants, test coverage should not decrease, and tests
-should pass before being merged.
+While each team decided when to merge pull requests, we recommended that
+all pull requests should have at least three participants, test coverage
+should not decrease, and tests should pass before being merged.
 We expected students to keep test coverage high, typically above 90\%.
 We covered this workflow in depth during lectures and in lab,
 and made clear that the project grade would be based on
@@ -590,16 +590,16 @@ and made clear that the project grade would be based on
 (c) whether we could run their analysis code to reproduce all
 their results and figures, and
 (d) how effectively the team collaborated using the techniques
-taught in the course (e.g., PRs, code review, testing).
+taught in the course (e.g., pull requests, code review, testing).
 %https://github.com/berkeley-stat159/project-template
 
 Students also used the GitHub Issues interface to record project discussions
 and actions taken by the group members.
-Moreover, students were instructed to create a PR
+Moreover, students were instructed to create a pull request
 or issue with code and text and use the GitHub interface to ask one or more
 of us to respond, if they had any questions about their projects.
 Periodically, we would review their work and open issues.
-We told the students that we would use the PR and Issue discussions
+We told the students that we would use the pull request and issue discussions
 as evidence for their contributions to the project, and as data for their
 final grades.
 
@@ -614,29 +614,37 @@ content.
 Once they had added code to handle downloading and validating the data,
 we had them commit code for their exploratory data analysis (week~9).
 
+\begin{figure}
+\centering
+\begin{tiny}
+\input{progress.tex}
+\end{tiny}
+\caption{Above.}\label{fig:progress}
+\end{figure}
 
-Progress presentation \& draft report (week~12) ...
-Slides were written in Markdown.
-These plain text files were committed to the project repository.
-They used Pandoc---a command line document processor---to generate
-PDFs that could be used as presentation
-slides.\footnote{\url{http://pandoc.org/MANUAL.html\#producing-slide-shows-with-pandoc}}
+\fixme{See~\ref{fig:progress}
+Progress presentation and draft report (week~12) ...
+Slides were written in Markdown and committed to the project repository.
 Reports were written in \LaTeX.
 Project presentation (week~15) ....
-Final report (week~17) ...
-They had to commit the final PDF of their reports as well as
-provide instructions for generating the PDF from the source
-\LaTeX files.
+They had to commit the final PDF of their reports as well as provide
+instructions for generating the PDF from the source \LaTeX files.
+We also required that each group prepare a slide presentation discussing where
+things were and there plan for finalizing their project two weeks before they
+were due.
+Final report (week~17) ...}
 
-We told the students that to reproduce their work, we would blindly
-follow the instructions in the \texttt{README} file at the top-level
-of their repository.
+Early in the project, we told the students that to reproduce their work, we
+would blindly follow the instructions in the \texttt{README} file at the
+top-level of their repository.
 The \texttt{README} file had to explain how to install, configure,
 and run all aspects of their project.
 Each \texttt{README} had to clearly state how to operate the
 components of the project and in what order to do so.
-In particular, students were required to include a section with
-an enumerated list of task to carry out, such as:
+%In particular, students were required to include a section with
+%an enumerated list of task to carry out, such as:
+For example, a \texttt{README} might include a section specifying
+the make commands to execute, such as:
 \begin{verbatim}
     make data - downloads the data 
     make validate - ensure the data is not corrupted
@@ -645,22 +653,15 @@ an enumerated list of task to carry out, such as:
     make report - build final report
 \end{verbatim}
 
-The \texttt{README} also had to contain any other pertinent information: for
-example, if the recipe for \texttt{data} target downloaded 5~GB of data, it had
-to warn of this so we would make sure to have enough disk space and that we were
-on a stable internet connection before trying to do so.
+%The \texttt{README} also had to contain any other pertinent information: for
+%example, if the recipe for \texttt{data} target downloaded 5~GB of data, it had
+%to warn of this so we would make sure to have enough disk space and that we were
+%on a stable internet connection before trying to do so.
 
-\fixme{To ensure that all the projects would work.
-We offered to proofread everyone's reports and
-test that we could reproduce their reports.
-As always, we used the GitHub system to record all feedback.
-We also required that each group prepare a slide presentation
-discussing where things were and there plan for finalizing
-their project two weeks before they were due.
-Finally, we had each team reproduce another team's project.}
-
-\fixme{More details about 'each team reproduce' ... ?}
-
+%\fixme{We offered to proofread everyone's reports and
+%test that we could reproduce their reports.
+%As always, we used the GitHub system to record all feedback.}
+%
 \subsection{Neuroimaging data analysis}\label{analysis}
 
 When teaching neuroimaging data analysis, our aim was for students to
@@ -677,7 +678,7 @@ neuroimaging statistical analysis with a linear model (GLM).
 
 All the following teaching used simple Python code to show them how the
 mathematics works in practice, and to give them sample code that they could
-edit and run for themselves -- see below for some examples.  We specifically
+edit and run for themselves---see below for some examples.  We specifically
 avoided using off-the-shelf imaging analysis software packages, and encouraged
 the students to build their own analyses given the building blocks we had
 given them.  We interleaved teaching with short group exercises where students
@@ -765,7 +766,7 @@ illustrate the mathematical and statistical ideas.
 \caption{Above we list the first few lines of \texttt{diagnosis\_script.py}.
 This file was part of the second homework, which focused on detecting outlier
 3D volumes in a 4D FMRI image.
-This included
+This part of the second homework included
 (a) implementing functions on image arrays using NumPy,
 (b) exploring FMRI data for outliers,
 (c) running least-squares fits on different models, and
