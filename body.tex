@@ -281,7 +281,7 @@ GitHub, like other Git hosting platforms, provides an interface for creating
 \emph{issues}.  These can be reports of errors in the code or analysis that need
 to be tracked, larger scale suggestions for changes, or items in a to-do list.
 
-\blockpar{Functions.}
+\blockpar{Functions with tests.}
 Functions are reusable blocks of code used to perform a specific task.
 They usually manipulate some input argument(s) and return some output
 result(s).
@@ -368,7 +368,7 @@ from the command line using \texttt{make progress.pdf}.
 Makefile rules often involve several commands.
 The target of a rule is often a filename (e.g., \texttt{progress.pdf}), but can
 also be an arbitrary name for some commands that you may want to invoke.
-The dependencies of a rule can be filenames (e.g., \texttt{progress.pdf}), but
+The dependencies of a rule can be filenames (e.g., \texttt{progress.md}), but
 may also be other rules in the Makefile.
 This ability to chain together complex sequences of commands necessary for
 generating multiple target files depending on other files is essential to
@@ -589,12 +589,12 @@ such that all their tests would be run and reported on remote servers, each
 time they changed their code on the GitHub hosting site.
 We added automated code coverage testing; each change to the code on GitHub
 resulted in a measure of the proportion of all code lines covered by tests.
-We expected students to keep test coverage high, typically above 90\%.
+We expected students to keep test coverage high, above 90\%.
 While each team decided when to merge pull requests, we recommended that
 all pull requests should have at least three participants, test coverage
 should not decrease, and tests should pass before being merged.
 
-Students also used the GitHub Issues interface to record project discussions
+Students also used the GitHub issues interface to record project discussions
 and actions taken by the group members.
 Moreover, students were instructed to create a pull request
 or issue with code and text and use the GitHub interface to ask one or more
@@ -616,11 +616,13 @@ their final grades.
 Rather than having students commit raw data to their project repository, we had
 them commit code to download and validate (using stored file checksums)
 all raw data used in their project (week~8).
-Since was the first code they added to their repositories, we gave them example
+Since this was the first code they added to their repositories, we gave them example
 code to download a file and check it against a stored hash of the file
 content.
-Once they had added code to handle downloading and validating the data,
+Once they added code to handle downloading and validating the data,
 we had them commit code for their exploratory data analysis (week~9).
+After this, the only milestones we provided were for progress
+presentations and report drafts.
 
 \begin{figure}
 \centering
@@ -630,23 +632,27 @@ we had them commit code for their exploratory data analysis (week~9).
 \caption{Above.}\label{fig:progress}
 \end{figure}
 
-\fixme{See~\ref{fig:progress}
-Progress presentation and draft report (week~12) ...
+
+The first progress presentation and report (week~12) consisted of a brief
+description of the data they were using, a description of what they had done so
+far, their plan for completing the project, and a reflection on the overall
+process (see Figure~\ref{fig:progress}).
 Slides were written in Markdown and committed to the project repository.
 Reports were written in \LaTeX.
-Project presentation (week~15) ....
-They had to commit the final PDF of their reports as well as provide
-instructions for generating the PDF from the source \LaTeX files.
-We also required that each group prepare a slide presentation discussing where
-things were and there plan for finalizing their project two weeks before they
-were due.
-Final report (week~17) ...}
+We also required that each group prepare a slide presentation (week~15)
+discussing where things were and their plan for finalizing their project two
+weeks before they were due.
+At the end of the project (week~17), they had to commit the final PDF of their
+reports as well as provide instructions for generating the PDF from the source
+\LaTeX files.
+They also had to ensure that all their work was computationally reproducible
+with details for how to do this in their project \texttt{README} file.
 
 Early in the project, we told the students that to reproduce their work, we
 would blindly follow the instructions in the \texttt{README} file at the
 top-level of their repository.
-The \texttt{README} file had to explain how to install, configure,
-and run all aspects of their project.
+So when we graded their projects, the \texttt{README} file had to explain how
+to install, configure, and run all aspects of their project.
 Each \texttt{README} had to clearly state how to operate the
 components of the project and in what order to do so.
 %In particular, students were required to include a section with
@@ -671,6 +677,15 @@ the make commands to execute, such as:
 %As always, we used the GitHub system to record all feedback.}
 %
 \subsection{Neuroimaging data analysis}\label{analysis}
+
+%needs an intro something like
+In order for the students to complete their projects we had to
+teach them about neuroimaging data and how to analyze it.
+This focused the lectures such that we were constantly teaching
+them the next thing the needed to know for their projects.
+It also meant that the students were motivated to learn as
+they needed the information we were giving them in order
+to get their work done.
 
 When teaching neuroimaging data analysis, our aim was for students to
 (a) understand the basic concepts in neuroimaging,
@@ -867,6 +882,12 @@ their own code?  Did they mostly use custom code for the GLM?  For PCA?}
 % it may be hard to duplicate. would a smaller, less diverse teaching staff be
 % able to handle so many diverse, open-ended projects, which are graded
 % in such detail?
+
+% Did we really teach computational reproducibility?
+% worth discussing perhaps ...
+% not completely (eg only Python software, etc.),
+% but gave a concrete sense of
+% how such a thing could be done and a solid foundation to build on.
 
 Most neuroimaging researchers agree that computational reproducibility is
 desirable, but rare.  How should we adapt our teaching to make reproducibility
@@ -1092,8 +1113,7 @@ easy sell to statistics students, as \LaTeX is widely used in statistics.
 Students outside mathematical fields might be less agreeable; if we were
 teaching psychology and neuroscience students, we might choose
 another plain text markup language, such as Markdown, with the text files run
-through the Pandoc \footnote{\url{http://pandoc.org}} document processor to
-write publication quality output.
+through the Pandoc document processor to write publication quality output.
 
 \section{Conclusion}\label{conclusion}
 
