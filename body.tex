@@ -873,22 +873,6 @@ their own code?  Did they mostly use custom code for the GLM?  For PCA?}
 
 \section{Discussion}\label{discussion}
 
-% do we need a section on is a substantial project necessary?
-% or is it more a theme than spans multiple of the discussion subsections?
-
-% what about teaching staff?
-% we had 4 instructors representing expertise in almost every aspect of
-% neuroimaging research  (neuroscience, neuroimaging, psychology, statistics, computing, physics, ...)
-% it may be hard to duplicate. would a smaller, less diverse teaching staff be
-% able to handle so many diverse, open-ended projects, which are graded
-% in such detail?
-
-% Did we really teach computational reproducibility?
-% worth discussing perhaps ...
-% not completely (eg only Python software, etc.),
-% but gave a concrete sense of
-% how such a thing could be done and a solid foundation to build on.
-
 Most neuroimaging researchers agree that computational reproducibility is
 desirable, but rare.  How should we adapt our teaching to make reproducibility
 more common?
@@ -908,12 +892,15 @@ To quote the American chemist Frank Westheimer:
 ``A couple of months in the laboratory can frequently save a couple of hours
 in the library.''
 
-For these reasons, our course took the opposite to the common approach. We
-started with the tools and process for working with numerical data, and for
-building their own analyses. We used this framework as a foundation on which
-to build their understanding of the underlying ideas.  As we taught these
-tools, we integrated them into their exercises, and made it clear how they
-related to their work on the project.
+For these reasons, our course took the opposite to the common approach.
+We put a substantial, collaborative, and open-ended project at the center of
+the course.
+We then started with the tools and process for working with numerical data, and
+for building their own analyses.
+We used this framework as a foundation on which to build their understanding of
+the underlying ideas.
+As we taught these tools, we integrated them into their exercises and homework,
+and made it clear how they related to their work on the project.
 
 Our claim is that this made our teaching and our students much more efficient.
 The secure foundation made it easier for them to work with us and with each
@@ -933,7 +920,7 @@ and teaching on the general linear model and principal component analysis from
 classes 9 through 15.  We only attempted to cover the standard statistical
 techniques needed for a basic analysis of a single run of FMRI data.  This is
 a much narrower range than a standard neuroimaging course.  However, we argue
-that we covered these topics in much greater depth that is typical for a
+that we covered these topics in much greater depth than is typical for a
 neuroimaging course, and that this formed the foundation for final projects
 that were substantial and well-grounded.
 
@@ -959,7 +946,7 @@ exploration of an FMRI dataset and paper.  Very few students had any
 experience or knowledge of FMRI before the course. The only guidance we gave
 was that they should prefer well-curated datasets from the OpenFMRI
 depository.  In order to design and implement their project, they had to
-understand at least one published FMRI paper in some depth, with little
+understand at least one published FMRI paper in some depth, with limited
 assistance from their instructors.  We gave no example projects for them to
 review, or templates for them to follow.  As we have already described in the
 results, the submitted projects were all substantial efforts to reproduce and
@@ -972,6 +959,15 @@ with multiple comparisons.   Our claim is that what we did teach was a sound
 and sufficient foundation from which they could write code to implement their
 own analyses.  We argue that this is a level of competence that few
 neuroimagers achieve even after considerable practical experience.
+
+\subsection{Did we really teach computational reproducibility?}
+
+% not completely (eg only Python software, etc.),
+% but gave a concrete sense of
+% how such a thing could be done and a solid foundation to build on.
+% we introduced them to problem and showed them what it looks like
+% to have something computationally reproducible.
+% but only by someone who is familiar with standard tools
 
 \subsection{Did we teach the right tools?}
 
@@ -991,8 +987,8 @@ using GitHub tools such as the issue tracker and pull requests.
 We set and marked code exercises with Git version control and text files,
 rather than interactive alternatives, such as Jupyter Notebooks.
 
-Of course some students complained that they would rather use Facebook for
-code discussions and Powerpoint for their presentation slides.
+Of course---at first---some students complained that they would rather use
+Facebook for code discussions and Powerpoint for their presentation slides.
 Should we have allowed them to do this?  We believe not.  Our own experience
 of using the tools we taught is that their true power only becomes apparent
 when you learn to use them for all the tasks of analysis, including generating
@@ -1007,19 +1003,45 @@ done in the context of a class where there are examples of use from coursework
 and support from experienced instructors who use these tools in their daily
 work.
 
-% Anecdote: students (5+) coming up on campus to remark how much they liked the
-% tools and process. they say the are using them for new work.
-
 \subsection{Do students need to be trained in programming?}
 
 One common justification for not training students in good coding practice, is
 the assertion that scientists do not need to be programmers.  Scientists do
-have to use, read and write code, so a more realistic version of this
+have to use, read, and write code, so a more realistic version of this
 statement would be that scientists do not need to be good programmers.
 Unfortunately bad programmers are inefficient and prone to error; they are
 less likely to detect errors, and improve slowly over time, if at all.  We
 should invest our work in education to help the student work efficiently and
 continue learning over the whole of their career.
+
+\subsection{Do students need a substantial, collaborative, and open-ended project?}
+
+In response to the question
+\emph{``What advice would you give to another student who is considering taking this course?''}
+one undergraduate student wrote:
+\begin{quotation}
+``[U]nlike most group projects (which last for maybe a few weeks tops or
+could conceivably be pulled off by one very dedicated person), this one will
+dominate the entire semester. . . . Try to stay organized for the project and
+create lots of little goals and checkpoints. You should always be working on
+something for the project, whether that's coding, reviewing, writing, etc. Ask
+lots of questions and ask them early!''
+\end{quotation}
+Without engaging the students to such an extent...
+wanted to reproduce the lab experience...
+
+- substantial;
+perhaps most essential, but might be done in the student's home lab
+
+- collaborative;
+seems the classroom is the best place to do this;
+added benefit of developing the expectation that your work
+should always be something you would want to show others
+to communicate your ideas and explain what you did
+
+- open-ended;
+mirrors the research experience;
+hopefully more fully engages the students
 
 \subsection{What background do students need?}
 
@@ -1115,19 +1137,11 @@ teaching psychology and neuroscience students, we might choose
 another plain text markup language, such as Markdown, with the text files run
 through the Pandoc document processor to write publication quality output.
 
-\section{Conclusion}\label{conclusion}
-
-In response to the question
-\emph{``What advice would you give to another student who is considering taking this course?''}
-one undergraduate student wrote:
-\begin{quotation}
-``[U]nlike most group projects (which last for maybe a few weeks tops or
-could conceivably be pulled off by one very dedicated person), this one will
-dominate the entire semester. . . . Try to stay organized for the project and
-create lots of little goals and checkpoints. You should always be working on
-something for the project, whether that's coding, reviewing, writing, etc. Ask
-lots of questions and ask them early!''
-\end{quotation}
+% we had 4 instructors and 11 projects (with three to five students per project)
+% it was a demanding load; it might be hard to scale up;
+% office hours more like consulting (something we had a lot of experience with);
+% could use advanced graduate student advisors
+% as research consultants with weekly office hours.
 
 \section*{Conflict of Interest Statement}
 
