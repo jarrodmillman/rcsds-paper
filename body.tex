@@ -194,7 +194,7 @@ Our objective for the course was for students to be
 (e) able to understand the computational and statistical issues involved with
 reproducibility, and
 (f) familiar with computational issues in modern statistical data
-analysis through hands-on analysis of neuroimaging data.
+analysis through extensive, hands-on analysis of neuroimaging data.
 
 In particular, we wanted to show our students how to apply these methods to
 investigate a real scientific question, that they had chosen themselves.
@@ -251,7 +251,7 @@ open source scientific computing. It is widely used in industry.
 There are automated installers for all major operating systems.
 Web platforms such as GitHub, Bitbucket, and GitLab provide web interfaces
 to version control to simplify procedures such as code review, automated
-testing and issue tracking (see below).
+testing, and issue tracking (see below).
 
 \blockpar{Scientific Python.}
 Python is a general purpose programming language,
@@ -268,7 +268,7 @@ and display by the other packages.
 
 \blockpar{Peer review.}
 Regular peer review is one of the most important ways of continuing to learn
-to be an effective author of correct code and data analysis.  Git and its
+to be an effective author of correct code and valid data analysis.  Git and its
 various web platforms provide a powerful tool for peer review.
 
 \emph{Pull requests} are a Git interface feature pioneered by GitHub, which
@@ -287,22 +287,22 @@ They usually manipulate some input argument(s) and return some output
 result(s).
 There are several advantages to organizing your code into functions rather
 than simply writing stream of consciousness scripts.
-First, functions allow you to ``hide'' the details of a discrete bit of
+Functions allow you to ``hide'' the details of a discrete bit of
 code from view.
 This can make it easier to see the higher-level structure of your analysis.
-Second, it encourages you to think of your program as a collection of sub-steps.
-Third, it allows you to reuse code instead of rewriting or copying and editing it.
-Fourth, it enables you to keep your variable namespace clean.
-Finally, it also allows you to test small parts of your program in isolation
-from the rest.
+They encourage you to think of your program as a collection of substeps.
+Functions allow you to reuse code instead of rewriting or copying and editing it.
+%Fourth, it enables you to keep your variable namespace clean.
+Finally, writing functions also allows you to test small parts of your program
+in isolation from the rest.
 
 Testing is an essential discipline to give some assurance to the authors and
-other users that the code continues to work as expected.
+other users that the code works as expected.
 The tests should also document how the code is expected to be used.
 Inexperienced coders typically greatly underestimate how often they make
-errors; expecting, finding and fixing errors is an essential part of being
+errors; expecting, finding, and fixing errors is an essential part of being
 able to learn from continued practice.
-There are tools that can measure how what proportion of the lines
+There are tools that can measure what proportion of the lines
 of code have covered by the tests---this is \emph{test coverage}.
 
 % unit tests doctests
@@ -325,11 +325,11 @@ like GitHub.
 % that you use for writing code.  You can also easily change format options.
 % Some of this is already said below.
 % We should rewrite the above sentence or just remove it.
-A markup language allows for generation of content in plain text, while also
+A markup language allows you to write content in plain text, while also
 maintaining a set of special syntax to annotate the content with structural
 information.
-In this way, the plain-text or ``source'' files are human-readable and easy to
-use with version control.
+In this way, the plain text or \emph{source} files are human-readable and work
+well with standard version control systems.
 To produce the final document, the source files must undergo a build or render
 step where the markup syntax (and any associated style files) are passed to a
 tool that knows how to interpret and render the content.
@@ -340,7 +340,7 @@ with their own usefulness.
 In contrast, Markdown is notation light, but limited.
 
 Pandoc is a command line document processor that can convert between multiple
-markup formats as well as produce final documents for many of them.
+markup formats as well as produce final documents.
 
 \blockpar{Reproducible workflows.}
 When working with the Unix command line, you frequently generate files
@@ -352,14 +352,14 @@ automate all types of command line workflows.
 Makefiles are machine-readable text files consisting of rules
 specifying the sequence of commands necessary for generating
 certain files and for tracking dependencies between files.
-For example, a Makefile might contain a rule like this:
+Considering the Makefile rule:
 \begin{verbatim}
     progress.pdf: progress.md
             pandoc -t beamer -s progress.md -o progress.pdf
 \end{verbatim}
 %The \emph{target} of this rule is the file \texttt{progress.pdf},
 %which \emph{depends} on the file \texttt{progress.md}.
-The rule says how to run \texttt{pandoc} to generate the PDF slides (\texttt{progress.pdf}) from the
+This rule says how to run \texttt{pandoc} to generate the PDF slides (\texttt{progress.pdf}) from the
 markdown file (\texttt{progress.md}).\footnote{\url{http://pandoc.org/MANUAL.html\#producing-slide-shows-with-pandoc}}
 If you edit \texttt{progress.md}, you can regenerate \texttt{progress.pdf}
 from the command line using \texttt{make progress.pdf}.
@@ -370,7 +370,7 @@ The target of a rule is often a filename (e.g., \texttt{progress.pdf}), but can
 also be an arbitrary name for some commands that you may want to invoke.
 The dependencies of a rule can be filenames (e.g., \texttt{progress.md}), but
 may also be other rules in the Makefile.
-This ability to chain together complex sequences of commands necessary for
+The ability to chain together complex sequences of commands necessary for
 generating multiple target files depending on other files is essential to
 enabling reproducible workflows.
 
@@ -383,9 +383,9 @@ We demonstrated basic methods and tools during lecture and lab,
 and expected students to do additional research and reading as they worked on
 the group project.
 For example, we only gave one or two lectures on each of Unix, Git, Python,
-Testing, and NumPy.
-Each weekly lab would focus on the software stack from previous lectures;
-after the Git lecture, we began to use Git and GitHub to fetch and submit all
+testing, and NumPy.
+Each weekly lab focused on the software stack from previous lectures;
+after the Git lecture, we used Git and GitHub to fetch and submit all
 exercises;
 after we taught on testing, we continually reinforced testing in the labs.
 Course work outside labs also made heavy use of the toolstack, including each
@@ -393,7 +393,7 @@ new tool as it was introduced in lectures.
 
 % first lecture topic
 For the first three lectures, we introduced students to the Unix environment
-and started teaching them version control using Git.
+and version control using Git.
 The fourth lecture was a high-level introduction to neuroimaging and
 functional magnetic resonance imaging (or FMRI).
 We then introduced students to scientific computing with Python.
@@ -465,8 +465,7 @@ bi-weekly basis.
 The readings consisted of articles that emphasized the core concepts
 of the class, either with respect to scientific computing, or neuroimaging.
 Students were required to compose a two-paragraph write-up that both summarized
-the main points of the article, and commented on it from their personal
-perspective.
+the main points of the article, and commented on it.
 
 The labs and quizzes emphasized hands-on experience with the computing tools
 and process associated with reproducible and collaborative computing (e.g.,
@@ -477,7 +476,7 @@ opposed to the statistical and neuroimaging components covered in the lectures.
 The remainder of the lab was devoted to providing hands-on experience via
 collaborative work on breakout exercises.
 These breakout exercises were formulated as small ``projects'' to be worked on
-in groups of 3 to 4 students.
+in groups of three to four students.
 Prior to the breakout session, a small review of material relevant for the 
 exercises was presented, often in the form of an interactive Jupyter notebook.
 
@@ -571,8 +570,8 @@ the way we work with collaborators in the lab.
 %This continued throughout the semester and was quite involved.
 %Mirrors how we work with collaborators.}
 
-Feedback was not only provided to the students from the instructors: the
-project evaluations included peer-review, where each research team was
+Feedback was not only provided to the students from the instructors:
+project feedback included peer-review, where each research team was
 responsible for cloning another team's project, running the tests and analyses,
 and evaluating the resulting technical document.
 The peer-review process proved particularly valuable, as the students 
