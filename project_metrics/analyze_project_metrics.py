@@ -25,7 +25,7 @@ assert len(project_names) == 11
 projects = projects[1:]
 
 columns = ['name', 'all', 'wo_tests', 'wo_tests_scripts', 'found_statements',
-           'percent_found_covered', 'prs', 'issues']
+           'percent_found_covered', 'prs', 'issues', 'grading_issues']
 dtypes = {'name': 'object', 'percent_found_covered': 'float64'}
 dtypes.update({name: 'int64' for name in columns if name not in dtypes})
 df = pd.DataFrame(columns=columns)
@@ -43,3 +43,4 @@ df['estimated_coverage'] = df['est_lines_covered'] / df['wo_tests'] * 100
 summary = pd.DataFrame([df.median(), df.min(), df.max()])
 
 print(summary)
+print(df.groupby('grading_issues')['name'].nunique())

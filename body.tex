@@ -823,27 +823,25 @@ This part of the second homework included
 
 \end{itemize}
 
-\section{Results}\label{results}
+\subsection{Final project grading}
 
-There were a total of eleven different research teams composed of three
-to five students, each responsible for completing a final project of their
-own design using datasets available through the OpenFMRI organization.
-
-The evaluation of the final projects was based on criteria that emphasized the
+We based the evaluation of the final projects on criteria that emphasized the
 underlying principles of reproducibility, collaboration, and technical
 quality.
 See Table~\ref{tab:rubric} for the final project grading rubric, which we
-provide the students (week~11) the week before the first progress
+gave to the students on week~11 --- the week before the first progress
 presentations.
-From the perspective of reproducibility, projects were evaluated on whether the
+From the perspective of reproducibility, we evaluated projects on whether the
 presented results could be generated from their repositories according to the
-documentation they provided.
-The code tests were also evaluated with respect to code coverage
-and thoroughness.
-The collaborative aspects of the project were evaluated using the information
-from the project history provided by version control, including
-individual contributions and reviewing pull requests.
-Finally, the technical quality of the project was evaluated both in terms of
+documentation they provided in their \texttt{README.md} text file.  When we
+could not reproduce the analysis, we raised one or more Github issues to
+negotiate with the project team.
+We graded the code tests with respect to code coverage.
+Grading for the collaborative aspects of the project used the information
+from the project history provided by the Git version history and Github web
+artefacts, including code contributions, reviewing Github pull requests and
+discussion on Github issues.
+Finally, we assessed the technical quality of the project in terms of
 the clarity of the final report and with respect to how well the proposed
 goals of the study were met by the final results of the analysis.
 
@@ -857,9 +855,68 @@ An ``A'' was roughly two or more check pluses and no check minuses.}
 \end{tiny}
 \end{table}
 
-There was a large disparity in the backgrounds of the students that constituted 
-each research team, and this was reflected by a range of scopes for the
-final projects.
+\section{Results}\label{results}
+
+There were a total of eleven research teams composed of three to five
+students, each responsible for completing a final project of their own design
+using datasets available through the OpenFMRI organization.  We named groups
+arbitrarily with Greek letters (e.g alpha, kappa, zeta).  The project
+repositories are public at \url{https://https://github.com/berkeley-stat159}.
+
+Although we allowed students to select any OpenFMRI dataset, in fact all
+groups selected one of the following:
+
+\begin{itemize}
+
+\item
+    \texttt{ds000005}\footnote{\url{https://openfmri.org/dataset/ds000005}}:
+        \textit{Mixed-gambles task} \citep{tom2007neural} (groups delta,
+        epsilon, eta, theta);
+
+\item
+    \texttt{ds000009}\footnote{\url{https://openfmri.org/dataset/ds000009}}:
+        \textit{The generality of self-control} \citep{cohen2014generality}
+        (group alpha);
+
+\item
+    \texttt{ds000105}\footnote{\url{https://openfmri.org/dataset/ds000105}}:
+        \textit{Visual object recognition} \citep{haxby2001distributed}
+        (groups kappa, zeta);
+
+\item
+    \texttt{ds000113}\footnote{\url{https://openfmri.org/dataset/ds000113}}:
+        \textit{A high-resolution 7-Tesla fMRI dataset from complex natural
+        stimulation with an audio movie} \citep{hanke2014high} (groups beta,
+        lambda);
+
+\item
+    \texttt{ds000115}\footnote{\url{https://openfmri.org/dataset/ds000115}}:
+        \textit{Working memory in healthy and schizophrenic individuals}
+        \citep{repovs2012working} (groups gamma, iota).
+
+\end{itemize}
+
+During grading, we succeeded in fully replicating all group analyses.  The
+minor problems that arose were largely platform differences between macOS used
+by the students and the Linux system we were using for grading.  Four projects
+reproduced without issue, six required us to raise one Github issue, and one
+required two issues.
+
+We counted the lines of Python code using the \texttt{cloc}
+utility\footnote{\url{http://cloc.sourceforge.net}}.  The median lines of code
+across projects was 1494 (range 624-8582), of which tests comprised (median,
+range) 440, 36-592.  As this suggests, we were not successful in teaching the
+students to test a large proportion of their code.  Although the code coverage
+utility uses a different estimate of code lines, we estimated code coverage at
+a median of 14.5\% of lines (range 2-108)\footnote{See
+\url{https://github.com/jarrodmillman/teaching/tree/master/project_metrics}
+for details of this estimate.}.  The code coverage machinery we
+had put in place did not measure coverage of code outside expected code
+directories, and the students had put a large proportion of their code outside
+these directories, leaving the automated code coverage score above 90\% in all
+cases, even though a large proportion of the code was not in fact covered by
+tests.
+
 The primary focus of the majority of projects was reproducing results
 of published research from the OpenFMRI datasets using the neuroimaging 
 analysis methods introduced in the course.

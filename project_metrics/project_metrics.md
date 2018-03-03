@@ -14,6 +14,7 @@ each project, I have recorded:
 * percentage of detected code statements covered by tests.
 * # PRs
 * # Issues
+* # of post-submission issues.
 
 I want to compare coverage line counts (which are in terms of Python
 statements) to code line counts from `cloc`.  For a few project I took
@@ -48,6 +49,7 @@ Alpha
 68
 190
 27
+1
 
 Beta
 
@@ -58,6 +60,7 @@ Beta
 97
 147
 13
+1
 
 Delta
 
@@ -68,6 +71,7 @@ Delta
 100
 122
 37
+2
 
 Epsilon
 
@@ -78,6 +82,7 @@ Epsilon
 100
 310
 31
+0
 
 Eta
 
@@ -88,6 +93,7 @@ Eta
 97
 89
 17
+0
 
 Gamma
 
@@ -98,6 +104,7 @@ Gamma
 100
 79
 12
+0
 
 Iota
 
@@ -108,6 +115,7 @@ Iota
 99
 113
 31
+1
 
 Kappa
 
@@ -118,6 +126,7 @@ Kappa
 95
 99
 37
+1
 
 Lambda
 
@@ -128,6 +137,7 @@ Lambda
 97
 67
 27
+1
 
 Theta
 
@@ -138,6 +148,7 @@ Theta
 99
 113
 28
+0
 
 Zeta
 
@@ -148,3 +159,4 @@ Zeta
 96
 49
 4
+1
