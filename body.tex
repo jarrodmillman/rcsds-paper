@@ -818,12 +818,17 @@ This part of the second homework included
 (d) making and saving plots with matplotlib.}\label{fig:diagnosis_script}
 \end{figure}
 
+We encouraged students to use the basic Python building blocks for their
+project analyses, but we did not insist.  Our rule was that, if they used
+other software, they had to persuade us that they had a sound understanding of
+the algorithms that the other software was using.
+
 % Kind-of flipped.
 % Centered on the project.
 
 \end{itemize}
 
-\subsection{Final project grading}
+\subsection{Project grading}
 
 We based the evaluation of the final projects on criteria that emphasized the
 underlying principles of reproducibility, collaboration, and technical
@@ -917,6 +922,26 @@ these directories, leaving the automated code coverage score above 90\% in all
 cases, even though a large proportion of the code was not in fact covered by
 tests.
 
+We were successful in persuading the students not to use specific neuroimaging
+software.  No team used SPM, FSL or AFNI.  Two projects imported the
+\texttt{nilearn} package\footnote{\url{https://nilearn.github.io}}, which is a
+Python neuroimaging package designed for machine learning, but both projects
+used Nilearn only for spatial smoothing and basic volume visualization.  One
+project used a single function from the
+\texttt{Dipy}\footnote{\url{http://nipy.org/dipy}} package for calculating a
+within-brain mask for the functional images.  Another used a class from the
+\texttt{NiTime} package\footnote{\url{http://nipy.org/nitime} for temporal
+filtering.  All projects used the basic Numpy, Scipy and Matplotlib packages;
+eight of eleven used the \texttt{Scikit-Learn} Python package for machine
+learning\footnote{\url{http://scikit-learn.org}}; six used the
+\texttt{Statsmodels} Python package for statistical
+modeling\footnote{\url{http://www.statsmodels.org}}.  The uses of Statsmodels
+were: Autoregressive integrated moving average (ARIMA) modeling of voxel
+time-series and autocorrelation plots (two projects); logistic regression (two
+projects); ordinary least squares modeling (one project); White test for
+Heteroscedasticity (one project); mixed effects modeling (one project).  Of
+these, we had only shown ordinary least squares analysis in class.
+
 The primary focus of the majority of projects was reproducing results
 of published research from the OpenFMRI datasets using the neuroimaging 
 analysis methods introduced in the course.
@@ -949,8 +974,18 @@ in the course by implementing analyses to replicate published results; and
 several went beyond this to expand their investigations to novel applications
 of the open data.
 
-\fixme{I feel the need for a bit more detail about what they implemented in
-their own code?  Did they mostly use custom code for the GLM?  For PCA?}
+Seventeen out of forty undergraduates and six out of ten graduate students
+completed anonymous course evaluations.  The primary question of interest to
+us was ``Considering both the limitations and possibilities of the subject
+matter and the course, how would you rate the overall effectiveness of this
+course?``; ratings were on a 1 through 7 scale with 4 corresponding to
+``Moderately effective``.  The average undergraduate and graduate scores were
+4.71 and 6.0 respectively, against a department average across all courses of
+5.23.  Undergraduate, graduate and department average ratings for ``I enjoyed
+this class`` on a 1 through 7 scale were 4.69, 6.00 and 4.96 respectively.
+
+70.5\% of the undergraduate respondents and all the graduate respondents
+claimed to have worked 10 or more hours a week on average.
 
 \section{Discussion}\label{discussion}
 
