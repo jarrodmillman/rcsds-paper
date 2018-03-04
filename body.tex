@@ -63,7 +63,7 @@ mixture of lectures covering the broad general ideas of the analysis, usually
 combined with some practical workshops using one of the standard imaging
 software packages.
 
-We also have many yeards of experience giving practical support for imaging
+We also have many years of experience giving practical support for imaging
 analysis to graduate students and post docs.
 
 Over these years of teaching and support, we have gradually come to realize
@@ -90,7 +90,7 @@ fundamental ways:
 
 As a corollary of these two problems, imaging researchers usually do not have
 the vocabulary, understanding, or shared tools to collaborate fluently with
-researchers from other fields, such as statistics, engineering or computer
+researchers from other fields, such as statistics, engineering, or computer
 science.
 
 We believe these two problems stem from an essential error of emphasis.  The
@@ -271,7 +271,7 @@ Git is the distributed version control system that has become the standard in
 open source scientific computing. It is widely used in industry.
 There are automated installers for all major operating systems.
 Web platforms such as GitHub\footnote{\url{https://github.com}},
-Bitbucket\footnote{\url{https://bitbucket.org}} and
+Bitbucket,\footnote{\url{https://bitbucket.org}} and
 GitLab\footnote{\url{https://about.gitlab.com}} provide web interfaces to
 version control to simplify procedures such as code review, automated testing,
 and issue tracking (see below).
@@ -401,7 +401,7 @@ also be an arbitrary name for some commands that you may want to invoke.
 The dependencies of a rule can be filenames (e.g., \texttt{progress.md}), but
 may also be other rules in the Makefile.
 The ability to chain together complex sequences of commands necessary for
-generating multiple target files depending on other files is import for
+generating multiple target files depending on other files is important for
 building and maintaining reproducible workflows.
 
 \subsubsection{Lectures, labs, notes, homeworks, readings, and quizzes}
@@ -452,7 +452,7 @@ Typically, assignments were given as a collection of tests that tested the
 desired behavior of named functions, and function templates with missing
 implementations.
 The functions were documented according to the NumPy documentation
-standard\footnote{\url{https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt}}.
+standard.\footnote{\url{https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt}}
 See the code listing in Figure~\ref{fig:dna} for an example from the first homework.
 Students added implementations to the functions according to the documentation
 and ran the unit tests to check that their code returned the correct results
@@ -511,7 +511,7 @@ in groups of three to four students.
 Prior to the breakout session, a small review of material relevant for the
 exercises was presented, often in the form of a Jupyter notebook containing
 Python code that the students could execute on their own
-machines\footnote{\url{https://jupyter-notebook.readthedocs.io}}.
+machines.\footnote{\url{https://jupyter-notebook.readthedocs.io}}
 
 We also used the labs to help the students practice critical code review.
 For example, we had the students form small groups and review one another's
@@ -604,7 +604,7 @@ scripts that called these functions to perform the project data analysis.
 We taught students to test their code thoroughly.
 We set up each project with a configuration file for the Travis
 CI\cref{travis-ci} continuous integration service, and enabled integration of
-this service with their Github repository.  The configuration file specified
+this service with their GitHub repository.  The configuration file specified
 that their tests would be run and reported on the Travis CI servers each
 time they changed their code on the GitHub hosting site.
 We added automated code coverage testing; each change to the code on GitHub
@@ -792,7 +792,7 @@ We covered the following topics:
         of some characteristic of that event, such as duration or intensity.
 \item
     Spatial smoothing with a Gaussian kernel; smoothing as a form of
-    convolution; the \texttt{scipy.ndimage} subpackage in Scipy as an
+    convolution; the \texttt{scipy.ndimage} subpackage in SciPy as an
     implementation of Gaussian and other smoothing.
 
 \item
@@ -835,18 +835,18 @@ We based the evaluation of the final projects on criteria that emphasized the
 underlying principles of reproducibility, collaboration, and technical
 quality.
 See Table~\ref{tab:rubric} for the final project grading rubric, which we
-gave to the students on week~11 --- the week before the first progress
+gave to the students on week~11---the week before the first progress
 presentations.
 From the perspective of reproducibility, we evaluated projects on whether the
 presented results could be generated from their repositories according to the
 documentation they provided in their \texttt{README.md} text file.  When we
-could not reproduce the analysis, we raised one or more Github issues to
+could not reproduce the analysis, we raised one or more GitHub issues to
 negotiate with the project team.
 We graded the code tests with respect to code coverage.
 Grading for the collaborative aspects of the project used the information
-from the project history provided by the Git version history and Github web
-artefacts, including code contributions, reviewing Github pull requests and
-discussion on Github issues.
+from the project history provided by the Git version history and GitHub web
+artifacts, including code contributions, reviewing GitHub pull requests and
+discussion on GitHub issues.
 Finally, we assessed the technical quality of the project in terms of
 the clarity of the final report and with respect to how well the proposed
 goals of the study were met by the final results of the analysis.
@@ -866,8 +866,8 @@ An ``A'' was roughly two or more check pluses and no check minuses.}
 There were a total of eleven research teams composed of three to five
 students, each responsible for completing a final project of their own design
 using datasets available through the OpenFMRI organization.  We named groups
-arbitrarily with Greek letters (e.g alpha, kappa, zeta).  The project
-repositories are public at \url{https://https://github.com/berkeley-stat159}.
+arbitrarily with Greek letters (e.g., alpha, kappa, zeta).  The project
+repositories are public at \url{https://github.com/berkeley-stat159}.
 
 Although we allowed students to select any OpenFMRI dataset, in fact all
 groups selected one of the following:
@@ -875,28 +875,28 @@ groups selected one of the following:
 \begin{itemize}
 
 \item
-    \texttt{ds000005}\footnote{\url{https://openfmri.org/dataset/ds000005}}:
+    \texttt{ds000005}:\footnote{\url{https://openfmri.org/dataset/ds000005}}
         \textit{Mixed-gambles task} \citep{tom2007neural} (groups delta,
         epsilon, eta, theta);
 
 \item
-    \texttt{ds000009}\footnote{\url{https://openfmri.org/dataset/ds000009}}:
+    \texttt{ds000009}:\footnote{\url{https://openfmri.org/dataset/ds000009}}
         \textit{The generality of self-control} \citep{cohen2014generality}
         (group alpha);
 
 \item
-    \texttt{ds000105}\footnote{\url{https://openfmri.org/dataset/ds000105}}:
+    \texttt{ds000105}:\footnote{\url{https://openfmri.org/dataset/ds000105}}
         \textit{Visual object recognition} \citep{haxby2001distributed}
         (groups kappa, zeta);
 
 \item
-    \texttt{ds000113}\footnote{\url{https://openfmri.org/dataset/ds000113}}:
-        \textit{A high-resolution 7-Tesla fMRI dataset from complex natural
+    \texttt{ds000113}:\footnote{\url{https://openfmri.org/dataset/ds000113}}
+        \textit{A high-resolution 7-Tesla FMRI dataset from complex natural
         stimulation with an audio movie} \citep{hanke2014high} (groups beta,
         lambda);
 
 \item
-    \texttt{ds000115}\footnote{\url{https://openfmri.org/dataset/ds000115}}:
+    \texttt{ds000115}:\footnote{\url{https://openfmri.org/dataset/ds000115}}
         \textit{Working memory in healthy and schizophrenic individuals}
         \citep{repovs2012working} (groups gamma, iota).
 
@@ -905,38 +905,40 @@ groups selected one of the following:
 During grading, we succeeded in fully replicating all group analyses.  The
 minor problems that arose were largely platform differences between macOS used
 by the students and the Linux system we were using for grading.  Four projects
-reproduced without issue, six required us to raise one Github issue, and one
+reproduced without issue, six required us to raise one GitHub issue, and one
 required two issues.
 
+% I am not sure why this is a measure of test coverage
 We counted the lines of Python code using the \texttt{cloc}
-utility\footnote{\url{http://cloc.sourceforge.net}}.  The median lines of code
-across projects was 1494 (range 624-8582), of which tests comprised (median,
-range) 440, 36-592.  As this suggests, we were not successful in teaching the
+utility.\footnote{\url{http://cloc.sourceforge.net}}  The median lines of code
+across projects was 1,494 (range 624--8,582), of which tests comprised (median,
+range) 440, 36--592.  As this suggests, we were not successful in teaching the
 students to test a large proportion of their code.  Although the code coverage
 utility uses a different estimate of code lines, we estimated code coverage at
-a median of 14.5\% of lines (range 2-108)\footnote{See
+a median of 14.5\% of lines (range 2--108).\footnote{See
 \url{https://github.com/jarrodmillman/teaching/tree/master/project_metrics}
-for details of this estimate.}.  The code coverage machinery we
+for details of this estimate.}  The code coverage machinery we
 had put in place did not measure coverage of code outside expected code
 directories, and the students had put a large proportion of their code outside
 these directories, leaving the automated code coverage score above 90\% in all
 cases, even though a large proportion of the code was not in fact covered by
 tests.
 
-We were successful in persuading the students not to use specific neuroimaging
-software.  No team used SPM, FSL or AFNI.  Two projects imported the
-\texttt{nilearn} package\footnote{\url{https://nilearn.github.io}}, which is a
+%We were successful in persuading the students not to use specific neuroimaging
+%software.
+No team used SPM, FSL, or AFNI.  Two projects imported the
+\texttt{nilearn} package,\footnote{\url{https://nilearn.github.io}} which is a
 Python neuroimaging package designed for machine learning, but both projects
 used Nilearn only for spatial smoothing and basic volume visualization.  One
 project used a single function from the
-\texttt{Dipy}\footnote{\url{http://nipy.org/dipy}} package for calculating a
+\texttt{Dipy} package\footnote{\url{http://nipy.org/dipy}} for calculating a
 within-brain mask for the functional images.  Another used a class from the
 \texttt{NiTime} package\footnote{\url{http://nipy.org/nitime}} for temporal
-filtering.  All projects used the basic Numpy, Scipy and Matplotlib packages;
-eight of eleven used the \texttt{Scikit-Learn} Python package for machine
-learning\footnote{\url{http://scikit-learn.org}}; six used the
-\texttt{Statsmodels} Python package for statistical
-modeling\footnote{\url{http://www.statsmodels.org}}.  The uses of Statsmodels
+filtering.  All projects used the basic NumPy, SciPy, and Matplotlib packages;
+eight of eleven used the \texttt{Scikit-Learn} package\footnote{\url{http://scikit-learn.org}}
+for machine learning; six used the
+\texttt{Statsmodels} package\footnote{\url{http://www.statsmodels.org}} for statistical
+modeling.  The uses of Statsmodels
 were: AutoRegressive Integrated Moving Average (ARIMA) modeling of voxel
 time-series and autocorrelation plots (two projects); logistic regression (two
 projects); ordinary least squares modeling (one project); White test for
@@ -948,22 +950,22 @@ There was a wide range in the novelty and scope of the projects.  Most
 projects consisted of a serious attempt to replicate one or several
 statistical findings in the original paper, with the addition of some further
 extension or exploration.  These extensions were typically the application of
-other statistical techniques.  For example, Project epsilon was one of the
-four groups working on the dataset ds000005 -- the \textit{Mixed-gambles
+other statistical techniques.  For example, project epsilon was one of the
+four groups working on the dataset ds000005---the \textit{Mixed-gambles
 task}.  They first explored the imaging data using the outlier detection
 machinery that all students had developed in the second homework.  Next they
 explored various logistic regression models of the behavioral data.  For the
-imaging data, they used the Scipy \texttt{ndimage} subpackage to smooth the
+imaging data, they used the SciPy \texttt{ndimage} subpackage to smooth the
 data, as we had briefly shown in class, and then followed some hints in the
 lectures to explore different confound models such as linear and quadratic
 drift, and Principal Components as regressors.  They used some of the code
 from class to implement the general linear model at each voxel, and calculate
-t and p values using contrast vectors.  Finally they thresholded their images
+$t$- and $p$-values using contrast vectors.  Finally they thresholded their images
 using Bonferroni correction.
 
 Other projects did more substantial technical or intellectual extensions of
-the original analysis.  Project alpha explored an analysis from ds000009 --
-\textit{The generality of self-control}.  Although we had not covered this in
+the original analysis.  Project alpha explored an analysis from
+ds000009---\textit{The generality of self-control}.  Although we had not covered this in
 class, they discovered from data exploration and reflection that the times of
 slice acquisition would affect their statistical modeling, and developed code
 to shift their model back and forth in time corresponding to the time of slice
@@ -976,14 +978,14 @@ multiple comparison correction and tried other methods for identifying
 activated brain regions, including hierarchical clustering.  Finally, they
 experimented with ARIMA models of the voxel time course.
 
-Project lambda did an heroic effort to replicate the analysis of ds000113 ---
-a high-resolution FMRI dataset of subjects listening to the description of the
+Project lambda did an heroic effort to replicate the analysis of ds000113---a
+high-resolution FMRI dataset of subjects listening to the description of the
 film Forrest Gump.  This dataset had many technical challenges; the images are
 unusually large, at over 1 million voxels per volume, and of unusually long
 duration, at around 450 volumes per run, and having 8 runs per subject.  The
 analysis requires the correlation of many voxel time-courses in each subject
 with voxel time-courses in all other subjects in the analysis.  The group did
-a variety of explorations, including finding some artefacts in the original
+a variety of explorations, including finding some artifacts in the original
 data, and an error in the published paper, and then went on to replicate the
 original correlation analysis, on a smaller number of subjects.  They ran the
 analysis on Amazon Web Services machines in order to deal with the demands of
@@ -998,11 +1000,14 @@ Seventeen out of forty undergraduates and six out of ten graduate students
 completed anonymous course evaluations.  The primary question of interest to
 us was ``Considering both the limitations and possibilities of the subject
 matter and the course, how would you rate the overall effectiveness of this
-course?''; ratings were on a 1 through 7 scale with 4 corresponding to
-``Moderately effective''.  The average undergraduate and graduate scores were
+course?''.  Ratings were on a 1 through 7 scale with 4 corresponding to
+``moderately effective'' and 7 corresponding to ``extremely effective.''
+The average undergraduate and graduate scores were
 4.71 and 6.0 respectively, against a department average across all courses of
-5.23.  Undergraduate, graduate and department average ratings for ``I enjoyed
-this class'' on a 1 through 7 scale were 4.69, 6.00 and 4.96 respectively.
+5.23.  Undergraduate, graduate, and department average ratings for ``I enjoyed
+this class'' on a 1 through 7 scale (with 4 corresponding to
+``somewhat'' and 7 to ``very'')
+were 4.69, 6.00, and 4.96 respectively.
 
 70.5\% of the undergraduate respondents and all the graduate respondents
 claimed to have worked 10 or more hours a week on average.
@@ -1052,7 +1057,7 @@ used neuroimaging as the example scientific application of these tools.  Can
 we claim to have taught a substantial amount of neuroimaging in this class?
 
 Class content specific to neuroimaging was a guest lecture in class 4 (of 25),
-and teaching on the brain images, correlation and the general linear model and
+and teaching on the brain images, correlation, and the general linear model and
 from classes 9 through 15.  We only attempted to cover the standard
 statistical techniques needed for a basic analysis of a single run of FMRI
 data.  This is a much narrower range than a standard neuroimaging course.
@@ -1142,11 +1147,11 @@ We set and marked code exercises with Git version control and text files,
 rather than interactive alternatives, such as Jupyter Notebooks.
 
 Of course---at first---some students complained that they would rather use
-Facebook for code discussions and Powerpoint for their presentation slides.
+Facebook for code discussions and PowerPoint for their presentation slides.
 Should we have allowed them to do this?  We believe not.  Our own experience
 of using the tools we taught is that their true power only becomes apparent
 when you learn to use them for all the tasks of analysis, including generating
-reports and presentations.  Mixing ``easy'' but heavy tools like Powerpoint
+reports and presentations.  Mixing ``easy'' but heavy tools like PowerPoint
 and Facebook with ``simple'' and light tools like text editors and Markdown
 causes us to lose concentration as we switch modes from heavy to light and
 back again. It is easy to be put off by the difficulty of getting used to the
@@ -1195,7 +1200,7 @@ students had different class schedules.  Many of the tools that we taught,
 such as distributed version control, only become essential when working in
 collaboration.  Conversely, if you are not collaborating with others, it can
 be difficult to see why it is worth investing the time to understand powerful
-tools like the Git version control software, or the Github interface.
+tools like the Git version control software, or the GitHub interface.
 
 Working in collaboration, and working reproducibly changes our approach to the
 work. If we have to explain our work to others in the group, or to
@@ -1250,7 +1255,7 @@ course went quickly through basic programming ideas such as for loops,
 conditionals, and functions.  We could not have done this for students without
 any experience of programming.  In our psychology / neuroscience courses that
 used similar material, we required some experience of programming in a
-language such as Python, R, or Matlab.  It is possible that a brief
+language such as Python, R, or MATLAB.  It is possible that a brief
 introduction would be enough to fulfill this requirement, such as a bootcamp
 or multi-day intensive course.
 
