@@ -941,24 +941,25 @@ were: AutoRegressive Integrated Moving Average (ARIMA) modeling of voxel
 time-series and autocorrelation plots (two projects); logistic regression (two
 projects); ordinary least squares modeling (one project); White test for
 Heteroscedasticity (one project); mixed effects modeling (one project).  Of
-these, we had only shown ordinary least squares analysis in class.
+these, we had only shown the implementation of ordinary least squares analysis
+in class.
 
 There was a wide range in the novelty and scope of the projects.  Most
 projects consisted of a serious attempt to replicate one or several
 statistical findings in the original paper, with the addition of some further
 extension or exploration.  These extensions were typically the application of
-other statistical techniques to the time series data.  For example, Project
-epsilon was one of the four groups working on the dataset ds000005 -- the
-\textit{Mixed-gambles task}.  They first explored the imaging data using the
-outlier detection machinery that all students had developed in the second
-homework.  Next they explored various logistic regression models of the
-behavioral data.  For the imaging data, they used the Scipy \texttt{ndimage}
-subpackage to smooth the data, as we had briefly shown in class, and then
-followed some hints in the lectures to explore different confound models such
-as linear and quadratic drift, and Principal Components as regressors.  They
-used some of the code from class to implement the general linear model at each
-voxel, and calculate t and p values using contrast vectors.  Finally they
-thresholded their images using Bonferroni correction.
+other statistical techniques.  For example, Project epsilon was one of the
+four groups working on the dataset ds000005 -- the \textit{Mixed-gambles
+task}.  They first explored the imaging data using the outlier detection
+machinery that all students had developed in the second homework.  Next they
+explored various logistic regression models of the behavioral data.  For the
+imaging data, they used the Scipy \texttt{ndimage} subpackage to smooth the
+data, as we had briefly shown in class, and then followed some hints in the
+lectures to explore different confound models such as linear and quadratic
+drift, and Principal Components as regressors.  They used some of the code
+from class to implement the general linear model at each voxel, and calculate
+t and p values using contrast vectors.  Finally they thresholded their images
+using Bonferroni correction.
 
 Other projects did more substantial technical or intellectual extensions of
 the original analysis.  Project alpha explored an analysis from ds000009 --
@@ -970,17 +971,17 @@ acquisition.  They tried various confound models on the data, including linear
 drift, Fourier bases and different numbers of PCA regressors, and explored
 these models with selection criteria such as the Bayes and Akaike Information
 Criteria, and adjusted $R^2$.  They ran diagnostics to detect voxels violating
-normality assumption. For whole brain analysis, they implemented the FDR
-multiple comparison correction and tried other threshold methods for
-identifying activated brain regions, including heirarchical clustering.
-Finally, they experimented with ARIMA models of the voxel time course.
+assumptions of normality. For whole brain analysis, they implemented the FDR
+multiple comparison correction and tried other methods for identifying
+activated brain regions, including hierarchical clustering.  Finally, they
+experimented with ARIMA models of the voxel time course.
 
 Project lambda did an heroic effort to replicate the analysis of ds000113 ---
 a high-resolution FMRI dataset of subjects listening to the description of the
 film Forrest Gump.  This dataset had many technical challenges; the images are
 unusually large, at over 1 million voxels per volume, and of unusually long
 duration, at around 450 volumes per run, and having 8 runs per subject.  The
-analysis requires the correlation of many voxel time-courses in one subject
+analysis requires the correlation of many voxel time-courses in each subject
 with voxel time-courses in all other subjects in the analysis.  The group did
 a variety of explorations, including finding some artefacts in the original
 data, and an error in the published paper, and then went on to replicate the
@@ -997,11 +998,11 @@ Seventeen out of forty undergraduates and six out of ten graduate students
 completed anonymous course evaluations.  The primary question of interest to
 us was ``Considering both the limitations and possibilities of the subject
 matter and the course, how would you rate the overall effectiveness of this
-course?``; ratings were on a 1 through 7 scale with 4 corresponding to
-``Moderately effective``.  The average undergraduate and graduate scores were
+course?''; ratings were on a 1 through 7 scale with 4 corresponding to
+``Moderately effective''.  The average undergraduate and graduate scores were
 4.71 and 6.0 respectively, against a department average across all courses of
 5.23.  Undergraduate, graduate and department average ratings for ``I enjoyed
-this class`` on a 1 through 7 scale were 4.69, 6.00 and 4.96 respectively.
+this class'' on a 1 through 7 scale were 4.69, 6.00 and 4.96 respectively.
 
 70.5\% of the undergraduate respondents and all the graduate respondents
 claimed to have worked 10 or more hours a week on average.
@@ -1012,11 +1013,11 @@ Most neuroimaging researchers agree that computational reproducibility is
 desirable, but rare.  How should we adapt our teaching to make reproducibility
 more common?
 
-We believe the most common answer to this question, is that we should train
+The most common practical answer to this question, is that we should train
 neuroimaging and other computational researchers as we do now, but add short
-courses or bootcamps that teach a subset of the tools we taught here but without
-the substantial practice.
-That is, reproducibility is an addition on top of current training.
+courses or bootcamps that teach a subset of the tools we taught here but
+without the substantial practice.  That is, reproducibility is an addition on
+top of current training.
 
 We believe this approach is doomed to failure, because the students are
 building on an insecure foundation.  Once you have learned to work in an
@@ -1182,8 +1183,8 @@ something for the project, whether that's coding, reviewing, writing, etc. Ask
 lots of questions and ask them early!''
 \end{quotation}
 
-We believe that this emphasis was necessary to teach the problem or
-reproducibility, with the tools needed to solve these problems, for and the
+We believe that this emphasis was necessary to teach the problem of
+reproducibility, with the tools needed to solve these problems, and the
 neuroimaging background.  As we have argued above, it is difficult to
 understand the problem of reproducibility, without experience of something
 close to a real and substantial scientific analysis.
