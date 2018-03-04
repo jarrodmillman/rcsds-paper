@@ -792,7 +792,8 @@ We covered the following topics:
         of some characteristic of that event, such as duration or intensity.
 \item
     Spatial smoothing with a Gaussian kernel; smoothing as a form of
-    convolution.
+    convolution; the \texttt{scipy.ndimage} subpackage in Scipy as an
+    implementation of Gaussian and other smoothing.
 
 \item
     The idea of voxel and millimeter coordinates in brain images, and the
@@ -936,43 +937,61 @@ eight of eleven used the \texttt{Scikit-Learn} Python package for machine
 learning\footnote{\url{http://scikit-learn.org}}; six used the
 \texttt{Statsmodels} Python package for statistical
 modeling\footnote{\url{http://www.statsmodels.org}}.  The uses of Statsmodels
-were: Autoregressive integrated moving average (ARIMA) modeling of voxel
+were: AutoRegressive Integrated Moving Average (ARIMA) modeling of voxel
 time-series and autocorrelation plots (two projects); logistic regression (two
 projects); ordinary least squares modeling (one project); White test for
 Heteroscedasticity (one project); mixed effects modeling (one project).  Of
 these, we had only shown ordinary least squares analysis in class.
 
-The primary focus of the majority of projects was reproducing results
-of published research from the OpenFMRI datasets using the neuroimaging 
-analysis methods introduced in the course.
-For example, several teams chose to focus on the open dataset provided by a
-study entitled \textit{The neural basis of loss aversion in decision-making
-under risk} \citep{tom2007neural}.
-The research teams implemented analyses based on the linear model (GLM) as
-well as extending the analysis to include other regression techniques, comparing
-their results to those of the published study.
-Projects of this nature accounted for about 8 of the 11 research teams, and
-on the whole were largely successful in demonstrating a practical understanding
-of the relevant statistical techniques.
-However, several teams expressed interest in using the open data sets to 
-perform analyses beyond replicating the published results.
-The investigation of modern machine learning techniques was of particular 
-interest to several groups that included students with a stronger computer
-science background.
-These projects utilized supervised learning techniques in an attempt to 
-develop predictive models based on input FMRI images.
-The ability of students to apply these concepts (which were largely external
-to the course) within the given reproducible and collaborative 
-framework was impressive and, according to feedback from the students,
-motivating and rewarding for them as well.
-In all cases, we were pleased by the quality of the organization and emphasis
-on reproducibility of the final projects, especially given the fact that
-most of the students had no practical experience with the tools (Python, Git,
-etc.) prior to this course.
-Most teams demonstrated a solid understanding of the neuroimaging methods introduced
-in the course by implementing analyses to replicate published results; and 
-several went beyond this to expand their investigations to novel applications
-of the open data.
+There was a wide range in the novelty and scope of the projects.  Most
+projects consisted of a serious attempt to replicate one or several
+statistical findings in the original paper, with the addition of some further
+extension or exploration.  These extensions were typically the application of
+other statistical techniques to the time series data.  For example, Project
+epsilon was one of the four groups working on the dataset ds000005 -- the
+\textit{Mixed-gambles task}.  They first explored the imaging data using the
+outlier detection machinery that all students had developed in the second
+homework.  Next they explored various logistic regression models of the
+behavioral data.  For the imaging data, they used the Scipy \texttt{ndimage}
+subpackage to smooth the data, as we had briefly shown in class, and then
+followed some hints in the lectures to explore different confound models such
+as linear and quadratic drift, and Principal Components as regressors.  They
+used some of the code from class to implement the general linear model at each
+voxel, and calculate t and p values using contrast vectors.  Finally they
+thresholded their images using Bonferroni correction.
+
+Other projects did more substantial technical or intellectual extensions of
+the original analysis.  Project alpha explored an analysis from ds000009 --
+\textit{The generality of self-control}.  Although we had not covered this in
+class, they discovered from data exploration and reflection that the times of
+slice acquisition would affect their statistical modeling, and developed code
+to shift their model back and forth in time corresponding to the time of slice
+acquisition.  They tried various confound models on the data, including linear
+drift, Fourier bases and different numbers of PCA regressors, and explored
+these models with selection criteria such as the Bayes and Akaike Information
+Criteria, and adjusted $R^2$.  They ran diagnostics to detect voxels violating
+normality assumption. For whole brain analysis, they implemented the FDR
+multiple comparison correction and tried other threshold methods for
+identifying activated brain regions, including heirarchical clustering.
+Finally, they experimented with ARIMA models of the voxel time course.
+
+Project lambda did an heroic effort to replicate the analysis of ds000113 ---
+a high-resolution FMRI dataset of subjects listening to the description of the
+film Forrest Gump.  This dataset had many technical challenges; the images are
+unusually large, at over 1 million voxels per volume, and of unusually long
+duration, at around 450 volumes per run, and having 8 runs per subject.  The
+analysis requires the correlation of many voxel time-courses in one subject
+with voxel time-courses in all other subjects in the analysis.  The group did
+a variety of explorations, including finding some artefacts in the original
+data, and an error in the published paper, and then went on to replicate the
+original correlation analysis, on a smaller number of subjects.  They ran the
+analysis on Amazon Web Services machines in order to deal with the demands of
+processing time and memory.  As they note in their \texttt{README.md} ``We
+strongly encourage running on a machine with 120 GBs of accessible RAM to
+emulate development environment.'' They extended the analysis by running a
+random forest model to detect volumes corresponding to outdoor and indoor
+scenes in the film.  With all this, they achieved somewhere near 100\% code
+test coverage.
 
 Seventeen out of forty undergraduates and six out of ten graduate students
 completed anonymous course evaluations.  The primary question of interest to
@@ -1077,6 +1096,25 @@ even after considerable practical experience.
 
 \subsection{Did we really teach computational reproducibility?}
 
+We had stressed the importance of reproducibility throughout the course, and
+made it an explicit feature for grading of the final project, so we were not
+surprised to find that it was possible to reproduce all of the final projects
+with little extra clarification or fixes from the group members.
+
+By design, we gave the students a project that was reasonably close to a real
+scientific data analysis.  They had to work with a messy and real dataset to
+explore the data, define their problem and solve it with an analysis that they
+implemented themselves, to various degrees.  We required them to work closely
+in teams, often remotely, using the standard tools for collaboration.
+
+We believe that this combination of a substantial analysis problem, expert
+tools, and the requirement for reproducibility, was effective at giving the
+students a concrete sense of the difficulty of making an analysis
+reproducible, and how these can be overcome.  We speculate, from our own work,
+that the first experience of building a reproducible analysis makes it easier
+to commit to the tools and practice needed for reproducible work in the
+future.
+
 % not completely (eg only Python software, etc.),
 % but gave a concrete sense of
 % how such a thing could be done and a solid foundation to build on.
@@ -1131,7 +1169,8 @@ continue learning over the whole of their career.
 
 \subsection{Do students need a substantial, collaborative, and open-ended project?}
 
-In response to the question
+We put great emphasis on the final project in this course, and this was clear
+to most of the students.  In response to the evaluation survey question
 \emph{``What advice would you give to another student who is considering taking this course?''}
 one undergraduate student wrote:
 \begin{quotation}
@@ -1142,21 +1181,52 @@ create lots of little goals and checkpoints. You should always be working on
 something for the project, whether that's coding, reviewing, writing, etc. Ask
 lots of questions and ask them early!''
 \end{quotation}
-Without engaging the students to such an extent...
-wanted to reproduce the lab experience...
 
-- substantial;
-perhaps most essential, but might be done in the student's home lab
+We believe that this emphasis was necessary to teach the problem or
+reproducibility, with the tools needed to solve these problems, for and the
+neuroimaging background.  As we have argued above, it is difficult to
+understand the problem of reproducibility, without experience of something
+close to a real and substantial scientific analysis.
 
-- collaborative;
-seems the classroom is the best place to do this;
-added benefit of developing the expectation that your work
-should always be something you would want to show others
-to communicate your ideas and explain what you did
+The size of the project also meant that the students had to learn to
+collaborate with each other efficiently, often remotely, as many of the
+students had different class schedules.  Many of the tools that we taught,
+such as distributed version control, only become essential when working in
+collaboration.  Conversely, if you are not collaborating with others, it can
+be difficult to see why it is worth investing the time to understand powerful
+tools like the Git version control software, or the Github interface.
 
-- open-ended;
-mirrors the research experience;
-hopefully more fully engages the students
+Working in collaboration, and working reproducibly changes our approach to the
+work. If we have to explain our work to others in the group, or to
+another user of the work, then we develop the expectation that our work
+will always be something you would want to show others.  It becomes part of
+the work to communicate your ideas and explain what you did.
+
+We also believe that it was important that the project was open-ended.  If the
+student has to solve a relatively small problem with a single correct answer,
+they can often check whether they have the right answer, and do not need to
+worry about the quality of the process that generated it.  In an open-ended
+project, it is likely that the group will need to explore different analyses
+to order to proceed.  Here the answers are not known, and the group has to
+proceed with care, to avoid making false conclusions.  This is typical of real
+scientific analysis, and puts a much higher burden on rigor and testing, than
+a typical small classroom problem.
+
+% Without engaging the students to such an extent...
+% wanted to reproduce the lab experience...
+
+% - substantial;
+% erhaps most essential, but might be done in the student's home lab
+
+% - collaborative;
+% seems the classroom is the best place to do this;
+% added benefit of developing the expectation that your work
+% should always be something you would want to show others
+% to communicate your ideas and explain what you did
+
+% - open-ended;
+% mirrors the research experience;
+% hopefully more fully engages the students
 
 \subsection{What background do students need?}
 
