@@ -16,7 +16,7 @@ This process is
 and (c) an impractical foundation on which to build reproducible analyses.
 
 The trifecta of confusion, error, and lack of reproducibility are ubiquitous
-problems of computation that programmers have been fighting since before ``programmer''
+problems that programmers have been fighting since before ``programmer''
 became a job title. There are widely accepted tools and processes to
 control this trifecta. These tools include the Unix command line, version
 control, high-level readable programming languages, code review, breaking code
@@ -67,7 +67,7 @@ We also have many years of experience giving practical support for imaging
 analysis to graduate students and post docs.
 
 Over these years of teaching and support, we have gradually come to realize
-that the traditional form of teaching does a poor job of preparing our
+that the traditional form of teaching does a poor job of preparing
 students for a productive career in imaging research.  It fails in two
 fundamental ways:
 
@@ -76,7 +76,7 @@ fundamental ways:
 \item
     Computation with large complex datasets is difficult and distracting;
         without training in standard practice to reduce this distraction, we
-        condemn our students to a life-time of inefficient work, and slow
+        condemn our students to a life-time of inefficient work and slow
         learning.
 
 \item
@@ -101,13 +101,14 @@ mathematical and practical foundations later, with the big picture as a
 framework to guide them in choosing what to learn.
 
 In fact we find that it is rare for students to go on to learn these
-foundations. They usually continue as they were when they leave the course, as
-inefficient practitioners, and unable to reason about their analysis.
+foundations. They usually continue as they were when they leave the course:
+as inefficient practitioners with minimal improvement in the ability to reason
+about their analysis.
 
 We have particular experience of this in our teaching of the General Linear
 Model (GLM)
 \citep{poline2012general}.\footnote{\url{http://imaging.mrc-cbu.cam.ac.uk/imaging/PrinciplesStatistics}}\footnote{\url{http://matthew-brett.github.io/teaching/glm_intro.html}\label{glm_intro}}
-The GLM is a widely-used term in neuroimaging, to refer to the generalization
+The GLM is a widely-used term in neuroimaging to refer to the generalization
 of multiple regression to analysis of variance (ANOVA) and other standard
 group comparisons.  Statisticians generally prefer the term \emph{linear
 regression model} or, simply, \emph{linear model}.
@@ -132,11 +133,11 @@ In contrast to the traditional approach, we emphasize:
 \begin{itemize}
 
 \item
-    Efficient computational practice, to decrease confusion, reduce error, and
-        increase collaboration.
+    Efficient computational practice to decrease confusion, reduce error, and
+        facilitate collaboration.
 
 \item
-    Teaching on the fundamental mathematical and statistical ideas of the
+    The fundamental mathematical and statistical bases of the
         analysis, such as the GLM, using computational tools to build,
         illustrate, and explain.
 
@@ -155,10 +156,12 @@ students should be able to implement their own simple versions of the major
 algorithms they were using.
 
 Our course put great emphasis on a final group project that accounted for more
-than half of the overall course grade.  We did this for two reasons.
+than half of the overall course grade.  We did this for two reasons:
 
-First, we believe computational reproducibility and collaboration are too
-abstract in the absence of a significant concrete project.  If a project lasts
+First, we believe the motivations for computational reproducibility and
+collaboration are too abstract be meaningfully understood in the absence of a
+significant, concrete project.
+If a project lasts
 just a few weeks, it is easy to remember all the steps without carefully
 recording and explaining them.  If you have a toy dataset and a small handful
 of tiny functions, you can throw them all in a directory and post them online.
@@ -222,7 +225,7 @@ reproducibility, and
 analysis through extensive, hands-on analysis of neuroimaging data.
 
 In particular, we wanted to show our students how to apply these methods to
-investigate a real scientific question, that they had chosen themselves.
+investigate a real scientific question that they had chosen themselves.
 
 \subsubsection{Tools and process}
 
@@ -233,11 +236,11 @@ principles with general computational tools, so students could build their own
 analysis from basic building blocks.
 
 Applying these principles, we taught command line tools and document machinery
-using text files.  We did not teach the user interface of a specific
+using text files as opposed to focusing on a specific
 neuroimaging analysis package. Instead we taught scientific coding with Python
 and its associated scientific libraries \citep{millman2011python,
 perez2011python}, and then showed the students how to perform standard
-statistical procedures on imaging data, using these tools
+statistical procedures on imaging data using these tools
 \citep{millman2007analysis}.
 
 \blockpar{Command line.}
@@ -268,13 +271,13 @@ The tools associated with distributed version control make it easier for
 collaborators to review each other's work and suggest changes.
 
 Git is the distributed version control system that has become the standard in
-open source scientific computing. It is widely used in industry.
-There are automated installers for all major operating systems.
+open source scientific computing. It is widely used in industry, with automated
+installers for all major operating systems.
 Web platforms such as GitHub\footnote{\url{https://github.com}},
 Bitbucket,\footnote{\url{https://bitbucket.org}} and
 GitLab\footnote{\url{https://about.gitlab.com}} provide web interfaces to
-version control to simplify procedures such as code review, automated testing,
-and issue tracking (see below).
+version control simplifying best-practices for collaboration such as code
+review, automated testing, and issue tracking (see below).
 
 \blockpar{Scientific Python.}
 Python is a general purpose programming language,
@@ -309,12 +312,12 @@ Functions are reusable blocks of code used to perform a specific task.
 They usually manipulate some input argument(s) and return some output
 result(s).
 There are several advantages to organizing your code into functions rather
-than writing stream of consciousness scripts.
+than writing stream-of-consciousness scripts.
 Functions allow you to encapsulate the details of a discrete element of
 work.  A top-level script may call a well-named function to express a
 particular step, allowing the user to ``hide'' the mechanism of this step in
 the function code.  This makes it easier to see the higher-level structure of
-your analysis.
+the overall analysis.
 Functions encourage the programmer to think of their program as a collection
 of substeps.
 They allow you to reuse code at various points in the analysis, instead of
@@ -358,14 +361,15 @@ maintaining a set of special syntax to annotate the content with structural
 information.
 In this way, the plain text or \emph{source} files are human-readable and work
 well with standard version control systems.
-To produce the final document, the source files must undergo a build or render
+To produce the final document, the source files must undergo a \emph{build} or
+\emph{render}
 step where the markup syntax (and any associated style files) are passed to a
 tool that knows how to interpret and render the content.
 
 \LaTeX\,and Markdown represent two extremes of Markup languages, each
 with their own usefulness.
-\LaTeX\,is notation heavy, but powerful.
-In contrast, Markdown is notation light, but limited.
+\LaTeX\,is notation-heavy, but powerful.
+In contrast, Markdown is notation-light, but limited.
 
 Pandoc is a command line document processor that can convert between multiple
 markup formats.  It can also generate rendered output from source files with
@@ -382,7 +386,7 @@ automate all types of command line workflows.
 Makefiles are machine-readable text files consisting of rules
 specifying the sequence of commands necessary for generating
 certain files and for tracking dependencies between files.
-Considering the Makefile rule:
+Consider the following Makefile rule:
 \begin{verbatim}
     progress.pdf: progress.md
             pandoc -t beamer -s progress.md -o progress.pdf
@@ -417,7 +421,8 @@ testing, and NumPy.
 Each weekly lab focused on the software stack from previous lectures.
 For example, after the Git lecture, we used Git and GitHub to fetch and submit
 all exercises;
-after we taught on testing, we continually reinforced testing in the labs.
+after introducing code testing in lecture, we continually reinforced testing in
+the labs.
 Course work outside labs also made heavy use of the toolstack, including each
 new tool as it was introduced in lectures.
 
@@ -631,11 +636,11 @@ their results and figures, and
 taught in the course (e.g., pull requests, code review, testing).
 And we told the students that we would use the pull request and issue
 discussions as evidence for their contributions to the project, and as data for
-their final grades.
+the participation component of the final grades.
 
-Rather than having students commit raw data to their project repository, we had
+Rather than have students commit the raw FMRI data to their project repository, we had
 them commit code to download and validate (using stored file checksums)
-all raw data used in their project (week~8).
+the raw data used in their project (week~8).
 Since this was the first code they added to their repositories, we gave them example
 code to download a file and check it against a stored hash of the file
 content.
@@ -653,14 +658,14 @@ presentations and report drafts.
 \end{figure}
 
 
-The first progress presentation and report (week~12) consisted of a brief
+The first progress report and presentation (week~12) consisted of a brief
 description of the data they were using, a description of what they had done so
 far, their plan for completing the project, and a reflection on the overall
 process (see Figure~\ref{fig:progress}).
-Slides were written in Markdown and committed to the project repository.
-Reports were written in \LaTeX.
+Slides were written in Markdown and committed to the project repository, along
+with reports written in \LaTeX.
 We also required that each group prepare a slide presentation (week~15)
-discussing where things were and their plan for finalizing their project two
+discussing their current progress and their plan for finalizing their project two
 weeks before they were due.
 At the end of the project (week~17), they had to commit the final PDF of their
 reports as well as provide instructions for generating the PDF from the source
@@ -1164,10 +1169,10 @@ work.
 
 \subsection{Do students need to be trained in programming?}
 
-One common justification for not training students in good coding practice, is
-the assertion that scientists do not need to be programmers.  Scientists do
-have to use, read, and write code, so a more realistic version of this
-statement would be that scientists do not need to be good programmers.
+One common justification for not training students in good coding practice is
+the assertion that scientists do not need to be programmers.  However, Scientists do
+have to use, read, and write code, so a more realistic 
+statement would be that scientists do not need to be \emph{good} programmers.
 Unfortunately bad programmers are inefficient and prone to error; they are
 less likely to detect errors, and improve slowly over time, if at all.  We
 should invest our work in education to help the student work efficiently and
@@ -1191,7 +1196,7 @@ lots of questions and ask them early!''
 We believe that this emphasis was necessary to teach the problem of
 reproducibility, with the tools needed to solve these problems, and the
 neuroimaging background.  As we have argued above, it is difficult to
-understand the problem of reproducibility, without experience of something
+understand the problem of reproducibility without experience of something
 close to a real and substantial scientific analysis.
 
 The size of the project also meant that the students had to learn to
