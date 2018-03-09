@@ -10,8 +10,6 @@ import pandas as pd
 
 HERE = dirname(__file__)
 
-statements_per_line = np.mean([0.7, 0.9, 0.95])
-
 with open(pjoin(HERE, 'project_metrics.md'), 'rt') as fobj:
     contents = fobj.read()
 
@@ -37,9 +35,9 @@ df['name'] = project_names
 df.iloc[:, 1:] = values
 df['test_lines'] = (df['all'] - df['wo_tests']).astype(float)
 df = df.astype(dtype=dtypes)
-df['est_lines_covered'] = (df['found_statements'] / statements_per_line
-                           * df['percent_found_covered'] / 100)
-df['estimated_coverage'] = df['est_lines_covered'] / df['wo_tests'] * 100
+df['lines_covered'] = (df['found_statements']
+                       * df['percent_found_covered'] / 100)
+df['estimated_coverage'] = df['lines_covered'] / df['wo_tests'] * 100
 summary = pd.DataFrame([df.median(), df.min(), df.max()])
 
 print(summary)

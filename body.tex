@@ -614,7 +614,7 @@ that their tests would be run and reported on the Travis CI servers each
 time they changed their code on the GitHub hosting site.
 We added automated code coverage testing; each change to the code on GitHub
 resulted in a measure of the proportion of all code lines covered by tests.
-We expected students to keep test coverage high, above 90\%.
+We expected students to keep measured test coverage above 90\%.
 While each team decided when to merge pull requests, we recommended that
 all pull requests should have at least three participants, test coverage
 should not decrease, and tests should pass before being merged.
@@ -916,16 +916,16 @@ required two issues.
 % I am not sure why this is a measure of test coverage
 We counted the lines of Python code using the \texttt{cloc}
 utility.\footnote{\url{http://cloc.sourceforge.net}}  The median lines of code
-across projects was 1,494 (range 624--8,582), of which tests comprised (median,
-range) 440, 36--592.  As this suggests, we were not successful in teaching the
-students to test a large proportion of their code.  Although the code coverage
-utility uses a different estimate of code lines, we estimated code coverage at
-a median of 14.5\% of lines (range 2--108).\footnote{See
+across projects was 1,494 (range 624--8,582), of which tests comprised
+(median; range) 440; 36--592.  As this suggests, we were not successful in
+persuading the students to test a large proportion of their code.  We
+estimated coverage of all lines of Python code at a median of 12.4\% (range
+2.0--91.8).\footnote{See
 \url{https://github.com/jarrodmillman/teaching/tree/master/project_metrics}
-for details of this estimate.}  The code coverage machinery we
-had put in place did not measure coverage of code outside expected code
-directories, and the students had put a large proportion of their code outside
-these directories, leaving the automated code coverage score above 90\% in all
+for details of this estimate.}  The code coverage machinery we had put in
+place did not measure coverage of code outside expected code directories, and
+the students had put a large proportion of their code outside these
+directories, leaving the automated code coverage score above 90\% in all
 cases, even though a large proportion of the code was not in fact covered by
 tests.
 
