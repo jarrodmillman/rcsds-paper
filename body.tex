@@ -809,15 +809,21 @@ We covered the following topics:
 See \cref{glm_intro} for an example lesson showing our use of Python code to
 illustrate the mathematical and statistical ideas.
 % An exercise as illustration.
-\fixme{See Figure~\ref{fig:diagnosis_script}...}
+
+We reinforced the same approach in the homeworks.
+Figure~\ref{fig:diagnosis_script} shows an excerpt from the second homework,
+in which we asked to students to fill out functions implementing various
+algorithms on 4D FMRI data and use these function to build up a simple
+diagnostic test for outlier volumes in the time series.  Finally, they
+applied the general linear model to the data to show that removing outlier
+scans reduced residual variance from the model fit.
 
 \begin{figure}
 \centering
 \input{diagnosis_script.tex}
 \caption{Above we list the first few lines of \texttt{diagnosis\_script.py}.
 This file was part of the second homework, which focused on detecting outlier
-3D volumes in a 4D FMRI image.
-This part of the second homework included
+3D volumes in a 4D FMRI image.  Tasks included:
 (a) implementing functions on image arrays using NumPy,
 (b) exploring FMRI data for outliers,
 (c) running least-squares fits on different models, and
