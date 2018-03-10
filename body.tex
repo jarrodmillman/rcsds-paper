@@ -59,9 +59,8 @@ valid, and reproducible work.
 
 Between us, we have many decades experience of teaching neuroimaging analysis.
 Like most other teachers of imaging, we have taught traditional courses with a
-mixture of lectures covering the broad general ideas of the analysis, usually
-combined with some practical workshops using one of the standard imaging
-software packages.
+mixture of lectures covering the general ideas of the analysis, combined with
+practical workshops using one of the standard imaging software packages.
 
 We also have many years of experience giving practical support for imaging
 analysis to graduate students and post docs.
@@ -88,17 +87,17 @@ fundamental ways:
 
 \end{itemize}
 
-As a corollary of these two problems, imaging researchers usually do not have
-the vocabulary, understanding, or shared tools to collaborate fluently with
-researchers from other fields, such as statistics, engineering, or computer
-science.
+As a result, imaging researchers usually do not have the vocabulary,
+understanding, or shared tools to collaborate fluently with researchers from
+other fields, such as statistics, engineering, or computer science.
 
-We believe these two problems stem from an essential error of emphasis.  The
-traditional approach to teaching takes the top level to be fundamental.  It
-aims to give the big picture, leaving the students to fill in the details.
-The assumption is that the student will either know or pick up some of the
-mathematical and practical foundations later, with the big picture as a
-framework to guide them in choosing what to learn.
+We believe that traditional teaching suffers from an essential error of
+emphasis, in giving priority to the overview at the expense of the
+intellectual and practical foundations of the analysis.  It aims to give the
+big picture, leaving the students to fill in the details.  The assumption is
+that the student will either know or pick up some of the mathematical and
+practical basis later, with the big picture as a framework to guide them in
+choosing what to learn.
 
 In fact we find that it is rare for students to go on to learn these
 foundations. They usually continue as they were when they leave the course:
@@ -160,14 +159,13 @@ than half of the overall course grade.  We did this for two reasons:
 
 First, we believe the motivations for computational reproducibility and
 collaboration are too abstract be meaningfully understood in the absence of a
-significant, concrete project.
-If a project lasts
-just a few weeks, it is easy to remember all the steps without carefully
-recording and explaining them.  If you have a toy dataset and a small handful
-of tiny functions, you can throw them all in a directory and post them online.
-As the datasets get larger and the analysis more complex, it becomes
-progressively harder to keep track of the analysis.  This second situation is
-typical of the analysis of real data.
+significant, concrete project.  If a project lasts just a few weeks, it is
+easy to remember all the steps without carefully recording and explaining
+them.  If you have a toy dataset and a small handful of tiny functions, it is
+reasonable to throw them all in a directory and post them online.  As datasets
+get larger and the analysis more complex, it becomes progressively harder to
+keep track of what you have done.  This second situation is typical in
+research.
 
 Second, we aimed to teach the students efficient reproducible practice with
 the standard tools that experts use for this purpose
@@ -229,11 +227,10 @@ investigate a real scientific question that they had chosen themselves.
 
 \subsubsection{Tools and process}
 
-As we describe in the introduction, we had two guiding principles in our
-choice of tools and process.  We aimed to teach the students efficient
-reproducible practice with standard expert tools.  We taught fundamental
-principles with general computational tools, so students could build their own
-analysis from basic building blocks.
+We had two guiding principles in our choice of tools and process: to teach a)
+efficient reproducible practice with standard expert tools; and b) fundamental
+principles with general computational tools.  Our intention was that students
+should be able to build their own analysis from basic building blocks.
 
 Applying these principles, we taught command line tools and document machinery
 using text files as opposed to focusing on a specific
@@ -252,11 +249,11 @@ stored in text files as scripts for later inspection and execution.  Quoting
 \cite{wilson2014best}---the Bash shell makes it easier to ``make the computer
 repeat tasks'' and ``save recent commands in a file for re-use.''
 
-The GUI interface of operating systems such as Windows and macOS can obscure
-the tree structure of the filesystem, and this in turn makes it harder for GUI
-users to think about the organization of data in hierarchy of directories and
-files.  The command line tools make the file system hierarchy explicit, and so
-make it easier to reason about data organization.
+The graphical user interface of operating systems such as Windows and macOS
+can obscure the tree structure of the file system, making it harder for user
+of this interface to think about the organization of data as a hierarchy of
+directories and files.  The command line tools make the file system hierarchy
+explicit, and so make it easier to reason about data organization.
 
 Linux and macOS are native Unix platforms and provide Unix / Bash command line
 tools from a standard install.  Windows 10 provides the Unix / Bash tools as
@@ -288,47 +285,48 @@ Its impact in scientific computing rests on a stack of popular scientific
 libraries including NumPy (computing with arrays), SciPy (scientific
 algorithms including optimization and image processing), Matplotlib (2D
 plotting), Scikit-Learn (machine learning), and Pandas (data science).  The
-Nibabel library\footnote{\url{http://nipy.org/nibabel}\label{nibabel}} can load
-files in standard brain image formats into memory as arrays for manipulation
-and display by the other packages.
+Nibabel library\footnote{\url{http://nipy.org/nibabel}\label{nibabel}} can
+load files in standard brain image formats as arrays for manipulation and
+display by the other packages.
 
 \blockpar{Peer review.}
 Regular peer review is one of the most important ways of learning
 to be an effective author of correct code and valid data analysis.  Git and its
 various web platforms provide a powerful tool for peer review.
 
-\emph{Pull requests} are a Git interface feature pioneered by GitHub that
-presents proposed changes to the shared repository in a convenient web
-interface. This allows collaborators to comment on the changes, ask questions,
-and suggest improvements.  The discussion on this interface forms a record of
-decisions, and a justification for each accepted set of changes.
+\emph{Pull requests} are a version control interface feature pioneered by
+GitHub.  A pull request (PR) presents proposed changes to the shared
+repository in a convenient web interface. Collaborators can comment on the
+changes, ask questions, and suggest improvements.  The discussion on this
+interface forms a record of decisions, and a justification for each accepted
+set of changes.
 
-GitHub, like other Git hosting platforms, provides an interface for creating
-\emph{issues}.  These can be reports of errors in the code or analysis that need
-to be tracked, larger scale suggestions for changes, or items in a to-do list.
+GitHub, like other hosting platforms for version control, provides an
+interface for creating \emph{issues}.  These can be reports of errors in the
+code or analysis that need to be tracked, larger scale suggestions for
+changes, or items in a to-do list.
 
 \blockpar{Functions with tests.}
 Functions are reusable blocks of code used to perform a specific task.
 They usually manipulate some input argument(s) and return some output
 result(s).
-There are several advantages to organizing your code into functions rather
+There are several advantages to organizing code into functions rather
 than writing stream-of-consciousness scripts.
-Functions allow you to encapsulate the details of a discrete element of
+Functions encapsulate the details of a discrete element of
 work.  A top-level script may call a well-named function to express a
 particular step, allowing the user to ``hide'' the mechanism of this step in
 the function code.  This makes it easier to see the higher-level structure of
 the overall analysis.
 Functions encourage the programmer to think of their program as a collection
-of substeps.
-They allow you to reuse code at various points in the analysis, instead of
-rewriting or copying and editing it.
+of substeps and make it easier to reuse code at various points in the
+analysis, instead of rewriting or copying and editing it.
 %Fourth, it enables you to keep your variable namespace clean.
-Finally, writing functions also allows you to test small parts of your program
-in isolation from the rest.
+Finally, writing functions allows the programmer to test small parts of the
+program in isolation from the rest.
 
 Testing is an essential discipline to give some assurance to the authors and
 other users that the code works as expected.
-The tests should also document how the code is expected to be used.
+Tests should also document how the code is expected to be used.
 Inexperienced coders typically greatly underestimate how often they make
 errors; expecting, finding, and fixing errors is an essential part of being
 able to learn from continued practice.
@@ -393,20 +391,28 @@ Consider the following Makefile rule:
 \end{verbatim}
 %The \emph{target} of this rule is the file \texttt{progress.pdf},
 %which \emph{depends} on the file \texttt{progress.md}.
-This rule says how to run \texttt{pandoc} to generate the PDF slides (\texttt{progress.pdf}) from the
-markdown file (\texttt{progress.md}).\footnote{\url{http://pandoc.org/MANUAL.html\#producing-slide-shows-with-pandoc}}
+This rule defines the procedure to generate the PDF slide show file
+\texttt{progress.pdf}. The first line specifies the \textit{target} of the
+rule, and any \textit{prerequisites}.  Here the target is
+\texttt{progress.pdf}; building this target \textit{requires} the source
+Markdown text file \texttt{progress.md}. The indented line gives the
+\textit{recipe}, which is the mechanism by which the target
+should be generated from the prerequisites.  In this case, the recipe is to
+execute the \texttt{pandoc} utility on the Markdown file, with various options
+applied.\footnote{\url{http://pandoc.org/MANUAL.html\#producing-slide-shows-with-pandoc}}
 If you edit \texttt{progress.md}, you can regenerate \texttt{progress.pdf}
 from the command line using \texttt{make progress.pdf}.
 
 %Unlike the above example,
-Makefile rules often involve several commands.
-The target of a rule is often a filename (e.g., \texttt{progress.pdf}), but can
-also be an arbitrary name for some commands that you may want to invoke.
-The dependencies of a rule can be filenames (e.g., \texttt{progress.md}), but
-may also be other rules in the Makefile.
-The ability to chain together complex sequences of commands necessary for
-generating multiple target files depending on other files is important for
-building and maintaining reproducible workflows.
+In the example above, the recipe was a single command, but Makefile recipes
+often involve several commands.  The target of a rule is often a filename
+(e.g., \texttt{progress.pdf}), but can also be an arbitrary name to describe
+the sequence of commands in the recipe.  The dependencies of a rule can be
+filenames (e.g., \texttt{progress.md}), but may also be other rules in the
+Makefile.  These features allow Makefiles to chain together complex sequences
+of commands necessary for generating multiple target files, that may depend on
+other files or steps; such chaining is important for building and maintaining
+reproducible workflows.
 
 \subsubsection{Lectures, labs, notes, homeworks, readings, and quizzes}
 
@@ -460,9 +466,9 @@ The functions were documented according to the NumPy documentation
 standard.\footnote{\url{https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt}}
 See the code listing in Figure~\ref{fig:dna} for an example from the first homework.
 Students added implementations to the functions according to the documentation
-and ran the unit tests to check that their code returned the correct results
+and ran the tests to check that their code returned the correct results
 for the provided tests.
-Assignments were graded using extended unit tests, which were not provided to
+Assignments were graded using extended tests, which were not provided to
 the students before they submitted their work.
 The homework reinforced the material we taught during the
 beginning of the course and focused on scientific programming
@@ -545,8 +551,8 @@ Students worked on their projects in teams for three months.
 %\end{quote}
 
 Early in the semester (week~5) groups of three to five students formed teams.
-To ensure every aspect of the project work was done in a computationally
-reproducible and collaborative way, we immediately created a publicly visible
+To ensure every aspect of the project work was computationally
+reproducible and collaborative, we immediately created a publicly visible
 project repository for each team.
 The scope of the projects were defined iteratively: each team submitted a
 proposal in week~6, a third of the way through the semester. We gave each team
@@ -556,7 +562,7 @@ feedback to clarify the motivation and goals of each project.
 
 For their project proposals, we required each team to use a \LaTeX\,template,
 which we provided, and to add the source file(s) to their project repository
-(see Figure~\ref{fig:repo}).  \fixme{Need caption for this figure}.
+(see Figure~\ref{fig:repo}).
 Each proposal involved
 (a) identifying a published FMRI paper and the accompanying data,
 (b) explaining the basic idea of the paper in a paragraph,
@@ -575,12 +581,23 @@ depository of MRI and EEG datasets
 \begin{figure}
 \centering
 \input{tree.tex}
-\caption{General caption ...}
+\caption{The initial and final repository directory template for student
+    projects.  We gave the students a project copied from the initial template
+    in week~5, from which they would write and build and their initial
+    proposal.  As the course progressed, we pushed two updates to their
+    repository. The first gave them a template for building their final
+    report, their top-level \texttt{README.md} file and file specifying an
+    open license for their work. The second gave them: an initial set of
+    functions we had shown them in class with associated tests (in the
+    \texttt{code} directory, not shown); machinery to trigger automatic
+    execution of tests on Travis-CI servers; automated code coverage
+    reporting; and a template for writing slides for their first progress
+    report.
 \label{fig:repo}
 \end{figure}
 
-We reviewed the project proposals and then met
-(week~7) with each team to help them refine their ideas.
+We reviewed the project proposals and met with each team in week~7 to help
+them refine their ideas.
 This feedback process continued throughout the semester, with students
 regularly submitting drafts according to milestones defined within the project
 timeline.
@@ -594,10 +611,9 @@ work with collaborators in the lab.
 %This continued throughout the semester and was quite involved.
 %Mirrors how we work with collaborators.}
 
-Feedback was not only provided to the students from the instructors:
-project feedback included peer-review, where each research team was
-responsible for cloning another team's project, running the tests and analyses,
-and evaluating the resulting technical document.
+Project feedback included peer-review, where each research team was
+responsible for cloning another team's project, running the tests and
+analyses, and evaluating the resulting technical document.
 The peer-review process proved particularly valuable, as the students 
 benefited greatly from the exposure to the coding techniques and 
 organizational principles of their peers.
@@ -621,7 +637,7 @@ should not decrease, and tests should pass before being merged.
 
 Students also used the GitHub issues interface to record project discussions
 and actions taken by the group members.
-Moreover, students were instructed to create a pull request
+We told students to create a pull request
 or issue with code and text and use the GitHub interface to ask one or more
 of us to respond, if they had any questions about their projects.
 Periodically, we would review their work and open issues.
@@ -634,7 +650,7 @@ and made clear that the project grade would be based on
 their results and figures, and
 (d) how effectively the team collaborated using the techniques
 taught in the course (e.g., pull requests, code review, testing).
-And we told the students that we would use the pull request and issue
+We told the students that we would use the pull request and issue
 discussions as evidence for their contributions to the project, and as data for
 their final grades.
 
@@ -654,25 +670,30 @@ presentations and report drafts.
 \begin{tiny}
 \input{progress.tex}
 \end{tiny}
-\caption{Above.}\label{fig:progress}
+\caption{Class lecture material giving instructions for the first progress
+    report.  This is the text we showed them during class, and discussed, to
+    prepare them for their first progress report.  As for almost all our
+    lecture material, we posted this text to the class website.
+\label{fig:progress}
 \end{figure}
 
 
-The first progress report and presentation (week~12) consisted of a brief
-description of the data they were using, a description of what they had done so
-far, their plan for completing the project, and a reflection on the overall
-process (see Figure~\ref{fig:progress}). \fixme{Need caption for this figure}.
-Slides were written in Markdown and committed to the project repository, along
-with reports written in \LaTeX.
-We also required that each group prepare a slide presentation (week~15)
-discussing their current progress and their plan for finalizing their project two
-weeks before they were due.
-At the end of the project (week~17), they had to commit the final PDF of their
-reports as well as provide instructions for generating the PDF from the source
-\LaTeX files.
-They also had to ensure that all their work was computationally reproducible
-with details for how to do this in a text file in the root directory of
-their project repository, called \texttt{README.md}.
+The students gave their first progress report and presentation in week~12;
+it consisted of a description of the data they were using, what they had done
+so far, their plan for completing the project, and a reflection on the overall
+process (see Figure~\ref{fig:progress}).
+We required the groups to write their slides in Markdown and commit them to
+the project repository.
+The students gave their second slide presentation in week~15, two weeks before
+the projects were due, discussing their current progress and their plan for
+finishing their project.
+At the end of the project, in week~17, they had to commit the final PDF of
+their reports and provide instructions for generating the report PDF
+from the source \LaTeX files.
+They also had to show that all their work was computationally reproducible.
+They gave instructions for running the analysis and generating their final
+report in a text file named \texttt{README.md}, in the root directory of their
+project repository.
 
 Early in the project, we told the students that we would grade their project
 work on whether it was reproducible.  In order to reproduce their work, we
@@ -712,7 +733,7 @@ This focused the lectures such that we were constantly teaching
 them the next thing the needed to know for their projects.
 It also meant that the students were motivated to learn as
 they needed the information we were giving them in order
-to get their work done.
+to do their project work.
 
 When teaching neuroimaging data analysis, our aim was for students to
 (a) understand the basic concepts in neuroimaging,
@@ -1124,13 +1145,12 @@ explore the data, define their problem and solve it with an analysis that they
 implemented themselves, to various degrees.  We required them to work closely
 in teams, often remotely, using the standard tools for collaboration.
 
-We believe that this combination of a substantial analysis problem, expert
-tools, and the requirement for reproducibility, was effective at giving the
-students a concrete sense of the difficulty of making an analysis
-reproducible, and how these can be overcome.  We speculate, from our own work,
-that the first experience of building a reproducible analysis makes it easier
-to commit to the tools and practice needed for reproducible work in the
-future.
+We found this combination of a substantial analysis problem, expert tools, and
+the requirement for reproducibility, was effective at giving the students a
+concrete sense of the difficulty of making an analysis reproducible, and how
+these can be overcome.  We speculate, from our own work, that the first
+experience of building a reproducible analysis makes it easier to commit to
+the tools and practice needed for reproducible work in the future.
 
 % not completely (eg only Python software, etc.),
 % but gave a concrete sense of
@@ -1199,7 +1219,7 @@ something for the project, whether that's coding, reviewing, writing, etc. Ask
 lots of questions and ask them early!''
 \end{quotation}
 
-We believe that this emphasis was necessary to teach the problem of
+We believe this emphasis was necessary to teach the problem of
 reproducibility, with the tools needed to solve these problems, and the
 neuroimaging background.  As we have argued above, it is difficult to
 understand the problem of reproducibility without experience of something
@@ -1219,15 +1239,15 @@ another user of the work, then we develop the expectation that our work
 will always be something you would want to show others.  It becomes part of
 the work to communicate your ideas and explain what you did.
 
-We also believe that it was important that the project was open-ended.  If the
-student has to solve a relatively small problem with a single correct answer,
-they can often check whether they have the right answer, and do not need to
-worry about the quality of the process that generated it.  In an open-ended
-project, it is likely that the group will need to explore different analyses
-to order to proceed.  Here the answers are not known, and the group has to
-proceed with care, to avoid making false conclusions.  This is typical of real
-scientific analysis, and puts a much higher burden on rigor and testing, than
-a typical small classroom problem.
+It was important that the project was open-ended.  If the student has to solve
+a relatively small problem with a single correct answer, they can often check
+whether they have the right answer, and do not need to worry about the quality
+of the process that generated it.  In an open-ended project, it is likely that
+the group will need to explore different analyses to order to proceed.  Here
+the answers are not known, and the group has to proceed with care, to avoid
+making false conclusions.  This is typical of real scientific analysis, and
+puts a much higher burden on rigor and testing, than a typical small classroom
+problem.
 
 % Without engaging the students to such an extent...
 % wanted to reproduce the lab experience...
@@ -1257,9 +1277,9 @@ lack training in probability; the pace of teaching and level of understanding
 were similar across the statistics students in this course and the other
 students we have taught.
 
-Psychology and neuroscience students do have some statistical training.  We
-believe this background is necessary for us to be able to as start quickly as
-we did in the analysis of linear regression.
+Psychology and neuroscience students do have some statistical training.  Our
+impression was that this background was necessary for us to be able to as
+start quickly as we did in the analysis of linear regression.
 
 We would also keep the requirement for some programming experience.  Our
 course went quickly through basic programming ideas such as for loops,
