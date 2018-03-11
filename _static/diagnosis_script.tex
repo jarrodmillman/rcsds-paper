@@ -1,0 +1,53 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} Script to run diagnostic analysis on FMRI run}
+
+\PY{l+s+sd}{The FMRI \PYZsq{}run\PYZsq{} is a continuous collection of one or more 3D volumes.}
+\PY{l+s+sd}{A run is usually stored as a 4D NIfTI image.}
+\PY{l+s+sd}{Fill in the code necessary under the comments below.}
+\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+
+\PY{c+c1}{\PYZsh{} import standard libraries here}
+
+
+\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{* Load \PYZdq{}ds114\PYZus{}sub009.nii\PYZdq{} as an image object}
+\PY{l+s+sd}{* Load the image data from the image}
+\PY{l+s+sd}{* Drop the first four volumes, as we know these are outliers}
+\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+
+\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{Use your vol\PYZus{}std function to get the volume standard deviation values}
+\PY{l+s+sd}{for the remaining 169 volumes. Save these values to a text file}
+\PY{l+s+sd}{called \PYZsq{}vol\PYZus{}std\PYZus{}values.txt\PYZsq{}.}
+\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+
+\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{Use the iqr\PYZus{}outlier detection routine to get indices of outlier volumes.}
+\PY{l+s+sd}{Save these indices to a text file called \PYZsq{}vol\PYZus{}std\PYZus{}outliers.txt\PYZsq{}.}
+\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+
+\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{Plot all these on the same plot:}
+\PY{l+s+sd}{* The volume standard deviation values;}
+\PY{l+s+sd}{* The outlier points from the std values marked with an \PYZsq{}o\PYZsq{} marker;}
+\PY{l+s+sd}{* A horizontal dashed line at the lower IRQ threshold;}
+\PY{l+s+sd}{* A horizontal dashed line at the higher IRQ threshold;}
+
+\PY{l+s+sd}{Save the figure to the current directory as ``vol\PYZus{}std.png``.}
+\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+
+\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\PY{l+s+sd}{Next calculate and plot the RMS difference values:}
+\PY{l+s+sd}{* Calculate the RMS difference values for the image data;}
+\PY{l+s+sd}{* Use the ``iqr\PYZus{}outlier`` function to return indices of possible}
+\PY{l+s+sd}{  outliers in this RMS difference vector;}
+
+\PY{l+s+sd}{On the same plot, plot the following:}
+\PY{l+s+sd}{* The RMS vector;}
+\PY{l+s+sd}{* The identified outlier points marked with an `o` marker;}
+\PY{l+s+sd}{* A horizontal dashed line at the lower IRQ threshold;}
+\PY{l+s+sd}{* A horizontal dashed line at the higher IRQ threshold;}
+
+\PY{l+s+sd}{Save this plot as ``vol\PYZus{}rms\PYZus{}outliers.png``}
+\PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+\end{Verbatim}
