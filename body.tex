@@ -1,44 +1,5 @@
 \section{Introduction}
 
-Computational reproducibility \citep{buckheit1995wavelab} ;
-general crisis in modern scientific research ;
-large data / complex analysis / diverse technical skills needed .
-Neuroimaging is experiencing these problems as well ;
-examples ...
-better practices and training needed...
-
-collaboration, multidisciplinary ;
-data and analysis sharing ;
-large multisite data collection ;
-increasing number of extra data sources (e.g., genomic) ;
-
-With these concerns in mind, we took a
-practical rather than academic approach to teaching reproducible
-and collaborative statistical analysis of neuroimaging data;
-trained to use a set of tools and practices through substantial engagement
-with scientific project ;
-we focus on a course we taught to master students and undergraduates through
-a course in the statistics department... ;
-while the course in general could have focused on any scientific problem domain,
-given our expertise we chose to focus on neuroimaging ;
-taught it much like we teach beginning neuroscientists.
-
-There was no requirement for students to have a background in neuroscience.
-The intention of focusing on neuroimaging data was to provide a concrete problem
-domain that exemplifies the types of programming and statistical challenges
-present in many modern statistical applications.
-Conversely, neuroimaging students taking a course like this also
-gain familiarity with the types of programming and statistical challenges
-present in many modern statistical applications.
-This means they can more easily incorporate new applications
-in their work.
-
-We begin by explaining the background and rationale (\S~\ref{background}) of our approach to the course.
-In material and methods (\S~\ref{methods}), we describe the course format, student audience,
-and curriculum.
-Student projects are presented in results (\S~\ref{results}).
-Finally, we discuss (\S~\ref{discussion}) adapting the course to
-different student audiences.
 
 Few neuroimaging analyses are computationally reproducible,\footnote{Following
 \citet{buckheit1995wavelab}, we define an analysis as \emph{computationally
@@ -760,27 +721,11 @@ the make commands to execute, such as:
 %to warn of this so we would make sure to have enough disk space and that we were
 %on a stable internet connection before trying to do so.
 
-<<<<<<< HEAD
-% JB: add advocacy bit on open versioned and citable data
-
-Rather than having students commit raw data to their project repository, we had
-them commit code to download and validate all raw data used in their project.
-For example, their project \texttt{README} might tell us that \texttt{make data}
-downloads all the relevant files for their study and \texttt{make validate}
-verifies the content of the downloaded files.
-||||||| merged common ancestors
-Rather than having students commit raw data to their project repository, we had
-them commit code to download and validate all raw data used in their project.
-For example, their project \texttt{README} might tell us that \texttt{make data}
-downloads all the relevant files for their study and \texttt{make validate}
-verifies the content of the downloaded files.
-=======
 %\fixme{We offered to proofread everyone's reports and
 %test that we could reproduce their reports.
 %As always, we used the GitHub system to record all feedback.}
 %
 \subsection{Neuroimaging data analysis}\label{analysis}
->>>>>>> 82b5eaab1580ea1d7906f165d210953cec0fab6c
 
 %needs an intro something like
 In order for the students to complete their projects we had to
