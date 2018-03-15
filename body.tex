@@ -39,11 +39,7 @@ replication or an extension of a published neuroimaging analysis, built from
 code they had written themselves.  We required the analysis to be computationally
 reproducible; each project had to provide a short text file that gave a
 simple set of commands with which the grading instructor could fetch the data,
-run the analysis, and generate the final report, including the figures.  As we
-describe below, our students were successful in achieving this goal.  We argue
-that this approach to training in neuroimaging is likely to be more fruitful
-than traditional imaging courses in preparing our students for efficient,
-valid, and reproducible work.
+run the analysis, and generate the final report, including the figures.
 
 %We begin by explaining the background and rationale (\S~\ref{background}) of
 %our approach to teaching students how to analyze neuroimaging data.
@@ -110,12 +106,12 @@ In contrast to the traditional approach, we emphasize:
 
 \item
     Efficient computational practice to decrease confusion, reduce error, and
-        facilitate collaboration.
+    facilitate collaboration.
 
 \item
-    The fundamental mathematical and statistical bases of the
-        analysis, such as the GLM, using computational tools to build,
-        illustrate, and explain.
+    The fundamental mathematical and statistical bases of the analysis, such
+    as the linear model, using computational tools to build, illustrate, and
+    explain.
 
 \end{itemize}
 
@@ -137,29 +133,25 @@ easy to remember all the steps without carefully recording and explaining
 them.  If you have a toy dataset and a small handful of tiny functions, it is
 reasonable to throw them all in a directory and post them online.  As datasets
 get larger and the analysis more complex, it becomes progressively harder to
-keep track of what you have done.  This second situation is typical in
-research.
+keep track of what you have done.  This situation is typical in research.
 
-Second, we aimed to teach the students efficient reproducible practice with
+Second, we intended to teach the students efficient reproducible practice with
 the standard tools that experts use for this purpose
 \citep{millman2014developing}. Our own practice has taught us that the power
 of these tools only becomes clear when you use them to do substantial work in
 collaboration with your peers.  In contrast, we have found that teaching
-``easy'' tools that need less initial learning has the paradoxical effect of
-making it harder for learners to move on to the more powerful and efficient
+``easy'' tools that need less initial investment has the paradoxical effect of
+making it harder for students to move on to the more powerful and efficient
 tools that they will need for their daily work.
 % JB: would be good to have a footnote with examples here, I guess excel ? may be jupyter nb ? :)
-We used the final project to
-show the power of expert tools for serious scientific analysis, especially in
-collaboration.
 
 \section{Material and Methods}\label{methods}
 
-During the fall semester of 2015, we taught \emph{Reproducible and Collaborative
-Statistical Data Science},\footnote{\url{http://www.jarrodmillman.com/stat159-fall2015/}}
-a project-based course offered through the Department of Statistics at UC Berkeley.
-The course was open to upper-level undergraduates (as STAT 159) as well as
-first-year graduate students (as STAT 259).
+We taught \emph{Reproducible and Collaborative Statistical Data
+Science},\footnote{\url{http://www.jarrodmillman.com/stat159-fall2015/}} during
+the fall semester of 2015.  The course was offered through the department of
+Statistics at UC Berkeley, and was open to upper-level undergraduates (as STAT
+159) as well as first-year graduate students (as STAT 259).
 
 The course entry requirements were Berkeley courses STAT 133 (Concepts in
 Computing with Data), STAT 134 (Concepts of Probability), and STAT 135
@@ -175,7 +167,7 @@ week~17, two weeks after the last class.
 
 \subsection{Course overview}
 
-Here is the Berkeley course catalog entry for our course:
+This was the entry for our course in the Berkeley course catalog:
 
 \begin{quote}
 A project-based introduction to statistical data analysis. Through case
@@ -187,33 +179,19 @@ process automation, code review, and collaborative programming.
 Software tools include Bash, Git, Python, and \LaTeX.
 \end{quote}
 
-Our objective for the course was for students to be
-(a) proficient at the Unix command line,
-(b) fluent in using version control with Git,
-(c) able to write documents in Markdown and \LaTeX,
-(d) familiar with scientific computing in Python,
-(e) able to understand the computational and statistical issues involved with
-reproducibility, and
-(f) familiar with computational issues in modern statistical data
-analysis through extensive, hands-on analysis of neuroimaging data.
-
-In particular, we wanted to show our students how to apply these methods to
-investigate a real scientific question that they had chosen themselves.
-
 \subsubsection{Tools and process}
 
 We had two guiding principles in our choice of tools and process: to teach a)
 efficient reproducible practice with standard expert tools; and b) fundamental
-principles with general computational tools.  Our intention was that students
+principles using explanation with simple code.  Our intention was that students
 should be able to build their own analysis from basic building blocks.
 
-Applying these principles, we taught command line tools and document machinery
-using text files as opposed to focusing on a specific
-neuroimaging analysis package. Instead we taught scientific coding with Python
-and its associated scientific libraries \citep{millman2011python,
-perez2011python}, and then showed the students how to perform standard
-statistical procedures on imaging data using these tools
-\citep{millman2007analysis}.
+Applying these principles, we taught command line tools, version control and
+document machinery using text files.  Rather than focusing on a specific
+neuroimaging analysis package, we taught scientific coding with Python and its
+associated scientific libraries \citep{millman2011python, perez2011python}, and
+then showed the students how to run standard statistical procedures on imaging
+data using these tools \citep{millman2007analysis}.
 
 \blockpar{Command line.}
 The Unix environment is the computational equivalent of the scientists'
@@ -225,10 +203,10 @@ stored in text files as scripts for later inspection and execution.  Quoting
 repeat tasks'' and ``save recent commands in a file for re-use.''
 
 The graphical user interface of operating systems such as Windows and macOS
-can obscure the tree structure of the file system, making it harder for user
-of this interface to think about the organization of data as a hierarchy of
-directories and files.  The command line tools make the file system hierarchy
-explicit, and so make it easier to reason about data organization.
+can obscure the tree structure of the file system, making it harder to think
+about the organization of data as a hierarchy of directories and files.  The
+command line tools make the file system hierarchy explicit, and so make it
+easier to reason about data organization.
 %JB could we do science with smart phones ?
 
 Linux and macOS are native Unix platforms and provide Unix / Bash command line
@@ -304,10 +282,10 @@ Testing is an essential discipline to give some assurance to the authors and
 other users that the code works as expected.
 Tests should also document how the code is expected to be used.
 Inexperienced coders typically greatly underestimate how often they make
-errors; expecting, finding, and fixing errors is an essential part of being
-able to learn from continued practice.
-There are tools that can measure what proportion of the lines
-of code have covered by the tests---this is \emph{test coverage}.
+errors; expecting, finding, and fixing errors is one of the foundations of
+learning from continued practice.  There are tools that can measure what
+proportion of the lines of code have covered by the tests---this is \emph{test
+coverage}.
 
 % unit tests doctests
 
@@ -414,7 +392,7 @@ and version control using Git.
 The fourth lecture was a high-level introduction to neuroimaging and
 functional magnetic resonance imaging (or FMRI).
 We then introduced students to scientific computing with Python.
-Students were referred to our course notes on
+We referred students to our course notes on
 Bash,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/bash.html}}
 Git,\footnote{\url{http://www.jarrodmillman.com/rcsds/standard/git-intro.html}}
 Make,\footnote{\url{https://www.youtube.com/watch?v=-Cp3jBBHQBE}}
@@ -530,9 +508,9 @@ Early in the semester (week~5) groups of three to five students formed teams.
 To ensure every aspect of the project work was computationally
 reproducible and collaborative, we immediately created a publicly visible
 project repository for each team.
-The scope of the projects were defined iteratively: each team submitted a
-proposal in week~6, a third of the way through the semester. We gave each team
-feedback to clarify the motivation and goals of each project.
+The groups defined the scope of their projects iteratively; each team
+submitted a proposal in week~6, a third of the way through the semester. We
+gave each team feedback to clarify project motivation and goals.
 
 %They then had a week to propose what they would do for their projects.
 
@@ -658,8 +636,9 @@ The students gave their first progress report and presentation in week~12;
 it consisted of a description of the data they were using, what they had done
 so far, their plan for completing the project, and a reflection on the overall
 process (see Figure~\ref{fig:progress}).
-We required the groups to write their slides in Markdown and commit them to
-the project repository.
+We required the groups to write their slides in Markdown text format for
+building into PDF with Pandoc.  They committed the Markdown source to the
+project repository.
 The students gave their second slide presentation in week~15, two weeks before
 the projects were due, discussing their current progress and their plan for
 finishing their project.
@@ -721,7 +700,7 @@ efficiency and help their understanding.
 
 For this course we concentrated on the statistical analysis of FMRI data.  We
 scheduled the teaching to give the students a sound background in standard
-neuroimaging statistical analysis with a linear model (GLM).
+neuroimaging statistical analysis with a linear model.
 
 All the following teaching used simple Python code to show them how the
 mathematics works in practice, and to give them sample code that they could
@@ -767,7 +746,7 @@ We covered the following topics:
         regressor for every brain voxel and the idea of a statistical
         parametric map.
 \item
-    The GLM as a matrix formulation of multiple regression.  We started with
+    The linear model as a matrix formulation of multiple regression.  We started with
         simple (single-regressor) regression as another measure of linear
         association.  We expressed simple regression as a linear model and
         showed how the model can be expressed as the addition of vectors and
@@ -814,8 +793,8 @@ Figure~\ref{fig:diagnosis_script} shows an excerpt from the second homework,
 in which we asked to students to fill out functions implementing various
 algorithms on 4D FMRI data and use these function to build up a simple
 diagnostic test for outlier volumes in the time series.  Finally, they
-applied the general linear model to the data to show that removing outlier
-scans reduced residual variance from the model fit.
+applied a linear (multiple regression) model to the data to show that removing
+outlier scans reduced residual variance from the model fit.
 
 \begin{figure}
 \centering
@@ -1080,14 +1059,15 @@ As we argued in the introduction, typical imaging courses do not attempt to
 teach the fundamental ideas of linear models, but assume this understanding
 and move onto imaging specifics.  This assumption is almost entirely false for
 neuroscience and psychology students, and mostly false for our own
-students, most of whom already had some training from an undergraduate
+students, even though most had already had some training from an undergraduate
 statistics major. As a result of this incorrect assumption, it is rare for
-students of neuroimaging to understand the statistics they are using.  We
-taught the linear model from the first principles of vector algebra, using the
-tools they had just learned to build a simple analysis from basic components.
-As a result, when the students got to their projects, they had the tools they
-needed to build their own analysis code for the neuroimaging data, both
-demonstrating and advancing their own understanding.
+students of neuroimaging to be confident in their understanding of the
+statistics they are using.  We taught the linear model from the first
+principles of vector algebra, using the tools they had just learned, to build
+a simple analysis from basic components.  As a result, when the students got
+to their projects, they had the tools they needed to build their own
+neuroimaging analysis code, both demonstrating and advancing their own
+understanding.
 
 We also note the difficulty of the task that we gave the students, and the
 extent of their success.  We made clear that their project was an open-ended
@@ -1178,15 +1158,15 @@ have to use, read, and write code, so a more realistic
 statement would be that scientists do not need to be \emph{good} programmers.
 Unfortunately bad programmers are inefficient and prone to error; they are
 less likely to detect errors, and improve slowly over time, if at all.  We
-should invest our work in education to help the student work efficiently and
-continue learning over the whole of their career.
+should invest our work in education to help our students work efficiently and
+continue learning for the rest of their careers.
 
 \subsection{Do students need a substantial, collaborative, and open-ended project?}
 
 We put great emphasis on the final project in this course, and this was clear
 to most of the students.  In response to the evaluation survey question
 \emph{``What advice would you give to another student who is considering taking this course?''}
-one undergraduate student wrote:
+one undergraduate wrote:
 \begin{quotation}
 ``[U]nlike most group projects (which last for maybe a few weeks tops or
 could conceivably be pulled off by one very dedicated person), this one will
@@ -1213,8 +1193,8 @@ tools like the Git version control software, or the GitHub interface.
 Working in collaboration, and working reproducibly changes our approach to the
 work. If we have to explain our work to others in the group, or to
 another user of the work, then we develop the expectation that our work
-will always be something you would want to show others.  It becomes part of
-the work to communicate your ideas and explain what you did.
+will always be something we will demonstrate and explain to others.  It
+becomes part of the work to communicate our ideas and explain what we did.
 
 It was important that the project was open-ended.  If the student has to solve
 a relatively small problem with a single correct answer, they can often check
@@ -1364,7 +1344,8 @@ reproducible research.
 We are sure that most of our readers would agree that teaching students to
 work in this way is desirable; but, given all the other classes our students
 must take, can we justify the time and energy that this course needs?  We
-believe so.  This is true of students as well as
+believe so, but we know that not all our readers with be convinced.  This is
+true of students as well as
 instructors.  We put such emphasis on the final project, precisely because we
 know well, that it is difficult to see how important these tools are, if you
 have not used them, or used them only in toy projects.  We cannot easily teach
