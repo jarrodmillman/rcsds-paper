@@ -6,7 +6,7 @@ reproducible} when someone other than the original author of an analysis can
 produce on their own computer the reported results using the author's data,
 code, and instructions.}
 even between researchers in a single lab.
-The process of analysis is typically ad-hoc and informal; the final analysis
+The process of analysis is typically ad-hoc and informal; the final result
 is often the fruit of a considerable amount of trial and error, based in part
 on scripts and data structures that the author inherited from other members of
 the lab.
@@ -15,24 +15,22 @@ This process is
 (b) error prone, leading to incorrect conclusions and greater confusion,
 and (c) an impractical foundation on which to build reproducible analyses.
 
-The trifecta of confusion, error, and lack of reproducibility are ubiquitous
-problems that programmers have been fighting since before ``programmer''
-became a job title. There are widely accepted tools and processes to
-control this trifecta. These tools include the Unix command line, version
-control, high-level readable programming languages, code review, breaking code
-into manageable functions and objects, writing tests for all code,  and
-continuous automatic test execution.
+Confusion, error, and lack of reproducibility are ubiquitous problems that
+programmers have been fighting since before ``programmer'' became a job title.
+There are widely accepted tools and processes to reduce these problems,
+including the Unix command line, version control, high-level readable
+programming languages, structured code, code review, writing tests for new
+code, and continuous automatic test execution.
 
 Many researchers accept that learning these techniques is desirable, but
-object that a neuroimager has a limited amount of time they can spend in
-class.  They may argue that this time should be spent learning an overview of
-neuroimaging analysis, rather than tools and process for efficient
-development.
+believe that teaching them is too difficult, or would cost too much in class
+time that should be spent on topics specific to neuroimaging.
 
 In the course we describe here, we tested our hypothesis that we could
-effectively teach \emph{both} the tools for efficient and reproducible work \emph{and}
-the principles of neuroimaging, by building the course around a substantial
-collaborative project, and putting the tools into immediate practice.
+effectively teach \emph{both} the tools for efficient and reproducible work
+\emph{and} the principles of neuroimaging, by building the course around a
+substantial collaborative project, and putting the tools into immediate
+practice.
 
 At intake, our students had little or no prior exposure to neuroimaging,
 or to the computational tools and process we listed above.  We set them the
@@ -42,7 +40,7 @@ code they had written themselves.  We required the analysis to be computationall
 reproducible; each project had to provide a short text file that gave a
 simple set of commands with which the grading instructor could fetch the data,
 run the analysis, and generate the final report, including the figures.  As we
-report below, our students were successful in achieving this goal.  We argue
+describe below, our students were successful in achieving this goal.  We argue
 that this approach to training in neuroimaging is likely to be more fruitful
 than traditional imaging courses in preparing our students for efficient,
 valid, and reproducible work.
@@ -93,41 +91,18 @@ other fields, such as statistics, engineering, or computer science.
 
 We believe that traditional teaching suffers from an essential error of
 emphasis, in giving priority to the overview at the expense of the
-intellectual and practical foundations of the analysis.  It aims to give the
-big picture, leaving the students to fill in the details.  
-\footnote{This figure explains the issue: https://twitter.com/designuxui/status/490179377099845632}
-The assumption is
+intellectual and practical foundations of the analysis.  The assumption is
 that the student will either know or pick up some of the mathematical and
 practical basis later, with the big picture as a framework to guide them in
 choosing what to learn.
 
 In fact we find that it is rare for students to go on to learn these
 foundations. They usually continue as they were when they leave the course:
-as inefficient practitioners with minimal improvement in the ability to reason
-about their analysis.
-
-We have particular experience of this in our teaching of the General Linear
-Model (GLM)
-\citep{poline2012general}.\footnote{\url{http://imaging.mrc-cbu.cam.ac.uk/imaging/PrinciplesStatistics}}\footnote{\url{http://matthew-brett.github.io/teaching/glm_intro.html}\label{glm_intro}}
-The GLM is a widely-used term in neuroimaging to refer to the generalization
-of multiple regression to analysis of variance (ANOVA) and other standard
-group comparisons.  Statisticians generally prefer the term \emph{linear
-regression model} or, simply, \emph{linear model}.
-
-Functional imaging packages present the linear model as a matrix formulation
-of multiple regression.  Many students have not taken linear algebra, or if
-they have, do not remember it well.  The traditional teaching approach is to
-show how the matrix formulation relates to simple and multiple regression over
-a few slides in an hour-long talk, and then move on to more advanced topics.
-Although the students may have the impression that they have understood, we
-have found that most of them are unable to answer simple questions about the
-matrix formulation after such a talk, and that they rarely go on to improve
-their understanding in their later education.
+as inefficient practitioners that have little ability to reason about their
+analysis.
 
 % we also believe that it is relatively easy to pick up the big picture once
 % you have the foundation
-
-\subsection{Our approach}
 
 In contrast to the traditional approach, we emphasize:
 
@@ -143,10 +118,6 @@ In contrast to the traditional approach, we emphasize:
         illustrate, and explain.
 
 \end{itemize}
-
-In the course we describe here, we devoted our teaching and assessment time to
-building these foundations, on which the students could build their later
-analysis and understanding.
 
 We were inspired by the famous epithet of Richard Feynman, found written on
 his blackboard after his death: ``What I cannot create, I do not
@@ -171,18 +142,16 @@ research.
 
 Second, we aimed to teach the students efficient reproducible practice with
 the standard tools that experts use for this purpose
-\citep{millman2014developing}. Our own experience has taught us that the power
+\citep{millman2014developing}. Our own practice has taught us that the power
 of these tools only becomes clear when you use them to do substantial work in
 collaboration with your peers.  In contrast, we have found that teaching
 ``easy'' tools that need less initial learning has the paradoxical effect of
 making it harder for learners to move on to the more powerful and efficient
-tools that they will need for their daily work.  
+tools that they will need for their daily work.
 % JB: would be good to have a footnote with examples here, I guess excel ? may be jupyter nb ? :)
 We used the final project to
 show the power of expert tools for serious scientific analysis, especially in
-collaboration. 
-Other teachers or mentors have also realized the benefits of collaborative projects
-and have adopted related approach \citep{huppenkothen_hack_2017}
+collaboration.
 
 \section{Material and Methods}\label{methods}
 
@@ -1297,6 +1266,11 @@ used similar material, we required some experience of programming in a
 language such as Python, R, or MATLAB.  It is possible that a brief
 introduction would be enough to fulfill this requirement, such as a bootcamp
 or multi-day intensive course.
+
+\subsection{Could this material be covered by a bootcamp or hack week?}
+
+Other teachers or mentors have also realized the benefits of collaborative projects
+and have adopted related approach \citep{huppenkothen_hack_2017}
 
 \subsection{Where would such a course fit in a curriculum?}
 
