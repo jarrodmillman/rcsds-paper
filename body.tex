@@ -7,7 +7,7 @@ produce on their own computer the reported results using the author's data,
 code, and instructions.}
 even between researchers in a single lab.
 The process of analysis is typically ad-hoc and informal; the final result
-is often the fruit of a considerable amount of trial and error, based in part
+is often the fruit of considerable trial and error, based
 on scripts and data structures that the author inherited from other members of
 the lab.
 This process is
@@ -77,16 +77,16 @@ As a result, imaging researchers usually do not have the vocabulary,
 understanding, or shared tools to collaborate fluently with researchers from
 other fields, such as statistics, engineering, or computer science.
 
-We believe that traditional teaching suffers from an essential error of
-emphasis, in giving priority to the overview at the expense of the
-intellectual and practical foundations of the analysis.  The assumption is
-that the student will either know or pick up some of the mathematical and
-practical basis later, with the big picture as a framework to guide them in
+The essential error in traditional teaching is one of emphasis;
+it gives priority to the overview at the expense of the
+intellectual and practical foundations.  The assumption is
+that the student will either know or pick up the mathematical and
+practical basis, with the big picture as a framework to guide them in
 choosing what to learn.
 
 In fact we find that it is rare for students to go on to learn these
 foundations. They usually continue as they were when they leave the course:
-as inefficient practitioners that have little ability to reason about their
+as inefficient practitioners with little ability to reason about their
 analysis.
 
 In contrast to the traditional approach, we emphasize:
@@ -123,8 +123,8 @@ possible to remember all the steps without carefully recording and explaining
 them.  If you have a small dataset and a handful of tiny functions, it is
 reasonable to throw them all in a directory and post them online.  As datasets
 get larger and the analysis more complex, it quickly becomes impossible to
-keep track of what you have done without carefully organizing and meticulously
-recording your work.  Large datasets and complex analysis are typical in research.
+keep track of what you have done without carefully organizing and
+recording your work.  Large datasets and complex analyses are typical in research.
 
 Second, we intended to teach the students efficient reproducible practice with
 the standard tools that experts use for this purpose
@@ -171,10 +171,10 @@ Software tools include Bash, Git, Python, and \LaTeX.
 
 \subsubsection{Tools and process}
 
-We had two guiding principles in our choice of tools and process: to teach (a)
-efficient reproducible practice with standard expert tools and (b) fundamental
-mathematical and statistical principles using explanation with simple code.
-Our intention was that students should be able to build their own analysis
+We had three guiding principles in our choice of tools and process:
+(a) to teach efficient reproducible practice with standard expert tools; (b)
+to teach fundamental mathematical and statistical principles using explanation
+with simple code, and c) students should be able to build their own analysis
 from basic building blocks.
 
 Applying these principles, we taught command line tools, version control, and
@@ -211,13 +211,13 @@ same set of files.
 The tools associated with distributed version control make it easier for
 collaborators to review each other's work and suggest changes.
 
-Git is the distributed version control system that has become the standard in
+Git is the distributed version control system that has become standard in
 open source scientific computing. It is widely used in industry, with automated
 installers for all major operating systems.
 Web platforms such as GitHub\footnote{\url{https://github.com}},
 Bitbucket,\footnote{\url{https://bitbucket.org}} and
 GitLab\footnote{\url{https://about.gitlab.com}} provide web interfaces to
-version control simplifying best-practices for collaboration such as code
+version control that simplify standard methods of collaboration such as code
 review, automated testing, and issue tracking (see below).
 
 \blockpar{Scientific Python.}
@@ -246,8 +246,8 @@ interface forms a record of decisions, and a justification for each accepted
 set of changes.
 
 GitHub, like other hosting platforms for version control, provides an
-interface for creating \emph{issues}.  These can be reports of errors in the
-code or analysis that need to be tracked, larger scale suggestions for
+interface for creating \emph{issues}.  These can be reports of errors
+that need to be tracked, larger scale suggestions for
 changes, or items in a to-do list.
 
 \blockpar{Functions with tests.}
@@ -260,9 +260,8 @@ Functions encapsulate the details of a discrete element of
 work.  A top-level script may call a well-named function to express a
 particular step, allowing the user to ``hide'' the mechanism of this step in
 the function code.  This makes it easier to see the higher-level structure of
-the overall analysis.
-Functions encourage the programmer to think of their program as a collection
-of substeps and make it easier to reuse code at various points in the
+the analysis.
+Functions make it easier to reuse code at various points in the
 analysis, instead of rewriting or copying and editing it.
 Finally, writing functions allows the programmer to test small parts of the
 program in isolation from the rest.
@@ -273,7 +272,7 @@ Tests should also document how the code is expected to be used.
 Inexperienced coders typically greatly underestimate how often they make
 errors; expecting, finding, and fixing errors is one of the foundations of
 learning from continued practice.  There are tools that can measure what
-proportion of the lines of code have covered by the tests---this is \emph{test
+proportion of the lines of code are covered by the tests---this is \emph{test
 coverage}.
 
 \blockpar{Continuous integration.}
@@ -282,9 +281,12 @@ results.  Modern code quality control includes \emph{continuous integration
 testing}, a practice that guarantees that the tests are run frequently and
 automatically, and the results are reported back to the coding team.
 Fortunately, this practice has become so ubiquitous in open source, that there
-are large free services such as Travis
-CI\footnote{\url{https://travis-ci.org}\label{travis-ci}} that integrate with code
-hosting sites like GitHub.
+are large free services that implement continuous integration, such as Travis
+CI\footnote{\url{https://travis-ci.org}\label{travis-ci}}, Circle
+CI\footnote{\url{https://circleci.com}} and
+Appveyor\footnote{\url{https://www.appveyor.com}}.  These services can
+integrate with hosting sites like GitHub in order to run tests after each
+change to the code.
 
 \blockpar{Markup languages.}
 A markup language allows you to write content in plain text, while also
@@ -385,7 +387,7 @@ which arose as we taught FMRI analysis methods.
 
 We assigned two homeworks.
 Students had two weeks to work on each homework.
-Homeworks were assigned and submitted using private GitHub repositories  during
+Homeworks were assigned and submitted using Git and private GitHub repositories during
 the first half of the semester.
 Typically, assignments were given as a collection of tests that tested the
 desired behavior of named functions, and function templates with missing
@@ -443,10 +445,10 @@ emphasized the computing aspects of the course material as
 opposed to the statistical and neuroimaging components covered in the lectures.
 The remainder of the lab was devoted to providing hands-on experience via
 collaborative work on breakout exercises.
-These breakout exercises were formulated as small ``projects'' to be worked on
+These exercises were formulated as small projects to be worked on
 in groups of three to four students.
-Prior to the breakout session, a small review of material relevant for the
-exercises was presented, often in the form of a Jupyter
+Prior to the breakout session the instructor presented a small review of material relevant for the
+exercises, often in the form of a Jupyter
 notebook\footnote{\url{https://jupyter-notebook.readthedocs.io}} containing
 Python code that the students could execute on their own
 machines.
@@ -470,14 +472,14 @@ of the overall course grade.
 Students worked on their projects in teams for three months.
 
 Early in the semester (week~5) groups of three to five students formed teams.
-To ensure every aspect of the project work was computationally
+To make sure every aspect of the project work was computationally
 reproducible and collaborative, we immediately created a publicly visible
 project repository for each team.
-The groups defined the scope of their projects iteratively; each team
-submitted a proposal in week~6, a third of the way through the semester. We
-gave each team feedback to clarify project motivation and goals.
+The groups defined the scope of their projects iteratively; the teams
+submitted their proposals in week~6, a third of the way through the semester.
+We gave each team feedback to clarify project motivation and goals.
 
-For their project proposals, we required each team to use a \LaTeX\,template,
+For their project proposals, we required the teams to use a \LaTeX\,template,
 which we provided, and to add the source file(s) to their project repository
 (see Figure~\ref{fig:repo}).
 Each proposal involved
@@ -512,7 +514,7 @@ depository of MRI and EEG datasets
 
 We reviewed the project proposals and met with each team in week~7 to help
 them refine their ideas.
-This feedback process continued throughout the semester, with students
+The feedback process continued throughout the semester, with students
 regularly submitting drafts according to milestones defined within the project
 timeline.
 As much as possible, we used this process to replicate the way we
@@ -649,7 +651,7 @@ edit and run for themselves.\footnote{For an example lesson showing our use
 of Python code to illustrate the mathematical and statistical ideas,
 see \url{http://www.jarrodmillman.com/rcsds/lectures/glm_intro.html}.}
 We specifically avoided using off-the-shelf imaging analysis software packages,
-and encouraged the students to build their own analyses given the building
+and encouraged the students to build their own analyses from the building
 blocks we had given them.  We interleaved teaching with short group exercises
 where students took the code from class and extended it to solve a new problem.
 
@@ -710,7 +712,7 @@ We covered the following topics:
 \item
     Parametric modulation of event regressors.  Some of the OpenFMRI datasets
         that the students had chosen used regressors to model parametric
-        module of events.  There is one regressor to model the hemodynamic
+        modulation of events.  There is one regressor to model the hemodynamic
         effect of a particular event type on average, and another to capture
         the variation of the hemodynamic event activity as a linear function
         of some characteristic of that event, such as duration or intensity.
@@ -851,17 +853,19 @@ No team used SPM, FSL, or AFNI.  Two projects imported the
 Python neuroimaging package designed for machine learning, but both projects
 used Nilearn only for spatial smoothing and basic volume visualization.  One
 project used a single function from the
-\texttt{Dipy} package\footnote{\url{http://nipy.org/dipy}} for calculating a
+\texttt{Dipy} package\footnote{Dipy is a package for analysis of diffusion
+imaging data: \url{http://nipy.org/dipy}} for calculating a
 within-brain mask for the functional images.  Another used a class from the
-\texttt{NiTime} package\footnote{\url{http://nipy.org/nitime}} for temporal
-filtering.  All projects used the basic NumPy, SciPy, and Matplotlib packages;
-eight of eleven used the \texttt{Scikit-Learn} package\footnote{\url{http://scikit-learn.org}}
-for machine learning; six used the
-\texttt{Statsmodels} package\footnote{\url{http://www.statsmodels.org}} for statistical
-modeling.  The uses of Statsmodels
-were: AutoRegressive Integrated Moving Average (ARIMA) modeling of voxel
-time-series and autocorrelation plots (two projects); logistic regression (two
-projects); ordinary least squares modeling (one project); White test for
+\texttt{NiTime} package\footnote{NiTime is a library for time-series analysis
+of data from neuroscience experiments: \url{http://nipy.org/nitime}} for
+temporal filtering.  All projects used the basic NumPy, SciPy, and Matplotlib
+packages; eight of eleven used the \texttt{Scikit-Learn}
+package\footnote{\url{http://scikit-learn.org}} for machine learning; six used
+the \texttt{Statsmodels} package\footnote{\url{http://www.statsmodels.org}}
+for statistical modeling.  The uses of Statsmodels were: AutoRegressive
+Integrated Moving Average (ARIMA) modeling of voxel time-series and
+autocorrelation plots (two projects); logistic regression (two projects);
+ordinary least squares modeling (one project); White test for
 Heteroscedasticity (one project); mixed effects modeling (one project).  Of
 these, we had only shown the implementation of ordinary least squares analysis
 in class.
@@ -953,7 +957,7 @@ To quote the American chemist Frank Westheimer:
 ``A couple of months in the laboratory can frequently save a couple of hours
 in the library.''
 
-For these reasons, our course took the opposite to the common approach.
+For these reasons, our course took the opposite approach.
 We put a substantial, collaborative, and open-ended project at the center of
 the course.
 We then started with the tools and process for working with numerical data, and
@@ -961,7 +965,7 @@ for building their own analyses.
 We used this framework as a foundation on which to build their understanding of
 the underlying ideas.
 As we taught these tools, we integrated them into their exercises and homework,
-and made it clear how they related to their work on the project.
+and made it clear how they related to their project work.
 
 Our claim is that this made our teaching and our students much more efficient.
 The secure foundation made it easier for them to work with us and with each
@@ -988,8 +992,8 @@ final projects that were substantial and well-grounded.
 As we argued in the introduction, typical imaging courses do not attempt to
 teach the fundamental ideas of linear models, but assume this understanding
 and move onto imaging specifics.  This assumption is almost entirely false for
-neuroscience and psychology students, and mostly false for our own
-students, even though most had already had some training from an undergraduate
+neuroscience and psychology students, and largely false for our own
+students, even though most had already had training from an undergraduate
 statistics major. As a result of this incorrect assumption, it is rare for
 students of neuroimaging to be confident in their understanding of the
 statistics they are using.  We taught the linear model from the first
@@ -1007,8 +1011,7 @@ was that they should prefer well-curated datasets from the OpenFMRI
 depository.  In order to design and implement their project, they had to
 understand at least one published FMRI paper in some depth, with limited
 assistance from their instructors.  We gave no example projects for them to
-review, or templates for them to follow.  As we have already described in the
-results, the submitted projects were all serious efforts to reproduce and
+review, or templates for them to follow.  The submitted projects were all serious efforts to reproduce and
 / or extend the published results, and all included analysis code that they
 had written themselves.
 
@@ -1017,7 +1020,7 @@ not cover pre-processing of the data, random effects analysis, or inference
 with multiple comparisons.   Our claim is that what we did teach was a sound
 and sufficient foundation from which they could write code to implement their
 own analyses.  This is a level of competence that few neuroimagers achieve
-even after considerable practical experience.
+after considerable experience.
 
 \subsection{Did we really teach computational reproducibility?}
 
@@ -1026,11 +1029,11 @@ made it an explicit feature for grading of the final project, so we were not
 surprised to find that it was possible to reproduce all of the final projects
 with little extra clarification or fixes from the group members.
 
-By design, we gave the students a project that was reasonably close to a real
+By design, we gave the students a project that was close to a real
 scientific data analysis.  They had to work with a messy and real dataset to
 explore the data, define their problem and solve it with an analysis that they
 implemented themselves, to various degrees.  We required them to work closely
-in teams, often remotely, using the standard tools for collaboration.
+in teams, often remotely, using standard tools for collaboration.
 
 We found this combination of a substantial analysis problem, expert tools, and
 the requirement for reproducibility, was effective at giving the students a
@@ -1046,21 +1049,20 @@ taught the tools that we use ourselves, and that we would teach to
 students working with us.
 
 We could have used R instead of Python, but Python is a better language for
-teaching, and has seen more development for neuroimaging and machine learning.
+teaching, and has better libraries for neuroimaging and machine learning.
 
 A more interesting question is whether we went too far in forcing the students
 to use expert tools.  For example, we required them to write their
 report in \LaTeX, and their presentation slides and analysis description in
 plain text with Markdown markup.  We asked them to do all project interaction
-using GitHub tools such as the issue tracker and pull requests.
-
-We set and marked code exercises with Git version control and text files,
-rather than interactive alternatives, such as Jupyter Notebooks.
+using GitHub tools such as the issue tracker and pull requests.  We set and
+marked code exercises with Git version control and text files, rather than
+interactive alternatives, such as Jupyter Notebooks.
 
 Of course---at first---some students complained that they would rather use
 Facebook for code discussions and PowerPoint for their presentation slides.
 Should we have allowed this?  We believe not.  Our own experience
-of using the tools we taught is that their true power only becomes apparent
+of using the tools we taught is that their power only becomes apparent
 when you learn to use them for all the tasks of analysis, including generating
 reports and presentations.  Mixing ``easy'' but heavy tools like PowerPoint
 and Facebook with ``simple'' and light tools like text editors and Markdown
@@ -1106,17 +1108,17 @@ understand the problem of reproducibility without experience of something
 close to a real scientific analysis.
 
 The size of the project also meant that the students had to learn to
-collaborate with each other efficiently, often remotely, as many of the
-students had different class schedules.  Many of the tools that we taught,
-such as distributed version control, only become essential when working in
+collaborate with each other efficiently, often remotely, as students had
+different class schedules.  Many of the tools that we taught, such as
+distributed version control, only become essential when working in
 collaboration.  Conversely, if you are not collaborating with others, it can
 be difficult to see why it is worth investing the time to understand powerful
 tools like the Git version control software, or the GitHub interface.
 
-Working in collaboration, and working reproducibly changes our approach to the
-work. If we have to explain our work to others in the group, or to
-another user of the work, then we develop the expectation that our work
-will always be something we will demonstrate and explain to others.  It
+Working in collaboration, and working reproducibly changes the way that we
+think.  If we have to explain our work to others in the group, or to
+another user of the work, then we develop the expectation that whatever we
+write will always be something we will demonstrate and explain to others.  It
 becomes part of the work to communicate our ideas and explain what we did.
 
 It was important that the project was open-ended.  If the student has to solve
@@ -1126,7 +1128,7 @@ of the process that generated it.  In an open-ended project, it is likely that
 the group will need to explore different analyses in order to proceed.
 The answers are not known, and the group has to proceed with care, to avoid
 making false conclusions.  This is typical of real scientific analysis, and
-puts a much higher burden on rigor and testing, than a typical small classroom
+puts a higher burden on rigor and testing, than a typical small classroom
 problem.
 
 \subsection{What background do students need?}
@@ -1138,7 +1140,7 @@ We would be happy to relax the requirement for probability.  We did not refer
 to the ideas of probability in any depth during the course.  Authors JBP and
 MB have taught similar material to neuroscience and psychology students who
 lack training in probability; the pace of teaching and level of understanding
-were similar across the statistics students in this course and the other
+were similar for the statistics students in this course and the other
 students we have taught.
 
 Psychology and neuroscience students do have some statistical training.  Our
@@ -1171,7 +1173,7 @@ These approaches have some similarity with the early classes in our course,
 but there are differences.  Bootcamps and hack weeks attract volunteers with
 interest in or commitment to efficient and reproducible practice. These are
 typically graduate students or post-docs that already have some technical
-experience.  They are already motivated enough to come to campus on a weekend,
+experience.  They are motivated enough to come to campus on a weekend,
 stay longer at a conference, or travel some distance.  Even so, we suspect
 that it would be possible to show that short introductions in
 bootcamps will not be effective in changing practice in the medium term,
@@ -1182,7 +1184,7 @@ of them had little background of good practice in computation.  The majority
 were undergraduates.  We suspect that many of the students finishing our
 course did have enough experience of using the tools they had used, to
 continue using them in their daily work, and teach others to do the same.  We
-base this suspicion on the depth and quality of much of the project work.
+base this suspicion on the depth and quality of the project work.
 
 Bootcamps and hack weeks can be useful, but their starting point is an
 attempt to augment an aging curriculum that does not recognize the need for
@@ -1202,7 +1204,7 @@ training imagers and other computational scientists?
 
 We think of this course as a foundation.  Students graduating from this course
 will be more effective in learning and analysis.  The tools that they have
-learned allow the instructor to build analyses from simple blocks, to
+learned allow the instructor to build analyses from basic blocks, to
 show them how algorithms work, and make them simple to extend.  We therefore
 suggest that a course like ours should be first in a sequence, where the
 following courses would continue to use these tools for exposition and for
@@ -1214,7 +1216,7 @@ Something like our course would follow.  There should be follow-up courses
 using the same tools for more advanced topics such as machine learning,
 spatial pre-processing, and analysis of other modalities. We suggest that each
 of these courses should have group project work as a large component, in which
-the student continue to practice techniques for efficient reproducible
+the students continue to practice techniques for efficient reproducible
 research.
 
 \subsection{What factors would influence the success of such a course?}
@@ -1243,12 +1245,12 @@ importance of Python in scientific computing, and in industry.  Tech firms
 recruit aggressively on campus, and Python is a valuable skill in industry.
 The cross-discipline introductory course in Fundamentals of Data Science uses
 Python. The new Berkeley Institute of Data Science has a strong emphasis
-toward Python for scientific computing.
+on Python for scientific computing.
 
 In the same way, a booming tech sector nearby made it more obvious to students
-that they would need to learn tools like Git and GitHub, as these are widely
-used in the tech industry.  For example, public activity on GitHub is one
-factor companies use to identify candidates for well-paid positions as
+that they would need to learn tools like Git and GitHub.
+For example, public activity on GitHub is one
+feature that companies use to identify candidates for well-paid positions as
 software engineers.
 
 We required students to use \LaTeX\,to write their final reports.  This was an
@@ -1269,17 +1271,17 @@ We made these ideas concrete with a substantial open-ended project designed to
 be as close as possible to the experience of graduate research.
 
 We were largely successful in teaching the students the tools they can continue
-to use productively for significant, collaborative, and reproducible research.
+to use productively for collaborative and reproducible research.
 
 We are sure that most of our readers would agree that, in an ideal world, we
 should teach students to work in this way, but, given all the other
 classes our students must take, can we justify the time and energy that this
-course needs?  We believe so, but we know that not all our readers with be
+course needs?  We believe so, but we know that not all our readers will be
 convinced.  This is true of students as well as
 instructors.  We put such emphasis on the final project, precisely because we
-know well, that it is difficult to see how important these tools are, if you
+know that it is difficult to see how important these tools are, if you
 have not used them, or used them only in toy projects.  We cannot easily teach
-these tools to our fellow instructors, so instead we offer this sketch of an
+these tools to our fellow teachers, so instead we offer this sketch of an
 experiment, to make the discussion more concrete.  Imagine we took 200
 students, and randomized them into two groups of 100 each.  The first group
 takes something like the course we describe here as an introduction, and then
@@ -1287,11 +1289,11 @@ one or more further courses on imaging.  The second does not take such a
 course, but instead has more traditional teaching on imaging that covers a
 wider range of techniques, using off the shelf imaging software.  Part of
 their later teaching would include some techniques for reproducible research.
-Two years after such an experiment, we are sure that it will be clear that
-students from the first group have a greater understanding of what they are
-doing, are more effective in analysis, and are more likely to experiment with
-new ideas.  We think it much more likely that the first group will be doing
-reproducible research.
+Two years after such an experiment, we predict that
+students from the first group will have a greater understanding of what they
+are doing, will be more effective in analysis, and more likely to
+experiment with new ideas.  We think it much more likely that the first group
+will be doing reproducible research.
 
 \section*{Conflict of Interest Statement}
 
