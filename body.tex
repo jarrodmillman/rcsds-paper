@@ -300,7 +300,7 @@ To produce the final document, the source files must undergo a \emph{build} or
 step where the markup syntax (and any associated style files) are passed to a
 tool that knows how to interpret and render the content.
 
-\LaTeX\,and Markdown represent two extremes of Markup languages, each
+\LaTeX\,and Markdown represent two extremes of markup languages, each
 with their own usefulness.
 \LaTeX\,is notation-heavy, but powerful.
 In contrast, Markdown is notation-light, but limited.
@@ -565,11 +565,11 @@ discussions as evidence for their contributions to the project, and as data for
 their final grades.
 
 Rather than have students commit the raw FMRI data to their project repository, we had
-them commit code to download and validate (using stored file checksums)
+them commit code to download and validate
 the raw data used in their project (week~8).
 Since this was the first code they added to their repositories, we gave them example
-code to download a file and check it against a stored hash of the file
-content.
+code to download a file and validate it by checking the file against a stored
+checksum of the file content.
 Once they added code to handle downloading and validating the data,
 we had them commit code for their exploratory data analysis (week~9).
 After this, the only milestones we provided were for progress
@@ -600,7 +600,7 @@ the projects were due, discussing their current progress and their plan for
 finishing their project.
 At the end of the project, in week~17, they had to commit the final PDF of
 their reports and provide instructions for generating the report PDF
-from the source \LaTeX files.
+from the source \LaTeX\,files.
 They also had to show that all their work was computationally reproducible.
 They gave instructions for running the analysis and generating their final
 report in a text file named \texttt{README.md}, in the root directory of their
