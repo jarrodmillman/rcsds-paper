@@ -652,8 +652,8 @@ We covered the following topics:
     The idea of images as visual displays of values in arrays.
 \item
     The standard neuroimaging NIfTI image format as a simple image container,
-        with metadata (such as shape) and image pixel / voxel data stored as
-        a sequence of numbers.  We used the Nibabel Python package
+        combining metadata (such as shape) and image pixel / voxel data stored
+        as a sequence of numbers.  We used the Nibabel Python package
         \cref{nibabel} to load NIfTI data as three-dimensional arrays.
 \item
     Four dimensional (4D) images as sequential time-series of 3D image
@@ -693,7 +693,7 @@ We covered the following topics:
 \item
     High-resolution sampling of regressors.  The simple cases that we had
         covered above assumed events or blocks that started at the same time
-        as the scanner started collecting a new brain volume.  This is not the
+        as the scanner started to collect a new brain volume.  This is not the
         case in general.  To deal with events that do not start at volume
         onsets, we need to generate a hemodynamic time-course at higher
         time resolution than the spacing of the scan onsets, and then sample
@@ -906,8 +906,8 @@ processing time and memory.  As they note in their \texttt{README.md} ``We
 strongly encourage running on a machine with 120 GBs of accessible RAM to
 emulate development environment.'' They extended the analysis by running a
 random forest model to detect volumes corresponding to outdoor and indoor
-scenes in the film.  With all this, they achieved somewhere near 100\% code
-test coverage.
+scenes in the film.  With all this, they achieved around 92\% code test
+coverage.
 
 Seventeen out of forty undergraduates and six out of ten graduate students
 completed anonymous course evaluations.  The primary question of interest to
