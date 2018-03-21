@@ -931,7 +931,7 @@ Most neuroimaging researchers agree that computational reproducibility is
 desirable, but rare.  How should we adapt our teaching to make reproducibility
 more common?
 
-The most common practical answer to this question, is that we should train
+The usual practical answer to this question, is that we should train
 neuroimaging and other computational researchers as we do now, but add short
 courses or bootcamps that teach a subset of the tools we taught here but
 without the substantial practice.  That is, reproducibility is an addition on
@@ -970,26 +970,26 @@ used neuroimaging as the example scientific application of these tools.  Can
 we claim to have taught a meaningful amount of neuroimaging in this class?
 
 Class content specific to neuroimaging was a guest lecture in class 4 (of 25),
-and teaching on the brain images, correlation, and the general linear model and
-from classes 9 through 15.  We only attempted to cover the standard
+and teaching on the brain images, correlation, and the general linear model
+from classes 9 through 15.  We covered only the standard
 statistical techniques needed for a basic analysis of a single run of FMRI
-data.  This is a much narrower range than a standard neuroimaging course.
-However, we argue that we covered these topics in much greater depth than is
-typical for a neuroimaging course, and that this formed the foundation for
-final projects that were substantial and well-grounded.
+data.  This is a much narrower range than a standard neuroimaging course, but
+we covered these topics in much greater depth than is typical for a
+neuroimaging course.  This was the basis for final projects that were
+substantial and well-grounded.
 
-As we argued in the introduction, typical imaging courses do not attempt to
+Typical imaging courses do not attempt to
 teach the fundamental ideas of linear models, but assume this understanding
 and move onto imaging specifics.  This assumption is almost entirely false for
 neuroscience and psychology students, and largely false for our own
-students, even though most had already had training from an undergraduate
+students, even though most had training from an undergraduate
 statistics major. As a result of this incorrect assumption, it is rare for
 students of neuroimaging to be confident in their understanding of the
 statistics they are using.  We taught the linear model from the first
 principles of vector algebra, using the tools they had just learned, to build
 a simple analysis from basic components.  As a result, when the students got
 to their projects, they had the tools they needed to build their own
-neuroimaging analysis code, both demonstrating and advancing their own
+neuroimaging analysis code, demonstrating and advancing their own
 understanding.
 
 We note the difficulty of the task that we gave the students, and the
@@ -1026,7 +1026,7 @@ in teams, often remotely, using standard tools for collaboration.
 
 We found this combination of a substantial analysis problem, expert tools, and
 the requirement for reproducibility, was effective at giving the students a
-concrete sense of the difficulty of making an analysis reproducible, and how
+concrete sense of the difficulties in making an analysis reproducible, and how
 these can be overcome.  We speculate, from our own work, that the
 experience of building a reproducible analysis makes it easier to commit to
 the tools and practice needed for reproducible work in the future.
@@ -1051,7 +1051,7 @@ interactive alternatives, such as Jupyter Notebooks.
 Of course---at first---some students complained that they would rather use
 Facebook for code discussions and PowerPoint for their presentation slides.
 Should we have allowed this?  We believe not.  Our own experience
-of using the tools we taught is that their power only becomes apparent
+of using these tools is that their power only becomes apparent
 when you learn to use them for all the tasks of analysis, including generating
 reports and presentations.  Mixing ``easy'' but heavy tools like PowerPoint
 and Facebook with ``simple'' and light tools like text editors and Markdown
@@ -1068,12 +1068,13 @@ work.
 
 One common justification for not training students in good coding practice is
 the assertion that scientists do not need to be programmers.  However, scientists do
-have to use, read, and write code, so a more realistic 
+have to use, read, and write code, so a more defensible
 statement would be that scientists do not need to be \emph{good} programmers.
-Unfortunately bad programmers are inefficient and prone to error; they are
-less likely to detect errors, and improve slowly over time, if at all.  We
-should invest our work in education to help our students work efficiently and
-continue learning for the rest of their careers.
+It is surely true that successful scientists can be bad programmers, but bad
+programmers are inefficient and prone to error; they are less likely to detect
+errors, and improve very slowly over time.  We should invest teaching time
+to help our students work efficiently and continue learning for the rest of
+their careers.
 
 \subsection{Do students need a substantial, collaborative, and open-ended project?}
 
@@ -1091,10 +1092,10 @@ lots of questions and ask them early!''
 \end{quotation}
 
 We believe this emphasis was necessary to teach the problem of
-reproducibility, with the tools needed to solve these problems, and the
-neuroimaging background.  As we have argued above, it is difficult to
-understand the problem of reproducibility without experience of something
-close to a real scientific analysis.
+reproducibility, along with the tools needed to solve these problems, and the
+neuroimaging background.  It is difficult to understand the problem of
+reproducibility without experience of something close to a real scientific
+analysis.
 
 The size of the project also meant that the students had to learn to
 collaborate with each other efficiently, often remotely, as students had
@@ -1104,7 +1105,7 @@ collaboration.  Conversely, if you are not collaborating with others, it can
 be difficult to see why it is worth investing the time to understand powerful
 tools like the Git version control software, or the GitHub interface.
 
-Working in collaboration, and working reproducibly changes the way that we
+Working in collaboration, and working reproducibly, changes the way that we
 think.  If we have to explain our work to others in the group, or to
 another user of the work, then we develop the expectation that whatever we
 write will always be something we will demonstrate and explain to others.  It
@@ -1114,11 +1115,10 @@ It was important that the project was open-ended.  If the student has to solve
 a small problem with a single correct answer, they can often check
 whether they have the right answer, and do not need to worry about the quality
 of the process that generated it.  In an open-ended project, it is likely that
-the group will need to explore different analyses in order to proceed.
-The answers are not known, and the group has to proceed with care, to avoid
-making false conclusions.  This is typical of real scientific analysis, and
-puts a higher burden on rigor and testing, than a typical small classroom
-problem.
+the group will need to explore different analyses as they progress.  The
+answers are not known, and the group has to proceed with care, to avoid making
+false conclusions.  This is typical of real scientific analysis, and puts a
+higher burden on rigor and testing, than a typical small classroom problem.
 
 \subsection{What background do students need?}
 
@@ -1134,7 +1134,7 @@ students we have taught.
 
 Psychology and neuroscience students do have some statistical training.  Our
 impression was that this background was necessary for us to be able to as
-start quickly as we did in the analysis of linear regression.
+start as quickly as we did in the analysis of linear regression.
 
 We would also keep the requirement for some programming experience.  Our
 course went quickly through basic programming ideas such as for loops,
@@ -1142,8 +1142,7 @@ conditionals, and functions.  We could not have done this for students without
 any experience of programming.  In our psychology / neuroscience courses that
 used similar material, we required some experience of programming in a
 language such as Python, R, or MATLAB.  It is possible that a brief
-introduction would be enough to fulfill this requirement, such as a bootcamp
-or multi-day intensive course.
+introduction would be enough to fulfill this requirement, such as a bootcamp.
 
 \subsection{Could this material be covered by a bootcamp or hack week?}
 
@@ -1152,11 +1151,11 @@ of informal and inefficient computational practice.  The best known may be
 Software Carpentry \citep{wilson2014software}.  A Software Carpentry course
 consists of a two-day bootcamp covering many of the same tools we used,
 including the Unix command line, distributed version control, and programming
-with a high-level language such as Python or R. Some fields organize Hack
-Weeks, that vary in format from a series of tutorials to a week of
-collaborative work on a project that has already been agreed
-\citep{huppenkothen_hack_2017}.  The tutorials and modeled working practice
-usually include the same set of tools we used.
+with a high-level language such as Python or R. Hack weeks can be a related
+approach to the same problems. Hack weeks vary in format from a series of
+tutorials to a week of collaborative work on a project that has already been
+agreed \citep{huppenkothen_hack_2017}.  The tutorials and modeled working
+practice usually include the same set of tools we used.
 
 These approaches have some similarity with the early classes in our course,
 but there are differences.  Bootcamps and hack weeks attract volunteers with
@@ -1194,7 +1193,7 @@ training imagers and other computational scientists?
 We think of this course as a foundation.  Students graduating from this course
 will be more effective in learning and analysis.  The tools that they have
 learned allow the instructor to build analyses from basic blocks, to
-show them how algorithms work, and make them simple to extend.  We therefore
+show how algorithms work, and make them simple to extend.  We
 suggest that a course like ours should be first in a sequence, where the
 following courses would continue to use these tools for exposition and for
 project work.
