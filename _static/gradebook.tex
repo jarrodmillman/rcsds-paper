@@ -1,0 +1,85 @@
+\section*{Appendix 1. Gradebook: Tools for grading}
+
+Here is the repo I used last summer:
+https://github.com/berkeley-stat133/assignments-summer2014
+
+Here is the repo Inga used last semester:
+https://github.com/berkeley-stat133/assignments-fall2014
+
+The scoring scripts should all be in the top-level with names like:
+hw1.py
+quiz1.py
+midterm.py
+final.py
+
+For example, if you look here
+  https://github.com/berkeley-stat133/assignments-summer2014/blob/master/hw7.py
+you will see something like:
+
+\begin{verbatim}
+# some imports
+# some boilerplate
+
+# two lists
+part_names = ['ex1', 'ex1_fig']
+possible = [18, 12]
+
+# two functions
+def ex1(assignment, score=0):
+def ex1_fig(assignment, score=0):
+\end{verbatim}
+
+The top of every scoring script will normally have the same imports
+and boilerplate.  The main task when writing a new scoring script is
+writing the scoring functions, which must return a numerical score.
+For each function, you need to write its name in the `part\_names` list
+and the total number of possible points in the possible list.  The
+two lists are basically a small little plugin system.
+
+There are no restrictions on how the functions compute a score, but
+there are some helper functions and standard patterns that I've used.
+When grading R assignments, I've mostly tested that the students'
+variables have the correct values and that their functions produce the
+correct results using something like R's all.equal function.  To do
+this I use:
+- a helper function `run` to run code and store results in the namespace g.
+- a helper function `score`, which returns 0 if its first two
+arguments do not match and its third argument if they do match
+
+For figures, I open the generated PDF and then present a set of
+queries about the figure that the person running the scoring script
+must answer using the `query` helper function.
+
+There isn't much going on for these steps and it should be trivial to
+implement this functionality in R.  The main purpose of my Python code
+is provide several commandline tools (with options) to produce log
+files, update a JSON file where I record all the student scores and
+information, and run arbitrary commands on all or a subset of
+students.
+
+There is some basic documentation in the gradebook README:
+https://github.com/jarrodmillman/gradebook
+
+It isn't really intended to be sufficient for someone to figure out on
+their own, but should be sufficient to give you an idea how the system
+works.  It may be more code than you need as I wanted something that I
+could use to score assignments in multiple programming languages and I
+was interested in extensive logs and other functionality like the
+ability to regrade (without reducing the score), to include penalties
+(e.g., for late submissions), to have different status students (e.g.,
+enrolled or auditor), and to handle shared project repos as well as
+each student's individual repo among other things.
+
+If you are interested, you can see the code for `gb-score`:
+https://github.com/jarrodmillman/gradebook/blob/master/gradebook/score.py
+
+To summarize, for each assignment you need to write a scoring script
+(e.g., hw1.py).  To score every student's assignment, you would type
+something like the following at a BASH prompt:
+\begin{verbatim}
+$ gb-run gb-score hw1
+\end{verbatim}
+
+If there are no figures, it will run by itself.  If there are figures,
+then normally someone will need to sit in front of their computer and
+answer a series of yes/no queries for each figure from each student.
