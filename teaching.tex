@@ -68,7 +68,7 @@ $^{5}$Neurology and Neurosurgery, McGill University, Montreal, Quebec, Canada}
 % Count of words
 \usepackage{moreverb} % for verbatim ouput
 %\immediate\write18{echo " out of 5000" | (echo -n "Word count: " && texcount -total -brief -sum body.tex | xargs echo -n && cat) > wordcount.tex}
-\immediate\write18{echo  "Word count: " $(texcount -total -brief -sum body.tex)  > wordcount.tex}
+\immediate\write18{echo  "Word count: " $(texcount -total -brief -sum=1 body.tex)  > wordcount.tex}
 \newcommand\wordcount{\verbatiminput{wordcount.tex}}
 
 \newcommand{\blockpar}[1]{\vspace*{3mm} \noindent \textbf{#1}}
