@@ -200,9 +200,9 @@ about the organization of data as a hierarchy of directories and files.  The
 command line tools make the file system hierarchy explicit, and so make it
 easier to reason about data organization.
 
-Linux and macOS are native Unix platforms and provide Unix / Bash command line
-tools from a standard install.  Windows 10 provides the Unix / Bash tools as
-an optional operating system install.
+%Linux and macOS are native Unix platforms and provide Unix / Bash command line
+%tools from a standard install.  Windows 10 provides the Unix / Bash tools as
+%an optional operating system install.
 
 \blockpar{Version control.}
 Version control is a fundamental tool for organizing and storing code and
@@ -347,7 +347,8 @@ of commands necessary for generating multiple target files, which may depend on
 other files or steps; such chaining is important for building and maintaining
 reproducible workflows.
 
-\subsubsection{Lectures, labs, notes, homeworks, readings, and quizzes}
+%\subsubsection{Lectures, labs, notes, homeworks, readings, and quizzes}
+\subsubsection{Lectures, labs, notes, homeworks, and quizzes}
 
 The weekly lectures and labs prepared students---through a
 series of examples and guided exercises---with the skills and
@@ -395,7 +396,7 @@ desired behavior of named functions, and function templates with missing
 implementations.
 The functions were documented according to the NumPy documentation
 standard.\footnote{\url{https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt}}
-See the code listing in Figure~\ref{fig:dna} for an example from the first homework.
+%See the code listing in Figure~\ref{fig:dna} for an example from the first homework.
 Students added implementations to the functions according to the documentation
 and ran the tests to check that their code returned the correct results
 for the provided tests.
@@ -405,38 +406,38 @@ The homework reinforced the material we taught during the
 beginning of the course and focused on scientific programming
 in Python.
 
-\begin{figure}
-\centering
-\input{dna.tex}
-\caption{Above we list the first few lines of \texttt{dna.py}.
-The assignment was to edit this file by implementing the functions.
-Including \texttt{is\_dna}, there were 9 functions
-to implement in \texttt{dna.py}.
-The first homework consisted of this Python file as well as two others.
-It also included a \texttt{README.md} file, which included instructions
-such as:}\label{fig:dna}
-\begin{quotation}
-The functions you are to implement are already defined in the \texttt{dna.py} and
-\texttt{cipher.py} files respectively. The string that immediately follows the function
-definition is called the \emph{docstring}. (The function definition is the line
-starting with \texttt{def}). In this case, you are to use the description given in the
-docstring as a guide for how to implement the function. At the end of each
-docstring, there is an \texttt{Examples} section that contains lines that start with
-\verb|>>>|. These are called \emph{doctests} as they are \emph{tests} for the code that are
-contained in the docstring. If you run the doctests on the assignment before
-doing any work, you'll notice that all of the tests fail. That's because none
-of the functions have been implemented yet! Once you have implemented a
-function, you can run the doctests again to make sure that function passes all
-of its doctests.
-\end{quotation}
-\end{figure}
+%\begin{figure}
+%\centering
+%\input{dna.tex}
+%\caption{Above we list the first few lines of \texttt{dna.py}.
+%The assignment was to edit this file by implementing the functions.
+%Including \texttt{is\_dna}, there were 9 functions
+%to implement in \texttt{dna.py}.
+%The first homework consisted of this Python file as well as two others.
+%It also included a \texttt{README.md} file, which included instructions
+%such as:}\label{fig:dna}
+%\begin{quotation}
+%The functions you are to implement are already defined in the \texttt{dna.py} and
+%\texttt{cipher.py} files respectively. The string that immediately follows the function
+%definition is called the \emph{docstring}. (The function definition is the line
+%starting with \texttt{def}). In this case, you are to use the description given in the
+%docstring as a guide for how to implement the function. At the end of each
+%docstring, there is an \texttt{Examples} section that contains lines that start with
+%\verb|>>>|. These are called \emph{doctests} as they are \emph{tests} for the code that are
+%contained in the docstring. If you run the doctests on the assignment before
+%doing any work, you'll notice that all of the tests fail. That's because none
+%of the functions have been implemented yet! Once you have implemented a
+%function, you can run the doctests again to make sure that function passes all
+%of its doctests.
+%\end{quotation}
+%\end{figure}
 
-Over the course of the semester, seven readings were assigned on a roughly
-bi-weekly basis.
-The readings consisted of articles that emphasized the core concepts
-of the class, either with respect to scientific computing, or neuroimaging.
-Students were required to compose a two-paragraph write-up that both summarized
-the main points of the article, and commented on it.
+%Over the course of the semester, seven readings were assigned on a roughly
+%bi-weekly basis.
+%The readings consisted of articles that emphasized the core concepts
+%of the class, either with respect to scientific computing, or neuroimaging.
+%Students were required to compose a two-paragraph write-up that both summarized
+%the main points of the article, and commented on it.
 
 The labs and quizzes emphasized hands-on experience with the computing tools
 and process associated with reproducible and collaborative computing (e.g.,
@@ -448,11 +449,11 @@ The remainder of the lab was devoted to providing hands-on experience via
 collaborative work on breakout exercises.
 These exercises were formulated as small projects to be worked on
 in groups of three to four students.
-Prior to the breakout session the instructor presented a small review of material relevant for the
-exercises, often in the form of a Jupyter
-notebook\footnote{\url{https://jupyter-notebook.readthedocs.io}} containing
-Python code that the students could execute on their own
-machines.
+%Prior to the breakout session the instructor presented a small review of material relevant for the
+%exercises, often in the form of a Jupyter
+%notebook\footnote{\url{https://jupyter-notebook.readthedocs.io}} containing
+%Python code that the students could execute on their own
+%machines.
 
 We also used the labs to help the students practice critical code review.
 For example, we had the students form small groups and review one another's
@@ -610,14 +611,14 @@ When we graded their projects, the \texttt{README.md} file had to explain how
 to install, configure, and run all aspects of their project.
 Each \texttt{README.md} had to specify how to rebuild all the components of
 the project and in what order to do so.
-For example, a \texttt{README.md} might include a section specifying
+For example, it might include a section specifying
 the \texttt{make} commands to execute, such as:
 \begin{verbatim}
-    make data  # download the data
+    make data      # download the data
     make validate  # ensure the data is not corrupted
-    make eda  # generate figures from exploratory analysis
+    make eda       # generate figures from exploratory analysis
     make analysis  # generate figures and results
-    make report # build final report
+    make report    # build final report
 \end{verbatim}
 
 \subsection{Neuroimaging data analysis}\label{analysis}
