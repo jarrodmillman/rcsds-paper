@@ -77,3 +77,14 @@ course more effective.
 Put otherwise, the NSF appears to be thinking of the situation where the
 curriculum is more or less set, and the study is looking for more effective
 ways to teach that curriculum.  We're proposing a big change in the curriculum.
+
+Specifically, addressing the reviewers comment "you have framed this as a
+research into project-based instruction".
+
+We are sorry that we gave the impression that we were doing research into
+project-based instruction - that was not what we were trying to do. Our aim was
+to establish that it was possible to teach the full range of tools for
+computational reproducibility by integrating them into course on neuroimaging.
+The paper is a proof-of-concept, to show that it can be done. Can you give us
+any pointers as to how we can make this distinction clearer, so our readers do
+not mistake our intention?
