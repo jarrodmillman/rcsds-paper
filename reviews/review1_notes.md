@@ -73,3 +73,7 @@ subject.  Our question was - can we teach it?  If the reader believes our
 assessment of the student projects, then the answer is yes.  To follow up, we
 can propose changes that someone might like to make, in order to make the
 course more effective.
+
+Put otherwise, the NSF appears to be thinking of the situation where the
+curriculum is more or less set, and the study is looking for more effective
+ways to teach that curriculum.  We're proposing a big change in the curriculum.
