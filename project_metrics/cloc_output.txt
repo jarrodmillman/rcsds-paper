@@ -1,0 +1,407 @@
+Analyzing alpha
+     100 files     137 text files.
+classified 137 filesDuplicate file check 137 files (134 known unique)Unique:      100 files                                               137 unique files.                              
+Counting:  9Counting:  11Counting:  15Counting:  17Counting:  0Counting:  5Counting:  0Counting:  9      80 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.05 s (62.8 files/s, 7830.5 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          66           2249           2094           3885
+-------------------------------------------------------------------------------
+SUM:                            66           2249           2094           3885
+-------------------------------------------------------------------------------
+     100 files     122 text files.
+classified 122 filesDuplicate file check 122 files (120 known unique)Unique:      100 files                                               122 unique files.                              
+Counting:  16Counting:  0Counting:  7Counting:  0Counting:  6Counting:  7Counting:  9Counting:  7      79 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.05 s (49.7 files/s, 6812.4 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          52           1958           1877           3293
+-------------------------------------------------------------------------------
+SUM:                            52           1958           1877           3293
+-------------------------------------------------------------------------------
+     100 files     104 text files.
+classified 104 filesDuplicate file check 104 files (102 known unique)Unique:      100 files                                               104 unique files.                              
+Counting:  5Counting:  4Counting:  0Counting:  0Counting:  0Counting:  4Counting:  12Counting:  10      78 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (33.6 files/s, 4108.1 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          35           1173           1193           1910
+-------------------------------------------------------------------------------
+SUM:                            35           1173           1193           1910
+-------------------------------------------------------------------------------
+Analyzing beta
+      98 text files.
+classified 98 files      95 unique files.                              
+Counting:  0Counting:  2Counting:  0Counting:  11Counting:  0Counting:  0Counting:  11Counting:  11      73 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.05 s (33.4 files/s, 4676.5 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          35            860           1748           2296
+-------------------------------------------------------------------------------
+SUM:                            35            860           1748           2296
+-------------------------------------------------------------------------------
+      88 text files.
+classified 88 files      85 unique files.                              
+Counting:  0Counting:  9Counting:  7Counting:  0Counting:  10Counting:  0Counting:  0Counting:  0      72 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.05 s (24.9 files/s, 4020.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          26            777           1675           1753
+-------------------------------------------------------------------------------
+SUM:                            26            777           1675           1753
+-------------------------------------------------------------------------------
+      88 text files.
+classified 88 files      85 unique files.                              
+Counting:  0Counting:  0Counting:  9Counting:  0Counting:  0Counting:  0Counting:  10Counting:  7      72 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (25.1 files/s, 4051.7 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          26            777           1675           1753
+-------------------------------------------------------------------------------
+SUM:                            26            777           1675           1753
+-------------------------------------------------------------------------------
+Analyzing delta
+      72 text files.
+classified 72 files      72 unique files.                              
+Counting:  1Counting:  8Counting:  7Counting:  0Counting:  8Counting:  0Counting:  0Counting:  1      54 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (24.0 files/s, 2471.9 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          25            444            829           1299
+-------------------------------------------------------------------------------
+SUM:                            25            444            829           1299
+-------------------------------------------------------------------------------
+      64 text files.
+classified 64 files      64 unique files.                              
+Counting:  1Counting:  7Counting:  0Counting:  7Counting:  0Counting:  3Counting:  0Counting:  0      53 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.03 s (17.5 files/s, 2020.7 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          18            361            724            996
+-------------------------------------------------------------------------------
+SUM:                            18            361            724            996
+-------------------------------------------------------------------------------
+      54 text files.
+classified 54 files      54 unique files.                              
+Counting:  0Counting:  0Counting:  3Counting:  0Counting:  0Counting:  0Counting:  6Counting:  0      51 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (8.7 files/s, 762.7 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                           9            108            382            302
+-------------------------------------------------------------------------------
+SUM:                             9            108            382            302
+-------------------------------------------------------------------------------
+Analyzing epsilon
+     100 files     104 text files.
+classified 104 filesDuplicate file check 104 files (103 known unique)Unique:      100 files                                               103 unique files.                              
+Counting:  4Counting:  11Counting:  4Counting:  2Counting:  0Counting:  13Counting:  0Counting:  13      63 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.05 s (44.8 files/s, 4132.9 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          47            719           1327           2289
+-------------------------------------------------------------------------------
+SUM:                            47            719           1327           2289
+-------------------------------------------------------------------------------
+      90 text files.
+classified 90 files      89 unique files.                              
+Counting:  0Counting:  10Counting:  0Counting:  0Counting:  3Counting:  3Counting:  5Counting:  12      63 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (31.8 files/s, 3358.2 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          33            545           1136           1809
+-------------------------------------------------------------------------------
+SUM:                            33            545           1136           1809
+-------------------------------------------------------------------------------
+      72 text files.
+classified 72 files      71 unique files.                              
+Counting:  2Counting:  0Counting:  0Counting:  9Counting:  0Counting:  1Counting:  5Counting:  0      61 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (16.3 files/s, 1215.9 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          17            252            624            392
+-------------------------------------------------------------------------------
+SUM:                            17            252            624            392
+-------------------------------------------------------------------------------
+Analyzing eta
+      52 text files.
+classified 52 files      51 unique files.                              
+Counting:  0Counting:  7Counting:  1Counting:  0Counting:  5Counting:  0Counting:  7Counting:  0      40 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.03 s (19.4 files/s, 1815.3 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          20            362            889            624
+-------------------------------------------------------------------------------
+SUM:                            20            362            889            624
+-------------------------------------------------------------------------------
+      49 text files.
+classified 49 files      48 unique files.                              
+Counting:  1Counting:  5Counting:  0Counting:  0Counting:  5Counting:  6Counting:  0Counting:  0      40 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.03 s (16.5 files/s, 1733.6 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          17            337            860            588
+-------------------------------------------------------------------------------
+SUM:                            17            337            860            588
+-------------------------------------------------------------------------------
+      49 text files.
+classified 49 files      48 unique files.                              
+Counting:  0Counting:  0Counting:  5Counting:  6Counting:  1Counting:  5Counting:  0Counting:  0      40 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (16.4 files/s, 1721.6 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          17            337            860            588
+-------------------------------------------------------------------------------
+SUM:                            17            337            860            588
+-------------------------------------------------------------------------------
+Analyzing gamma
+     100 files     200 files     300 files     400 files     465 text files.
+classified 465 filesDuplicate file check 465 files (191 known unique)Unique:      100 files                                               303 unique files.                              
+Counting:  0Counting:  28Counting:  0Counting:  0Counting:  0Counting:  2Counting:  2Counting:  0     461 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.11 s (28.7 files/s, 2276.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          32            544            497           1494
+-------------------------------------------------------------------------------
+SUM:                            32            544            497           1494
+-------------------------------------------------------------------------------
+     100 files     200 files     300 files     400 files     449 text files.
+classified 449 filesDuplicate file check 449 files (177 known unique)Unique:      100 files                                               287 unique files.                              
+Counting:  0Counting:  18Counting:  0Counting:  0Counting:  0Counting:  0Counting:  1Counting:  0     457 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.11 s (17.2 files/s, 1667.2 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          19            409            397           1040
+-------------------------------------------------------------------------------
+SUM:                            19            409            397           1040
+-------------------------------------------------------------------------------
+     100 files     200 files     300 files     400 files     449 text files.
+classified 449 filesDuplicate file check 449 files (177 known unique)Unique:      100 files                                               287 unique files.                              
+Counting:  0Counting:  0Counting:  1Counting:  0Counting:  0Counting:  0Counting:  18Counting:  0     457 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.12 s (17.0 files/s, 1651.6 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          19            409            397           1040
+-------------------------------------------------------------------------------
+SUM:                            19            409            397           1040
+-------------------------------------------------------------------------------
+Analyzing iota
+      81 text files.
+classified 81 files      78 unique files.                              
+Counting:  0Counting:  0Counting:  1Counting:  6Counting:  3Counting:  0Counting:  10Counting:  1      68 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.26 s (16.7 files/s, 1471.3 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          21            349            540            964
+-------------------------------------------------------------------------------
+SUM:                            21            349            540            964
+-------------------------------------------------------------------------------
+      78 text files.
+classified 78 files      75 unique files.                              
+Counting:  0Counting:  1Counting:  0Counting:  10Counting:  3Counting:  0Counting:  4Counting:  0      68 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.26 s (14.3 files/s, 1394.4 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          18            320            506            928
+-------------------------------------------------------------------------------
+SUM:                            18            320            506            928
+-------------------------------------------------------------------------------
+      78 text files.
+classified 78 files      75 unique files.                              
+Counting:  3Counting:  0Counting:  0Counting:  0Counting:  10Counting:  1Counting:  4Counting:  0      68 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.26 s (14.3 files/s, 1394.7 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          18            320            506            928
+-------------------------------------------------------------------------------
+SUM:                            18            320            506            928
+-------------------------------------------------------------------------------
+Analyzing kappa
+      76 text files.
+classified 76 files      70 unique files.                              
+Counting:  1Counting:  9Counting:  1Counting:  9Counting:  9Counting:  4Counting:  1Counting:  9      42 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (41.3 files/s, 1839.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          43            307            412           1194
+-------------------------------------------------------------------------------
+SUM:                            43            307            412           1194
+-------------------------------------------------------------------------------
+      54 text files.
+classified 54 files      53 unique files.                              
+Counting:  0Counting:  5Counting:  7Counting:  0Counting:  7Counting:  1Counting:  0Counting:  6      35 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (25.0 files/s, 1690.8 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          26            267            334           1157
+-------------------------------------------------------------------------------
+SUM:                            26            267            334           1157
+-------------------------------------------------------------------------------
+      54 text files.
+classified 54 files      53 unique files.                              
+Counting:  0Counting:  6Counting:  0Counting:  0Counting:  7Counting:  7Counting:  1Counting:  5      35 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (25.1 files/s, 1694.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          26            267            334           1157
+-------------------------------------------------------------------------------
+SUM:                            26            267            334           1157
+-------------------------------------------------------------------------------
+Analyzing lambda
+      58 text files.
+classified 58 files      58 unique files.                              
+Counting:  8Counting:  8Counting:  0Counting:  0Counting:  8Counting:  1Counting:  5Counting:  0      46 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.03 s (29.1 files/s, 2194.3 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          30            395            697           1172
+-------------------------------------------------------------------------------
+SUM:                            30            395            697           1172
+-------------------------------------------------------------------------------
+      47 text files.
+classified 47 files      47 unique files.                              
+Counting:  6Counting:  6Counting:  3Counting:  0Counting:  0Counting:  4Counting:  0Counting:  0      50 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.03 s (18.4 files/s, 1655.2 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          19            301            679            732
+-------------------------------------------------------------------------------
+SUM:                            19            301            679            732
+-------------------------------------------------------------------------------
+      47 text files.
+classified 47 files      47 unique files.                              
+Counting:  6Counting:  0Counting:  6Counting:  0Counting:  4Counting:  0Counting:  3Counting:  0      50 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (18.3 files/s, 1647.4 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          19            301            679            732
+-------------------------------------------------------------------------------
+SUM:                            19            301            679            732
+-------------------------------------------------------------------------------
+Analyzing theta
+      84 text files.
+classified 84 files      84 unique files.                              
+Counting:  1Counting:  1Counting:  7Counting:  8Counting:  0Counting:  2Counting:  10Counting:  11      51 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (38.4 files/s, 2838.6 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          40            425            881           1653
+-------------------------------------------------------------------------------
+SUM:                            40            425            881           1653
+-------------------------------------------------------------------------------
+      66 text files.
+classified 66 files      66 unique files.                              
+Counting:  0Counting:  0Counting:  1Counting:  8Counting:  0Counting:  8Counting:  3Counting:  8      45 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (27.0 files/s, 1962.5 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          28            282            566           1186
+-------------------------------------------------------------------------------
+SUM:                            28            282            566           1186
+-------------------------------------------------------------------------------
+      51 text files.
+classified 51 files      51 unique files.                              
+Counting:  3Counting:  0Counting:  0Counting:  0Counting:  5Counting:  6Counting:  0Counting:  1      44 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.03 s (14.5 files/s, 974.2 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          15            140            434            431
+-------------------------------------------------------------------------------
+SUM:                            15            140            434            431
+-------------------------------------------------------------------------------
+Analyzing zeta
+      81 text files.
+classified 81 files      81 unique files.                              
+Counting:  0Counting:  11Counting:  3Counting:  11Counting:  11Counting:  0Counting:  10Counting:  2      41 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (46.1 files/s, 12438.9 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          48           2010           2361           8582
+-------------------------------------------------------------------------------
+SUM:                            48           2010           2361           8582
+-------------------------------------------------------------------------------
+      68 text files.
+classified 68 files      68 unique files.                              
+Counting:  0Counting:  9Counting:  0Counting:  9Counting:  1Counting:  0Counting:  9Counting:  7      41 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (33.6 files/s, 11992.1 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          35           1933           2274           8287
+-------------------------------------------------------------------------------
+SUM:                            35           1933           2274           8287
+-------------------------------------------------------------------------------
+      68 text files.
+classified 68 files      68 unique files.                              
+Counting:  0Counting:  0Counting:  7Counting:  9Counting:  9Counting:  1Counting:  0Counting:  9      41 files ignored.
+
+github.com/AlDanial/cloc v 1.76  T=1.04 s (33.8 files/s, 12061.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                          35           1933           2274           8287
+-------------------------------------------------------------------------------
+SUM:                            35           1933           2274           8287
+-------------------------------------------------------------------------------
