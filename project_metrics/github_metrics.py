@@ -5,12 +5,15 @@ Data read from JSON file, abstracted via the Github API.
 See fetch_project_data.py.
 """
 
+import re
 import json
 import datetime
 from collections import OrderedDict
 
 import pytz
 import pandas as pd
+
+from tabulate import tabulate
 
 # Constants
 DATA_FNAME = 'project_data.json'
@@ -85,16 +88,14 @@ def str2dt(dt_str):
 
 def get_metrics(repo):
     m = OrderedDict()
-    m['No of commits'] = len(valid_commits(repo['commits']))
+    m['Commits'] = len(valid_commits(repo['commits']))
     issues, prs = get_issues_prs(repo)
-    issue_comments = valid(sum(get_comments(issues), []))
-    pr_comments = valid(sum(get_comments(prs), []))
-    m['No of issues'] = len(valid(issues))
-    m['No of issue comments'] = len(issue_comments)
-    m['Mean issue comment wc'] = mean_wc(issue_comments)
-    m['No of PRs'] = len(valid(prs))
-    m['No of PR comments'] = len(pr_comments)
-    m['Mean PR comment wc'] = mean_wc(pr_comments)
+    issues_prs = issues + prs
+    comments = valid(sum(get_comments(issues_prs), []))
+    m['Issues'] = len(valid(issues))
+    m['PRs'] = len(valid(prs))
+    m['Comments'] = len(comments)
+    m['Words / comment'] = mean_wc(comments)
     return m
 
 
@@ -102,3 +103,49 @@ def metrics_df(repos):
     dicts = [get_metrics(repo) for repo in repos.values()]
     names = [name.split('-')[1].capitalize() for name in repos]
     return pd.DataFrame(dicts, index=names)
+
+
+PROJECT_RE = re.compile('^Analyzing', flags=re.M)
+CLOC_RE = re.compile('^github.com/AlDanial/cloc', flags=re.M)
+
+
+def ana_project(proj_part):
+    name = proj_part.splitlines()[0].strip()
+    clocs = CLOC_RE.split(proj_part)[1:]
+    counts = [ana_cloc(c) for c in clocs if c]
+    return name, dict(zip(['LoC', 'no_tests', 'no_tests_scripts'], counts))
+
+
+def ana_cloc(cloc_part):
+    for line in cloc_part.splitlines():
+        if not line.startswith('SUM:'):
+            continue
+        return int(line.split()[-1])
+
+
+def cloc_df(fname):
+    with open(fname, 'rt') as fobj:
+        contents = fobj.read()
+    proj_dicts = []
+    proj_names = []
+    for proj_part in PROJECT_RE.split(contents):
+        if proj_part.strip() == '':
+            continue
+        name, values = ana_project(proj_part)
+        proj_names.append(name.capitalize())
+        proj_dicts.append(values)
+    df = pd.DataFrame(proj_dicts, index=proj_names)
+    proc_df = pd.DataFrame()
+    proc_df = df[['LoC']].copy()
+    proc_df['Test LoC'] = df['LoC'] - df['no_tests']
+    return proc_df
+
+
+repos = load_data()
+df1 = metrics_df(repos)
+df2 = cloc_df('cloc_output.txt')
+df = pd.concat([df1, df2], axis=1)
+df.insert(0, 'Project', df.index)
+table = tabulate(df, tablefmt="latex", floatfmt=".1f", headers='keys',
+                 showindex='never')
+print(table)

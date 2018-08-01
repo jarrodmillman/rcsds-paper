@@ -850,12 +850,13 @@ persuading the students to test a large proportion of their code.  We
 estimated coverage of all lines of Python code at a median of 12.4\% (range
 2.0--91.8).\footnote{See
 \url{https://github.com/jarrodmillman/rcsds-paper/tree/master/project_metrics}
-for details of this estimate.}  The code coverage machinery we had put in
-place did not measure coverage of code outside expected code directories, and
-the students had put a large proportion of their code outside these
-directories, leaving the automated code coverage score above 90\% in all
-cases, even though a large proportion of the code was not in fact covered by
-tests.
+for details of this estimate.\label{fn:metrics}}
+The code coverage machinery we had put in place did not measure coverage of
+code outside expected code directories, and the students had put a large
+proportion of their code outside these directories, leaving the automated code
+coverage score above 90\% in all cases, even though a large proportion of the
+code was not in fact covered by tests. See table \ref{tab:metrics} for more on
+code metrics.
 
 No team used SPM, FSL, or AFNI.  Two projects imported the
 \texttt{nilearn} package,\footnote{\url{https://nilearn.github.io}} which is a
@@ -929,7 +930,49 @@ random forest model to detect volumes corresponding to outdoor and indoor
 scenes in the film.  With all this, they achieved around 92\% code test
 coverage.
 
-Github metrics suggested that the students had engaged with the platform
+Github metrics for the project repositories suggested that the teams had
+engaged with Git and Github workflow -- see table \ref{tab:metrics}.  All
+projects used the Pull Request (PR) feature to a reasonable degree, with
+median (min, max) number of PRs of 113 (49, 310).  There was considerable
+variation in the degree to which the teams used comments to review PRs and
+issues, with median (min, max) of 86 (21, 450). All projects except Zeta had a
+low ratio of final lines of code to number of commits, ranging from 2.3 to
+4.9.  Zeta appears to have used a different strategy, with the most lines of
+code per commit (24.9), and the smallest number of comments.
+
+\begin{table}
+\begin{tabular}{lrrrrrrr}
+\hline
+ Project   &   Commits &   Issues &   PRs &   Comments &   Words / comment &   LoC &   Test LoC \\
+\hline
+ Alpha     &       787 &       23 &   190 &        379 &              23.5 &  3885 &        592 \\
+ Beta      &       534 &        7 &   147 &        105 &              18.5 &  2296 &        543 \\
+ Delta     &       571 &       31 &   121 &        117 &              33.2 &  1299 &        303 \\
+ Epsilon   &       593 &       26 &   310 &         79 &              37.9 &  2289 &        480 \\
+ Eta       &       259 &       11 &    89 &         44 &              19.1 &   624 &         36 \\
+ Gamma     &       329 &        4 &    79 &         35 &              21.6 &  1494 &        454 \\
+ Iota      &       414 &       26 &   113 &        144 &              21.9 &   964 &         36 \\
+ Kappa     &       337 &       30 &    99 &         86 &              15.0 &  1194 &         37 \\
+ Lambda    &       365 &       22 &    67 &         82 &              16.6 &  1172 &        440 \\
+ Theta     &       547 &       25 &   133 &        450 &              20.7 &  1653 &        467 \\
+ Zeta      &       344 &        3 &    49 &         21 &              17.9 &  8582 &        295 \\
+\hline
+\end{tabular}
+\caption{Github metrics for student projects.
+    \emph{Commits}: number of Git commits in repository.
+    \emph{Issues}: number of Github issues. 
+    \emph{PRs}: number of Github Pull Requests.
+    \emph{Comments}: number of comments, either on issues or PRs, not
+    including the initial description of the issue / PR.
+    \emph{Words / comment}: mean number of words per comment.
+    \emph{LoC}: total lines of code estimated by \texttt{cloc} utility.
+    \emph{Test LoC}: lines of code found in test directories (also included
+    in LoC column).
+    Counts for commits, issues, PRs and comments do not include those created
+    by instructors, or those added after the end of the semester
+    \footref{fn:metrics}.}
+\label{tab:metrics}
+\end{table}
 
 In the next paragraph, we report the student course evaluations.  We should
 make clear that we use student ratings as an equivocal measure of student
