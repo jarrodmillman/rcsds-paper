@@ -2,7 +2,10 @@
 
 Usage:
 
-    python fetch_project_data.py my-username my-password
+    python fetch_project_data.py my-gh-username my-gh-password
+
+The project data is all public, but you'll need your Github credentials to
+overcome the rate limits on anonymous queries.
 """
 import sys
 import json
@@ -40,11 +43,11 @@ def save_json(repos, fname):
     for repo in repos:
         repos_d[repo.name] = to_dicts(repo)
     with open(fname, 'wt') as fobj:
-        json.dump(repos, fobj)
+        json.dump(repos_d, fobj)
 
 
 def main():
-    repos = get_repos(sys.argv[1:])
+    repos = get_repos(*sys.argv[1:])
     save_json(repos, 'project_data.json')
 
 
