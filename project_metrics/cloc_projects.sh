@@ -1,4 +1,5 @@
 #!/bin/bash
+# Count lines of code for projects
 PROJECTS="alpha beta delta epsilon eta gamma iota kappa lambda theta zeta"
 for project in $PROJECTS; do
     echo "Analyzing $project"

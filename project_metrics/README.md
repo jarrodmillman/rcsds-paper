@@ -2,7 +2,7 @@
 
 Also see `project_metrics.md` and `Makefile`.
 
-`github_metrics.py`` is the main analysis script generating table 2 in the
+`github_metrics.py` is the main analysis script generating table 2 in the
 paper.   You should be able to run that script from this directory, and get
 the same output as we have in the paper.
 
@@ -30,3 +30,5 @@ followed by:
 ```
 bash cloc_projects.sh > cloc_output.txt
 ```
+
+We used coverage statistics from [coveralls](https://coveralls.io).  See `get_coveralls_reports.sh` for script to download the Coveralls report for each project.  We analyze these in `github_metrics.py`.

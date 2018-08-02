@@ -2,12 +2,12 @@
 
 Data read from:
 
-* JSON file, abstracted via the Github API.
-* cloc utility output from projects.
-
-See fetch_project_data.py and cloc_projects.sh
+* JSON file, abstracted via the Github API (``fetch_project_data.py``);
+* cloc utility output from projects (``cloc_projects.sh``);
+* Report for code coverage (``get_coveralls_reports.sh``).
 """
 
+from os.path import join as pjoin
 import re
 import json
 import datetime
@@ -108,7 +108,7 @@ def get_metrics(repo):
     m['Issues'] = len(valid(issues))
     m['PRs'] = len(valid(prs))
     m['Comments'] = len(comments)
-    m['Words / comment'] = mean_wc(comments)
+    m['Words/comment'] = mean_wc(comments)
     return m
 
 
@@ -156,9 +156,21 @@ def cloc_df(fname):
         proj_dicts.append(values)
     df = pd.DataFrame(proj_dicts, index=proj_names)
     proc_df = pd.DataFrame()
-    proc_df = df[['LoC']].copy()
-    proc_df['Test LoC'] = df['LoC'] - df['no_tests']
+    proc_df = df[['LoC', 'no_tests']].copy()
     return proc_df
+
+# Coveralls report parsing
+LINES_RE = re.compile(r"<strong>(\d+)</strong>")
+
+def get_lines_covered(report_file):
+    with open(report_file, 'rt') as fobj:
+        lines = fobj.read().splitlines()
+    index = lines.index("<label>Run Details</label>")
+    assert index != -1
+    covered = lines[index + 2]
+    match = LINES_RE.match(covered)
+    if match:
+        return int(match.groups()[0])
 
 
 # Load JSON data stored from Github queries.
@@ -167,6 +179,11 @@ repos = load_data()
 df1 = metrics_df(repos)
 # Calculate metrics from cloc output file.
 df2 = cloc_df('cloc_output.txt')
+# Calculate coverage
+covered = {p: get_lines_covered(pjoin('coveralls-reports', p.lower() + '-report.html'))
+           for p in df1.index}
+df2["% covered"] = pd.Series(covered) / df2['no_tests'] * 100
+df2 = df2.drop(columns='no_tests')
 # Merge into single data frame
 df = pd.concat([df1, df2], axis=1)
 # Duplicate index as new column at beginning of data frame.  This makes it

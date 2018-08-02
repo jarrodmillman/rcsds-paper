@@ -943,33 +943,35 @@ code per commit (24.9), and the smallest number of comments.
 \begin{table}
 \begin{tabular}{lrrrrrrr}
 \hline
- Project   &   Commits &   Issues &   PRs &   Comments &   Words / comment &   LoC &   Test LoC \\
+ Project   &   Commits &   Issues &   PRs &   Comments &   Words/comment &   LoC &   \% covered \\
 \hline
- Alpha     &       787 &       23 &   190 &        379 &              23.5 &  3885 &        592 \\
- Beta      &       534 &        7 &   147 &        105 &              18.5 &  2296 &        543 \\
- Delta     &       571 &       31 &   121 &        117 &              33.2 &  1299 &        303 \\
- Epsilon   &       593 &       26 &   310 &         79 &              37.9 &  2289 &        480 \\
- Eta       &       259 &       11 &    89 &         44 &              19.1 &   624 &         36 \\
- Gamma     &       329 &        4 &    79 &         35 &              21.6 &  1494 &        454 \\
- Iota      &       414 &       26 &   113 &        144 &              21.9 &   964 &         36 \\
- Kappa     &       337 &       30 &    99 &         86 &              15.0 &  1194 &         37 \\
- Lambda    &       365 &       22 &    67 &         82 &              16.6 &  1172 &        440 \\
- Theta     &       547 &       25 &   133 &        450 &              20.7 &  1653 &        467 \\
- Zeta      &       344 &        3 &    49 &         21 &              17.9 &  8582 &        295 \\
+ Alpha     &       787 &       23 &   190 &        379 &            24.7 &  3885 &         3.7 \\
+ Beta      &       534 &        7 &   147 &        105 &            20.1 &  2296 &         2.0 \\
+ Delta     &       571 &       31 &   121 &        117 &            35.1 &  1299 &        21.3 \\
+ Epsilon   &       593 &       26 &   310 &         79 &            40.9 &  2289 &        19.5 \\
+ Eta       &       259 &       11 &    89 &         44 &            21.7 &   624 &        12.4 \\
+ Gamma     &       329 &        4 &    79 &         35 &            22.3 &  1494 &        37.6 \\
+ Iota      &       414 &       26 &   113 &        144 &            24.3 &   964 &         8.4 \\
+ Kappa     &       337 &       30 &    99 &         86 &            16.6 &  1194 &         3.5 \\
+ Lambda    &       365 &       22 &    67 &         82 &            17.6 &  1172 &        91.5 \\
+ Theta     &       547 &       25 &   133 &        450 &            22.1 &  1653 &        23.1 \\
+ Zeta      &       344 &        3 &    49 &         21 &            20.8 &  8582 &         6.2 \\
 \hline
 \end{tabular}
-\caption{Github metrics for student projects.
+\caption{Github and other code metrics for student projects.
     \emph{Commits}: number of Git commits in repository.
-    \emph{Issues}: number of Github issues. 
+    \emph{Issues}: number of Github issues.
     \emph{PRs}: number of Github Pull Requests.
     \emph{Comments}: number of comments, either on issues or PRs, not
     including the initial description of the issue / PR.
     \emph{Words / comment}: mean number of words per comment.
-    \emph{LoC}: total lines of code estimated by \texttt{cloc} utility.
-    \emph{Test LoC}: lines of code found in test directories (also included
-    in LoC column).
+    \emph{LoC}: total lines of code estimated by \texttt{cloc} utility, not
+    including test directories.
+    \emph{\% covered}: Estimate of percentage of lines of code in \emph{LoC}
+    column that were covered by tests, from statistics at
+    \url{https://coveralls.io}.
     Counts for commits, issues, PRs and comments do not include those created
-    by instructors, or those added after the end of the semester
+    by instructors, or those added after the end of semester.
     \footref{fn:metrics}.}
 \label{tab:metrics}
 \end{table}
