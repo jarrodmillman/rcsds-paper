@@ -130,7 +130,7 @@ def ana_project(proj_part):
     name = proj_part.splitlines()[0].strip()
     clocs = CLOC_RE.split(proj_part)[1:]
     counts = [ana_cloc(c) for c in clocs if c]
-    return name, dict(zip(['LoC', 'no_tests', 'no_tests_scripts'], counts))
+    return name, dict(zip(['LoC', 'not_tests', 'not_tests_scripts'], counts))
 
 
 def ana_cloc(cloc_part):
@@ -154,10 +154,8 @@ def cloc_df(fname):
         name, values = ana_project(proj_part)
         proj_names.append(name.capitalize())
         proj_dicts.append(values)
-    df = pd.DataFrame(proj_dicts, index=proj_names)
-    proc_df = pd.DataFrame()
-    proc_df = df[['LoC', 'no_tests']].copy()
-    return proc_df
+    return pd.DataFrame(proj_dicts, index=proj_names)
+
 
 # Coveralls report parsing
 LINES_RE = re.compile(r"<strong>(\d+)</strong>")
@@ -176,16 +174,18 @@ def get_lines_covered(report_file):
 # Load JSON data stored from Github queries.
 repos = load_data()
 # Calculate metrics from Github queries.
-df1 = metrics_df(repos)
+gh_metrics = metrics_df(repos)
 # Calculate metrics from cloc output file.
-df2 = cloc_df('cloc_output.txt')
+cloc_raw = cloc_df('cloc_output.txt')
 # Calculate coverage
-covered = {p: get_lines_covered(pjoin('coveralls-reports', p.lower() + '-report.html'))
-           for p in df1.index}
-df2["% covered"] = pd.Series(covered) / df2['no_tests'] * 100
-df2 = df2.drop(columns='no_tests')
+fmt = pjoin('coveralls-reports', '{}-report.html')
+covered = {p: get_lines_covered(fmt.format(p.lower()))
+           for p in gh_metrics.index}
+cloc_metrics = cloc_raw[['not_tests']].copy()
+cloc_metrics.columns = ['LoC']
+cloc_metrics["% covered"] = pd.Series(covered) / cloc_raw['not_tests'] * 100
 # Merge into single data frame
-df = pd.concat([df1, df2], axis=1)
+df = pd.concat([gh_metrics, cloc_metrics], axis=1)
 # Duplicate index as new column at beginning of data frame.  This makes it
 # easier to display the project names with a column heading.
 df.insert(0, 'Project', df.index)

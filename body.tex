@@ -842,21 +842,63 @@ by the students and the Linux system we were using for grading.  Four projects
 reproduced without issue, six required us to raise one GitHub issue, and one
 required two issues.
 
-We counted the lines of Python code using the \texttt{cloc}
-utility.\footnote{\url{http://cloc.sourceforge.net}}  The median lines of code
-across projects was 1,494 (range 624--8,582), of which tests comprised
-(median; range) 440; 36--592.  As this suggests, we were not successful in
-persuading the students to test a large proportion of their code.  We
-estimated coverage of all lines of Python code at a median of 12.4\% (range
-2.0--91.8).\footnote{See
-\url{https://github.com/jarrodmillman/rcsds-paper/tree/master/project_metrics}
-for details of this estimate.\label{fn:metrics}}
-The code coverage machinery we had put in place did not measure coverage of
-code outside expected code directories, and the students had put a large
-proportion of their code outside these directories, leaving the automated code
-coverage score above 90\% in all cases, even though a large proportion of the
-code was not in fact covered by tests. See table \ref{tab:metrics} for more on
-code metrics.
+Table \ref{tab:metrics} shows code metrics for the project repositories, and
+statistics for the projects' use of the Github interface.
+
+\begin{table}
+\begin{tabular}{lrrrrrrr}
+\hline
+ Project   &   Commits &   Issues &   PRs &   Comments &   Words/comment &   LoC &   \% covered \\
+\hline
+ Alpha     &       787 &       23 &   190 &        379 &            24.7 &  3293 &         3.7 \\
+ Beta      &       534 &        7 &   147 &        105 &            20.1 &  1753 &         2.0 \\
+ Delta     &       571 &       31 &   121 &        117 &            35.1 &   996 &        21.3 \\
+ Epsilon   &       593 &       26 &   310 &         79 &            40.9 &  1809 &        19.5 \\
+ Eta       &       259 &       11 &    89 &         44 &            21.7 &   588 &        12.4 \\
+ Gamma     &       329 &        4 &    79 &         35 &            22.3 &  1040 &        37.6 \\
+ Iota      &       414 &       26 &   113 &        144 &            24.3 &   928 &         8.4 \\
+ Kappa     &       337 &       30 &    99 &         86 &            16.6 &  1157 &         3.5 \\
+ Lambda    &       365 &       22 &    67 &         82 &            17.6 &   732 &        91.5 \\
+ Theta     &       547 &       25 &   133 &        450 &            22.1 &  1186 &        23.1 \\
+ Zeta      &       344 &        3 &    49 &         21 &            20.8 &  8287 &         6.2 \\
+\hline
+\end{tabular}
+\caption{Github and other code metrics for student projects.
+    \emph{Commits}: number of Git commits in repository.
+    \emph{Issues}: number of Github issues.
+    \emph{PRs}: number of Github Pull Requests.
+    \emph{Comments}: number of comments, either on issues or PRs, not
+    including the initial description of the issue / PR.
+    \emph{Words / comment}: mean number of words per comment.
+    \emph{LoC}: total lines of code measured with
+    \url{http://cloc.sourceforge.net}, not including test directories.
+    \emph{\% covered}: Estimate of percentage of lines of code in \emph{LoC}
+    column that were covered by tests, from statistics at
+    \url{https://coveralls.io}.
+    Counts for commits, issues, PRs and comments do not include those created
+    by instructors, or those added after the end of semester. See
+    \url{https://github.com/jarrodmillman/rcsds-paper/tree/master/project_metrics}
+    for details of these calculations.
+\label{tab:metrics}
+\end{table}
+
+The median final lines of non-test code per project was 1,157.  We were not
+successful in persuading the students to test a large proportion of their
+code; we estimated a 12.4\% of code lines covered by tests with a range of 2\%
+to 91.5\%.  The code coverage machinery we had put in place did not measure
+code lines outside expected code directories, and the students had put a
+large proportion of their code outside these directories, leaving the
+automated code coverage score above 90\% in all cases, even though a large
+proportion of the code was not in fact covered by tests.
+
+The Github statistics suggest that the teams did engage with Git and Github
+workflow.  All projects used the Pull Request (PR) feature to a reasonable
+degree, with a median of 113 PRs per project.  There was considerable
+variation in the degree to which the teams used comments to review PRs and
+issues, with median of 86 comments per project. All projects except Zeta had a
+low ratio of final lines of code to number of commits, ranging from 1.7 to
+4.2.  Zeta appears to have used a different strategy, with the most lines of
+code per commit (24.1), and the smallest number of comments.
 
 No team used SPM, FSL, or AFNI.  Two projects imported the
 \texttt{nilearn} package,\footnote{\url{https://nilearn.github.io}} which is a
@@ -929,52 +971,6 @@ emulate development environment.'' They extended the analysis by running a
 random forest model to detect volumes corresponding to outdoor and indoor
 scenes in the film.  With all this, they achieved around 92\% code test
 coverage.
-
-Github metrics for the project repositories suggested that the teams had
-engaged with Git and Github workflow -- see table \ref{tab:metrics}.  All
-projects used the Pull Request (PR) feature to a reasonable degree, with
-median (min, max) number of PRs of 113 (49, 310).  There was considerable
-variation in the degree to which the teams used comments to review PRs and
-issues, with median (min, max) of 86 (21, 450). All projects except Zeta had a
-low ratio of final lines of code to number of commits, ranging from 2.3 to
-4.9.  Zeta appears to have used a different strategy, with the most lines of
-code per commit (24.9), and the smallest number of comments.
-
-\begin{table}
-\begin{tabular}{lrrrrrrr}
-\hline
- Project   &   Commits &   Issues &   PRs &   Comments &   Words/comment &   LoC &   \% covered \\
-\hline
- Alpha     &       787 &       23 &   190 &        379 &            24.7 &  3885 &         3.7 \\
- Beta      &       534 &        7 &   147 &        105 &            20.1 &  2296 &         2.0 \\
- Delta     &       571 &       31 &   121 &        117 &            35.1 &  1299 &        21.3 \\
- Epsilon   &       593 &       26 &   310 &         79 &            40.9 &  2289 &        19.5 \\
- Eta       &       259 &       11 &    89 &         44 &            21.7 &   624 &        12.4 \\
- Gamma     &       329 &        4 &    79 &         35 &            22.3 &  1494 &        37.6 \\
- Iota      &       414 &       26 &   113 &        144 &            24.3 &   964 &         8.4 \\
- Kappa     &       337 &       30 &    99 &         86 &            16.6 &  1194 &         3.5 \\
- Lambda    &       365 &       22 &    67 &         82 &            17.6 &  1172 &        91.5 \\
- Theta     &       547 &       25 &   133 &        450 &            22.1 &  1653 &        23.1 \\
- Zeta      &       344 &        3 &    49 &         21 &            20.8 &  8582 &         6.2 \\
-\hline
-\end{tabular}
-\caption{Github and other code metrics for student projects.
-    \emph{Commits}: number of Git commits in repository.
-    \emph{Issues}: number of Github issues.
-    \emph{PRs}: number of Github Pull Requests.
-    \emph{Comments}: number of comments, either on issues or PRs, not
-    including the initial description of the issue / PR.
-    \emph{Words / comment}: mean number of words per comment.
-    \emph{LoC}: total lines of code estimated by \texttt{cloc} utility, not
-    including test directories.
-    \emph{\% covered}: Estimate of percentage of lines of code in \emph{LoC}
-    column that were covered by tests, from statistics at
-    \url{https://coveralls.io}.
-    Counts for commits, issues, PRs and comments do not include those created
-    by instructors, or those added after the end of semester.
-    \footref{fn:metrics}.}
-\label{tab:metrics}
-\end{table}
 
 In the next paragraph, we report the student course evaluations.  We should
 make clear that we use student ratings as an equivocal measure of student
