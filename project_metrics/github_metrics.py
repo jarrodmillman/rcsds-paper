@@ -1,8 +1,11 @@
 """ Calculate github metrics for projects
 
-Data read from JSON file, abstracted via the Github API.
+Data read from:
 
-See fetch_project_data.py.
+* JSON file, abstracted via the Github API.
+* cloc utility output from projects.
+
+See fetch_project_data.py and cloc_projects.sh
 """
 
 import re
@@ -28,14 +31,19 @@ TERM_END = datetime.datetime(2015, 12, 18, 23, 59, 59, 999, pytz.utc)
 
 
 def load_data(fname=DATA_FNAME):
+    """ Load stored JSON data from Github query
+
+    Query in fetch_github_data.py
+    """
     with open(fname, 'rt') as fobj:
         repos_d = json.load(fobj)
     del repos_d['project-aleph']  # Not started
     return repos_d
 
 
-def get_issues_prs(repo_d):
-    issues_prs = repo_d['issues']
+def get_issues_prs(issues_prs):
+    """ Split generic `issues_prs` into actual issues and PRs
+    """
     issues = [i for i in issues_prs if '/issues/' in i['html_url']]
     prs = [i for i in issues_prs if '/pull/' in i['html_url']]
     assert len(issues) + len(prs) == len(issues_prs)
@@ -43,10 +51,12 @@ def get_issues_prs(repo_d):
 
 
 def members_only(elements):
+    """ Filter out elements created by instructors """
     return [e for e in elements if e['user']['login'] not in INSTRUCTOR_LOGINS]
 
 
 def in_term(elements):
+    """ Filter out elements after end of semester """
     return [e for e in elements if str2dt(e['created_at']) < TERM_END]
 
 
@@ -55,6 +65,7 @@ def valid(elements):
 
 
 def valid_commits(commits):
+    """ Filter commits by instructors, after end of term """
     valids = []
     for commit in commits:
         data = commit['commit']['author']
@@ -72,7 +83,7 @@ def get_comments(elements):
 
 def word_count(text):
     for char in ',.:;\'"`-@()':
-        text = text.replace(char, '')
+        text = text.replace(char, ' ')
     return len(text.split())
 
 
@@ -82,14 +93,16 @@ def mean_wc(elements):
 
 
 def str2dt(dt_str):
+     """ Convert Github data representation to datetime """
      naive = datetime.datetime.strptime(dt_str, '%Y-%m-%dT%XZ')
      return pytz.utc.localize(naive)
 
 
 def get_metrics(repo):
+    """ Calculate dictionary of metrics from repository dict """
     m = OrderedDict()
     m['Commits'] = len(valid_commits(repo['commits']))
-    issues, prs = get_issues_prs(repo)
+    issues, prs = get_issues_prs(repo['issues'])
     issues_prs = issues + prs
     comments = valid(sum(get_comments(issues_prs), []))
     m['Issues'] = len(valid(issues))
@@ -100,16 +113,20 @@ def get_metrics(repo):
 
 
 def metrics_df(repos):
+    """ Create metrics dataframe from repositories dict """
     dicts = [get_metrics(repo) for repo in repos.values()]
     names = [name.split('-')[1].capitalize() for name in repos]
     return pd.DataFrame(dicts, index=names)
 
 
+# Splitter for processing cloc_output.txt file.  This contains the output of
+# the cloc runs on the project repositories.
 PROJECT_RE = re.compile('^Analyzing', flags=re.M)
 CLOC_RE = re.compile('^github.com/AlDanial/cloc', flags=re.M)
 
 
 def ana_project(proj_part):
+    """ Process cloc outputs for one repository """
     name = proj_part.splitlines()[0].strip()
     clocs = CLOC_RE.split(proj_part)[1:]
     counts = [ana_cloc(c) for c in clocs if c]
@@ -117,6 +134,7 @@ def ana_project(proj_part):
 
 
 def ana_cloc(cloc_part):
+    """ Process output from single cloc run """
     for line in cloc_part.splitlines():
         if not line.startswith('SUM:'):
             continue
@@ -124,6 +142,8 @@ def ana_cloc(cloc_part):
 
 
 def cloc_df(fname):
+    """ Create dataframe by processing cloc output in `fname`
+    """
     with open(fname, 'rt') as fobj:
         contents = fobj.read()
     proj_dicts = []
@@ -141,11 +161,18 @@ def cloc_df(fname):
     return proc_df
 
 
+# Load JSON data stored from Github queries.
 repos = load_data()
+# Calculate metrics from Github queries.
 df1 = metrics_df(repos)
+# Calculate metrics from cloc output file.
 df2 = cloc_df('cloc_output.txt')
+# Merge into single data frame
 df = pd.concat([df1, df2], axis=1)
+# Duplicate index as new column at beginning of data frame.  This makes it
+# easier to display the project names with a column heading.
 df.insert(0, 'Project', df.index)
+# Create, print LaTeX table from dataframe.
 table = tabulate(df, tablefmt="latex", floatfmt=".1f", headers='keys',
                  showindex='never')
 print(table)
